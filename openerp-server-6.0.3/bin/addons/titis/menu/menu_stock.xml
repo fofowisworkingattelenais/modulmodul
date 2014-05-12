@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- MENGHILANGKAN DASHBOARD WAREHOUSE -->
+        <record id="stock.menu_stock_root" model="ir.ui.menu">
+			<field name="icon">terp-stock</field>
+			<field name="sequence">5</field>
+			<field name="group" ref="stock.group_stock_manager"/>
+			<field name="action" eval="0"/>
+        </record>			
+        
+		<menuitem 	id="menu_titis_wizardImportPerbaikanDataProduct" 
+					parent="stock.menu_stock_product" 
+					action="waction_titis_wizardImportPerbaikanDataProduct" />        	
+        	
+		<menuitem 	id="menu_titis_WizardLaporanKartuStock" 
+					parent="stock.next_id_61" 
+					name="Kartu Stock"
+					sequence="500"
+					action="waction_titis_wizardKartuStock" />		
+					
+		<menuitem 	id="menu_titis_WizardLaporanStokTotal" 
+					parent="stock.next_id_61" 
+					name="Stok Total"
+					sequence="501"
+					action="waction_titis_wizardStokTotal" />
+
+	</data>
+</openerp>

@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<document filename="Stok Total.pdf">
+
+	<template pageSize="(842.0,595.0)" title="Material Request Status" author="Faris Bassam" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+			<frame id="first" x1="28.0" y1="28.0" width="786" height="500"/>
+		</pageTemplate>
+	</template>
+
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+		/>
+
+		<paraStyle
+			name="JUDUL_LAPORAN_2"
+			fontName="Times-Bold"
+			fontSize="12.0"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			leading="14"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="8,0"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="8,0"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="8,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="1,-1"/>
+
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="8,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="8,-1"/>
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,1" stop="3,2"/>
+
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/>
+
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<story>
+
+
+		<blockTable rowHeights="1cm,1cm" colWidths="605.0,100.0,10.0,100.0" style="TABEL_HEADER">
+			<tr>
+				<td><para style="JUDUL_LAPORAN" alignment="LEFT">MATERIAL REQUEST STATUS</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="CENTER">Date</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="CENTER">:</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="RIGHT">[[ tanggal(data['form']) ]]</para></td>
+			</tr>
+			<tr>
+
+				<td><para style="JUDUL_LAPORAN_2" alignment="LEFT"> </para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="LEFT"> </para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="LEFT"> </para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="LEFT"> </para></td>
+			</tr>
+		</blockTable>
+
+		<section>
+
+			<blockTable style="TABEL_STANDAR" colWidths="140.0,60.0,75.0,40.0,55.0,170.0,145.0,60.0,70.0">
+				<tr>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">MAT. REQ. NO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">DATED MR</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">PURCHASE BY</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">QTY</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">UNIT</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">DESCRIPTION</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">STATUS/TS NO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">TS/DATE</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">DELIVERY / DAY</para></td>
+				</tr>
+			</blockTable>
+			<blockTable style="TABEL_STANDAR" colWidths="140.0,60.0,75.0,40.0,55.0,170.0,145.0,60.0,70.0">
+                    <tr>
+            			[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+<!--                        <para style="ISI_TABEL_ITEM">[[ repeatIn(objects,'o') ]]</para> -->
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['requisition_id'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['date_start'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['pcs_by'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['product_qty'] ]] </para> </td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['product_uom_id'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['product_id']  ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['order_id'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['po_date_order'] ]] </para></td>
+                        <td><para style="ISI_TABEL_ITEM" alignment="CENTER"> [[ a['delivery'] ]] </para></td>
+                    </tr>
+			</blockTable>
+
+
+		</section>
+
+	</story>
+
+</document>
+

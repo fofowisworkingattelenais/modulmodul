@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="form_base_perusahaanLaporanKeuangan" model="ir.ui.view">
+            <field name="name">Form Perusahaan - Laporan Keuangan</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+            	<notebook>
+					<page string="Konfigurasi Laporan Keuangan">
+						<group colspan="4" col="2">
+							<group colspan="1" col="2">
+								<separator string="Neraca Saldo" colspan="2"/>
+								<field name="account_neraca_id"/>
+								<field name="account_aktiva_id"/>
+								<field name="account_kewajiban_id"/>
+								<field name="account_ekuitas_id"/>
+							</group>
+							<group colspan="1" col="2">
+								<separator string="Laba-Rugi" colspan="2"/>
+								<field name="account_laba_rugi_id"/>
+								<field name="account_pendapatan_id"/>
+								<field name="account_hpp_id"/>
+								<field name="account_beban_id"/>
+								<field name="account_pendapatan_dll_id"/>
+								<field name="account_beban_dll_id"/>	
+							</group>							
+						</group>				
+					</page>
+					<page string="Purchase Configuration">
+						<separator string="Purchase Requisition Approval" colspan="4"/>
+						<field name="requisition_approval_ids" colspan="4" nolabel="1">
+							<tree string="Purchase Requisition Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+							</tree>
+						</field>					
+						<separator string="Purchase Order Approval" colspan="4"/>
+						<field name="purchase_approval_ids" colspan="4" nolabel="1">
+							<tree string="Purchase Order Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+							</tree>
+						</field>
+					</page>
+					<page string="Accounting Configuration">
+						<field name="bank_payment_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Bank Payment'}">
+							<tree string="Bank Payment Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>				
+						
+						<field name="bank_receipt_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Bank Receipt'}">
+							<tree string="Bank Receipt Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>		
+						
+						<field name="cash_payment_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Cash Payment'}">
+							<tree string="Cash Payment Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>		
+						
+						<field name="cash_receipt_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Cash Receipt'}">
+							<tree string="Cash Receipt Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>				
+						
+						<field name="customer_invoice_approval_ids" colspan="2" nolabel="1" context="{'type' : 'out_invoice'}">
+							<tree string="Customer Invoice Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>
+						</field>
+							
+						<field name="supplier_invoice_approval_ids" colspan="2" nolabel="1" context="{'type' : 'in_invoice'}">
+							<tree string="Supplier Invoice Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>		
+						</field>	
+							
+						<field name="customer_refund_approval_ids" colspan="2" nolabel="1" context="{'type' : 'out_refund'}">
+							<tree string="Customer Refund Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>														
+						</field>				
+						
+						<field name="supplier_refund_approval_ids" colspan="2" nolabel="1" context="{'type' : 'in_refund'}">
+							<tree string="Supplier Refund Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>														
+						</field>																							
+					</page>					
+				</notebook>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

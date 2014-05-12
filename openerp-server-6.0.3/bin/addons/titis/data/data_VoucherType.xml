@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="data_voucherType_bankPayment" model="titis.voucher_type">
+			<field name="name">Bank Payment</field>
+			<field name="kode">BP</field>
+			<field name="default_header_type">payment</field>
+			<field name="default_detail_type_selection">cr</field>
+			<field name="model_name">titis.bank_payment</field>
+			<field name="model_view_form">form_titis_bankPayment</field>
+			<field name="modul_origin">titis</field>	
+		</record>
+		
+		<record id="data_voucherType_bankReceive" model="titis.voucher_type">
+			<field name="name">Bank Receipt</field>
+			<field name="kode">BR</field>
+			<field name="default_header_type">receipt</field>
+			<field name="default_detail_type_selection">dr</field>
+			<field name="model_name">titis.bank_receipt</field>
+			<field name="model_view_form">form_titis_bankReceipt</field>
+			<field name="modul_origin">titis</field>
+		</record>		
+		
+		<record id="data_voucherType_cashPayment" model="titis.voucher_type">
+			<field name="name">Cash Payment</field>
+			<field name="kode">CP</field>
+			<field name="default_header_type">payment</field>
+			<field name="default_detail_type_selection">cr</field>
+			<field name="model_name">titis.cash_payment</field>
+			<field name="model_view_form">form_titis_cashPayment</field>
+			<field name="modul_origin">titis</field>
+		</record>
+		
+		<record id="data_voucherType_cashReceive" model="titis.voucher_type">
+			<field name="name">Cash Receipt</field>
+			<field name="kode">CR</field>
+			<field name="default_header_type">receipt</field>
+			<field name="default_detail_type_selection">dr</field>
+			<field name="model_name">titis.cash_receipt</field>
+			<field name="model_view_form">form_titis_cashReceipt</field>
+			<field name="modul_origin">titis</field>
+		</record>	
+			
+	</data>
+</openerp>

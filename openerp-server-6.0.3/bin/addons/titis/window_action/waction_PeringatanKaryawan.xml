@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_titis_peringatanKaryawan" model="ir.actions.act_window">
+			<field name="name">Peringatan Karyawan</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.peringatan_karyawan</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_titis_treePeringatanKaryawan" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_peringatanKaryawan"/>
+			<field name="act_window_id" ref="waction_titis_peringatanKaryawan"/>
+		</record>
+
+		<record id="wactionView_titis_formPeringatanKaryawan" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_peringatanKaryawan"/>
+			<field name="act_window_id" ref="waction_titis_peringatanKaryawan"/>
+		</record>
+	</data>
+</openerp>

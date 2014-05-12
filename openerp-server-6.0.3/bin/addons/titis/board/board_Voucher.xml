@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!-- BANK PAYMENT -->
+		<record id="waction_titis_bankPaymentBoard" model="ir.actions.act_window">
+			<field name="name">Bank Payment</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.bank_payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="context">{'voucher_type' : 'Bank Payment'}</field>
+			<field name="domain">[('voucher_type_id.name','=','Bank Payment'),('state','in',['waiting','proforma','ready'])]</field>
+		</record>
+		
+		<!-- CASH PAYMENT -->
+		<record id="waction_titis_cashPaymentBoard" model="ir.actions.act_window">
+			<field name="name">Cash Payment</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.cash_payment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="context">{'voucher_type' : 'Cash Payment'}</field>
+			<field name="domain">[('voucher_type_id.name','=','Cash Payment'),('state','in',['waiting','proforma','ready'])]</field>
+		</record>	
+		
+		<!-- BANK RECEIPT -->
+		<record id="waction_titis_bankReceiptBoard" model="ir.actions.act_window">
+			<field name="name">Bank Receipt</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.bank_receipt</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="context">{'voucher_type' : 'Bank Receipt'}</field>
+			<field name="domain">[('voucher_type_id.name','=','Bank Receipt'),('state','in',['waiting','proforma','ready'])]</field>
+		</record>		
+		
+		<!-- CASH RECEIPT -->
+		<record id="waction_titis_cashReceiptBoard" model="ir.actions.act_window">
+			<field name="name">Cash Receipt</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.cash_receipt</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="context">{'voucher_type' : 'Cash Receipt'}</field>
+			<field name="domain">[('voucher_type_id.name','=','Cash Receipt'),('state','in',['waiting','proforma','ready'])]</field>
+		</record>			
+
+        <record id="form_titis_boardARAP" model="ir.ui.view">
+            <field name="name">Form A/R &amp; A/P Dashboard</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard A/R &amp; A/P">
+                    <hpaned>
+                        <child1>
+                        	<action colspan="2" height="220" name="%(waction_titis_bankPaymentBoard)d" string="Bank Payment"  />
+                        	<action colspan="2" height="220" name="%(waction_titis_cashPaymentBoard)d" string="Cash Payment"/>
+                        </child1>
+                        
+
+                        <child2>
+                        	<action colspan="4" height="220" name="%(waction_titis_bankReceiptBoard)d" string="Bank Receipt"  />
+                        	<action colspan="4" height="220" name="%(waction_titis_cashReceiptBoard)d" string="Cash Receipt"/>
+                        </child2>
+
+                        
+                        
+                    </hpaned>
+                </form>
+            </field>
+        </record>
+
+
+		
+        <record id="waction_titis_boardARAP" model="ir.actions.act_window">
+            <field name="name">Dashboard A/R &amp; A/P</field>
+            <field name="res_model">board.board</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="form_titis_boardARAP"/>
+        </record>
+        
+    </data>
+</openerp>

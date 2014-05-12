@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate='0'>
+
+<!--
+ Users Groups
+-->
+		<record model="res.company" id="base.main_company">
+			<field name="rml_header">
+				&lt;header&gt;
+					&lt;pageTemplate&gt;
+						&lt;frame id="first" x1="1.3cm" y1="2.5cm" height="23.0cm" width="19cm"/&gt;
+						&lt;pageGraphics&gt;
+							&lt;!-- You Logo - Change X,Y,Width and Height --&gt;
+							&lt;image x="1.3cm" y="27.6cm" height="40.0" &gt;[[ company.logo or removeParentNode('image') ]]&lt;/image&gt;
+							&lt;setFont name="Times-Bold" size="10"/&gt;
+							&lt;fill color="blue"/&gt;
+							&lt;stroke color="blue"/&gt;
+							&lt;drawRightString x="20cm" y="27.6cm"&gt;[[ company.rml_header1 ]]&lt;/drawRightString&gt;
+
+
+							&lt;drawString x="3cm" y="28.7cm"&gt;[[ company.partner_id.name ]]&lt;/drawString&gt;
+							&lt;setFont name="Times-BoldItalic" size="10"/&gt;
+							&lt;fill color="red"/&gt;
+							&lt;stroke color="red"/&gt;
+							&lt;drawString x="3cm" y="28.2cm"&gt;More Perfect With Us&lt;/drawString&gt;
+							&lt;setFont name="Times-Bold" size="10"/&gt;
+							&lt;fill color="blue"/&gt;
+							&lt;stroke color="blue"/&gt;
+							&lt;drawString x="3cm" y="27.7cm"&gt;Head Office&lt;/drawString&gt;
+							&lt;drawString x="4.5cm" y="27.7cm"&gt;:&lt;/drawString&gt;
+							&lt;drawString x="4.7cm" y="27.7cm"&gt;[[ company.partner_id.address and company.partner_id.address[0].street or  '' ]] [[ company.partner_id.address and company.partner_id.address[0].city or '' ]]&lt;/drawString&gt;
+
+							&lt;drawString x="3cm" y="27.4cm"&gt;Telp&lt;/drawString&gt;
+							&lt;drawString x="4.5cm" y="27.4cm"&gt;:&lt;/drawString&gt;
+							&lt;drawString x="4.7cm" y="27.4cm"&gt;[[ company.partner_id.address and company.partner_id.address[0].phone or '' ]]&lt;/drawString&gt;
+
+							&lt;drawString x="3cm" y="27.1cm"&gt;Fax&lt;/drawString&gt;
+							&lt;drawString x="4.5cm" y="27.1cm"&gt;:&lt;/drawString&gt;
+							&lt;drawString x="4.7cm" y="27.1cm"&gt;[[ company.partner_id.address and company.partner_id.address[0].fax or '' ]]&lt;/drawString&gt;
+
+							&lt;drawString x="3cm" y="26.8cm"&gt;Email&lt;/drawString&gt;
+							&lt;drawString x="4.5cm" y="26.8cm"&gt;:&lt;/drawString&gt;
+							&lt;drawString x="4.7cm" y="26.8cm"&gt;[[ company.partner_id.address and company.partner_id.address[0].email or '' ]]&lt;/drawString&gt;
+
+							&lt;!--page bottom--&gt;
+
+							&lt;lines&gt;1.2cm 2.15cm 19.9cm 2.15cm&lt;/lines&gt;
+
+							&lt;drawCentredString x="10.5cm" y="1.7cm"&gt;[[ company.rml_footer1 ]]&lt;/drawCentredString&gt;
+							&lt;drawCentredString x="10.5cm" y="1.25cm"&gt;[[ company.rml_footer2 ]]&lt;/drawCentredString&gt;
+							&lt;drawCentredString x="10.5cm" y="0.8cm"&gt;Contact : [[ user.name ]] - Page: &lt;pageNumber/&gt;&lt;/drawCentredString&gt;
+						&lt;/pageGraphics&gt;
+					&lt;/pageTemplate&gt;
+				&lt;/header&gt;
+			</field>
+		</record>
+  
+    </data>
+</openerp>
+

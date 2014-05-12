@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<document filename="Kartu Stock.pdf">
+
+	<template pageSize="(595.0,842.0)" title="Kartu Stock" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+      		<frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+		</pageTemplate>
+	</template>
+  
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="green" start="0,0" stop="5,0"/>	
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,0" stop="5,0"/>
+			
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+			
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="5,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,-1" stop="5,-1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>	
+			<lineStyle kind="LINEABOVE" colorName="green" start="0,0" stop="2,0"/>	
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<para style="JUDUL_LAPORAN">KARTU STOCK</para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,13cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">NOMOR PART (PN)</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  default_code(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">DESKRIPSI</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  nama_product(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">TYPE/SERIAL/MODEL</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  category_name(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">MANUFACTURE/MERK</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  nama_product(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">NOMOR IDENTIK PIN</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">-</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">POSISI</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  location_name(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">SATUAN JUMLAH</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  nama_uom(data['form']) ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">MSL</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">-</para></td>
+			</tr>
+		
+		</blockTable>
+		
+		<para><font color="white"> </font></para>
+		
+		<section>
+
+		<blockTable style="TABEL_STANDAR" colWidths="3.5cm,2.5cm,2.5cm,6cm,4cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">TANGGAL</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">MASUK</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KELUAR</para></td>
+				
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KETERANGAN</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">TANDA TANGAN</para></td>
+			</tr>
+			<tr>				
+				[[ repeatIn(isi_laporan(data['form']), 'a') ]]				
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['tanggal'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['masuk'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['keluar'] ]]</para></td>
+				
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['keterangan'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+			</tr>
+		
+		</blockTable>
+
+                <para><font color="white"> </font></para>
+                <para><font color="white"> </font></para>
+
+		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,13cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">STOK AKHIR</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  a['stok'] ]]</para></td>
+			</tr>
+                </blockTable>
+
+		</section>
+
+	</story>
+	
+</document>
+

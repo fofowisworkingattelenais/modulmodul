@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- MENGHILANGKAN DASHBOARD ACCOUNTING -->
+        <record id="account.menu_finance" model="ir.ui.menu">
+			<field name="icon">terp-account</field>
+			<field name="sequence">14</field>
+			<field name="action"></field>
+			
+        </record>	
+
+		<!-- BANK AND CASH -->
+		<menuitem 	
+					id="menu_titis_bankPayment"
+					parent="account.menu_finance_bank_and_cash"
+					name="Bank Payment"
+					action="waction_titis_bankPayment"
+					sequence="1"
+		/>
+		
+		<menuitem 	
+					id="menu_titis_bankReceipt"
+					parent="account.menu_finance_bank_and_cash"
+					name="Bank Receipt"
+					action="waction_titis_bankReceipt"
+					sequence="2"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_cashPayment"
+					parent="account.menu_finance_bank_and_cash"
+					name="Cash Payment"
+					action="waction_titis_cashPayment"
+					sequence="3"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_cashReceipt"
+					parent="account.menu_finance_bank_and_cash"
+					name="Cash Receipt"
+					action="waction_titis_cashReceipt"
+					sequence="4"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_bankCashReconcilliation"
+					parent="account.menu_finance_bank_and_cash"
+					name="Bank/Cash Reconciliation"
+					action="account.action_bank_statement_periodic_tree"
+					sequence="5"
+		/>		
+
+<!--		<menuitem 	id="menu_titis_iOweYou"
+        			parent="account.menu_finance_bank_and_cash"
+					name="I-Owe-You"
+					action="waction_titis_iOweYou"
+					sequence="6"
+					/>
+					
+	-->
+
+		<!-- CONFIGURATION -->
+
+		<menuitem 	id="menu_titis_voucherType"
+					parent="account.menu_finance_configuration"
+					sequence="1"
+					name="Voucher Type"
+					action="waction_titis_voucherType"
+		/>					
+
+        
+
+		<!-- REPORT -->
+        	
+		<menuitem 	id="menu_titis_WizardLaporanCashFlowDirect" 
+					parent="account.menu_finance_reporting" 
+					name="Cash Direct"
+					sequence="500"
+					action="waction_titis_wizardLaporanCashFlowDirect" />
+
+		<menuitem 	id="menu_titis_WizardDepartmentReport" 
+					parent="account.menu_finance_reporting" 
+					name="Department Report"
+					sequence="501"
+					action="waction_titis_wizardDepartmentReport" />
+					
+		<menuitem 	id="menu_titis_WizardLedger" 
+					parent="account.menu_finance_reporting" 
+					name="Ledger"
+					sequence="502"
+					action="waction_titis_wizardLedger" />	
+					
+		<menuitem 	id="menu_titis_WizardIncomeStatement" 
+					parent="account.menu_finance_reporting" 
+					name="Income Statement"
+					sequence="503"
+					action="waction_titis_wizardIncomeStatement" />		
+		
+		<menuitem 	id="menu_titis_WizardIndirectCashflow" 
+					parent="account.menu_finance_reporting" 
+					name="Indirect Cashflow"
+					sequence="504"
+					action="waction_titis_wizardIndirectCashflow" />	
+					
+		<menuitem 	id="menu_titis_WizardReportAccountPayableAging" 
+					parent="account.menu_finance_reporting" 
+					name="Account Payable Aging"
+					sequence="505"
+					action="waction_titis_wizardReportAccountPayableAging" />
+					
+		<menuitem 	id="menu_titis_WizardReportAccountPayableAgingByVendor" 
+					parent="account.menu_finance_reporting" 
+					name="Account Payable Aging By Vendor"
+					sequence="506"
+					action="waction_titis_wizardReportAccountPayableAgingByVendor" />		
+					
+		<menuitem 	id="menu_titis_WizardReportAccountReceivable" 
+					parent="account.menu_finance_reporting" 
+					name="Account Receivable"
+					sequence="507"
+					action="waction_titis_wizardReportAccountReceivable" />	
+					
+		<menuitem 	id="menu_titis_WizardReportAccountReceivableByCustomer" 
+					parent="account.menu_finance_reporting" 
+					name="Account Receivable By Customer"
+					sequence="508"
+					action="waction_titis_wizardReportAccountReceivableByCustomer" />	
+		
+		<menuitem 	id="menu_titis_WizardReportActualBudgetCorporate" 
+					parent="account.menu_finance_reporting" 
+					name="Actual Vs Budget "
+					sequence="509"
+					action="waction_titis_wizardReportActualVsBudget" />
+					
+		<menuitem 	id="menu_titis_WizardReportBalanceSheet" 
+					parent="account.menu_finance_reporting" 
+					name="Balance Sheet"
+					sequence="510"
+					action="waction_titis_wizardBalanceSheet" />
+					
+		<menuitem 	id="menu_titis_WizardReportTrialBalance" 
+					parent="account.menu_finance_reporting" 
+					name="Trial Balance"
+					sequence="511"
+					action="waction_titis_wizardTrialBalance" />																										
+	</data>
+</openerp>

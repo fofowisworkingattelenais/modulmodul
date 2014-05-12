@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no" ?>
+<document filename="Balance Sheet.pdf">
+
+	<template pageSize="(14.3in,8.5in)"
+			leftMargin="2.5cm"
+			rightMargin="2.5cm"
+			topMargin="2.5cm"
+			bottomMargin="2.5cm"
+			title="Balance Sheet"
+			author="PT. Telenais Asset Tangguh"
+			showBoundary="0"
+			allowSplitting="20">
+			
+		<pageTemplate id="main">
+				<frame id="columnOne" x1="1.5cm" y1="2cm" width="16cm" height="16cm"/>
+				<frame id="columnTwo" x1="18.5cm" y1="2cm" width="16cm" height="16cm"/>
+    			<pageGraphics>
+					<image x="493" y="555" height="30.0" >[[ company.logo or removeParentNode('image') ]]</image>
+					<setFont name="Times-Bold" size="14"/>
+					<drawString x="480" y="540">NERACA</drawString>
+					<drawString x="385" y="525">[[ periode(data['form']) ]]</drawString>
+	
+				</pageGraphics>
+		</pageTemplate>
+
+	</template>
+	
+	<stylesheet> 
+			
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="LEFT"
+		/>
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+		
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>
+		
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="3,0"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="3,0"/>	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<section>
+			<blockTable colWidths="9.0cm,1cm,3.0cm,3.0cm" repeatRows="1" style="TABEL_HEADER">
+				<tr>									
+					<td><para style="HEADER_TABEL"> </para></td>
+					<td><para style="HEADER_TABEL" alignment="CENTER">Note</para></td>
+					<td><para style="HEADER_TABEL" alignment="CENTER">[[ periode_tabel_header(data['form']) ]]</para></td>
+					<td><para style="HEADER_TABEL" alignment="CENTER">[[ tahun_sebelumnya(data['form']) ]]</para></td>
+				</tr>
+				<tr>
+					[[ repeatIn(isi_laporan(data['form']), 'o') ]]								
+					<td><para><font color="white"></font><font name="Times-Bold">[[ o['type'] &lt;&gt; 'view' and removeParentNode('font') ]] [[ o['name'] ]]</font><font name="Times-Roman">[[ o['type'] == 'view' and removeParentNode('font') ]] [[ o['name'] ]]</font></para></td>
+					<td><para alignment="CENTER">[[ o['type'] ]]</para></td>
+					<td><para alignment="RIGHT"><font color="white"></font><font name="Times-Bold">[[ o['type'] &lt;&gt; 'view' and removeParentNode('font') ]] [[ formatLang(o['saldo_periode']) ]]</font><font name="Times-Roman">[[ o['type'] == 'view' and removeParentNode('font') ]] [[ formatLang(o['saldo_periode']) ]]</font></para></td>	
+					<td><para alignment="RIGHT"><font color="white"></font><font name="Times-Bold">[[ o['type'] &lt;&gt; 'view' and removeParentNode('font') ]] [[ formatLang(o['saldo_fiscal_year']) ]]</font><font name="Times-Roman">[[ o['type'] == 'view' and removeParentNode('font') ]] [[ formatLang(o['saldo_fiscal_year']) ]]</font></para></td>	
+				</tr>			
+			</blockTable>
+		</section>
+
+	</story>
+
+</document>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_titis_boardLembur" model="ir.ui.view">
+            <field name="name">Tree Board Lembur</field>
+            <field name="model">hr.lembur</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Lembur">
+                    <field name="name"/>
+					<field name="employee_id"/>
+					<field name="tanggal_permohonan"/>
+					<field name="flag_sebelum"/>
+					<field name="jumlah_menit_sebelum"/>
+					<field name="flag_setelah"/>
+					<field name="jumlah_menit_setelah"/>
+				</tree>
+            </field>
+        </record>
+            
+
+    </data>
+</openerp>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem id="menu_titis_salesHeader"
+								name="Sales"
+								sequence="0"
+								web_icon="images/sales.png"
+								web_icon_hover="images/sales-hover.png"/>
+								
+		<menuitem id="menu_titis_sales"
+								name="Sales"
+								sequence="1"
+								parent="menu_titis_salesHeader"/>
+								
+		<menuitem id="menu_titis_project"
+								name="Project"
+								sequence="1"
+								parent="menu_titis_sales"
+								action="waction_titis_projectProject"/>		
+								
+ 	<menuitem id="base.menu_address_book" 
+ 							name="Address Book" 
+ 							parent="menu_titis_salesHeader" 
+ 							sequence="2"/>
+																				
+								
+		<menuitem id="menu_titis_salesReportHeader"
+								name="Reports"
+								sequence="99"
+								parent="menu_titis_salesHeader"/>
+        
+		<menuitem 	id="menu_titis_WizardSalesReport" 
+					parent="menu_titis_salesReportHeader" 
+					name="Sales Report"
+					sequence="500"
+					action="waction_titis_wizardSalesReport" />	
+					
+		<menuitem 	id="menu_titis_WizardSalesReportCustomer" 
+					parent="menu_titis_salesReportHeader" 
+					name="Sales Report By Customer"
+					sequence="501"
+					action="waction_titis_wizardSalesReportCustomer" />	
+					
+		<menuitem id="menu_titis_salesConfiguration"
+								name="Configuration"
+								sequence="100"
+								parent="menu_titis_salesHeader"/>							
+																										
+	</data>
+</openerp>

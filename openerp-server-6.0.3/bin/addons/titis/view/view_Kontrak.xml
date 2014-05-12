@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- TREE DRAFT HISTORY -->
+        <record id="tree_titis_boardDraftHistory" model="ir.ui.view">
+            <field name="name">Tree Draft History</field>
+            <field name="model">hr.contract</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Draft History">
+                    <field name="name" string="# History"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="tanggal_mulai" string="Tanggal Mulai Berlaku"/>
+                    <field name="tipe_history_id"/>
+                </tree>
+            </field>
+        </record>
+        
+    	<!-- TREE PROBATION HAMPIR HABIS -->
+        <record id="tree_titis_boardProbationHampirHabis" model="ir.ui.view">
+            <field name="name">Tree Probation Hampir Habis</field>
+            <field name="model">hr.contract</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Probation Hampir Habis">
+                    <field name="name" string="# History"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="date_start" string="Mulai"/>
+                    <field name="date_end" string="Akhir"/>
+                </tree>
+            </field>
+        </record>        
+        
+    	<!-- TREE KONTRAK HAMPIR HABIS -->
+        <record id="tree_titis_boardKontrakHampirHabis" model="ir.ui.view">
+            <field name="name">Tree Kontrak Hampir Habis</field>
+            <field name="model">hr.contract</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Kontrak Hampir Habis">
+                    <field name="name" string="# History"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="date_start" string="Mulai"/>
+                    <field name="date_end" string="Akhir"/>
+                </tree>
+            </field>
+        </record>            
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- DRAFT HISTORY -->
+		<record id="waction_titis_boardDraftHistory" model="ir.actions.act_window">
+			<field name="name">Draft History</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.contract</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('state','=','draft')]</field>
+		</record>	
+		
+		<record id="wactionView_titis_treeBoardDraftHistory" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_boardDraftHistory"/>
+			<field name="act_window_id" ref="waction_titis_boardDraftHistory"/>
+		</record>		
+		
+    	<!-- PROBATION HAMPIR HABIS -->
+		<record id="waction_titis_boardProbationHampirHabis" model="ir.actions.act_window">
+			<field name="name">Probation Hampir Habis</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.contract</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('state','=','valid'),('type_id.name','=','Probition'),('date_end','>',(datetime.date.today()+datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]</field>
+		</record>	
+		
+		<record id="wactionView_titis_treeBoardProbationHampirHabis" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_boardProbationHampirHabis"/>
+			<field name="act_window_id" ref="waction_titis_boardProbationHampirHabis"/>
+		</record>				
+		
+    	<!-- KONTRAK HAMPIR HABIS -->
+		<record id="waction_titis_boardKontrakHampirHabis" model="ir.actions.act_window">
+			<field name="name">Kontrak Hampir Habis</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.contract</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+			<field name="domain">[('state','=','valid'),('type_id.name','=','PKWT'),('date_end','>',(datetime.date.today()+datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]</field>
+		</record>	
+		
+		<record id="wactionView_titis_treeBoardKontrakHampirHabis" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_boardKontrakHampirHabis"/>
+			<field name="act_window_id" ref="waction_titis_boardKontrakHampirHabis"/>
+		</record>				
+		
+        <record id="form_titis_boardKepegawaianHistory" model="ir.ui.view">
+            <field name="name">Form Kepegawaian History Dashboard</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard History Kepegawaian">
+                    <hpaned>
+                        <child1 readonly="1">
+							<action colspan="2" height="220" name="%(waction_titis_boardDraftHistory)d" string="Draft History" readonly="1"/>
+                        </child1>
+                        
+
+                        <child2>
+							<action colspan="2" height="220" name="%(waction_titis_boardProbationHampirHabis)d" string="Probation Hampir Habis"/>
+							<action colspan="2" height="220" name="%(waction_titis_boardKontrakHampirHabis)d" string="Kontrak Hampir Habis"/>
+                        </child2>
+
+                        
+                        
+                    </hpaned>
+                </form>
+            </field>
+        </record>
+
+
+		
+        <record id="waction_titis_boardKepegawaianHistory" model="ir.actions.act_window">
+            <field name="name">Dashboard History Kepegawaian</field>
+            <field name="res_model">board.board</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="form_titis_boardKepegawaianHistory"/>
+        </record>
+        
+    </data>
+</openerp>

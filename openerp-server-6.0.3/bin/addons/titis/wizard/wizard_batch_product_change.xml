@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_titis_wizardBatchProductChange" model="ir.ui.view">
+            <field name="name">Form Wizard Batch Product Change</field>
+            <field name="model">titis.wizard_batch_product_change</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Batch Product Change">
+					<separator string="Attribute To Change" colspan="2"/>
+					<newline/>
+					<field name="categ_id"/>
+					<newline/>
+					<field name="uom_id"/>
+					<newline/>
+					<field name="uom_po_id"/>
+					<newline/>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="1"/>
+					<button name="change_product_data" type="object" string="Change Product Data" colspan="1" icon="gtk-execute"/>
+                </form>
+            </field>
+        </record>
+
+        <act_window 
+        	name="Batch Product Change"		    
+		    res_model="titis.wizard_batch_product_change"
+		    src_model="product.product"
+		    view_mode="form"
+		    target="new"        
+            key2="client_action_multi"    
+		    id="waction_titis_wizardBatchProductChange"/>			
+
+    </data>
+</openerp>

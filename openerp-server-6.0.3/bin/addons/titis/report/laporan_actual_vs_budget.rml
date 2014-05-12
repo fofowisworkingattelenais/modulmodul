@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<document filename="Actual Vs Budget.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	 <template pageSize="(14.3in,8.5in)" title="Actual Vs Budget" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+		<pageTemplate id="first">
+		  <frame id="first" x1="140.70" y1="70.0" width="750" height="520"/>
+		</pageTemplate>
+	</template>
+	
+	
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="LEFT"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			leading="9"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+				<blockValign value="middle" start="0,0" stop="0,2"/>
+				<blockValign value="middle" start="1,0" stop="1,2"/>
+				<blockBackground colorName="yellow" start="0,0" stop="7,2"/>
+				<blockSpan start="0,0" stop="0,2"/>
+				<blockSpan start="1,0" stop="1,2"/>
+				<blockSpan start="2,0" stop="7,0"/>
+				<blockSpan start="2,1" stop="4,1"/>
+				<blockSpan start="5,1" stop="7,1"/>
+			
+			<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,1" stop="-2,-1"/> 
+			
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+			
+			<!-- PEMISAH KOLOM HEADER --> 
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,0"/> 
+			
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,1" stop="-1,-2"/>			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<para style="JUDUL_LAPORAN">ACTUAL VS BUDGET</para>
+		<para style="JUDUL_LAPORAN">PT. TITIS SAMPURNA</para>
+		<para style="JUDUL_LAPORAN">[[ nama_budget(data['form']) ]]</para>
+		<para style="JUDUL_LAPORAN">Divisi : [[ nama_analytic(data['form']) ]] </para>
+		<para><font color="white"> </font></para>
+		
+		<section>
+		<blockTable style="TABEL_STANDAR" colWidths="3.0cm,8cm,3cm,3cm,1.5cm,3cm,3cm,1.5cm" repeatRows="1">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER" >NO ACCOUNT</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">URAIAN</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">[[ nama_periode(data['form']) ]]</para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">BULAN INI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">BULAN INI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">BULAN INI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">S.D BULAN INI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">S.D BULAN INI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">S.D BULAN INI</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">REALISASI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">BUDGET</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">%</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">REALISASI</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">BUDGET</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">%</para></td>
+			</tr>
+			
+			<tr>
+				<para>[[ repeatIn(isi_laporan(data['form']), 'line') ]]	</para>
+				<td><para style="ISI_TABEL_ITEM">[[ line['no_account'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ line['uraian'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ line['realisasi_bulan_ini'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ line['budget_bulan_ini'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ line['persentase_bulan_ini'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ line['realisasi_sd_bulan_ini'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ line['budget_sd_bulan_ini'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM"></para></td>
+				
+			</tr>
+		</blockTable>
+		<blockTable style="TABEL_TOTAL" colWidths="3.0cm,8cm,3cm,3cm,1.5cm,3cm,3cm,1.5cm" repeatRows="1">
+			<tr>
+				<td><para style="ISI_TABEL_TOTAL"></para>Total</td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+				<td><para style="ISI_TABEL_TOTAL"></para></td>
+			</tr>
+		</blockTable>
+		</section>
+	</story>
+
+</document>

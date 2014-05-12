@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<document filename="Account_Receivable_By_Customer.pdf">
+
+	<template pageSize="(842.0,595.0)" title="Account Receivable By Customer" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate>
+			<frame id="first" x1="28.0" y1="28.0" width="786" height="450"/>
+
+    			<pageGraphics>
+					<image x="40" y="505" height="60.0" >[[ company.logo or removeParentNode('image') ]]</image>
+					<setFont name="Times-Bold" size="10"/>
+					<fill color="blue"/>
+					<stroke color="blue"/>
+	
+					<drawString x="100" y="555">ACCOUNT REPORT RECEIVABLE BY CUSTOMER</drawString>
+					<drawString x="100" y="545">[[ company.partner_id.name ]]</drawString>
+	
+					<setFont name="Times-BoldItalic" size="10"/>
+					<fill color="red"/>
+					<stroke color="red"/>
+					<drawString x="100" y="535">More Perfect With Us</drawString>
+	
+					<setFont name="Times-Bold" size="10"/>
+					<fill color="blue"/>
+					<stroke color="blue"/>
+					<drawString x="100" y="525">Head Office</drawString>
+					<drawString x="150" y="525">:</drawString>
+					<drawString x="160" y="525">[[ company.partner_id.address and company.partner_id.address[0].street or  '' ]] [[ company.partner_id.address and company.partner_id.address[0].city or '' ]]</drawString>
+	
+					<drawString x="100" y="515">Telp</drawString>
+					<drawString x="150" y="515">:</drawString>
+					<drawString x="160" y="515">[[ company.partner_id.address and company.partner_id.address[0].phone or '' ]]</drawString>
+
+					<drawString x="100" y="505">Fax</drawString>
+					<drawString x="150" y="505">:</drawString>
+					<drawString x="160" y="505">[[ company.partner_id.address and company.partner_id.address[0].fax or '' ]]</drawString>
+
+					<drawString x="100" y="495">Email</drawString>
+					<drawString x="150" y="495">:</drawString>
+					<drawString x="160" y="495">[[ company.partner_id.address and company.partner_id.address[0].email or '' ]]</drawString>
+					
+					<fill color="black"/>
+					<stroke color="black"/>
+					
+					<drawString x="620" y="505">Unit Code</drawString>
+					<drawString x="670" y="505">:</drawString>
+					<drawString x="680" y="505">-</drawString>
+
+					<drawString x="620" y="495">Date</drawString>
+					<drawString x="670" y="495">:</drawString>
+					<drawString x="680" y="495">[[ date_header(data['form']) ]]</drawString>
+				</pageGraphics>
+		</pageTemplate>
+	</template>
+  
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="10"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>	
+			
+			<blockSpan start="0,0" stop="0,1"/>	
+			<blockSpan start="1,0" stop="1,1"/>	
+			<blockSpan start="2,0" stop="2,1"/>	
+			<blockSpan start="3,0" stop="3,1"/>		
+			<blockSpan start="4,0" stop="9,0"/>	
+			<blockSpan start="10,0" stop="10,1"/>	
+			<blockSpan start="11,0" stop="11,1"/>	
+			<blockSpan start="12,0" stop="12,1"/>	
+			<blockSpan start="13,0" stop="13,1"/>	
+			<blockSpan start="14,0" stop="14,1"/>			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+
+	<section>
+		<blockTable colWidths="20.0,80.0,50.0,50.0,50.0,70.0,30.0,60.0,60.0,60.0,50.0,50.0,65.0,65.0,55.0" style="TABEL_STANDAR" repeatRows="2">
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">No.</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Client</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Project Code</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Activity Code</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Invoice</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Retention</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Rate(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total Sales Received(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total Received Balance(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Aging sch(days)</para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"> </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Client</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Project Code</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Activity Code</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Date</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">No</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Curr</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Sales</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">VAT</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Retention</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Rate(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total Sales Received(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total Received Balance(RP)</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Aging sch(days)</para></td>
+			</tr>
+			<tr>
+				[[ repeatIn(isi_laporan(data['form']), 'a') ]]			
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ a['no'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2">[[ a['client'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">-</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">-</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ a['date_invoice'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ a['no_invoice'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ a['symbol_invoice'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['sales']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['vat']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['total']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">0.00</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['exch_rate']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['total_sales_received']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[ formatLang(a['ar_balance']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ a['ar_aging'] ]]</para></td>
+			</tr>
+		</blockTable>
+
+	</section>
+
+	</story>
+	
+</document>
+

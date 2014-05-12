@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem 	
+					id="menu_titis_dashboard"
+					name="Dashboard"
+					sequence="1"
+		/>
+		
+		<menuitem 	
+					id="menu_titis_dashboardAccounting"
+					parent="menu_titis_dashboard"
+					name="Dashboard Accounting"
+					sequence="1"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_dashboardUtangPiutang"
+					parent="menu_titis_dashboardAccounting"
+					name="Dashboard A/R &amp; A/P"
+					action="waction_titis_boardARAP"
+					sequence="1"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_dashboardVoucher"
+					parent="menu_titis_dashboardAccounting"
+					name="Dashboard Voucher"
+					action="waction_titis_boardARAP"
+					sequence="2"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_dashboardPurchase"
+					parent="menu_titis_dashboard"
+					name="Dashboard Purchase"
+					sequence="1"
+		/>		
+		
+		<!--<menuitem 	
+					id="menu_titis_dashboardLogistic"
+					parent="menu_titis_dashboardPurchase"
+					name="Dashboard Logistic"
+					action="waction_titis_boardKepegawaian"
+					sequence="1"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_dashboardProcurement"
+					parent="menu_titis_dashboardPurchase"
+					name="Dashboard Procurement"
+					action="waction_titis_boardKepegawaian"
+					sequence="1"
+		/>			
+		
+		<menuitem 	
+					id="menu_titis_dashboardKepegawaian"
+					parent="menu_titis_dashboard"
+					name="Dashboard Kepegawaian"
+					sequence="4"
+		/>			
+		
+		<menuitem 	
+					id="menu_titis_dashboardAbsensi"
+					parent="menu_titis_dashboardKepegawaian"
+					name="Dashboard Absensi"
+					action="waction_titis_boardKepegawaian"
+					sequence="1"
+		/>	
+		
+		<menuitem 	
+					id="menu_titis_dashboardPayroll"
+					parent="menu_titis_dashboardKepegawaian"
+					name="Dashboard Payroll"
+					action="waction_titis_boardKepegawaian"
+					sequence="2"
+		/>	
+		
+		<menuitem 	
+					id="menu_titis_dashboardHistory"
+					parent="menu_titis_dashboardKepegawaian"
+					name="Dashboard History"
+					action="waction_titis_boardKepegawaianHistory"
+					sequence="3"
+		/>-->				
+														
+	</data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_titis_supplierinvoice" model="ir.ui.view">
+         	<field name="name">Form Supplier Invoice : Titis Sampurna</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+				<data>
+					
+
+					<notebook colspan="4" position="inside">
+						<page string="Invoice Approval">
+							<field name="purchase_approval_ids" colspan="4" nolabel="1">
+								<tree string="Purchase Order Approval" editable="bottom">
+									<field name="name"/>
+									<field name="sequence"/>
+									<field name="user_id"/>
+									<field name="user_bypass_id"/>
+									<field name="state"/>
+									<field name="approval_date"/>
+									<button name="button_action_approved" string="Approved" icon="gtk-go-forward" type="object" states="waiting"/>
+									<button name="button_action_bypass" string="By Pass" icon="gtk-goto-last" type="object" states="waiting"/>
+								</tree>
+							</field>
+						</page>
+
+
+                                                <page string="Catatan">
+                                                        <field colspan="4" name="catatan" nolabel="1"/>
+                                                </page>
+
+						
+					</notebook>
+				</data>
+            </field>
+        
+
+    </data>
+</openerp>
+

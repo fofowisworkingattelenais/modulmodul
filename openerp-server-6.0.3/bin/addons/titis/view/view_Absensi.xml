@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- TREE ABSENSI UNTUK DASHBOARD -->
+        <record id="tree_titis_boardAbsensi" model="ir.ui.view">
+            <field name="name">Tree Board Absensi</field>
+            <field name="model">hr.absensi</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Absensi">
+                	<field name="karyawan_id"/>
+                    <field name="tanggal"/>
+                    <field name="kode_absen_id"/>
+                    <field name="shift_kerja_id"/>
+        	 		<field name="jam_masuk"/>
+        	 		<field name="jam_keluar"/>
+		            <field name="realisasi_jam_masuk"/>                
+		            <field name="realisasi_jam_keluar"/>        	 		                  
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

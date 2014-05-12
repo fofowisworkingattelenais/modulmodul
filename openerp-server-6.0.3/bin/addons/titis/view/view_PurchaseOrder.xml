@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_titis_purchaseOrder" model="ir.ui.view">
+         	<field name="name">Form Purchase Order : Titis Sampurna</field>
+            <field name="model">purchase.order</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+				<data>
+					<field name="warehouse_id" on_change="onchange_warehouse_id(warehouse_id)" widget="selection" position="before">
+						<field name="project_id" on_change="onchange_project_id(project_id)"/>
+						<field name="purchase_type"/>
+						
+					</field>
+
+					<group col="7" colspan="4" position="replace"/>
+					
+					<group col="11" colspan="4" position="replace"/>
+					
+					<tree string="Purchase Order Lines" position="replace">
+		                <tree string="Purchase Order Lines">
+		                    <field name="date_planned"/>
+		                    <field name="name"/>
+		                    <field name="product_qty"/>
+		                    <field name="product_uom"/>
+		                    <field name="discount"/>
+                                    <field name="subtotal"/>
+				    <field name="price_unit"/>
+		                   
+		                    <field name="price_subtotal"/>
+		                </tree>					
+                    </tree>
+					
+					<field colspan="4" name="order_line" nolabel="1" mode="tree,form" position="after">
+						<group name="group_1" colspan="4" col="3" >
+							<group name="group_1_1" colspan="1" col="2">
+								<field name="state" readonly="1"/>
+								<field name="approval_id" attrs="{'invisible':[('state','!=','confirmed')]}"/>
+							</group>
+							<group name="group_1_2" colspan="1" col="2">
+								<field name="discount_type"/>
+								<field name="amount_before_discount" sum="Amount Before Discount"/>
+								<field name="total_discount"/>
+								<field name="amount_discount" sum="Amount Discount" />
+								<field name="amount_untaxed" sum="Untaxed amount" />
+								<field name="amount_tax" />
+								<field name="amount_total" sum="Total amount" />
+								<button name="compute_order" type="object" string="Compute" icon="gtk-execute" colspan="2"/>
+							</group>
+							<group name="group_1_3" colspan="1" col="2">
+                                <button name="purchase_cancel" states="draft,confirmed,wait_auth" string="Cancel" icon="gtk-cancel" colspan="2"/>
+                                <button name="action_cancel_draft" states="cancel" string="Set to Draft" type="object" icon="gtk-convert"/>
+                                <button name="action_cancel" states="approved,except_picking,except_invoice,wait" string="Cancel Purchase Order" type="object" icon="gtk-cancel" colspan="2"/>
+                                <button name="picking_ok" states="except_picking" string="Manually Corrected" icon="gtk-convert" colspan="2"/>
+                                <button name="invoice_ok" states="except_invoice" string="Manually Corrected" icon="gtk-convert" colspan="2"/>
+                                <button name="purchase_confirm" states="draft" string="Convert to Purchase Order" icon="gtk-go-forward" colspan="2"/>
+                                <button name="%(purchase.report_purchase_order)d" string="Print" states="approved" type="action" icon="gtk-print" colspan="2"/>
+								<button name="%(report_titis_poNoPPN)d" string="PO Without VAT" states="approved" type="action" icon="gtk-print"/>
+								<button name="%(report_titis_poPPN)d" string="PO With VAT" states="approved" type="action" icon="gtk-print"/>
+							</group>																
+						</group>
+					</field>
+
+					<notebook colspan="4" position="inside">
+						<page string="Purchase Order Approval">
+							<field name="purchase_approval_ids" colspan="4" nolabel="1">
+								<tree string="Purchase Order Approval" editable="bottom">
+									<field name="name"/>
+									<field name="sequence"/>
+									<field name="user_id"/>
+									<field name="user_bypass_id"/>
+									<field name="state"/>
+									<field name="approval_date"/>
+									<button name="button_action_approved" string="Approved" icon="gtk-go-forward" type="object" states="waiting"/>
+									<button name="button_action_bypass" string="By Pass" icon="gtk-goto-last" type="object" states="waiting"/>
+								</tree>
+							</field>
+						</page>
+
+
+                                                <page string="Catatan">
+                                                        <field colspan="4" name="catatan" nolabel="1"/>
+                                                </page>
+
+						
+					</notebook>
+				</data>
+            </field>
+        </record>
+        
+        <!-- TREE -->
+        <record id="tree_titis_purchaseOrder" model="ir.ui.view">
+            <field name="name">purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+				<data>
+                    <field name="name"/>
+                    
+                    
+                </data>
+
+
+            </field>
+        </record>        
+
+    </data>
+</openerp>
+

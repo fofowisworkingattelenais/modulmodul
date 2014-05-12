@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<document filename="Stok Total.pdf">
+
+	<template pageSize="(842.0,595.0)" title="Stok Total" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+			<frame id="first" x1="28.0" y1="28.0" width="786" height="500"/>
+		</pageTemplate>
+	</template>
+  
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+		/>
+		
+		<paraStyle
+			name="JUDUL_LAPORAN_2"
+			fontName="Times-Bold"
+			fontSize="12.0"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			leading="14"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="green" start="0,0" stop="7,0"/>	
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,0" stop="7,0"/>
+			
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+			
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="7,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,-1" stop="7,-1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>	
+			<lineStyle kind="LINEABOVE" colorName="green" start="0,1" stop="3,2"/>	
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<blockTable rowHeights="1cm,1cm" colWidths="605.0,100.0,10.0,100.0" style="TABEL_HEADER">
+			<tr>
+				<td><para style="JUDUL_LAPORAN" alignment="LEFT">LAPORAN STOK TOTAL</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="CENTER">Close Date</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="CENTER">:</para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="RIGHT">[[ tanggal(data['form']) ]]</para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_LAPORAN" alignment="LEFT">MANUFACTURE/MERK : </para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="LEFT"></para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_LAPORAN_2" alignment="RIGHT"></para></td>
+			</tr>
+		</blockTable>
+		
+		<section>
+
+			<blockTable style="TABEL_STANDAR" colWidths="185.0,60.0,60.0,60.0,150.0,90.0,170.0,40.0">
+				<tr>								
+					<td><para style="JUDUL_KATEGORI" alignment="LEFT">TYPE/SERIAL/MODEL</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Posisi</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">MSL</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Stok</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="LEFT">Nomor Part</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="LEFT">Nomor Identik</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="LEFT">Nama Part</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">ID</para></td>
+				</tr>
+		
+			</blockTable>
+
+		</section>
+
+	</story>
+	
+</document>
+

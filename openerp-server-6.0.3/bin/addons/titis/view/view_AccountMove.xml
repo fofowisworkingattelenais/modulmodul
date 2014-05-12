@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_titis_accountMove1" model="ir.ui.view">
+         	<field name="name">Form Account Move : Titis Sampurna</field>
+            <field name="model">account.move</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <data>
+					<notebook colspan="4" position="inside">
+						<page string="Audit Trails">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="Originator" colspan="2"/>
+									<field name="originator_id"/>
+									<field name="waktu_dibuat"/>
+								</group>
+								<group name="group_1_2" colspan="1" col="2">
+									<separator string="Authorized" colspan="2"/>
+									<field name="otorisator_id"/>
+									<field name="waktu_diotorisasi"/>
+								</group>		
+								<group name="group_1_3" colspan="1" col="2">
+									<separator string="Verfified" colspan="2"/>
+									<field name="verificator_id"/>
+									<field name="waktu_diverifikasi"/>
+								</group>																
+							</group>
+						</page>
+					</notebook>
+					
+					<button name="button_validate" states="draft" string="Approve" type="object" icon="terp-camera_test" position="replace">
+						<button name="button_authorize" states="draft" string="Authorize" type="object" icon="terp-camera_test" groups="titis.group_journalAuthorizator"/>
+						<button name="button_validate" states="authorized" string="Approve" type="object" icon="terp-camera_test" groups="titis.group_journalVerificator"/>
+					</button>
+					
+					
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>
+

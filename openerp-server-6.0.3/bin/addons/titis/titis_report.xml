@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<report auto="False" 
+				id="report_titis_poNoPPN" 
+				model="purchase.order" 
+				name="po_no_ppn" 
+				rml="titis/report/po_no_ppn.rml" 
+				string="PO Without VAT"/>
+
+		<report auto="False" 
+				id="report_titis_poPPN" 
+				model="purchase.order" 
+				name="po_ppn" 
+				rml="titis/report/po_ppn.rml" 
+				string="PO With VAT"/>
+		<report auto="False"
+				id="report_titis_cetakanVoucher" 
+				model="titis.bank_payment" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+		
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.bank_receipt" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.cash_payment" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.cash_receipt" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+		
+        <!--start ticket 5 -->
+
+		<report auto="False"
+				id="transmital_advice"
+				model="account.invoice"
+				name="transmital"
+				rml="titis/report/transmital.rml"
+				string="Transmital Advice"
+                multi="True"/>
+
+
+        <report auto="False"
+				id="kwitansi"
+				model="account.invoice"
+				name="kwitansi"
+				rml="titis/report/kwitansi.rml"
+				string="Kwitansi"
+                multi="True"/>
+
+        <report auto="False"
+				id="purchase_requisition_line"
+				model="purchase.requisition.line"
+				name="purchase_requisition_line"
+				rml="titis/report/purchase_requisition_line.rml"
+				string="Material Request Status"
+                multi="True"/>
+
+        <!--end of ticket 5-->
+
+
+    </data>
+</openerp>

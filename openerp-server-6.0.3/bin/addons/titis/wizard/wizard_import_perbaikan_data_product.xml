@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_titis_wizardImportPerbaikanDataProduct" model="ir.ui.view">
+            <field name="name">Form Wizard Import Perbaikan Data Product</field>
+            <field name="model">titis.wizard_import_perbaikan_data_product</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Perbaikan Data Produk">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<field name="import_file" colspan="2"/>
+						</group>											
+					</group>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="import_data" type="object" string="Import" colspan="2" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_titis_wizardImportPerbaikanDataProduct" model="ir.actions.act_window">
+            <field name="name">Import Perbaikan Data Produk</field>
+            <field name="res_model">titis.wizard_import_perbaikan_data_product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_wizardImportPerbaikanDataProduct"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

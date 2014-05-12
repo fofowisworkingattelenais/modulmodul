@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_titis_peringatanKaryawan" model="ir.ui.view">
+            <field name="name">Tree Peringatan Karyawan</field>
+            <field name="model">titis.peringatan_karyawan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Peringatan Karyawan">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="jenis_peringatan_id"/>
+                    <field name="tanggal"/>
+                    <field name="state"/>
+        			<button name="workflow_action_confirm" colspan="2" string="Konfirmasi" type="object" icon="gtk-go-forward" states="draft"/>
+        			<button name="workflow_action_disetujui" colspan="2" string="Disetujui" type="object" icon="gtk-apply" states="confirm"/>
+        			<button name="workflow_action_ditolak" colspan="2" string="Ditolak" type="object" icon="gtk-stop" states="confirm"/>                    
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_titis_peringatanKaryawan" model="ir.ui.view">
+            <field name="name">Form Peringatan Karyawan</field>
+            <field name="model">titis.peringatan_karyawan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Peringatan Karyawan">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Peringatan Karyawan"/>
+                	 		<field name="name"/>
+                	 		<field name="employee_id"/>     	 		
+                	 		<field name="jenis_peringatan_id"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Tanggal Diberikan"/>
+				            <field name="tanggal"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" colspan="4" nolabel="1"/>
+                </form>
+                <group name="group_2" colspan="4" col="3">
+                	<group name="group_2_1" colspan="1" col="2">
+                		<separator string="Status" colspan="2"/>
+                		<field name="state"/>
+                	</group>
+                	<group name="group_2_2" colspan="1" col="2">
+                		<separator string="Cetak" colspan="2"/>
+                	</group>            
+                	<group name="group_2_2" colspan="1" col="2">
+                		<separator string="Workflow" colspan="2"/>
+            			<button name="workflow_action_confirm" colspan="2" string="Konfirmasi" type="object" icon="gtk-go-forward" states="draft"/>
+            			<button name="workflow_action_disetujui" colspan="2" string="Disetujui" type="object" icon="gtk-apply" states="confirm"/>
+            			<button name="workflow_action_ditolak" colspan="2" string="Ditolak" type="object" icon="gtk-stop" states="confirm"/>
+            			<button name="workflow_action_batal" colspan="2" string="Batal" type="object" icon="gtk-cancel" states="draft,disetujui,ditolak"/>                		
+                	</group>                	    	
+                </group>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_titis_peringatanKaryawan" model="ir.ui.view">
+            <field name="name">Search Peringatan Karyawan</field>
+            <field name="model">titis.peringatan_karyawan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Peringatan Karyawan">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="jenis_peringatan_id"/>
+                    <field name="tanggal"/>
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

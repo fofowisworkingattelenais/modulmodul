@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="ar_hr_standar_app.menu_hrApp_kepegawaianHeader" model="ir.ui.menu">
+			<field name="icon">terp-account</field>
+			<field name="action" ref="waction_titis_boardKepegawaian"/>
+        </record>	
+
+		<menuitem 	
+					id="menu_titis_wizardImportAbsensi"
+					parent="ar_hr_absensi_app.menu_hrApp_absensiHeader"
+					name="Import Absensi"
+					action="waction_titis_wizardImportAbsensi"
+					sequence="99"
+		/>
+
+		<menuitem 	
+					id="menu_titis_penghargaanKaryawan"
+					parent="ar_hr_standar_app.menu_hrApp_karyawanHeader"
+					name="Penghargaan Karyawan"
+					action="waction_titis_penghargaanKaryawan"
+					sequence="99"
+		/>	
+		
+		<menuitem 	
+					id="menu_titis_peringatanKaryawan"
+					parent="ar_hr_standar_app.menu_hrApp_karyawanHeader"
+					name="Peringatan Karyawan"
+					action="waction_titis_peringatanKaryawan"
+					sequence="99"
+		/>			
+		
+		<menuitem 	
+					id="menu_titis_jenisPenghargaan"
+					parent="ar_hr_standar_app.menu_hrApp_konfigurasiKaryawanHeader"
+					name="Jenis Penghargaan"
+					action="waction_titis_jenisPenghargaan"
+					sequence="99"
+		/>		
+		
+		<menuitem 	
+					id="menu_titis_jenisPeringatan"
+					parent="ar_hr_standar_app.menu_hrApp_konfigurasiKaryawanHeader"
+					name="Jenis Peringatan"
+					action="waction_titis_jenisPeringatan"
+					sequence="99"
+		/>			
+
+	</data>
+</openerp>

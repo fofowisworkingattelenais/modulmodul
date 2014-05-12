@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+
+                    <notebook colspan="4" position="inside">
+                        <page string="Transmittal"  >
+                            <field name="remarks"/>
+                            <field name="ta_qty" />
+                            <separator colspan="4" string="Description"/>
+                            <field colspan="4" name="ta_description" nolabel="1"/>
+                        </page>
+                        <page string="Kwitansi">
+                            <field name="nomor"/>
+                            <field colspan="4" name="uang_sebanyak"/>
+                            <field colspan="4" name="untuk_pembayaran" />
+                        </page>
+                    </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

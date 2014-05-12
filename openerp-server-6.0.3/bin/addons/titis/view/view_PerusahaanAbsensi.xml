@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+        <record id="form_titis_perusahaanAbsensi" model="ir.ui.view">
+            <field name="name">Titis : Form Perusahaan Absensi</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_attendance.form_hr_perusahaanAbsensi"/>
+            <field name="arch" type="xml">
+				<data>
+							<field name="sequence_lembur_id" position="after">
+								<field name="sequence_penghargaan_karyawan_id"/>
+								<field name="sequence_peringatan_karyawan_id"/>
+							</field>
+				</data>
+            </field>
+        </record>
+	</data>
+</openerp>

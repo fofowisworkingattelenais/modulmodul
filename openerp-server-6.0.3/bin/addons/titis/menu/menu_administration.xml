@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <menuitem	id="hr.menu_hr_root" 
+        						parent="base.menu_administration"
+    							icon="terp-hr" 
+    							name="Human Resources" 
+    							sequence="100"
+        						web_icon="images/hr.png"
+        						web_icon_hover="images/hr-hover.png"/>
+        						
+        <menuitem
+            					icon="terp-project" 
+            					id="base.menu_main_pm"
+            					name="Project" 
+            					sequence="10"
+            					parent="base.menu_administration"
+            					groups="project.group_project_manager"
+            					web_icon="images/project.png"
+            					web_icon_hover="images/project-hover.png"/>        						
+
+		<!-- MENGHILANGKAN DASHBOARD SALES & MEMINDAHKAN MENU SALE KE ADMINISTRATION-->
+        <record id="base.menu_base_partner" model="ir.ui.menu">
+			<field name="icon">terp-partner</field>
+			<field name="sequence">0</field>
+			<field name="group" ref="base.group_sale_salesman"/>
+			<field name="action" eval="0"/>
+			<field name="parent_id" ref="base.menu_administration"/>
+        </record>				
+        
+		<menuitem 	
+					id="menu_account_accountingHideHeader"
+					parent="base.menu_administration"
+					name="Unused Accounting Menu"
+		/>
+		
+		<menuitem 
+				action="account_voucher.action_voucher_list" 
+				id="account_voucher.menu_encode_entries_by_voucher" 
+				parent="menu_account_accountingHideHeader" />
+				
+        <menuitem 
+        		action="account_voucher.action_vendor_payment" 
+        		icon="STOCK_JUSTIFY_FILL"
+            	id="account_voucher.menu_action_vendor_payment"  
+            	parent="menu_account_accountingHideHeader"/>	
+            	
+        <menuitem 
+        		action="account_voucher.action_vendor_receipt" 
+        		icon="STOCK_JUSTIFY_FILL"
+            	id="account_voucher.menu_action_vendor_receipt"  
+            	parent="menu_account_accountingHideHeader"/>     
+            	
+        <menuitem 
+        		id="account_voucher.menu_action_sale_receipt" 
+        		icon="STOCK_JUSTIFY_FILL"
+            	action="account_voucher.action_sale_receipt"
+            	parent="menu_account_accountingHideHeader"
+            	groups="base.group_extended"/>          
+            	
+        <menuitem 
+        		id="account_voucher.menu_action_purchase_receipt" 
+        		icon="STOCK_JUSTIFY_FILL"
+            	action="account_voucher.action_purchase_receipt" 
+            	parent="menu_account_accountingHideHeader"
+            	groups="base.group_extended"/>      
+            	
+        <menuitem 
+			id="account.menu_eaction_account_moves_sale"        
+        	action="account.action_account_moves_sale" 
+        	sequence="16" 
+			parent="menu_account_accountingHideHeader"
+            icon="STOCK_JUSTIFY_FILL" 
+            groups="account.group_account_user,account.group_account_manager"/>  
+            
+        <menuitem 
+        	action="account.action_account_moves_purchase"
+            id="account.menu_eaction_account_moves_purchase"
+			parent="menu_account_accountingHideHeader"
+            icon="STOCK_JUSTIFY_FILL"
+            sequence="16"
+            groups="account.group_account_user,account.group_account_manager"/>    	  	  
+            
+        <menuitem
+            action="account.action_account_moves_bank"
+            icon="STOCK_JUSTIFY_FILL"
+            id="account.menu_action_account_moves_bank"
+			parent="menu_account_accountingHideHeader"
+            sequence="16"
+            groups="account.group_account_user,account.group_account_manager"
+        />     			
+        
+        <menuitem 
+        	string="Bank Statements" 
+        	action="account.action_bank_statement_tree" 
+        	id="account.menu_bank_statement_tree" 
+			parent="menu_account_accountingHideHeader"
+        	sequence="7"/>	
+        	
+        <menuitem 
+        	action="account.action_view_bank_statement_tree" 
+        	id="account.journal_cash_move_lines"
+			parent="menu_account_accountingHideHeader" />        			
+											
+																										
+	</data>
+</openerp>

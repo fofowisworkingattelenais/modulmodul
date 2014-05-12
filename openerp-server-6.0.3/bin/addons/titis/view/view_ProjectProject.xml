@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="tree_titis_projectProject" model="ir.ui.view">
+         	<field name="name">Tree Project : Titis Sampurna</field>
+            <field name="model">project.project</field>
+            <field name="type">tree</field>
+			<field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+				<tree string="Project">
+					<field name="name" string="Project"/>
+					<field name="code" string="Code"/>
+					<field name="partner_id" string="Customer"/>
+					<field name="reg_date"/>
+					<field name="or_num"/>
+					<field name="or_date"/>
+					<field name="contract_num"/>
+					<field name="contract_date"/>
+					<field name="ipc_num"/>
+					<field name="ipc_date"/>
+				</tree>
+            </field>
+        </record>
+        
+         <record id="form_titis_projectProject" model="ir.ui.view">
+         	<field name="name">Form Project : Titis Sampurna</field>
+            <field name="model">project.project</field>
+            <field name="type">form</field>
+			<field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+				<form string="Project">
+					<field name="name" string="Project"/>
+					<field name="code" string="Code"/>
+					<field name="partner_id" string="Customer"/>
+					<field name="reg_date"/>
+					<notebook colspan="4">
+						<page string="Project Information">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="O.R" colspan="2"/>
+									<field name="or_num"/>
+									<field name="or_date"/>
+								</group>
+								<group name="group_1_2" colspan="1" col="2">
+									<separator string="SP/PO/Contract" colspan="2"/>
+									<field name="contract_num"/>
+									<field name="contract_date"/>
+								</group>
+								<group name="group_1_3" colspan="1" col="2">
+									<separator string="IPC" colspan="2"/>
+									<field name="ipc_num"/>
+									<field name="ipc_date"/>
+								</group>
+							</group>
+						</page>
+						<page string="Purchase Configuration">
+							<field name="purchase_sequence_id"/>
+							<newline/>
+							<field name="purchase_approval_ids" colspan="4" nolabel="1">
+								<tree string="Purchase Approval" editable="bottom">
+									<field name="name"/>
+									<field name="sequence"/>
+									<field name="user_id"/>
+								</tree>
+							</field>								
+						</page>
+						<page string="Requisition Configuration">
+							<field name="requisition_sequence_id"/>
+							<newline/>
+							<field name="requisition_approval_ids" colspan="4" nolabel="1">
+								<tree string="Purchase Requisition Approval" editable="bottom">
+									<field name="name"/>
+									<field name="sequence"/>
+									<field name="user_id"/>
+								</tree>
+							</field>							
+						</page>	
+
+
+
+
+                                                <page string="Accounting Configuration">
+						<field name="bank_payment_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Bank Payment'}">
+							<tree string="Bank Payment Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>				
+						
+						<field name="bank_receipt_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Bank Receipt'}">
+							<tree string="Bank Receipt Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>		
+						
+						<field name="cash_payment_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Cash Payment'}">
+							<tree string="Cash Payment Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>		
+						
+						<field name="cash_receipt_approval_ids" colspan="2" nolabel="1" context="{'voucher_type' : 'Cash Receipt'}">
+							<tree string="Cash Receipt Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="voucher_type_id" invisible="1"/>
+							</tree>
+						</field>				
+						
+						<field name="customer_invoice_approval_ids" colspan="2" nolabel="1" context="{'type' : 'out_invoice'}">
+							<tree string="Customer Invoice Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>
+						</field>
+							
+						<field name="supplier_invoice_approval_ids" colspan="2" nolabel="1" context="{'type' : 'in_invoice'}">
+							<tree string="Supplier Invoice Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>		
+						</field>	
+							
+						<field name="customer_refund_approval_ids" colspan="2" nolabel="1" context="{'type' : 'out_refund'}">
+							<tree string="Customer Refund Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>														
+						</field>				
+						
+						<field name="supplier_refund_approval_ids" colspan="2" nolabel="1" context="{'type' : 'in_refund'}">
+							<tree string="Supplier Refund Approval" editable="bottom">
+								<field name="name"/>
+								<field name="sequence"/>
+								<field name="user_id"/>
+								<field name="type" invisible="1"/>
+							</tree>														
+						</field>																							
+					</page>				
+
+
+											
+					</notebook>
+				</form>
+            </field>
+        </record>      
+        
+        <!-- SEARCH -->
+         <record id="search_titis_projectProject" model="ir.ui.view">
+         	<field name="name">Search Project : Titis Sampurna</field>
+            <field name="model">project.project</field>
+            <field name="type">search</field>
+			<field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+				<search string="Project">
+					<field name="name" string="Project"/>
+					<field name="code" string="Code"/>
+					<field name="partner_id" string="Customer"/>					
+					<field name="reg_date"/>
+					<field name="or_num"/>
+					<field name="or_date"/>
+					<field name="contract_num"/>
+					<field name="contract_date"/>
+					<field name="ipc_num"/>
+					<field name="ipc_date"/>
+				</search>
+            </field>
+        </record>          
+    </data>
+</openerp>
+

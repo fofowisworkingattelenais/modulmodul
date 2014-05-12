@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<report auto="False" 
+				id="report_titis_poNoPPN" 
+				model="purchase.order" 
+				name="po_no_ppn" 
+				rml="titis/report/po_no_ppn.rml" 
+				string="PO Without VAT"/>
+				
+		<report auto="False" 
+				id="report_titis_poPPN" 
+				model="purchase.order" 
+				name="po_ppn" 
+				rml="titis/report/po_ppn.rml" 
+				string="PO With VAT"/>
+
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.bank_payment" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+		
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.bank_receipt" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+
+		<report auto="False" 
+				id="report_titis_cetakanVoucher" 
+				model="titis.cash_payment" 
+				name="cetakan_voucher" 
+				rml="titis/report/cetakan_voucher.rml" 
+				string="Voucher"/>
+		
+    </data>
+</openerp>

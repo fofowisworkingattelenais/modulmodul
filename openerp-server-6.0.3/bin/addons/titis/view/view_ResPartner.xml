@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <record id="form_titis_resPartner" model="ir.ui.view">
+         	<field name="name">Form Partner : Titis Sampurna</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+					<notebook colspan="4">
+						<page string="Legalitas Perusahaan">
+							<group colspan="4" col="2">
+								<group colspan="1" col="2">
+									<separator string="Legalitas Perusahaan" colspan="2"/>
+									<field name="status_perusahaan_id"/>
+									<field name="kepemilikan_perusahaan_id"/>
+									<field name="jenis_usaha_utama_id"/>
+									<field name="surat_ijin_usaha"/>
+									<field name="npwp"/>
+								</group>														
+							</group>
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>
+

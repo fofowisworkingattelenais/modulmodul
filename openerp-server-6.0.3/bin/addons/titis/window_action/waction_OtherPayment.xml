@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+        <record model="ir.actions.act_window" id="waction_titis_OtherPayment">
+            <field name="name">Other Payment</field>
+            <field name="res_model">account.voucher</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="domain">[('other_type', '=', 'other_payment')]</field>
+            <field name="context">{'type':'purchase','line_type':'dr','other_type':'other_payment'}</field>
+            <field name="view_id" eval="tree_titis_OtherPayment"/>
+            <field name="search_view_id" ref="search_titis_OtherPayment"/>
+        </record>
+        <record id="waction_titis_treeOtherPayment" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="waction_titis_OtherPayment"/>
+        </record>
+        <record id="waction_titis_formOtherPayment" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="form_titis_OtherPayment"/>
+            <field name="act_window_id" ref="waction_titis_OtherPayment"/>
+        </record>
+    </data>
+</openerp>

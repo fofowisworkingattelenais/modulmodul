@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_titis_voucherType" model="ir.actions.act_window">
+			<field name="name">Voucher Type</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.voucher_type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_titis_treeVoucherType" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_voucherType"/>
+			<field name="act_window_id" ref="waction_titis_voucherType"/>
+		</record>
+
+		<record id="wactionView_titis_formVoucherType" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_voucherType"/>
+			<field name="act_window_id" ref="waction_titis_voucherType"/>
+		</record>
+	</data>
+</openerp>

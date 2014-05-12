@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="waction_titis_bankReceipt" model="ir.actions.act_window">
+			<field name="name">Bank Receipt</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">titis.bank_receipt</field>
+			<field name="search_view_id" ref="select_titis_bankReceipt"/>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'voucher_type' : 'Bank Receipt'}</field>
+			<field name="domain">[('voucher_type_id.name','=','Bank Receipt')]</field>
+		</record>
+		
+		<record id="wactionView_titis_treeBankReceipt" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_titis_bankReceipt"/>
+			<field name="act_window_id" ref="waction_titis_bankReceipt"/>
+		</record>
+
+		<record id="wactionView_titis_formBankReceipt" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_bankReceipt"/>
+			<field name="act_window_id" ref="waction_titis_bankReceipt"/>
+		</record>
+	</data>
+</openerp>

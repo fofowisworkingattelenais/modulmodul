@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_titis_wizardPurchaseRequisitionLine" model="ir.ui.view">
+            <field name="name">Form Wizard Material Request Status</field>
+            <field name="model">titis.purchase_requisition_line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Material Request Status">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+						</group>
+					</group>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="cetak_report" type="object" string="Print" colspan="2" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_titis_wizardPurchaseRequisitionLine" model="ir.actions.act_window">
+            <field name="name">Material Request Status</field>
+            <field name="res_model">titis.purchase_requisition_line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_wizardPurchaseRequisitionLine"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

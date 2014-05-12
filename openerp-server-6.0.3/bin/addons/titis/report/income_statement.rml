@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<document filename="Income_Statement.pdf">
+
+	<template pageSize="(595.0,842.0)" title="Income_Statement" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+		<pageTemplate id="first">
+			<frame id="first" x1="28.0" y1="28.0" width="539" height="772"/>
+		</pageTemplate>
+	</template>
+  
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="JUDUL_KATEGORI_2"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="12"
+			spaceBefore="2" 
+			spaceAfter="2"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="CENTER"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>	
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<image x="1.3cm" y="27.6cm" height="40.0" >[[ company.logo or removeParentNode('image') ]]</image>
+		<para style="JUDUL_LAPORAN">LAPORAN LABA RUGI</para>
+		<para style="JUDUL_LAPORAN">UNTUK TAHUN YANG BERAKHIR PADA TANGGAL-TANGGAL</para>
+		<para style="JUDUL_LAPORAN">[[ periode(data['form']) ]]</para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="8cm,1.5cm,3.5cm,3.5cm" repeatRows="1" style="TABEL_HEADER">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI"> </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Note</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">[[ periode_tabel_header(data['form']) ]]</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">[[ tahun_sebelumnya(data['form']) ]]</para></td>
+			</tr>
+		
+		</blockTable>
+	<section>
+		<blockTable colWidths="8cm,1.5cm,3.5cm,3.5cm" repeatRows="1">
+			<tr>								
+				[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+				<td>
+					<para>
+					<font color="white">[[  '..............'*(a['level']-1) ]]</font>
+					<font>[[ a['level']&lt;4 and ( setTag('para','para',{'style':'JUDUL_KATEGORI_2'})) or removeParentNode('font')  ]][[ a['name'] ]]</font>
+					</para>
+				</td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">-</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ formatLang(a['saldo_periode']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[ formatLang(a['saldo_fiscal_year']) ]]</para></td>
+			</tr>
+		
+		</blockTable>
+
+	</section>
+	
+	<para><font color="white"> </font></para>
+	<para><font color="white"> </font></para>
+	<para><font color="white"> </font></para>
+	<para><font color="white"> </font></para>
+	<para style="ISI_TABEL_ITEM">Lihat Catatan atas Laporan Keuangan yang merupakan</para>
+	<para style="ISI_TABEL_ITEM">Bagian yang tidak terpisahkan dari laporan keuangan secara keseluruhan</para>
+	
+	</story>
+	
+</document>
+

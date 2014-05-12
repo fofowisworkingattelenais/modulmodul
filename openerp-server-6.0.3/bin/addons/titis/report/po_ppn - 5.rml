@@ -1,0 +1,531 @@
+<?xml version="1.0"?>
+<document filename="Department Report.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<!-- <template pageSize="(595.0,842.0)" title="Department Report" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
+		<pageTemplate id="first">
+			<frame id="first" x1="25.0" y1="25.0" width="539" height="772"/>
+		</pageTemplate>
+	</template> -->
+	<template pageSize="(595.0,842.0)" title="Department Report" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="1">
+<pageTemplate id="first">
+<pageGraphics>
+<!--<image file="files/webtitis.png" x="11.5cm" y="25.65cm"/>-->
+<setFont name="Times" size="8"/>
+<drawString x="16.5cm" y="0.5cm">F.OP.SS-PROC-08 Rev.0</drawString>
+[[repeatIn(objects,'o')]
+<drawString x="1cm" y="0.5cm">No. PO : [[o.name]]</drawString>
+ </pageGraphics>
+<!-- one frames: -->
+<frame id="first" x1="25.0" y1="25.0" width="539" height="772"/>
+
+</pageTemplate>
+</template>
+	
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="RIGHT"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			
+		/>		
+		
+		<paraStyle
+			name="DESCRIPTION"
+			alignment="CENTER"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			
+		/>
+		
+		<paraStyle
+			name="DESCRIPTION_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			
+		/>
+		
+		<paraStyle
+			name="DESCRIPTION_3"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			
+		/>		
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+		</blockTableStyle>	
+		
+		<blockTableStyle id="TABEL_STANDAR_2">
+			<blockAlignment value="LEFT"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+		</blockTableStyle>	
+		
+		<blockTableStyle id="TABEL_ATAS_BAWAH_JUDUL">
+			<blockAlignment value="RIGHT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="2,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="2,0" stop="-1,-1"/>		
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_ATAS_BAWAH_JUDUL_2">
+			<lineStyle kind="BOX" colorName="#000000"/>
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+			<blockSpan start="0,0" stop="0,1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+		</blockTableStyle>
+		
+		<blockTableStyle id="LAYOUT_JUDUL">
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="RIGHT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="LAYOUT">
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>		
+    <blockTableStyle id="TABEL_ATAS">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+    <blockTableStyle id="TABEL_ATAS_1">
+              	<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+    <blockTableStyle id="TABEL_ATAS_2">
+              	<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER"/> 
+		<blockValign value="CENTER"/>
+    </blockTableStyle>		
+    <blockTableStyle id="JUDUL_TABEL">
+		<lineStyle kind="GRID" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+
+    <blockTableStyle id="TABEL_JUMLAH">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER" start="0,0" stop="0,0"/> 
+		<blockValign value="CENTER" start="0,0" stop="0,0"/>
+    </blockTableStyle>		
+    <blockTableStyle id="TABEL_BAWAH">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+	<blockTableStyle id="GARIS">
+      <blockAlignment value="LEFT"/>
+      <blockValign value="TOP"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="0,-1" stop="0,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="1,-1" stop="1,-1"/>
+      <lineStyle kind="LINEBELOW" colorName="#e6e6e6" start="2,-1" stop="2,-1"/>
+    </blockTableStyle>	
+
+		
+	</stylesheet>
+	
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<para>[[repeatIn(objects,'o')]]</para>  
+		<blockTable colWidths="8.5cm,8.5cm" style="TABEL_ATAS_BAWAH_JUDUL">
+			<tr>								
+				<td> </td>
+				<td><para style="JUDUL_LAPORAN">PURCHASE ORDER</para></td>
+			</tr>
+		</blockTable>
+
+		<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="3.5cm,1.5cm,7cm,5cm" style="TABEL_ATAS_BAWAH_JUDUL">
+			<tr>								
+				<td> </td>
+				<td> </td>
+				<td><para style="ISI_TABEL_ITEM">Purchase Order No: [[ o.name ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM">Print Date: [[ o.date_order ]]</para></td>
+			</tr>
+			<tr>	
+				<td> </td>
+				<td> </td>				
+				<td><para style="ISI_TABEL_ITEM">Material Request No:[[ o.requisition_id.name ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM">Commencement Date: [[ o.minimum_planned_date ]]</para></td>
+			</tr>
+			<tr>	
+				<td> </td>
+				<td> </td>			
+				<td><para style="ISI_TABEL_ITEM">Revision No:</para></td>
+				<td><para style="ISI_TABEL_ITEM">Page Number <pageNumber/></para></td>
+			</tr>
+		
+		</blockTable>
+		<para><font color="white"> </font></para>
+		<para style="DESCRIPTION">This order number must appear on all invoice, packing list and shipping paper</para>
+		<para><font color="white"> </font></para>
+		
+<blockTable colWidths="17cm" style="TABEL_ATAS">
+	<tr>								
+		<td>
+		<blockTable colWidths="8.5cm,4.25cm,4.25cm" style="TABEL_ATAS_1">
+			<tr>								
+				<td><para><font color="white">_</font></para></td>
+				<td>
+					<blockTable style="TABEL_ATAS">
+					<tr>								
+						<td>
+							<para style="DESCRIPTION_2"><font color="white">_</font>Send invoice in triplicate to:</para>
+						</td>
+					</tr>
+					</blockTable>
+				</td>
+				<td>
+					<blockTable style="TABEL_ATAS">
+					<tr>								
+						<td>
+					<para style="DESCRIPTION_2"><font color="white">_</font>Seller:</para>
+						</td>
+					</tr>
+					</blockTable>
+				</td>
+			</tr>
+			<tr>								
+				<td>
+				<para style="DESCRIPTION_2"><font color="white">_</font>Kindly enter order for the scope of work as described below and in <font color="white">_</font>accordance with the "General Term of Purchase" and in comply with the <font color="white">_</font>"General Condition" all attached to this puchase order</para>
+				</td>
+				<td><para style="DESCRIPTION_2"><font color="white">_</font>[[ company.partner_id.name ]]</para></td>
+				<td><para style="DESCRIPTION_2"><font color="white">_</font>[[ o.partner_id.name ]]</para></td>
+			</tr>
+			<tr>								
+				<td><para><font color="white"> </font></para></td>
+				<td><para><font color="white"> </font></para></td>
+				<td><para><font color="white"> </font></para></td>
+			</tr>
+			<tr>								
+				<td>
+				<para style="DESCRIPTION_2"><font color="white">_</font>Please return the attached confirmation copy within ten</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>(10) calender days upon receipt of this purchase order</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>duly date and legally signed for acceptance </para>
+				<para><font color="white"> </font></para>
+				</td>
+				<td>
+				<para style="DESCRIPTION_2"><font color="white">_</font>Attention :</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>ACCOUNT PAYABLE</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ company.partner_id.address and company.partner_id.address[0].street ]]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ company.partner_id.address and company.partner_id.address[0].city or '' ]]  - [[ company.partner_id.address and company.partner_id.address[0].country_id and company.partner_id.address[0].country_id.name  or '']] [[ company.partner_id.address and company.partner_id.address[0].zip ]]</para>
+				</td>
+				<td>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ o.partner_address_id.street ]]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ o.partner_address_id.city ]] -  [[ company.partner_id.address and company.partner_id.address[0].country_id and company.partner_id.address[0].country_id.name  or '']]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ o.partner_address_id.street2 ]]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>[[ o.partner_address_id.country_id.name ]]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>Phone No. [[o.partner_address_id.phone ]]</para>
+				<para style="DESCRIPTION_2"><font color="white">_</font>Fax No. [[o.partner_address_id.fax ]]</para></td>
+			</tr>
+		
+		</blockTable>
+		</td>
+	</tr>
+</blockTable>
+		
+
+		
+				<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="1cm,17cm">
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">1. </para></td>
+				<td><para style="ISI_TABEL_ITEM">DESCRIPTION AND PRICE</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td>
+				<para style="DESCRIPTION_2">The vendor shall supply strictly in accordance with the details / spesifications mentioned in this Purchase Order</para>
+				<para style="DESCRIPTION_2">and its attachment, following materials complete with all required documents and certificates:</para>
+				<para><font color="white"> </font></para>
+				</td>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2"><u>SPAREPARTS : </u></para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2"><u>REPEAT ORDER</u></para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+		
+		</blockTable>
+		<para><font color="white"> </font></para>
+		
+		<blockTable style="TABEL_ATAS" colWidths="17cm" >
+			<tr>								
+				<td>
+		
+		<blockTable style="TABEL_ATAS" colWidths="0.5cm,3cm,5.5cm,2.5cm,2.5cm,3cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">No</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Part Number</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Description</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Qty</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Unit Price</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total Price</para></td>
+			</tr>
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">([[ o.pricelist_id.currency_id. name ]])</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">([[ o.pricelist_id.currency_id. name ]])</para></td>
+			</tr>
+		</blockTable>
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+		<para><seqReset id="nourut"/></para>
+		<section>	
+		<para>[[ repeatIn(o.order_line,'a') ]]</para>
+		<blockTable style="TABEL_ATAS_1" colWidths="0.5cm,3cm,5.5cm,2.5cm,2.5cm,3cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"><font color="white">_</font><seq id="nourut"/></para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">[[ a.product_id.default_code ]]</para></td>
+				<td><para style="DESCRIPTION_2" ><font color="white">_</font>[[ a.product_id.name ]]</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">[[ a.product_qty ]] [[ a.product_uom.name ]]</para></td>
+				<td><para style="DESCRIPTION_3" >[[ a.price_unit ]]<font color="white">_</font></para></td>
+				<td><para style="DESCRIPTION_3" >[[ a.price_subtotal ]]<font color="white">_</font></para></td>
+			</tr>
+		</blockTable>
+		</section>
+		</td>
+			</tr>
+		
+		<tr>
+		<td>
+		<blockTable style="JUDUL_TABEL" colWidths="14cm,3cm">
+			<tr>								
+				<td><para style="DESCRIPTION_3" >TOTAL<font color="white">_</font></para></td>
+				<td><para style="DESCRIPTION_3" >[[ o.amount_untaxed ]]<font color="white">_</font></para></td>
+			</tr>
+			<tr>								
+				<td><para style="DESCRIPTION_3" >PPN 10%<font color="white">_</font></para></td>
+				<td><para style="DESCRIPTION_3" >[[ o.amount_tax ]]<font color="white">_</font></para></td>
+			</tr>
+			<tr>								
+				<td><para style="DESCRIPTION_3" >GRAND TOTAL PRICE AFTER PPN<font color="white">_</font></para></td>
+				<td><para style="DESCRIPTION_3" >[[ o.amount_total ]]<font color="white">_</font></para></td>
+			</tr>
+		</blockTable>
+		</td>
+			</tr>
+			
+		<tr>
+		<td>
+		<blockTable style="LAYOUT_JUDUL" colWidths="2.5cm,14.5cm">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+				<td><para style="DESCRIPTION_2" >Say : [[ o.pricelist_id.currency_id. name ]]</para></td>
+			</tr>
+		</blockTable>
+		</td>
+			</tr>
+		</blockTable>
+		
+		<blockTable style="LAYOUT_JUDUL" colWidths="1cm,5.5cm,1cm,10cm">
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">2. </para></td>
+				<td><para style="ISI_TABEL_ITEM">CURRENCY</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ o.pricelist_id.currency_id. name ]]</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">3. </para></td>
+				<td><para style="ISI_TABEL_ITEM">TAXES</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">Included VAT 10%</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">4. </para></td>
+				<td><para style="ISI_TABEL_ITEM">DELIVERY POINT</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[o.notes]]</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">5. </para></td>
+				<td><para style="ISI_TABEL_ITEM">DELIVERY COMPLETION</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">Stock at [[ o.partner_id.name ]]</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">6. </para></td>
+				<td><para style="ISI_TABEL_ITEM">TERMS OF PAYMENT</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[o.partner_id.property_payment_term.name]]</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">7. </para>
+				<para><font color="white"> </font></para>
+				<para><font color="white"> </font></para></td>
+				<td><para style="ISI_TABEL_ITEM">REFERENCE(S)</para>
+				<para><font color="white"> </font></para>
+				<para><font color="white"> </font></para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para>
+				<para><font color="white"> </font></para>
+				<para><font color="white"> </font></para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ o.partner_id.name ]]</para>
+				<para style="ISI_TABEL_ITEM">[[o.partner_ref]] </para>
+				<para style="ISI_TABEL_ITEM">Reference PO: [[ o.partner_id.name ]] . PO No. [[ o.name ]]</para></td>
+				<para><font color="white"> </font></para>
+			</tr>
+		</blockTable>
+		
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="5.5cm,6cm,5cm">
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">SIGN FOR ACCEPTANCE BY</para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">FOR AND ON BEHALF OF</para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM">FOR AND ON BEHALF OF</para></td>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">[[ o.partner_id.name ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ company.partner_id.name ]]</para></td>
+			</tr>
+		</blockTable>
+		
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="5.5cm,6cm,5cm">
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">[[ o.partner_address_id.name ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM">[[o.validator.name]]</para></td>
+			</tr>
+			<tr>								
+				<td><para style="ISI_TABEL_ITEM">Managing Director</para></td>
+				<td><para style="ISI_TABEL_ITEM"> </para></td>
+				<td><para style="ISI_TABEL_ITEM">Finance Director</para></td>
+			</tr>
+		</blockTable>
+		
+	</story>
+
+</document>

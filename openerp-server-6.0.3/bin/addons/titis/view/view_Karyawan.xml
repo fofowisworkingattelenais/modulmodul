@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_titis_karyawan" model="ir.ui.view">
+            <field name="name">Titis : Tree Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">tree</field>  
+            <field name="inherit_id" ref="ar_hr.tree_hr_karyawan"/>     
+            <field name="arch" type="xml">
+				<data>
+                	<field name="nip" string="NIP" position="after">
+                		<field name="nip_lama"/>
+                	</field>
+				</data>
+			</field>
+        </record>
+        
+        <record id="search_titis_karyawan" model="ir.ui.view">
+            <field name="name">Titis : Search Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="ar_hr.search_hr_karyawan"/>
+            <field name="type">search</field>    
+            <field name="arch" type="xml">      
+				<data>
+                    <field name="nip" position="after"> 
+                    	<field name="nip_lama"/>
+                    </field>
+				</data>
+            </field>
+        </record>        
+
+       <record id="form_titis_karyawan" model="ir.ui.view">
+            <field name="name">Titis : Form Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>
+            <field name="type">form</field>         
+            <field name="arch" type="xml">
+				<data>
+            		<field name="nip" position="after">
+            			<field name="nip_lama"/>
+            		</field>
+				</data>
+            </field>
+        </record>    
+    </data>
+</openerp>

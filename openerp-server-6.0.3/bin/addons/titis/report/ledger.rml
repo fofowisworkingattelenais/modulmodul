@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<document filename="Ledger.pdf">
+
+	<template pageSize="(595.0,842.0)" title="Ledger" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+			<frame id="first" x1="50.0" y1="25.0" width="539" height="772"/>
+		</pageTemplate>
+	</template>
+  
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<para style="JUDUL_LAPORAN">GENERAL LEDGER</para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable colWidths="2.7cm,0.5cm,2.3cm,3cm,0.5cm,4.8cm,1cm,0.5cm,5cm" repeatRows="1">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI">Account Code</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ account_code(data['form']) ]]</para></td>
+				<td><para style="JUDUL_KATEGORI">Account Name</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ account_name(data['form']) ]]</para></td>
+				<td><para style="JUDUL_KATEGORI">Period</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[ date_length(data['form']) ]]</para></td>
+			</tr>
+		
+		</blockTable>
+		<para><font color="white"> </font></para>
+
+
+	<section>
+		<blockTable style="TABEL_STANDAR" colWidths="2.3cm,2cm,4.5cm,2cm,2.25cm,2.25cm,2.5cm,2cm" repeatRows="1">
+			<tr>								
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Trans Date</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Unit</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Description</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Ref. No</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Debit</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Credit</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Balance</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Dept</para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_TOTAL_2" alignment="LEFT">Beginning Balance</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> </para></td>
+				<td><para style="ISI_TABEL_TOTAL_2" alignment="RIGHT">[[ formatLang(saldo_awal(data['form'])) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+			</tr>
+			<tr>
+			[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['tanggal'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT">-</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT">[[  a['keterangan'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['ref'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[  formatLang(a['debit']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[  formatLang(a['kredit']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT">[[  formatLang(a['saldo']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT">[[  a['dept'] ]]</para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_TOTAL_2" alignment="LEFT">Total</para></td>
+				<td><para style="ISI_TABEL_TOTAL_2" alignment="RIGHT">[[  formatLang(a['total_debit']) ]]</para></td>
+				<td><para style="ISI_TABEL_TOTAL_2" alignment="RIGHT">[[  formatLang(a['total_credit']) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+			</tr>
+			
+		</blockTable>
+
+
+	</section>
+
+	</story>
+	
+</document>
+

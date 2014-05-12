@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+<!--
+ Users Groups
+--> 
+ 	<record model="res.groups" id="group_journalAuthorizator">
+        <field name="name">Accounting / Journal Authorizator</field>
+	</record>  
+	
+ 	<record model="res.groups" id="group_journalVerificator">
+        <field name="name">Accounting / Journal Verificator</field>
+	</record>  	
+
+  
+    </data>
+</openerp>
+

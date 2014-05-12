@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- SEARCH VIEW -->
+		
+        <record id="select_titis_cashReceipt" model="ir.ui.view">
+            <field name="name">Search Cash Receipt</field>
+            <field name="model">titis.cash_receipt</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Cash Receipt">
+                    <group>
+                        <filter icon="terp-document-new" string="Draft" domain="[('state','=','draft')]" help="Draft Vouchers"/>
+                        <filter icon="terp-camera_test" string="Posted" domain="[('state','=','posted')]" help="Posted Vouchers"/>
+                        <separator orientation="vertical"/>
+                        <field name="date"/>
+                        <field name="number" string="# Voucher"/>
+                    </group>
+                    <newline/>
+                    <group>
+                        <field name="journal_id" widget="selection" context="{'journal_id': self, 'set_visible':False}" domain="[('type','in',('bank','cash'))]"/>
+                        <field name="period_id" groups="base.group_extended"/>
+                    </group>
+                   <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Journal" icon="terp-folder-orange" domain="[]" context="{'group_by':'journal_id'}"/>
+                        <filter string="Period" icon="terp-go-month" domain="[]" context="{'group_by':'period_id','visible':True}"/>
+                        <filter string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- TREE -->
+        
+        <record model="ir.ui.view" id="tree_titis_cashReceipt">
+            <field name="name">Tree Cash Receipt</field>
+            <field name="model">titis.cash_receipt</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="blue:state == 'draft';gray:state == 'cancel';red:audit" string="Voucher Entries">
+                    <field name="number" string="# Voucher"/>
+
+                    <!--<field name="reference" string="Description"/>-->
+                    <field name="name" string="Description"/>
+
+                    <field name="date"/>
+                    <field name="period_id"/>
+                    <field name="journal_id"/>
+                    <field name="amount" sum="Total Amount"/>
+                    <field name="state"/>
+					 <field name="approval_id"/>
+                                         <field name="user_id"/>
+                </tree>
+            </field>
+        </record>        
+        
+		<!-- FORM -->
+		
+        <record model="ir.ui.view" id="form_titis_cashReceipt">
+            <field name="name">Form Cash Receipt</field>
+            <field name="model">titis.cash_receipt</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cash Receipt">
+                    <group colspan="4" col="2" name="group_1" >
+                    	<group colspan="1" col="2" name="group_1_1">
+                    		<separator string="Cash Receipt" colspan="2"/>
+                    		<field name="number" string="# Voucher"/>
+                    		<field name="date" on_change="onchange_date(date)"/>
+		                    <field name="journal_id" domain="[('type','in',('bank','cash'))]" invisible="context.get('line_type', False)" select="1" string="Journal" on_change="onchange_journal_id(journal_id)"/>   
+                    		<field name="company_id" widget="selection" groups="base.group_multi_company"/>
+							<field name="account_id" widget="selection" invisible="True"/> 
+           					<field name="name" invisible="context.get('line_type', False)" string="Description"  required="1"/>					
+							<field name="pre_line" invisible="1"/>
+							<field name="type" invisible="True"/>
+							<field name="voucher_type_id" invisible="1"/>	
+							<field name="project_id" on_change="onchange_project_id(project_id)"/>			
+                		</group>       
+                    	<group colspan="1" col="2" name="group_1_2">
+                    		<separator string="Amount" colspan="2"/>
+                    		<field name="amount" invisible="context.get('line_type', False)"/>
+                    		<field name="currency_id" invisible="1"/>         		
+                    		<field name="writeoff_acc_id" string="Currency Diff. Account"/>
+                		</group>                     		               		    		
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Voucher Detail">
+                            <field name="line_cr_ids" colspan="4" nolabel="1" height="140">                            
+                                <tree string="Voucher Detail" editable="bottom" colors="gray:amount==0">
+                                    <field name="move_line_id" domain="[('reconcile_id','=',False),('account_id.reconcile','=',True),('debit','>',0)]" on_change="onchange_move_id(move_line_id, parent.journal_id, parent.currency_id)" readonly="1"/>                                    
+                                    <field name="account_id" domain="[('type','!=','view')]"/>
+                                    <field name="analytics_id"/>
+                                     <field name="name"  required="1"/>
+                                    <field name="date_original" readonly="1"/>
+                                    <field name="date_due" readonly="1"/>
+                                    <field name="amount_original" readonly="1"/>
+                                    <field name="amount_unreconciled" readonly="1"/>
+                                    <field name="amount" sum="Total Allocation"/>
+                                </tree>
+                            </field>
+							<field name="writeoff_amount"/>
+						</page>
+						<page string="Voucher Approval">
+							<field name="approval_ids" colspan="4" nolabel="1">
+								<tree string="Voucher Approval" editable="bottom">
+									<field name="name"/>
+									<field name="sequence"/>
+									<field name="user_id"/>
+									<field name="user_bypass_id"/>
+									<field name="state"/>
+									<field name="approval_date"/>
+									<button name="button_action_approved" type="object" string="Approved" icon="gtk-go-forward" states="waiting"/>
+									<button name="button_action_bypass" type="object" string="By Pass" icon="gtk-goto-last" states="waiting"/>					
+								</tree>
+							</field>						
+						</page>   						
+                        <page string="Notes">
+                        	<field name="narration" colspan="4" nolabel="1"/>
+                        </page>
+                        <page string="Journal Items" groups="base.group_extended" attrs="{'invisible': [('state','!=','posted')]}">
+                            <group col="6" colspan="4">
+                                <field name="period_id"/>
+                            </group>
+                            <field name="move_ids" colspan="4" nolabel="1" readonly="1">
+                               <tree string="Journal Items">
+                                   <field name="move_id"/>
+                                   <field name="ref"/>
+                                   <field name="date"/>
+                                   <field name="statement_id"/>
+                                   <field name="partner_id"/>
+                                   <field name="account_id"/>
+                                   <field name="name"/>
+                                   <field name="debit"/>
+                                   <field name="credit"/>
+                                   <field name="state"/>
+                                   <field name="reconcile_id"/>
+                                   <field name="amount_currency"/>
+                                   <field name="currency_id"/>
+                               </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group name="group_2" colspan="4" col="3">
+                    	<group name="group_2_1" colspan="1" col="2">
+                    		<separator string="State" colspan="2"/>
+                        	<field name="state"/>
+                        	 <field name="approval_id"/>
+                    	</group>
+                    	<group name="group_2_2" colspan="1" col="2">
+                    		<separator string="Print" colspan="2"/>                    	
+                		</group>
+                    	<group name="group_2_3" colspan="1" col="2">
+                    		<separator string="Workflow &amp; Action" colspan="2"/>                		
+                    		<button name="%(waction_titis_wizardImportMoveLine)d" string="Import Move Lines" states="draft" icon="gtk-execute" type="action" context="{'move_type' : 'cr'}" colspan="2"/>
+                    		<button name="button_workflow_action_confirm" type="object" string="Confirm" colspan="2" icon="gtk-yes" states="draft"/>
+                    		<button name="button_workflow_action_proforma" type="object" string="Proforma" colspan="2" icon="gtk-yes" states="ready"/>
+                    		<button name="button_workflow_action_posted" type="object" string="Posted" colspan="2" icon="gtk-yes" states="proforma,ready"/>
+                    		<button name="button_workflow_action_cancel" type="object" string="Cancel" colspan="2" icon="gtk-cancel" states="draft,confirm,waiting,proforma,ready"/>
+                    		<button name="button_cancel" type="object" string="Cancel" colspan="2" icon="gtk-cancel" states="posted"/>
+                    		<button name="button_set_to_draft" type="object" string="Set To Draft" colspan="2" icon="terp-stock_effects-object-colorize" states="cancel"/>                  		
+	                    </group>
+                    </group>
+                </form>
+            </field>
+        </record>		
+		     		 
+
+	</data>
+</openerp>

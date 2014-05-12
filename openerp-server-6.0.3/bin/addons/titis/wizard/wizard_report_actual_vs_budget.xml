@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_titis_wizardReportActualVsBudget" model="ir.ui.view">
+            <field name="name">Form Wizard Report Actual Vs Budget</field>
+            <field name="model">titis.wizard_report_actual_vs_budget</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Report Actual Vs Budget Divisi">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<field name="fiscal_year_id" colspan="2"/>
+							<field name="period_id" colspan="2"/>
+							<field name="analytic_account_id" colspan="2"/>
+						</group>											
+					</group>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="print_report" type="object" string="Print" colspan="2" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_titis_wizardReportActualVsBudget" model="ir.actions.act_window">
+            <field name="name">Wizard Report Actual Vs Budget</field>
+            <field name="res_model">titis.wizard_report_actual_vs_budget</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_titis_wizardReportActualVsBudget"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>
