@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="form_gdi_mrpBom" model="ir.ui.view">
+            <field name="name">Form BOM GDI</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+					<field name="code" select="1" string="Reference" groups="base.group_extended" position='replace'>
+						<field name="code" select="1" string="POS" groups="base.group_extended"/>
+					</field>
+				
+				
+					<field name="company_id" select="1" groups="base.group_multi_company" widget="selection" position="after">				
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>    						
+					</field>
+				
+					<tree string="Components" editable="bottom" position="replace">
+                        <tree string="Components" editable="bottom">
+                            <field name="product_id" on_change="onchange_product_id(product_id, name)" select="1"/>
+                            <field name="product_qty"/>
+                            <field name="product_uom"/>
+							<field name="lenght" invisible="1"/>
+							<field name="width" invisible="1"/>
+							<field name="lenght_dummy"/>
+							<field name="width_dummy"/>                            
+                            <field name="name" invisible="1"/>
+                            <field name="date_start"/>
+                            <field name="date_stop"/>
+                        </tree>
+                    </tree>
+                   <xpath expr="/form[@string='Bill of Material']/notebook[@colspan='4']/page[@string='Components']/field[@name='bom_lines']/form[@string='Bill of Material']/group/notebook/page[@string='Components']/field[@name='bom_lines']/tree[@string='Components']/field[@name='product_uom']" position="after">
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>    
+                    </xpath>                    
+                    <xpath expr="/form[@string='Bill of Material']/notebook[@colspan='4']/page[@string='Components']/field[@name='bom_lines']/form[@string='Bill of Material']/group[@colspan='4']/field[@name='company_id']" position="after">
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>    
+                    </xpath>
+			</data>
+			</field>
+        </record>
+        
+       <record id="tree_gdi_mrpBom" model="ir.ui.view">
+            <field name="name">Tree BOM GDI</field>
+            <field name="model">mrp.bom</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_tree_view"/>
+            <field name="arch" type="xml">
+                    <field name="product_uom" position="after">
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>                    
+                    </field>
+                    <field name="code" position='replace'>
+						<field name="code" string="POS"/>
+                    </field>
+            </field>
+        </record>        
+        
+       <record id="tree_gdi_mrpBomComponent" model="ir.ui.view">
+            <field name="name">Tree BOM GDI Compenent</field>
+            <field name="model">mrp.bom</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_component_tree_view"/>
+            <field name="arch" type="xml">
+                    <field name="product_uom" position="after">
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>                    
+                    </field>
+                    
+                    <field name="code" position='replace'>
+						<field name="code" string="POS"/>
+                    </field>
+            </field>
+        </record>           
+        
+    </data>
+</openerp>

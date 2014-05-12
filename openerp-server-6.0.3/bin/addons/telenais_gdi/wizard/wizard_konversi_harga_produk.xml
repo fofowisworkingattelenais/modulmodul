@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<record id="form_gdi_wizardKonvertHargaProduk" model="ir.ui.view">
+			<field name="name">Form Wizard Konversi Harga Produk</field>
+			<field name="model">gdi.wizard_konversi_harga_produk</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Conversion Product Prices">
+					<field name="currency_from_id"/>
+					<newline/>
+					<field name="currency_to_id"/>
+					<newline/>
+					<field name="price_to_convert"/>
+					<newline/>					
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="konversi_currency" type="object" string="Converts" colspan="2" icon="gtk-convert"/>
+			</form>
+			</field>
+		</record>
+
+		<record id="waction_gdi_wizardKonvertHargaProduk" model="ir.actions.act_window">
+			<field name="name">Product Prices Conversion</field>
+			<field name="res_model">gdi.wizard_konversi_harga_produk</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_gdi_wizardKonvertHargaProduk"/>
+			<field name="target">new</field>
+		</record>
+
+		<act_window
+			id="action_gdi_wizardKonversiHargaProduk" 
+			key2="client_action_multi" name="Product Prices Conversion"
+			res_model="gdi.wizard_konversi_harga_produk" src_model="product.product"
+			view_mode="form" target="new" view_type="form"
+		/>
+	</data>
+</openerp>

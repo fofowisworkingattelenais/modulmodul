@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<document filename="Rekapitulasi Pengeluaran Barang.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<template pageSize="(29.7cm,21.0cm)" title="Rekapitulasi Pengeluaran Barang" author="PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>	
+		</pageTemplate>
+	</template>
+	
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+		
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>		
+		
+				
+		
+		<blockTableStyle id="TABEL_STANDAR">		
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="GRID" colorName="black"/>
+			 <blockSpan  start="0,0" stop="0,1"/>
+			 <blockSpan  start="1,0" stop="1,1"/>
+			 <blockSpan  start="2,0" stop="3,0"/>
+			 <blockSpan  start="4,0" stop="5,0"/>
+			 <blockSpan  start="6,0" stop="6,1"/>
+			 <blockSpan  start="7,0" stop="7,1"/>
+			 <blockSpan  start="8,0" stop="8,1"/>
+			 <blockSpan  start="9,0" stop="9,1"/>
+			 <blockSpan  start="10,0" stop="10,1"/>
+			 <blockSpan  start="11,0" stop="11,1"/>
+			 <blockAlignment value="CENTER" start="0,0" stop="-1,1"/>
+			  <blockValign value="MIDDLE" start="0,0" stop="-1,1"/>
+			  <blockFont name="Helvetica" size="8"/>
+			
+		
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<para>KAWASAN BERIKAT PT. GDI INDONESIA</para>
+		<para>LAPORAM PENGELUARAN BARANG PER DOKUMEN PABEAN</para>
+		<para>PERIODE [[ date_from() ]] S/D [[ date_to() ]]</para>
+		<para><font color="white"> </font></para>
+
+		<para><font color="white"> </font></para>
+		
+		<section>
+			<blockTable style="TABEL_STANDAR" colWidths="1.0cm,2.5cm,2.0cm,2.0cm,2.0cm,2.0cm,4.2cm,3.0cm,3.0cm,2.0cm,1.5cm,2.5cm">
+				<tr>
+					<td>No.</td>
+					<td>Jenis Dokumen</td>
+					<td>Dokumen Pabean</td>
+					<td>Dokumen Pabean</td>
+					<td>Bukti Pengeluaran Barang</td>
+					<td>Bukti Pengeluaran Barang</td>
+					<td>Pembeli / Penerima</td>
+					<td>Kode Barang</td>
+					<td>Nama Barang</td>
+					<td>Satuan</td>
+					<td>Jumlah</td>
+					<td>Nilai Barang</td>
+				</tr>			
+				<tr>
+					<td>No.</td>
+					<td>Jenis Dokumen</td>
+					<td>Nomor</td>
+					<td>Tanggal</td>
+					<td>Nomor</td>
+					<td>Tanggal</td>
+					<td>Pembeli / Penerima</td>
+					<td>Kode Barang</td>
+					<td>Nama Barang</td>
+					<td>Satuan</td>
+					<td>Jumlah</td>
+					<td>Nilai Barang</td>
+				</tr>	
+				
+				<tr>
+					[[ repeatIn(isi_laporan(), 'isi') ]]
+					<td>[[ isi['no'] ]]</td>
+					<td>[[ isi['jenis_dokumen'] ]]</td>
+					<td>[[ isi['nomor_dokumen'] ]]</td>
+					<td>[[ isi['tanggal_dokumen'] ]]</td>
+					<td>[[ isi['nomor_bast'] ]]</td>
+					<td>[[ isi['tanggal_bast'] ]]</td>
+					<td>[[ isi['pemasok'] ]]</td>
+					<td>[[ isi['kode_barang'] ]]</td>
+					<td>[[ isi['nama_barang'] ]]</td>
+					<td>[[ isi['satuan'] ]]</td>
+					<td>[[ isi['kuantitas'] ]]</td>
+					<td>[[ locale.format('%.2f', isi['nilai_barang'], True) ]]</td>
+				</tr>				
+			</blockTable>
+		</section>
+	</story>
+
+</document>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_stock_purchaseOrders">
+        <field name="name">Purchase Orders Inherits</field>
+        <field name="type">form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+        	<data>
+				<field name="shipped" position="after">
+					<field name="chk_import"/>
+				</field>
+				
+				<field name="product_uom" position="after">
+					<field name="lenght"/>
+					<field name="width"/>
+				</field>
+
+				<button name="%(purchase.report_purchase_order)d" string="Print" states="approved" type="action" icon="gtk-print" position="replace">
+					<button name="%(purchase.report_purchase_order)d" string="Purchase Order Internal" states="approved" type="action" icon="gtk-print"/>
+				</button>
+
+                <group col="11" colspan="4" position="after">
+	                <group col="7" colspan="4">
+						<button name="%(report_purchase_order_external)d" string="Purchase Order External" states="approved" type="action" icon="gtk-print"/>
+						<button name="%(report_purchase_rfq_internal)d" string="Request for Quotation Internal" states="approved" type="action" icon="gtk-print"/>
+						<button name="%(report_purchase_rfq_external)d" string="Request for Quotation External" states="approved" type="action" icon="gtk-print"/>
+                	</group>
+            	</group>
+
+       		</data>
+   		</field>
+    </record>
+    
+        <record id="form_gdi_purchaseOrderLine" model="ir.ui.view">
+            <field name="name">Form PO Line GDI</field>
+            <field name="model">purchase.order.line</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_form"/>
+            <field name="arch" type="xml">
+				<data>
+					<field name="product_uom" readonly="1" position="after">
+						<field name="lenght" invisible="1"/>
+						<field name="width" invisible="1"/>
+						<field name="lenght_dummy"/>
+						<field name="width_dummy"/>						
+					</field>
+				</data>
+            </field>
+        </record>
+    
+    
+    </data>
+</openerp>

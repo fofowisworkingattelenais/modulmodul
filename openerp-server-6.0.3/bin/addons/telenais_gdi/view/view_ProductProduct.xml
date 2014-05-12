@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<!-- TREE -->
+        <record id="tree_gdi_productProduct" model="ir.ui.view">
+            <field name="name">Tree Product GDI</field>
+            <field name="model">product.product</field>
+            <field name="type">tree</field>
+			<field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+				<data>
+                    <field name="uom_id" string="UoM" position="after">
+                    	<field name="lenght"/>
+                    	<field name="width"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        
+        <!-- FORM -->
+        <record id="form_gdi_productProduct" model="ir.ui.view">
+            <field name="name">Form Product GDI</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+					<separator string="Weights" colspan="2" position="replace"/>
+					
+					<field digits="(14, 3)" name="volume" attrs="{'readonly':[('type','=','service')]}" position="before">
+						<separator string="Dimension" colspan="2"/>
+					</field>
+
+                    <field digits="(14, 3)" name="weight_net" attrs="{'readonly':[('type','=','service')]}" position="after">
+                    	<field name="lenght" attrs="{'readonly':[('type','=','service')]}"/>
+                    	<field name="width" attrs="{'readonly':[('type','=','service')]}"/>
+                    </field>
+                    
+                    <field name="standard_price" attrs="{'readonly':[('cost_method','=','average')]}" position="replace">
+                    	<group name="group_1" colspan="2" col="3">
+                    		<field name="currency_standard_id" string="Cost Price"/>
+                    		<field name="standard_price" attrs="{'readonly':[('cost_method','=','average')]}" nolabel="1"/>
+                    	</group>
+                    </field>
+                    
+                    
+                     <field name="list_price" position="replace">
+                     	<group name="group_1" colspan="2" col="3">
+                     		<field name="currency_list_id" string="Sale Price"/>
+                     		<field name="list_price" nolabel="1"/>
+                 		</group>
+                     </field>
+                </data>
+            </field>
+        </record>
+        
+                <record id="form_gdi_productProduct1" model="ir.ui.view">
+            <field name="name">Form Product GDI 1</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.view_product_standard_price_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+					 <label string="Cost Price:" align="1.0" position="replace"/>
+                </data>
+            </field>
+        </record>
+        
+
+    </data>
+</openerp>

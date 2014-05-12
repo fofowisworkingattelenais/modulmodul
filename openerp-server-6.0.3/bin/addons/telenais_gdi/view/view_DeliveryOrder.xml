@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="form_gdi_deliveryOrder">
+        <field name="name">Delivery Order</field>
+        <field name="type">form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_out_form"/>
+        <field name="arch" type="xml">
+        	<data>
+				 <group col="6" colspan="4" position="inside">
+				 	<group name="group_1" colspan="6" col="6">
+				 		<separator string="Dokumen Pabean" colspan="6"/>
+				 		<field name="chk_import"/>
+				 		<newline/>
+				 		<field name="jenis_dokumen_id" widget="selection" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				 		<field name="nomor_dokumen_pabean" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				 		<field name="tanggal_dokumen_pabean" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				 	</group>
+				</group>
+			</data>
+
+       </field>
+    </record>
+    
+    </data>
+</openerp>

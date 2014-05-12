@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_gdi_wizardPurchaseRequsitionLineUnited" model="ir.ui.view">
+            <field name="name">Form Wizard Purchase Requsition Line United</field>
+            <field name="model">gdi.wizard_purchase_requsition</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create Purchase Order">
+		          		 <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+		          		 <newline/>
+		          		 
+		          		 <field domain="[('partner_id','=',partner_id)]" name="partner_address_id"/>
+		          		 <newline/>
+		          		 <separator string="" colspan="2" />
+		          		 <label string=" "/>
+		          		 <label string=" "/>
+						<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="1"/>
+						<button name="united" type="object" string="Process" icon="gtk-ok" colspan="1"/>
+						<label string=" "/>
+						<label string=" "/>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="action_gdi_wizardPurchaseRequsitionLineUnited" model="ir.actions.act_window">
+            <field name="name">Create Purchase Order</field>
+            <field name="res_model">gdi.wizard_purchase_requsition</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_gdi_wizardPurchaseRequsitionLineUnited"/>
+            <field name="target">new</field>
+        </record>
+        
+       <act_window id="action_view_gdi_purchase_line_window"
+            key2="client_action_multi" name="Create Purchase Order"
+            res_model="gdi.wizard_purchase_requsition" src_model="purchase.requisition.line"
+            view_mode="form" target="new" view_type="form" />
+        
+    </data>
+</openerp>

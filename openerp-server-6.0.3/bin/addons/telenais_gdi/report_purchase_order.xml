@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<delete model="ir.actions.report.xml" search="[('report_name','=','purchase.quotation')]" />
+    
+		<report auto="False" id="report_purchase_rfq_internal" model="purchase.order" name="purchase.rfq.internal" rml="telenais_gdi/report/rfq_internal.rml" string="Request for Quotation Internal"/>
+		<report auto="False" id="report_purchase_rfq_external" model="purchase.order" name="purchase.rfq.external" rml="telenais_gdi/report/rfq_external.rml" string="Request for Quotation External"/>
+        <report auto="False" id="purchase.report_purchase_order" model="purchase.order" name="purchase.order.internal" rml="telenais_gdi/report/purchase_order_internal.rml" string="Purchase Order Internal"/>
+        <report auto="False" id="report_purchase_order_external" model="purchase.order" name="purchase.order.external" rml="telenais_gdi/report/purchase_order_external.rml" string="Purchase Order External"/>
+
+		<report auto="False" id="report_gdi_rekapPenerimaanBarang" model="stock.move" name="gdi.rekap_penerimaan_barang" rml="telenais_gdi/report/rekap_penerimaan_barang.rml" string="Rekapitulasi Penerimaan Barang"/>
+		<report auto="False" id="report_gdi_rekapPengeluaranBarang" model="stock.move" name="gdi.rekap_pengeluaran_barang" rml="telenais_gdi/report/rekap_pengeluaran_barang.rml" string="Rekapitulasi Pengeluaran Barang"/>
+		<report auto="False" id="report_gdi_pemakaianBahan" model="stock.picking" name="gdi.pemakaian_bahan" rml="telenais_gdi/report/pemakaian_bahan.rml" string="Pemakaian Bahan"/>
+    </data>
+</openerp>
