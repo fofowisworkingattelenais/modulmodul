@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Contract View -->
+        <record id="account_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.view.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	<data>
+                	<button name="action_cancel_draft" position="after">
+						<button name="%(ar_account_taxform.waction_account_wizardCreateTaxform)d"  states="draft,proforma,proforma2,open,paid,cancel" string="Create Taxform" type="action" icon="gtk-ok"/>
+					</button>
+            	</data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

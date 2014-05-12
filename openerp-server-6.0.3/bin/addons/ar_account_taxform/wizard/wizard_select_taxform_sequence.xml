@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_account_wizardSelectTaxformSequence" model="ir.ui.view">
+            <field name="name">Wizard Select Taxform Sequence</field>
+            <field name="model">account.wizard_select_taxform_sequence</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Select Taxform Sequence">
+                    <field name="taxform_sequence_id" domain="[('taxform_id','=',False),('sequence_id','=',sequence_id)]"/>
+                    <field name="sequence_id" invisible="1"/>
+                   	<newline/>
+					<button name="select_sequence" type="object" string="Select Sequence" icon="gtk-execute"/>
+					<button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_account_wizardSelectTaxformSequence" model="ir.actions.act_window">
+             <field name="name">Select Taxform Sequence</field>
+             <field name="res_model">account.wizard_select_taxform_sequence</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="form_account_wizardSelectTaxformSequence"/>
+             <field name="target">new</field>
+       </record>        
+
+    </data>
+</openerp>
+

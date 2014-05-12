@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="form_account_companyTaxform" model="ir.ui.view">
+            <field name="name">Company : Taxform</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+                    <page string="Configuration" position="inside">
+                    	<group name="group_1" colspan="2" col="2">
+                    		<separator string="Taxform" colspan="2"/>
+		                	<field name="company_tax_id"/>
+		                	<field name="sequence_taxform_id"/>
+		                	<field name="user_sign_id"/>
+                    	</group>
+                    </page>
+				</data>
+            </field>
+        </record>    
+    </data>
+</openerp>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_account_wizardCreateTaxformSequence" model="ir.ui.view">
+            <field name="name">Wizard Create Taxform Sequence</field>
+            <field name="model">account.wizard_create_taxform_sequence</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create Taxform">
+                    <separator colspan="4" string="This wizard create new taxform sequence"/>
+					<button name="create_sequence" type="object" string="Create Taxform Sequence" icon="gtk-execute"/>
+					<button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_account_wizardCreateTaxformSequence" model="ir.actions.act_window">
+			<field name="name">Create Taxform Sequence</field>
+			<field name="res_model">account.wizard_create_taxform_sequence</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_account_wizardCreateTaxformSequence"/>
+			<field name="context">{'record_id' : active_id}</field>
+			<field name="target">new</field>
+       </record>        
+
+    </data>
+</openerp>
+

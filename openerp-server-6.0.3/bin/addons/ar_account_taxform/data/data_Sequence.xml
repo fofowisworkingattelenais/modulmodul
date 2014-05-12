@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="data_seqtype_taxform" model="ir.sequence.type">
+            <field name="name">Taxform</field>
+            <field name="code">taxform</field>
+        </record>	
+
+	
+    </data>
+</openerp>

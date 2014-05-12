@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report id="report_account_taxform"
+            string="Taxform"
+            model="account.taxform"
+            name="account.taxform"
+            rml="ar_account_taxform/report/taxform.rml"
+            menu="True"
+            auto="False"/>
+
+        <report id="report_account_taxformPreprinted"
+            string="Taxform Pre-Printed"
+            model="account.taxform"
+            name="account.taxform.preprinted"
+            rml="ar_account_taxform/report/taxform_preprinted.rml"
+            menu="True"
+            auto="False"/>
+
+	
+	<report id="report_account_taxformUsd"
+            string="Taxform USD"
+            model="account.taxform"
+            name="account.taxformdolar"
+            rml="ar_account_taxform/report/taxformdolar.rml"
+            menu="True"
+            auto="False"/>
+    </data>
+</openerp>

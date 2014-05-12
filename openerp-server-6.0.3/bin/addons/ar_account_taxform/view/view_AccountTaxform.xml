@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_account_taxform" model="ir.ui.view">
+            <field name="name">Tree Account Taxform</field>
+            <field name="model">account.taxform</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Account Taxform">
+                	<field name="name"/>
+                	<field name="taxform_date"/>
+                	<field name="invoice_id"/> 
+                    <field name="company_id"/>
+                    <field name="company_address"/>                    
+                    <field name="company_npwp"/> 
+                    <field name="partner_id"/>   
+                    <field name="partner_address_id"/>
+                    <field name="partner_npwp"/>
+                    <field name="category_id"/>
+                    <field name="signature_id"/>                    
+                    <field name="discount"/>
+                    <field name="advance_payment"/>
+                    <field name="base"/>                    
+                    <field name="state"/>                 
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_account_taxform" model="ir.ui.view">
+            <field name="name">Form Account Taxform</field>
+            <field name="model">account.taxform</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<form string="Account Taxform">
+					<group colspan="4" col="2" name="group_1">
+						<group colspan="1" col="2" name="group_1_1">
+							<group colspan="2" col="4" name="group_1_1_1">
+								<field name="name"/>          
+						        <button name="%(waction_account_wizardSelectTaxformSequence)d" string="Select" type="action" icon="gtk-execute" colspan="1" states="draft"/>
+				                <button name="create_sequence" string="Create" type="object" colspan="1" icon="gtk-execute" states="draft"/>									
+							</group>
+					        <field name="taxform_date"/>
+					        <field name="company_id"/>
+					        <field name="company_address"/>
+					        <field name="company_npwp"/> 
+					       	<field name="category_id" widget="selection"/>                     
+					        <field name="kurs_pajak"/>
+			         	</group>
+			         	<group colspan="1" col="2" name="group_1_2">
+			         		<field name="invoice_id"/>
+					        <field name="partner_id"/>
+					        <field name="partner_address_id"/>                    
+					        <field name="partner_npwp"/>
+                            <field name="berdasarkan_no" />
+                            <field name="berdasarkan_date" />
+ 			         	</group>
+			         </group>
+					<notebook colspan="4">
+						<page string="Taxform Line">
+							<field name="taxform_line_ids" nolabel="1" colspan="4" height="250">
+								<tree string="Taxform Line">
+									<field name="name"/>
+									<field name="product_id"/>
+									<field name="subtotal"/>
+								</tree>			
+								<form string="Taxform Line">	
+									<field name="name"/>
+									<field name="product_id"/>
+									<field name="subtotal"/>
+				    			</form>					    
+					    	</field>
+			        	</page>
+                        <page string="Notes">
+                            <field name="description" colspan="4" nolabel="1"/>
+                        </page>
+			        </notebook>
+
+			        <group colspan="4" col="3" name="group_1_3">
+						<group colspan="1" col="2" name="group_1_4">
+				            <field name="state"/>
+				            <field name="signature_id"/> 
+				            <button name="%(report_account_taxform)d" type="action" string="Plain" colspan="2" icon="gtk-print" states='printed'/>
+				            <button name="%(report_account_taxformPreprinted)d" type="action" string="Pre-Printed" colspan="2" icon="gtk-print" states='printed'/>
+				            <button name="%(waction_account_wizardCancelTaxformSequence)d" type="action" string="Cancel" colspan="2" icon="gtk-cancel" states='printed'/>
+		                </group>
+		                <group colspan="1" col="2" name="group_1_5">
+							<button name="button_compute" type="object" string="Compute" colspan="2" icon="gtk-execute" states='draft,printed'/>
+		                </group>
+		                <group colspan="1" col="2" name="group_1_6">
+		                	<field name="untaxed"/>
+				            <field name="discount"/>
+				            <field name="advance_payment"/>
+				            <field name="base"/>   
+				            <field name="amount_tax"/>   
+				            <field name="result_pajak"/>
+				            <field name="result_pajak_ppn"/>
+		                </group>
+		           </group>         
+                </form>
+            </field>
+        </record>
+        
+        <record id="search_account_taxform" model="ir.ui.view">
+            <field name="name">Search Tahun Pajak</field>
+            <field name="model">account.taxform</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Account Taxform">
+                	<field name="name"/>
+                	<field name="company_id"/>
+                	<field name="partner_id"/>
+                	<field name="invoice_id"/>
+                	<field name="state"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

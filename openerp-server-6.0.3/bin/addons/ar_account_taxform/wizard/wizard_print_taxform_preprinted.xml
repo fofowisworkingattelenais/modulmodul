@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_account_wizardPrintTaxformPreprinted" model="ir.ui.view">
+            <field name="name">Wizard Print Taxform Preprinted</field>
+            <field name="model">account.wizard_print_taxform_preprinted</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Print Taxform Pre-Printed">
+                    <separator colspan="4" string="This wizard print taxform on pre-printed paper"/>
+					<button name="print_taxform" type="object" string="Print Taxform" icon="gtk-print"/>
+					<button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_account_wizardPrintTaxformPreprinted" model="ir.actions.act_window">
+			<field name="name">Print Taxform</field>
+			<field name="res_model">account.wizard_print_taxform_preprinted</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_account_wizardPrintTaxformPreprinted"/>
+			<field name="target">new</field>
+       </record> 
+
+    </data>
+</openerp>
+

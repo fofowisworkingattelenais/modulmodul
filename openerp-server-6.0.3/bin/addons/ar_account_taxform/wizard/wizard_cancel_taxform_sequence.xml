@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_account_wizardCancelTaxformSequence" model="ir.ui.view">
+            <field name="name">Wizard Cancel Taxform</field>
+            <field name="model">account.wizard_cancel_taxform_sequence</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Taxform">
+                    <separator colspan="4" string="This wizard will cancel taxform and make the sequence usable"/>
+					<button name="cancel_sequence" type="object" string="Cancel Taxform" icon="gtk-execute"/>
+					<button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_account_wizardCancelTaxformSequence" model="ir.actions.act_window">
+			<field name="name">Cancel Taxform</field>
+			<field name="res_model">account.wizard_cancel_taxform_sequence</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_account_wizardCancelTaxformSequence"/>
+			<field name="context">{'record_id' : active_id}</field>
+			<field name="target">new</field>
+       </record>        
+
+    </data>
+</openerp>
+

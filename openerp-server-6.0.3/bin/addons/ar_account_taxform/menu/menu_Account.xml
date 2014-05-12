@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem 	id="menu_account_taxform" 
+					parent="account.menu_finance_receivables" 
+					sequence="101"
+					name="Taxform"
+					icon="STOCK_JUSTIFY_FILL"
+					action="waction_account_taxform"/>
+					
+		<menuitem 	id="menu_account_taxformCategory" 
+					parent="account.menu_configuration_misc" 
+					sequence="101"
+					name="Control"
+					icon="STOCK_JUSTIFY_FILL"
+					action="waction_account_taxformCategory"/>																					
+	</data>
+</openerp>
