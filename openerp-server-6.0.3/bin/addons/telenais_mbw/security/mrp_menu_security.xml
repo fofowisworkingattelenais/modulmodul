@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>	
+    
+		<record model="ir.ui.menu" id="base.menu_mrp_root" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_manufacturing" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_bom" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_configuration" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_property" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_property_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_property_group_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_routing_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_bom_form_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_bom_form_action2" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_production_action"  > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_pm_resources_config" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_view_resource_search_mrp" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_view_resource_calendar_search_mrp" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_view_resource_calendar_leaves_search_mrp" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_planning" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_mrp_production_order_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_report_mrp_production_orders_tree" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.next_id_77" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menus_dash_mrp" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="mrp.menu_board_manufacturing" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="base.menu_mrp_root" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		
+    </data>
+</openerp>

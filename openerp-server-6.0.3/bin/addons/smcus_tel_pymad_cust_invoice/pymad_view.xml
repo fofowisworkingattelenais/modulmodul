@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="smcus_pymad_form_invoice" model="ir.ui.view">
+            <field name="name">smcus.pymad.form.invoice</field>
+            <field name="model">smcus.pymad</field>
+            <field name="inherit_id" ref="smcus_tel_pymad.smcus_pymad_form" />
+            <field name="arch" type="xml">
+                <button name="action_validate" position="after">
+                    <button name="action_cancel_invoice" states="invoiced" string="Cancel" type="object" icon="gtk-cancel"/>
+                    <button name="action_invoice_create" states="validated" string="Create Invoice" type="object" icon="gtk-go-forward"/>
+                </button>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

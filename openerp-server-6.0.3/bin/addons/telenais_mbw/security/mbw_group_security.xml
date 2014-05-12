@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+<!--
+ Users Groups
+--> 
+	
+	<record model="res.groups" id="group_mbw_mgrSalesValidator">
+        <field name="name">MGR-SALES-VALIDATOR</field>
+	</record>
+	
+	<record model="res.groups" id="group_mbw_mgrPurchaseValidator">
+        <field name="name">MGR-PURCHASE-VALIDATOR</field>
+	</record>
+  
+    </data>
+</openerp>
+

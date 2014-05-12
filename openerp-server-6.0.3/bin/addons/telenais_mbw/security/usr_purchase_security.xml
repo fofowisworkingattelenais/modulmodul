@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate='0'>
+
+<!--
+ Users Groups
+-->
+	<record model="res.groups" id="group_mbw_usrPurchase">
+        <field name="name">USR-PURCHASE</field>
+    	<field name="menu_access" eval=	"[	(4 ,ref('base.menu_purchase_root')),
+											(4 ,ref('purchase.menu_procurement_management')),
+											(4 ,ref('purchase.menu_purchase_config_purchase')),
+											(4 ,ref('purchase.menu_purchase_config_pricelist')),
+											(4 ,ref('purchase.menu_product_pricelist_action_purhase')),
+											(4 ,ref('purchase.menu_product_pricelist_action2_purchase')),
+											(4 ,ref('purchase.menu_purchase_product_pricelist_type')),
+											(4 ,ref('purchase.menu_product_in_config_purchase')),
+											(4 ,ref('purchase.menu_product_category_config_purchase')),
+											(4 ,ref('purchase.menu_purchase_unit_measure_purchase')),
+											(4 ,ref('purchase.menu_purchase_uom_categ_form_action')),
+											(4 ,ref('purchase.menu_purchase_uom_form_action')),
+											(4 ,ref('base.menu_procurement_management_supplier')),
+											(4 ,ref('base.menu_procurement_management_supplier_name')),
+											(4 ,ref('purchase.menu_procurement_management_inventory')),
+											(4 ,ref('purchase.menu_action_picking_tree4')),
+											(4 ,ref('purchase.menu_action_picking_tree_in_move')),
+											(4 ,ref('purchase.menu_procurement_management_invoice')),
+											(4 ,ref('purchase.menu_procurement_management_pending_invoice')),
+											(4 ,ref('purchase.menu_procurement_management_product')),
+											(4 ,ref('purchase.menu_product_by_category_purchase_form')),
+											(4 ,ref('purchase.menu_procurement_partner_contact_form')),
+											(4 ,ref('purchase.menu_purchase_rfq')),
+											(4 ,ref('purchase.menu_purchase_form_action')),
+											(4 ,ref('purchase.menu_purchase_line_order_draft')),
+											(4 ,ref('purchase.menu_purchase_deshboard')),
+											(4 ,ref('purchase.menu_board_purchase')),
+											(4 ,ref('base.menu_purchase_root')),
+											(4 ,ref('base.next_id_73')),
+											(4 ,ref('purchase.menu_action_purchase_order_report_all')),
+											(4 ,ref('purchase_requisition.menu_purchase_requisition_pro_mgt')),
+											(4 ,ref('purchase.menu_action_stock_move_report_po'))]"/>
+    										
+
+	</record>
+  
+    </data>
+</openerp>
+

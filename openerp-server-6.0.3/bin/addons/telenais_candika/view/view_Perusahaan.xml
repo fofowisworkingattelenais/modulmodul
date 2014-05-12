@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="form_candika_companyProperty" model="ir.ui.view">
+            <field name="name">Form Company - Candika</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+           	<field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+            	<notebook>
+					<page string="Configuration Account">
+						<group colspan="4" col="2">
+							<group colspan="1" col="2">
+								<separator string="Configuration Account" colspan="2"/>
+								<field name="default_account_cash_register_id" string="Default Account Cash Register"/>
+								<field name="default_account_diskon_id" string="Default Account Diskon"/>
+								<field name="default_account_penjualan_id" string="Default Account Penjualan"/>
+								<field name="default_account_konsiensi_penjualan_id" string="Default Account Konsiensi"/>
+								<field name="default_account_retur_id" string="Default Account Retur"/>
+							</group>
+						</group>				
+					</page>
+				</notebook>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

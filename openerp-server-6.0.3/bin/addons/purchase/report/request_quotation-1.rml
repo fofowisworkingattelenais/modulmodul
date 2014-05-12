@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<document filename="test.pdf">
+	<!-- BAGIAN TEMPLATE -->
+  <template pageSize="(21.0cm,29.7cm)" title="Test" author="Martin Simon" allowSplitting="20">
+    <pageTemplate id="first">
+      <frame id="first" x1="19.0cm.0" y1="27.7cm" width="535" height="758"/>
+    </pageTemplate>
+  </template>
+  
+  <!-- BAGIAN STYLESHEET -->
+  <stylesheet>
+    <blockTableStyle id="LAYOUT_JUDUL">
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>
+    <blockTableStyle id="LAYOUT">
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>		
+    <blockTableStyle id="TABEL_ATAS">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+    <blockTableStyle id="TABEL_ATAS_1">
+              
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>		
+    <blockTableStyle id="JUDUL_TABEL">
+		<lineStyle kind="GRID" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+
+    <blockTableStyle id="TABEL_JUMLAH">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER" start="0,0" stop="0,0"/> 
+		<blockValign value="CENTER" start="0,0" stop="0,0"/>
+    </blockTableStyle>	
+	
+    <blockTableStyle id="TABEL_BAWAH">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/> 
+		<blockValign value="TOP"/>
+    </blockTableStyle>	
+    
+    <blockTableStyle id="TABEL_ATAS_2">
+              	<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="CENTER"/> 
+		<blockValign value="CENTER"/>
+    </blockTableStyle>		
+	
+  <paraStyle name="JUDUL" fontName="Helvetica-BoldOblique" fontSize="14.0" aligment="LEFT"/>
+  <paraStyle name="NORMAL" fontSize="8.0"/>
+  <paraStyle name="COSTUM" fontSize="8.0" alignment="RIGHT"/>
+  <paraStyle name="COSTUM_1" fontSize="8.0" alignment="CENTER"/>
+  <paraStyle name="COSTUM_2" fontSize="8.0" alignment="LEFT"/>		
+  <paraStyle name="ANGKA" fontSize="8.0" alignment="RIGHT"/>	
+  <paraStyle name="NORMAL_1" fontSize="8.0" alignment="CENTER"/>
+   <paraStyle name="NORMAL_2" fontSize="8.0" alignment="RIGHT"/>
+  </stylesheet>
+  
+ 
+  
+  <!-- BAGIAN STRORY -->
+  <story>
+    <para>[[repeatIn(objects,'o')]]</para>  
+        <blockTable style="LAYOUT_JUDUL" colWidths="19cm">
+        <tr>
+		    <td><para style="JUDUL">INQUIRY.</para></td>       
+		</tr>
+		</blockTable>
+		
+		<para><font color="white"> </font></para>
+		
+		<blockTable style="LAYOUT" colWidths="19cm">
+		<tr>
+			<td><para style="COSTUM_2"><b>Inq. Rfq : [[ o.name ]]</b></para></td>
+		</tr>
+		</blockTable> 
+		
+		<para><font color="white">_</font></para>
+
+        <blockTable style="LAYOUT_JUDUL" colWidths="19cm">
+		<tr>
+            <td><para style="NORMAL"> Dear All Partner,</para></td>                 
+		</tr>
+		<tr>
+            <td><para><font color="white"> </font></para></td>                 
+		</tr>
+        <tr>
+			<td><para style="NORMAL"> We would like to order Spare part, so please quote the price of :</para></td>                 
+		</tr>
+		        
+		</blockTable>
+	
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+		
+		<blockTable style="JUDUL_TABEL" colWidths="1cm,5cm,6cm,7cm">
+			<tr>
+				<td>
+					<para style="NORMAL_1">No</para>
+				</td>	
+                <td>
+					<para style="NORMAL_1">Description</para>
+				</td>		
+				<td>
+					<para style="NORMAL_1">Qty</para>
+				</td>		
+				<td>
+					<para style="NORMAL_1">Spesification</para>
+				</td>		
+			</tr>
+		</blockTable>	
+		
+		<para><seqReset id="nourut"/></para>
+		
+		<section>
+			<para>[[ repeatIn(o.order_line,'a') ]]</para>
+			<blockTable style="JUDUL_TABEL" colWidths="1cm,5cm,6cm,7cm">
+			<tr>
+				<td><para style="COSTUM" alignment="CENTER"><font color="white">_</font><seq id="nourut"/></para></td>
+				<td><para style="COSTUM_2"><font color="white">_</font>[[ a.product_id.name ]] </para></td>
+				<td><para style="COSTUM">[[ a.product_qty ]] [[ a.product_uom.name ]]<font color="white">_</font></para></td>
+				<td><para style="COSTUM_1"> [[ a.spec ]] [[ a.merk ]]</para></td>
+			</tr>
+			</blockTable>      
+		</section>
+
+		<blockTable style="LAYOUT" colWidths="19cm">
+			<tr>
+				<td>
+					<para><font color="white"> </font></para>
+					<para style="NORMAL">Notes : </para>
+					<para style="NORMAL">[[ format(o.notes or '') ]]</para>
+					<para><font color="white"> </font></para>
+					<para style="NORMAL">Previously, thank you for your attention and coorperation.</para>
+					<para style="NORMAL"><font color="white">_</font></para>
+					<para style="NORMAL">Best Regards, </para>
+					<para style="NORMAL">Procurement</para>
+					<para style="NORMAL"><font color="white">_</font></para>
+					<!--<image file="webtitis.jpg" x="0" y="0" width="100" height="21"/>-->
+					<para style="NORMAL"><b>Operational Div</b></para>
+					<para style="NORMAL"><font color="white">_</font></para>
+					<para style="NORMAL"><b>[[ company.partner_id.name ]]</b></para>
+					<para style="NORMAL">[[ company.partner_id.address and company.partner_id.address[0].street ]]</para>
+					<para style="NORMAL">[[ company.partner_id.address and company.partner_id.address[0].street2 ]] [[ company.partner_id.address and company.partner_id.address[0].zip or '' ]] </para>
+					<para style="NORMAL">[[ company.partner_id.address and company.partner_id.address[0].city or '' ]]  - [[ company.partner_id.address and company.partner_id.address[0].country_id and company.partner_id.address[0].country_id.name  or '']] </para>
+					<para style="NORMAL"> Telp. : [[ company.partner_id.address and company.partner_id.address[0].phone ]]</para>
+					<para style="NORMAL"> Fax. : [[ company.partner_id.address and company.partner_id.address[0].fax ]]</para>
+					<para style="NORMAL"> Website : [[ company.partner_id.address and company.partner_id.notes ]]</para>
+				</td>		
+			</tr>
+		</blockTable>	
+		
+        
+
+  </story>
+</document>

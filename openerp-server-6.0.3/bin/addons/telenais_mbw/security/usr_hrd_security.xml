@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate='0'>
+
+<!--
+ Users Groups
+-->
+	<record model="res.groups" id="group_mbw_usrHrd">
+        <field name="name">USR-HRD</field>
+    	<field name="menu_access" eval=	"[	(4 ,ref('base.dashboard')),
+											(4 ,ref('hr.menu_hr_deshboard')),
+											(4 ,ref('hr.menu_hr_root')),
+											(4 ,ref('hr.menu_hr_main')),
+											(4 ,ref('hr.menu_hr_configuration')),
+											(4 ,ref('hr.menu_hr_management')),
+											(4 ,ref('hr.menu_view_employee_category_configuration_form')),
+											(4 ,ref('hr.menu_open_view_employee_list_my')),
+											(4 ,ref('hr.hr_menu_marital_status')),
+											(4 ,ref('hr.menu_view_employee_category_form')),
+											(4 ,ref('hr.menu_view_employee_category_tree')),
+											(4 ,ref('base.menu_crm_case_job_req_main')),
+											(4 ,ref('hr.menu_hr_job')),
+											(4 ,ref('hr.menu_hr_department_tree'))]"/>
+    										
+	</record>
+  
+    </data>
+</openerp>
+
+
+

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- CUSTOM PPH -->
+    	<menuitem id="menu_view_pph_form" parent="hr.menu_hr_management" name="Pph" sequence="6" />
+    	
+    	<!-- PTKP -->
+    	<record id="hr_pph_ptkp_view_form" model="ir.ui.view">
+            <field name="name">hr.pph.ptkp.view.form</field>
+            <field name="model">hr.pph.ptkp</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ptkp">
+                	<field name="name"/>
+                    <field name="marital" widget="selection"/>
+                    <field name="ptkp"/>
+                    <field name="desc"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_pph_ptkp_view_tree" model="ir.ui.view">
+            <field name="name">hr.pph.ptkp.view.tree</field>
+            <field name="model">hr.pph.ptkp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ptkp">
+                	<field name="name"/>
+                    <field name="marital"/>
+                    <field name="ptkp"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_pph_ptkp_view_search" model="ir.ui.view">
+            <field name="name">hr.pph.ptkp.view.search</field>
+            <field name="model">hr.pph.ptkp</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Ptkp">
+                   <group col='15' colspan='4'>
+                   <field name="name"/>
+                   <field name="marital"/>
+                   <field name="ptkp"/>
+                   <field name="desc"/>
+                   </group>                   
+               </search>
+            </field>
+        </record>
+
+        <record id="action_hr_pph_ptkp" model="ir.actions.act_window">
+            <field name="name">Ptkp</field>
+            <field name="res_model">hr.pph.ptkp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="hr_pph_ptkp_view_search"/>
+        </record>
+        
+        <menuitem action="action_hr_pph_ptkp" id="hr_menu_pph_ptkp" parent="menu_view_pph_form" sequence="7"/>
+		
+		<!-- Tarif Progresif Pph-->
+    	<record id="hr_pph_tarif_view_form" model="ir.ui.view">
+            <field name="name">hr.pph.tarif.view.form</field>
+            <field name="model">hr.pph.tarif</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tarif Pajak Progresif">                    
+                    <field name="tarif"/>
+                    <field name="pkp"/>
+                    <field name="desc"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_pph_tarif_view_tree" model="ir.ui.view">
+            <field name="name">hr.pph.tarif.view.tree</field>
+            <field name="model">hr.pph.tarif</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tarif Pajak Progresif">
+                    <field name="tarif"/>
+                    <field name="pkp"/>                    
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_pph_tarif_view_search" model="ir.ui.view">
+            <field name="name">hr.pph.tarif.view.search</field>
+            <field name="model">hr.pph.tarif</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Tarif Pajak Progresif">
+                   <group col='15' colspan='4'>
+                   <field name="tarif"/>
+                   <field name="pkp"/>
+                   <field name="desc"/>
+                   </group>                   
+               </search>
+            </field>
+        </record>
+
+        <record id="action_hr_pph_tarif" model="ir.actions.act_window">
+            <field name="name">Tarif Pajak Progresif</field>
+            <field name="res_model">hr.pph.tarif</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="hr_pph_tarif_view_search"/>
+        </record>
+        
+        <menuitem action="action_hr_pph_tarif" id="hr_menu_pph_tarif" parent="menu_view_pph_form" sequence="8"/>
+                
+        <!-- Biaya Jabatan-->
+    	<record id="hr_pph_occupy_expense_form" model="ir.ui.view">
+            <field name="name">hr.pph.occupy.expense.view.form</field>
+            <field name="model">hr.pph.occupy.expense</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Biaya Jabatan">                    
+                    <field name="amount"/>
+                    <field name="maximum"/>
+                    <field name="desc"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_pph_occupy_expense_view_tree" model="ir.ui.view">
+            <field name="name">hr.pph.occupy.expense.view.tree</field>
+            <field name="model">hr.pph.occupy.expense</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Biaya Jabatan">                    
+                    <field name="amount"/>
+                    <field name="maximum"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_pph_occupy_expense_view_search" model="ir.ui.view">
+            <field name="name">hr.pph.occupy.expense.view.search</field>
+            <field name="model">hr.pph.occupy.expense</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Biaya Jabatan">
+                   <group col='15' colspan='4'>
+                   <field name="amount"/>
+                   <field name="maximum"/>
+                   </group>                   
+               </search>
+            </field>
+        </record>
+
+        <record id="action_hr_pph_occupy_expense" model="ir.actions.act_window">
+            <field name="name">Biaya Jabatan</field>
+            <field name="res_model">hr.pph.occupy.expense</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="hr_pph_occupy_expense_view_search"/>
+        </record>
+        
+        <menuitem action="action_hr_pph_occupy_expense" id="hr_menu_pph_occupy_expense" parent="menu_view_pph_form" sequence="9"/>
+           
+        <!-- SALARY HEAD untuk tunjangan pph -->
+    	<record id="hr_pph_salary_head_pph_allow_form" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.allow.view.form</field>
+            <field name="model">hr.pph.salary.head.pph.allow</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salary Head Tunj. Pph">                    
+                    <field name="category_id"/>
+                    <field name="desc"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_pph_salary_head_pph_allow_view_tree" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.allow.view.tree</field>
+            <field name="model">hr.pph.salary.head.pph.allow</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Salary Head Tunj. Pph">                    
+                   <field name="category_id"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_pph_salary_head_pph_allow_view_search" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.allow.view.search</field>
+            <field name="model">hr.pph.salary.head.pph.allow</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Salary Head Tunj. Pph">
+                   <group col='15' colspan='4'>
+                   <field name="category_id"/>
+                   <field name="desc"/>
+                   </group>                   
+               </search>
+            </field>
+        </record>
+
+        <record id="action_hr_pph_salary_head_pph_allow" model="ir.actions.act_window">
+            <field name="name">Salary Head Tunj. Pph</field>
+            <field name="res_model">hr.pph.salary.head.pph.allow</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="hr_pph_salary_head_pph_allow_view_search"/>
+        </record>
+        <!-- 
+        <menuitem id="hr_menu_pph_salary_head" parent="menu_view_pph_form" name="Salary Head"  sequence="9"/>
+         -->
+        <menuitem action="action_hr_pph_salary_head_pph_allow" id="hr_menu_pph_salary_head_pph_allow" parent="menu_view_pph_form" sequence="91"/>       	
+    	
+    	<!-- SALARY HEAD untuk pph -->
+    	<record id="hr_pph_salary_head_intax_form" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.view.form</field>
+            <field name="model">hr.pph.salary.head.pph</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Salary Head Pph">                    
+                    <field name="category_id"/>
+                    <field name="desc"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_pph_salary_head_intax_view_tree" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.view.tree</field>
+            <field name="model">hr.pph.salary.head.pph</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Salary Head Pph">                    
+                   <field name="category_id"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_pph_salary_head_intax_view_search" model="ir.ui.view">
+            <field name="name">hr.pph.salary.head.pph.view.search</field>
+            <field name="model">hr.pph.salary.head.pph</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Salary Head Pph">
+                   <group col='15' colspan='4'>
+                   <field name="category_id"/>
+                   <field name="desc"/>
+                   </group>                   
+               </search>
+            </field>
+        </record>
+		
+		
+        <record id="action_hr_pph_salary_head_intax" model="ir.actions.act_window">
+            <field name="name">Salary Head Pph</field>
+            <field name="res_model">hr.pph.salary.head.pph</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="hr_pph_salary_head_intax_view_search"/>
+        </record>
+        
+        <menuitem action="action_hr_pph_salary_head_intax" id="hr_menu_pph_salary_head_intax" parent="menu_view_pph_form" sequence="92"/>
+             
+        <!-- Custom Employee -->
+        <record id="view_employee_x_form" model="ir.ui.view">
+            <field name="name">hr.employee.x.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="priority" eval="15" />                        
+            <field name="arch" type="xml">
+            	<field name="passport_id" position="after">
+					 <field name="npwp" />
+					 <field name="gol_ptkp" />
+				</field>	
+            </field>
+        </record>
+        
+             	
+	</data>
+</openerp>
+            

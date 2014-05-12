@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+            		
+        <menuitem 	string="Bank Statements" 
+        			action="account.action_bank_statement_tree" 
+        			id="account.menu_bank_statement_tree" 
+        			parent="account.menu_finance_bank_and_cash" 
+        			sequence="7"
+            		groups="group_candika_bankStatement"/>
+
+																										
+	</data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+     <record id="view_hr_timesheet_import_att_data" model="ir.ui.view">
+        <field name="name">hr_timesheet_import_att_data.form</field>
+        <field name="model">hr.timesheet.import.att.data</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import Attendance Data">            	
+               	<separator string="Import a .CSV file" colspan="4"/>
+               	<newline/>     
+               	<group colspan="4">                                         		
+            		<field name="data" nolabel="1" />
+            	</group>                
+                <separator colspan="4"/>
+                <newline/>            		
+                <button icon='gtk-cancel' special="cancel" string="Close" />
+                <button icon='gtk-ok' name="proccess_file" string="Import Data" type="object" />               
+           </form>
+        </field>
+    </record>
+
+    <record id="action_hr_timesheet_import_att_data" model="ir.actions.act_window">
+        <field name="name">Import Attendance Data</field>
+        <field name="res_model">hr.timesheet.import.att.data</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_hr_timesheet_import_att_data"/>
+        <field name="target">new</field>
+        <field name="help">Import data attendance that is exported from attendance machine.</field>
+    </record>
+
+    <menuitem action="action_hr_timesheet_import_att_data" icon="STOCK_NEW" id="menu_act_hr_timesheet_import_att_data_form" name="Import Attandance Data" parent="hr_attendance.menu_hr_time_tracking" sequence="9"/>
+
+    </data>
+</openerp>

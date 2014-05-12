@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+    
+    <record model="ir.ui.view" id="account_analytic_plan_instance_form">
+        <field name="name">account.analytic.plan.instance.form</field>
+        <field name="model">account.analytic.plan.instance</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_analytic_plans.account_analytic_plan_instance_form"></field>
+        <field name="arch" type="xml">
+            <field name="account_ids" nolabel="1" colspan="4" position="replace">
+                <field name="account_ids" nolabel="1" colspan="4" />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_analytic_plan_instance_line_form">
+        <field name="name">account.analytic.plan.instance.line.form</field>
+        <field name="model">account.analytic.plan.instance.line</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_analytic_plans.account_analytic_plan_instance_line_form"></field>
+        <field name="arch" type="xml">
+            <field name="plan_id" position="replace"/>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_analytic_plan_instance_line_tree">
+        <field name="name">account.analytic.plan.instance.line.tree</field>
+        <field name="model">account.analytic.plan.instance.line</field>
+        <field name="inherit_id" ref="account_analytic_plans.account_analytic_plan_instance_line_tree"></field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <field name="plan_id" position="replace"/>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_analytic_plan_instance_action">
+        <field name="name">Analytic Distribution's Models</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.analytic.plan.instance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+     <menuitem
+         parent="account_analytic_plans.menu_account_analytic_multi_plan_action"
+         id="menu_account_analytic_plan_instance"
+         action="account_analytic_plan_instance_action"/>
+</data>
+</openerp>

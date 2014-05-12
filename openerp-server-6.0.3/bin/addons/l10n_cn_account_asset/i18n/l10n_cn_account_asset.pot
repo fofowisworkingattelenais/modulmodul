@@ -1,0 +1,702 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* l10n_cn_account_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2012-07-19 13:21+0000\n"
+"PO-Revision-Date: 2012-07-19 13:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,method_end:0
+#: field:account.asset.history,method_end:0
+#: field:asset.modify,method_end:0
+msgid "Ending date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+msgid "Previous Month"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,value_residual:0
+msgid "Residual Value"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,account_expense_depreciation_id:0
+msgid "Depr. Expense Account"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Depreciation board"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,gross_value:0
+msgid "Gross Amount"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: field:account.asset.depreciation.line,asset_id:0
+#: field:account.asset.history,asset_id:0
+#: view:asset.asset.report:0
+#: field:asset.asset.report,asset_id:0
+#: model:ir.model,name:l10n_cn_account_asset.model_account_asset_asset
+msgid "Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,prorata:0
+#: help:account.asset.category,prorata:0
+msgid "Indicates that the first depreciation entry for this asset have to be done from the purchase date instead of the first January"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: selection:account.asset.asset,method:0
+#: selection:account.asset.category,method:0
+msgid "Linear"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,company_id:0
+#: field:account.asset.category,company_id:0
+#: view:asset.asset.report:0
+#: field:asset.asset.report,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.modify:0
+msgid "Modify"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+#: selection:asset.asset.report,state:0
+msgid "Running"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,amount:0
+msgid "Depreciation Amount"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_asset_asset_report
+#: model:ir.model,name:l10n_cn_account_asset.model_asset_asset_report
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_action_asset_asset_report
+msgid "Assets Analysis"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.modify,name:0
+msgid "Reason"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method_progress_factor:0
+#: field:account.asset.category,method_progress_factor:0
+msgid "Degressive Factor"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_account_asset_asset_list_normal
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_action_account_asset_asset_list_normal
+msgid "Asset Categories"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.depreciation.confirmation.wizard:0
+msgid "This wizard will post the depreciation lines of running assets that belong to the selected period."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+msgid "This Year"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,account_move_line_ids:0
+#: field:account.move.line,entry_ids:0
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.act_entries_open
+msgid "Entries"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: field:account.asset.asset,depreciation_line_ids:0
+msgid "Depreciation Lines"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,salvage_value:0
+msgid "It is the amount you plan to have that you cannot depreciate."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,depreciation_date:0
+#: view:asset.asset.report:0
+#: field:asset.asset.report,depreciation_date:0
+msgid "Depreciation Date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,posted_value:0
+msgid "Posted Amount"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: view:asset.asset.report:0
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_account_asset_asset_form
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_action_account_asset_asset_form
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_finance_assets
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_finance_config_assets
+msgid "Assets"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,account_depreciation_id:0
+msgid "Depreciation Account"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.move.line:0
+msgid "You can not create move line on closed account."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: view:account.asset.category:0
+#: view:account.asset.history:0
+#: view:asset.modify:0
+#: field:asset.modify,note:0
+msgid "Notes"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,move_id:0
+msgid "Depreciation Entry"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: sql_constraint:account.move.line:0
+msgid "Wrong credit or debit value in accounting entry !"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+#: field:asset.asset.report,nbr:0
+msgid "# of Depreciation Lines"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method_end:0
+#: selection:account.asset.asset,method_time:0
+#: selection:account.asset.category,method_time:0
+#: selection:account.asset.history,method_time:0
+msgid "Ending Date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+msgid "Group By..."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Account Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_asset_depreciation_confirmation_wizard
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_asset_depreciation_confirmation_wizard
+msgid "Compute Assets"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,sequence:0
+msgid "Sequence of the depreciation"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method_period:0
+#: field:account.asset.category,method_period:0
+#: field:account.asset.history,method_period:0
+#: field:asset.modify,method_period:0
+msgid "Period Length"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+#: selection:asset.asset.report,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,method_number:0
+msgid "Calculates Depreciation within specified interval"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Change Duration"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,account_analytic_id:0
+msgid "Analytic account"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method:0
+#: field:account.asset.category,method:0
+msgid "Computation Method"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,method_period:0
+msgid "State here the time during 2 depreciations, in months"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.asset.asset:0
+msgid "Prorata temporis can be applied only for time method \"number of depreciations\"."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.history,method_time:0
+msgid "The method to use to compute the dates and number of depreciation lines.\n"
+"Number of Depreciations: Fix the number of depreciation lines and the time between 2 depreciations.\n"
+"Ending Date: Choose the time between 2 depreciations and the date the depreciations won't go beyond."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,purchase_value:0
+msgid "Gross value "
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.asset.asset:0
+msgid "Error ! You can not create recursive assets."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.history,method_period:0
+msgid "Time in month between two depreciations"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.modify:0
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_asset_modify
+#: model:ir.model,name:l10n_cn_account_asset.model_asset_modify
+msgid "Modify Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Other Information"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,salvage_value:0
+msgid "Salvage Value"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.invoice.line,asset_category_id:0
+#: view:asset.asset.report:0
+#: field:product.product,asset_category_id:0
+msgid "Asset Category"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Set to Close"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.wizard,name:l10n_cn_account_asset.wizard_asset_compute
+msgid "Compute assets"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.wizard,name:l10n_cn_account_asset.wizard_asset_modify
+msgid "Modify asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.history:0
+#: model:ir.model,name:l10n_cn_account_asset.model_account_asset_history
+msgid "Asset history"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.category:0
+msgid "Search Asset Category"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,state:0
+msgid "State"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_account_invoice_line
+msgid "Invoice Line"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_account_move_line
+msgid "Journal Items"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,unposted_value:0
+msgid "Unposted Amount"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method_time:0
+#: field:account.asset.category,method_time:0
+#: field:account.asset.history,method_time:0
+msgid "Time Method"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.category:0
+msgid "Analytic information"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.modify:0
+msgid "Asset durations to modify"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,compute_at_end_period:0
+msgid "Compute at the end of period"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.history,note:0
+msgid "Note"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,method:0
+#: help:account.asset.category,method:0
+msgid "Choose the method to use to compute the amount of depreciation lines.\n"
+"  * Linear: Calculated on basis of: Gross Value / Number of Depreciations\n"
+"  * Degressive: Calculated on basis of: Remaining Value * Degressive Factor"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.asset,method_time:0
+#: help:account.asset.category,method_time:0
+msgid "Choose the method to use to compute the dates and number of depreciation lines.\n"
+"  * Number of Depreciations: Fix the number of depreciation lines and the time between 2 depreciations.\n"
+"  * Ending Date: Choose the time between 2 depreciations and the date the depreciations won't go beyond."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Closed"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.history,user_id:0
+msgid "User"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,account_asset_id:0
+msgid "Asset Account"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+msgid "Extended Filters..."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.move.line:0
+msgid "Company must be same for its related account and period."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,deprec_start_date:0
+msgid "Depreciation starting Date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: view:asset.depreciation.confirmation.wizard:0
+msgid "Compute"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.move.line:0
+msgid "The date of your Journal Entry is not in the defined period!"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_asset_depreciation_confirmation_wizard
+msgid "asset.depreciation.confirmation.wizard"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.history,date:0
+msgid "Date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.wizard,name:l10n_cn_account_asset.wizard_asset_close
+msgid "Close asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,parent_state:0
+msgid "State of Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,name:0
+msgid "Depreciation Name"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: field:account.asset.asset,history_ids:0
+msgid "History"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.depreciation.confirmation.wizard:0
+msgid "Compute Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.depreciation.confirmation.wizard,period_id:0
+msgid "Period"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "General"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,prorata:0
+#: field:account.asset.category,prorata:0
+msgid "Prorata Temporis"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.category:0
+msgid "Accounting information"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_account_asset_asset_form_normal
+msgid "Review Asset Categories"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.depreciation.confirmation.wizard:0
+#: view:asset.modify:0
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: selection:asset.asset.report,state:0
+msgid "Close"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: view:account.asset.category:0
+msgid "Depreciation Method"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,purchase_date:0
+#: view:asset.asset.report:0
+#: field:asset.asset.report,purchase_date:0
+msgid "Purchase Date"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: selection:account.asset.asset,method:0
+#: selection:account.asset.category,method:0
+msgid "Degressive"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:asset.depreciation.confirmation.wizard,period_id:0
+msgid "Choose the period for which you want to automatically post the depreciation lines of running assets"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Current"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,remaining_value:0
+msgid "Amount to Depreciate"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,open_asset:0
+msgid "Skip Draft State"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+#: view:account.asset.category:0
+#: view:account.asset.history:0
+msgid "Depreciation Dates"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.category,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.history,name:0
+msgid "History name"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,depreciated_value:0
+msgid "Amount Already Depreciated"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+msgid "This Month"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.depreciation.line,move_check:0
+#: view:asset.asset.report:0
+#: field:asset.asset.report,move_check:0
+msgid "Posted"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.category,open_asset:0
+msgid "Check this if you want to automatically confirm the assets of this category when created by invoices."
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:asset.asset.report,name:0
+msgid "Year"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.model,name:l10n_cn_account_asset.model_account_asset_depreciation_line
+msgid "Asset depreciation line"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.category:0
+#: field:asset.asset.report,asset_category_id:0
+#: model:ir.model,name:l10n_cn_account_asset.model_account_asset_category
+msgid "Asset category"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.asset.report:0
+#: field:asset.asset.report,depreciation_value:0
+msgid "Amount of Depreciation Lines"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: code:addons/l10n_cn_account_asset/wizard/wizard_asset_compute.py:49
+#, python-format
+msgid "Created Asset Moves"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.act_window,help:l10n_cn_account_asset.action_asset_asset_report
+msgid "From this report, you can have an overview on all depreciation. The tool search can also be used to personalise your Assets reports and so, match this analysis to your needs;"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: help:account.asset.category,method_period:0
+msgid "State here the time between 2 depreciations, in months"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: field:account.asset.asset,method_number:0
+#: selection:account.asset.asset,method_time:0
+#: field:account.asset.category,method_number:0
+#: selection:account.asset.category,method_time:0
+#: field:account.asset.history,method_number:0
+#: selection:account.asset.history,method_time:0
+#: field:asset.modify,method_number:0
+msgid "Number of Depreciations"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:asset.depreciation.confirmation.wizard:0
+msgid "Post Depreciation Lines"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: view:account.asset.asset:0
+msgid "Confirm Asset"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: model:ir.actions.act_window,name:l10n_cn_account_asset.action_account_asset_asset_tree
+#: model:ir.ui.menu,name:l10n_cn_account_asset.menu_action_account_asset_asset_tree
+msgid "Asset Hierarchy"
+msgstr ""
+
+#. module: l10n_cn_account_asset
+#: constraint:account.move.line:0
+msgid "You can not create move line on view account."
+msgstr ""
+

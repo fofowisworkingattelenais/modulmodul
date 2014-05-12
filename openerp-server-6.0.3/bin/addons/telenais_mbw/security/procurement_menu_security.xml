@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.menu" id="procurement.menu_stock_sched"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="procurement.menu_stock_proc_schedulers"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="procurement.menu_stock_procurement_action"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="procurement.menu_stock_procurement"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="procurement.menu_stock_order_points"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		
+	</data>
+</openerp>
+
+['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]

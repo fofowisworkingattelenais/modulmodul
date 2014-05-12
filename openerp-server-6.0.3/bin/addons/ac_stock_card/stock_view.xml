@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+<wizard id="wiz_stock_card" model="stock.location" name="stock.card" string="Print Stock Card"/>
+
+<menuitem parent="stock.next_id_61" type="wizard" action="wiz_stock_card"/>
+
+</data>
+</openerp>
+<!-- vim: set fdm=marker : -->

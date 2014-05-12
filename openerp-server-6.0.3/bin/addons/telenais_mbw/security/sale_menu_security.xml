@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+		<record model="ir.ui.menu" id="base.next_id_64"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_report_product_all"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="board.menu_dasboard"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_board_sales_manager"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_action_picking_list_to_invoice"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="base.menu_base_partner"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="base.menu_sales"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="base.menu_product"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="product.menu_products"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_action_shop_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_sale_order"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_invoiced"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="sale.menu_invoicing_sales_order_lines"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		
+    </data>
+</openerp>

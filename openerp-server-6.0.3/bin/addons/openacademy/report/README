@@ -1,0 +1,15 @@
+
+The RML file produced from the SXW file has been modified:
+
+1. <para style="Standard">Duration: [[ session.duration or
+   removeParentNode('para') ]]</para>
+
+2. <para style="Standard">Percentage of remaining seats:
+   <font color="black">[[session.remaining_seats_percent&lt;50
+   and setTag('font','font',{'color':'red'})]]
+   [[ formatLang(session.remaining_seats_percent,digits=2) ]]</font>
+
+In 1., the para element that displays duration is removed if there is
+no duration. I
+n 2. the color of the font element is set to red if less than half the seats are available.
+

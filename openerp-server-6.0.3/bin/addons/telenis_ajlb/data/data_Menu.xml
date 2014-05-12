@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+
+        <menuitem icon="terp-partner" 
+        	id="base.menu_base_partner" name="Sales" sequence="0"
+			web_icon="data/sales.png"
+			web_icon_hover="data/sales-hover.png"
+			parent="account.menu_finance"/>  
+			
+        <menuitem icon="terp-stock" id="stock.menu_stock_root" name="Warehouse"
+                  groups="stock.group_stock_manager,stock.group_stock_user" sequence="5"
+                  web_icon="images/warehouse.png"
+                  web_icon_hover="images/warehouse-hover.png"
+                  parent="account.menu_finance"/>		
+                  
+       <menuitem icon="terp-purchase" id="base.menu_purchase_root" name="Purchases" sequence="3"
+           groups="purchase.group_purchase_manager,purchase.group_purchase_user"
+           web_icon="images/purchases.png"
+           web_icon_hover="images/purchases-hover.png"
+           parent="account.menu_finance"/>                  	      
+		
+		
+
+    </data>
+</openerp>

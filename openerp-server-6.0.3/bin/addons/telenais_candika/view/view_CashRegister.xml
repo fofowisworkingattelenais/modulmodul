@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="form_candika_accountCashRegister" model="ir.ui.view">
+            <field name="name">Form Account Cash Register - Candika</field>
+            <field name="model">account.bank.statement</field>
+            <field name="type">form</field>
+           	<field name="inherit_id" ref="account.view_bank_statement_form2"/>
+            <field name="arch" type="xml">
+				<data>
+					<field colspan="4" name="line_ids" nolabel="1" position='replace'>
+						<field colspan="4" name="line_ids" context="{'jenis' : 'cash_register'}" nolabel="1">
+		                    <tree editable="bottom" string="Statement lines">
+		                        <field name="sequence" invisible="1"/>
+		                        <field name="date" groups="base.group_extended"/>
+		                        <field name="name"/>
+		                        <field name="ref"/>
+		                        <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+		                        <field name="type" on_change="onchange_type(partner_id, type)" groups="base.group_extended"/>
+		                        <field domain="[('journal_id','=',parent.journal_id)]" name="account_id" groups="base.group_extended"/>
+		                        <field name="analytic_account_id" domain="[('company_id', '=', parent.company_id), ('type', '&lt;&gt;', 'view')]" groups="analytic.group_analytic_accounting" />
+		                        <field name="amount"/>
+		                    </tree>
+		                    <form string="Statement lines">
+		                        <field name="date"/>
+		                        <field name="name"/>
+		                        <field name="ref"/>
+		                        <field name="partner_id" on_change="onchange_partner_id(partner_id)"/>
+		                        <field name="type" on_change="onchange_type(partner_id, type)" groups="base.group_extended"/>
+		                        <field domain="[('journal_id', '=', parent.journal_id), ('type', '&lt;&gt;', 'view')]" name="account_id" groups="base.group_extended"/>
+		                        <field name="analytic_account_id" domain="[('company_id', '=', parent.company_id), ('type', '&lt;&gt;', 'view')]" groups="analytic.group_analytic_accounting" />
+		                        <field name="amount"/>
+		                        <field name="sequence"/>
+		                        <separator colspan="4" string="Notes"/>
+		                        <field colspan="4" name="note" nolabel="1"/>
+		                    </form>
+						</field>
+					</field>
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>

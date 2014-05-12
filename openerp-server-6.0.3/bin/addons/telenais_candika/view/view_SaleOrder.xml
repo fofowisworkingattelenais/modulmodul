@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="form_candika_sale" model="ir.ui.view">
+            <field name="name">Form Sale Orders - Candika</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+           	<field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+				<data>
+
+                    <group col="13" colspan="4" position='replace'>
+						<group col="15" colspan="4">
+		                    <field name="state"/>
+		                    <button name="invoice_recreate" states="invoice_except" string="Recreate Invoice" icon="gtk-go-forward"/>
+		                    <button name="invoice_corrected" states="invoice_except" string="Ignore Exception" icon="gtk-apply"/>
+		                    <button name="ship_recreate" states="shipping_except" string="Recreate Packing" icon="gtk-ok"/>
+		                    <button name="ship_corrected" states="shipping_except" string="Ignore Exception" icon="gtk-apply"/>
+		                    <button name="action_cancel" states="manual,progress" string="Cancel Order" type="object" icon="gtk-cancel"/>
+		                    <button name="manual_invoice" states="manual" string="Create Final Invoice" icon="gtk-go-forward" type="object"/>
+		                    <button name="ship_cancel" states="shipping_except" string="Cancel Order" icon="gtk-cancel"/>
+		                    <button name="action_cancel_draft" states="cancel" string="Set to Draft" type="object" icon="gtk-convert"/>
+		                    <button name="cancel" states="draft" string="Cancel Order" icon="gtk-cancel"/>
+		                    <button name="invoice_cancel" states="invoice_except" string="Cancel Order" icon="gtk-cancel"/>
+		                    <button name="order_confirm" states="validate" string="Confirm Order" icon="gtk-apply" />
+							<button name="button_validate" states="draft" string="Validate" icon="gtk-apply" groups="telenais_candika.group_candika_managerSale"/>
+	                    </group>
+                    </group>
+                    
+                    <field colspan="4"
+                        context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+                        name="product_id"
+                        on_change="product_id_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], True, parent.date_order, product_packaging, parent.fiscal_position, False)"
+                        position='replace'>
+                        
+		                <field colspan="4"
+		                    context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+		                    name="product_id"
+		                    on_change="product_id_change(parent.shop_id, parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], True, parent.date_order, product_packaging, parent.fiscal_position, False)"
+		                    />
+                        
+					</field>
+					
+                    <field
+                        context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+                        name="product_uom_qty"
+                        on_change="product_id_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order, product_packaging, parent.fiscal_position, True)"
+                        position='replace'>
+                     
+		                <field
+		                    context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+		                    name="product_uom_qty"
+		                    on_change="product_id_change(parent.shop_id, parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order, product_packaging, parent.fiscal_position, True)"
+		                    />
+		                
+					</field>
+                        
+                    <field name="product_uom"
+                        on_change="product_uom_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order)" position='replace'>
+                       
+                    	<field name="product_uom"
+                        	on_change="product_uom_change(parent.shop_id, parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order)"/>
+                        
+					</field>
+					
+                    <field
+                        name="product_packaging"
+                        context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+                        on_change="product_id_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order, product_packaging, parent.fiscal_position, False)"
+                        domain="[('product_id','=',product_id)]"
+                        groups="base.group_extended" position='replace'>
+                        
+		                <field
+		                    name="product_packaging"
+		                    context="partner_id=parent.partner_id,quantity=product_uom_qty,pricelist=parent.pricelist_id,shop=parent.shop_id,uom=product_uom"
+		                    on_change="product_id_change(parent.shop_id, parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,product_uos,name,parent.partner_id, 'lang' in context and context['lang'], False, parent.date_order, product_packaging, parent.fiscal_position, False)"
+		                    domain="[('product_id','=',product_id)]"
+		                    groups="base.group_extended"/>
+                        
+					</field>
+					<field name="price_unit" position='after'>
+						<field name="price_dummy" string="Unit Price"/>
+					</field>
+					
+					<field name="price_unit" position='replace'>
+						<field name="price_unit" invisible="1" />
+					</field>
+			
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>

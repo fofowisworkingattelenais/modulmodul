@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>			
+	<!-- <menuitem 	
+      		id="menu_candika_wizard_penjualan_15_cust_terbaik"
+		name="Laporan 15 Customer Terbaik"
+       		parent="base.next_id_64"
+		action="waction_candika_wizardPenjualan15CustTerbaik" 
+	/> -->
+
+	<menuitem 
+		id="menu_candika_wizard_penjualan_customer"
+		name="Penjualan Customer"
+		parent="base.next_id_64"
+		action="waction_candika_wizardPenjualanCustomer"
+	/>
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_penjualan_salesman"
+		name="Penjualan Salesman"
+		parent="base.next_id_64"
+		action="waction_candika_wizardPenjualanSalesman"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_penjualan_produk"
+		name="Penjualan Produk"
+		parent="base.next_id_64"
+		action="waction_candika_wizardPenjualanProduk"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_pareto_salesman_brand"
+		name="Pareto Per Salesman/Brand"
+		parent="base.next_id_64"
+		action="waction_candika_wizardParetoSalesmanBrand"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_pareto_customer_brand"
+		name="Pareto Per Customer/Brand"
+		parent="base.next_id_64"
+		action="waction_candika_wizardParetoCustomerBrand"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_pareto_branch_brand"
+		name="Pareto Per branch/Brand"
+		parent="base.next_id_64"
+		action="waction_candika_wizardParetoBranchBrand"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_pareto_salesman_customer"
+		name="Pareto Per Salesman/Customer"
+		parent="base.next_id_64"
+		action="waction_candika_wizardParetoSalesmanCustomer"
+	/> -->
+
+	<!-- <menuitem 
+		id="menu_candika_wizard_pareto_ntr_branch"
+		name="Pareto NTR Per Branch"
+		parent="base.next_id_64"
+		action="waction_candika_wizardParetoNtrBranch"
+	/> -->
+
+</data>
+</openerp>

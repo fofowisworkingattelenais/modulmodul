@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="smcus_account_invoice_pymad" model="ir.ui.view">
+            <field name="name">smcus.account.invoice.pymad</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <field name="payment_term" position="after">
+                    <field name="smcus_pymad_id"/>
+                </field>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

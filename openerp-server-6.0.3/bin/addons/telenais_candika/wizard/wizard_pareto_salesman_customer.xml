@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_candika_wizardParetoSalesmanCustomer" model="ir.ui.view">
+            <field name="name">Form Wizard Pareto Salesman Customer</field>
+            <field name="model">candika.wizard_pareto_salesman_customer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cetak Laporan Pareto Salesman Customer">
+					<field name="period_mulai_id"/>
+					<newline/>
+					<field name="period_akhir_id"/>
+					<newline/>
+						<button special="cancel" string="Cancel" icon="gtk-cancel"/>
+						<button name="cetak_laporan" type="object" string="Print" icon="gtk-print"/>
+
+		     </form>
+            </field>
+        </record>
+
+
+      
+          <record id="waction_candika_wizardParetoSalesmanCustomer" model="ir.actions.act_window">
+            <field name="name">Form Wizard Pareto Salesman Customer</field>
+            <field name="res_model">candika.wizard_pareto_salesman_customer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_candika_wizardParetoSalesmanCustomer"/>
+            <field name="target">new</field>
+         </record>
+</data>
+</openerp>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="form_candika_sale_shop" model="ir.ui.view">
+            <field name="name">Form Sale Shop - Candika</field>
+            <field name="model">sale.shop</field>
+            <field name="type">form</field>
+           	<field name="inherit_id" ref="sale.view_shop_form"/>
+            <field name="arch" type="xml">
+				<data>
+					<form string="Sales Shop">
+					<separator colspan="4" string="Shop Categories"/>
+						<group colspan="4">
+							<field name="category_ids" nolabel="1" height="200"/>
+						</group>
+					</form>
+				</data>
+            </field>
+        </record>
+    </data>
+</openerp>

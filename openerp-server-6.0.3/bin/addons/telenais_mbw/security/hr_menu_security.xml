@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record model="ir.ui.menu" id="base.dashboard" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_deshboard" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_root" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_main" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_configuration" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_management" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_view_employee_category_configuration_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_open_view_employee_list_my" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.hr_menu_marital_status"  > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_view_employee_category_form"  > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_view_employee_category_tree" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="base.menu_crm_case_job_req_main" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_job" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="hr.menu_hr_department_tree" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		
+    </data>
+</openerp>

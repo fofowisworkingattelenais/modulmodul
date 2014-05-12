@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		
+		<record model="ir.ui.menu" id="stock.next_id_61" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_stock_move_report" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_stock_inventory_report" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_report_stock_line_date" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_root" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_warehouse_mgmt" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_products_moves" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_product" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_product_by_category_stock_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_products_menu" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_configuration" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_warehouse_config" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_inventory_control" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_product_in_config_stock" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_product_category_config_stock" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_product_packaging_stock_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_unit_measure_stock" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_uom_categ_form_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_uom_form_action" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_inventory_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_traceability" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_tracking_form"  > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_production_lot_form"  > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_location_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_location_tree" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_warehouse_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_picking_tree" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_picking_tree4" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_picking_tree6" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_move_form2" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_incoterm_open" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_pdct_in" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_pdct_out" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_action_stock_journal_form" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_dashboard_stock" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_board_warehouse" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="stock.menu_stock_root" > <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+
+    </data>
+</openerp>

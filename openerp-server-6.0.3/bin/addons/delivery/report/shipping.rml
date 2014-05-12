@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<document filename="Delivery Order.pdf">
+  <template pageSize="(595.0,842.0)" title="Delivery Order" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+    <pageTemplate id="first">
+      <frame id="first" x1="30.0" y1="57.0" width="538" height="728"/>
+		<pageGraphics>
+			<!--<image file="titis_logo.jpeg" x="11.5cm" y="25.5cm"/>-->
+			
+			<lines>1.1cm 27.5cm 20cm 27.5cm</lines>
+			
+				<setFont name="Times" size="5"/>
+				<drawString x="17.5cm" y="1.8cm">Form : F-0P-SS-LOG-04-REV.0</drawString>
+				<drawString x="1.1cm" y="1.8cm">This document is property of PT. TITIS SAMPURNA</drawString>
+				<drawString x="1.1cm" y="1.5cm">All external communication, reproduction, publication should be authorized by PT. TITIS SAMPURNA</drawString>
+				<drawString x="19cm" y="1.5cm">Page: <pageNumber/></drawString>
+				
+			<lines>1.1cm 2.0cm 20cm 2.0cm</lines>
+		</pageGraphics>
+    </pageTemplate>
+  </template>
+  <stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="9.0"
+		/>
+		
+		<paraStyle
+			name="NORMAL"
+			fontName="Times-Roman"
+			fontSize="8.0"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>
+			
+		
+		<blockTableStyle id="TABEL_FROM_TO">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,0"/>
+			<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>		
+		</blockTableStyle>	
+		
+		<blockTableStyle id="TABEL_JUDUL">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="CENTER"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+
+			<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		</blockTableStyle>
+		
+				
+		<blockTableStyle id="TABEL_KOTAK">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_ISI">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/> 
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_LAYOUT">
+			<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+			<blockAlignment value="LEFT"/> 
+			<blockValign value="TOP"/>
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<para style="NORMAL" alignment="LEFT">[[repeatIn(objects,'o')]]</para>
+		<section>
+			<para style="NORMAL" alignment="CENTER">[[repeatIn(o.move_lines,'line')]]</para>
+		</section>
+		<blockTable style="TABEL_LAYOUT" colWidths="19cm">
+			<tr>
+				<td>
+					<para style="NORMAL" alignment="CENTER"><font color="white"> </font></para>
+					<para style="JUDUL_LAPORAN" alignment="CENTER">SERAH TERIMA MATERIAL DAN PERALATAN</para>
+					<para style="NORMAL" alignment="CENTER"><font color="white"> </font></para>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<blockTable style="TABEL_LAYOUT" colWidths="13cm,6cm">
+						<tr>
+							<td>
+								<blockTable style="TABEL_LAYOUT" colWidths="2cm,0.5cm,10.5cm">
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT">Tanggal</para></td>
+										<td><para style="NORMAL" alignment="LEFT">:</para></td>
+										<td><para style="NORMAL" alignment="LEFT">[[ formatLang(o.date_done,date_time = True) ]]</para></td>
+									</tr>
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT">Bagian</para></td>
+										<td><para style="NORMAL" alignment="LEFT">:</para></td>
+										<td><para style="NORMAL" alignment="LEFT"><font color="white"> </font> * Operation <font color="white">___</font>* Maintenance</para></td>
+									</tr>
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT">Lokasi</para></td>
+										<td><para style="NORMAL" alignment="LEFT">:</para></td>
+										<td><para style="NORMAL" alignment="LEFT">[[line.location_dest_id.name or '']]</para></td>
+									</tr>
+								</blockTable>
+							</td>
+							<td>
+								<blockTable style="TABEL_LAYOUT" colWidths="2cm,0.5cm,3.5cm">
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT">Issued No.</para></td>
+										<td><para style="NORMAL" alignment="LEFT">:</para></td>
+										<td><para style="NORMAL" alignment="LEFT">[[o.name]]</para></td>
+									</tr>
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT">Lembar No.</para></td>
+										<td><para style="NORMAL" alignment="LEFT">:</para></td>
+										<td><para style="NORMAL" alignment="LEFT"><font color="white"> </font></para></td>
+									</tr>
+								</blockTable>
+							</td>
+						</tr>
+					</blockTable>
+					<para style="NORMAL" alignment="CENTER"><font color="white"> </font></para>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<para style="NORMAL" alignment="LEFT"><seqReset id="nourut"/></para>
+					<blockTable style="TABEL_JUDUL" colWidths="1cm,10cm,2.5cm,2cm,3.5cm">
+						<tr>
+							<td>
+								<para style="NORMAL" alignment="CENTER">No.</para>
+							</td>
+							<td>
+								<para style="NORMAL" alignment="CENTER">Uraian</para>
+							</td>
+							<td>
+								<para style="NORMAL" alignment="CENTER">Jumlah</para>
+							</td>
+							<td>
+								<para style="NORMAL" alignment="CENTER">Unit</para>
+							</td>
+							<td>
+								<para style="NORMAL" alignment="CENTER">Ref. MESR</para>
+							</td>
+						</tr>
+					</blockTable>
+					<section>
+						<para style="NORMAL" alignment="CENTER">[[repeatIn(o.move_lines,'line')]]</para>
+						<blockTable style="TABEL_JUDUL" colWidths="1cm,10cm,2.5cm,2cm,3.5cm">
+							<tr>
+								<td>
+									<para style="NORMAL" alignment="CENTER"><seq id="nourut"/></para>
+								</td>
+								<td>
+									<para style="NORMAL" alignment="LEFT"><font color="white">_</font><font color="black">[</font>[[line.product_id.code ]]<font color="black">]</font>[[line.product_id.name or '']]</para>
+								</td>
+								<td>
+									<para style="NORMAL" alignment="CENTER">[[line.product_qty or '']]</para>
+								</td>
+								<td>
+									<para style="NORMAL" alignment="CENTER">[[line.product_uom.name or '']]</para>
+								</td>
+								<td>
+									<para style="NORMAL" alignment="CENTER">[[o.origin or '']]</para>
+								</td>
+							</tr>
+						</blockTable>
+					</section>
+					<blockTable style="TABEL_JUDUL" colWidths="19cm">
+						<tr>
+							<td>
+								<blockTable style="TABEL_LAYOUT" colWidths="2cm,17cm">
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font>Keterangan :</para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT">[[o.note]]</para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+										</td>
+									</tr>
+								</blockTable>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+								<blockTable style="TABEL_LAYOUT" colWidths="5cm,9cm,5cm">
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font>[[line.location_dest_id.name or '']]</para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font>[[line.location_id.name or '']]</para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="CENTER"><font color="white">_</font></para>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+											<illustration>
+												<rect x="1.3cm" y="-0.5" width="2.5cm" height="0.0cm" fill="yes" stroke="yes"/>
+											</illustration>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+											<illustration>
+												<rect x="1.4cm" y="-0.5" width="2.5cm" height="0.0cm" fill="yes" stroke="yes"/>
+											</illustration>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<para style="NORMAL" alignment="CENTER">Tanggal : [[ formatLang(o.date_done,date_time = True) ]]</para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="LEFT"><font color="white"> </font></para>
+										</td>
+										<td>
+											<para style="NORMAL" alignment="CENTER">Tanggal : [[ formatLang(o.date_done,date_time = True) ]]</para>
+										</td>
+									</tr>
+									<tr>
+										<td><para style="NORMAL" alignment="LEFT"><font color="white"> </font></para></td>
+									</tr>
+								</blockTable>
+							</td>
+						</tr>
+					</blockTable>
+					<para style="NORMAL" alignment="LEFT"><font color="white">_</font></para>
+					<para style="NORMAL" alignment="LEFT"><font color="white"> </font>Distribusi</para>
+					<para style="NORMAL" alignment="LEFT"><font color="white">_____</font>1. Arsip</para>
+					<para style="NORMAL" alignment="LEFT"><font color="white">_____</font>2. User</para>
+				</td>
+			</tr>
+		</blockTable>
+	</story>
+  
+</document>

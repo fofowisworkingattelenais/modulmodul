@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<document filename="Laporan Penjualan Customer.pdf">
+
+	<template pageSize="(595.0,842.0)" title="Laporan Penjualan Customer" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+      		<frame id="first" x1="15.0" y1="55.0" width="570" height="780"/>
+		</pageTemplate>
+	</template>
+  
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+			alignment="LEFT"
+		/>
+		
+		<paraStyle
+			name="JUDUL_LAPORAN_2"
+			fontName="Times-Roman"
+			fontSize="12.0"
+			alignment="LEFT"
+		/>
+		
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>		
+		
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_ITEM_3"
+			alignment="LEFT"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>	
+		
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>			
+		
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>
+		
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="green" start="0,0" stop="5,0"/>	
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,0" stop="5,0"/>
+			
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+			
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="5,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="green" start="0,-1" stop="5,-1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>	
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_SUB_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>	
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="2,-1" stop="-1,-1"/>
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_SUB_HEADER_2">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>	
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,-1" stop="-1,-1"/>
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_ISI_CUSTOM">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+				
+
+			
+		</blockTableStyle>
+		
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+			
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/> 
+			
+		
+	
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<story>
+		<para style="JUDUL_LAPORAN">LAPORAN PENJUALAN CUSTOMER ( Sales By Customer ) </para>
+		<para><font color="white"> </font></para>
+		<para style="JUDUL_LAPORAN_2">PERIODE [[ periode_mulai(data['form']) ]] [[ tahun_mulai(data['form']) ]] SAMPAI [[ periode_akhir(data['form']) ]] [[ tahun_akhir(data['form']) ]]</para>
+		<para><font color="white"> </font></para>
+		<para><font color="white"> </font></para>
+	
+		<blockTable colWidths="3.0cm,6.5cm,1.5cm,1.5cm,1.5cm,2.0cm,2.0cm,2.0cm" style="TABEL_HEADER">
+			<tr>									
+				<td><para style="HEADER_TABEL">Kode Barang</para></td>
+				<td><para style="HEADER_TABEL">Nama Barang</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Reg</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Cons</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Retur</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Gross</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Discount</para></td>
+				<td><para style="HEADER_TABEL" alignment="CENTER">Total</para></td>
+			</tr>		
+		</blockTable>
+		<section>
+			<para>[[ repeatIn(isi_laporan(data['form']), 'o') ]]</para>
+			<para style="ISI_TABEL_ITEM_3">[ [[ o['partner_code'] ]] ] - [[ o['partner_id'] ]]</para>
+			<para><font color="white"> </font></para>
+		
+			<section>
+				<para>[[ repeatIn(o['sub_header'], 'x') ]]</para>
+				<para style="ISI_TABEL_ITEM_2">Brand : [[ x['nama_brand'] ]]</para>
+				<para><font color="white"> </font></para>
+				<para style="ISI_TABEL_ITEM_2">Category : [[ x['nama_categori'] ]]</para>
+				<para><font color="white"> </font></para>
+				<blockTable colWidths="3.0cm,6.5cm,1.5cm,1.5cm,1.5cm,2.0cm,2.0cm,2.0cm" >
+					<tr>								
+						<para>[[ repeatIn(x['detail'], 'a') ]]</para>	
+						<td><para style="ISI_TABEL_ITEM">[[ a['kode_produk'] ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM">[[ a['nama_produk'] ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(a['reg'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(a['cons'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(a['retur'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['gross']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['diskon']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['sub_total']) ]]</para></td>
+					</tr>		
+				</blockTable>
+				<blockTable colWidths="3.0cm,6.5cm,1.5cm,1.5cm,1.5cm,2.0cm,2.0cm,2.0cm" style="TABEL_SUB_HEADER">
+					<tr>									
+						<td><para style="HEADER_TABEL"> </para></td>
+						<td><para style="HEADER_TABEL"> </para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(x['total_reg_sub_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(x['total_cons_sub_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(x['total_retur_sub_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(x['total_gross_sub_header']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(x['total_diskon_sub_header']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(x['total_sub_total_sub_header']) ]]</para></td>
+					</tr>		
+				</blockTable>
+			</section>
+			<blockTable colWidths="3.0cm,6.5cm,1.5cm,1.5cm,1.5cm,2.0cm,2.0cm,2.0cm" style="TABEL_SUB_HEADER_2">
+				<tr>									
+					<td><para style="HEADER_TABEL"> </para></td>
+					<td><para style="HEADER_TABEL"> </para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(o['total_reg_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(o['total_cons_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(o['total_retur_header'],digits=0) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(o['total_gross_header']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(o['total_diskon_header']) ]]</para></td>
+						<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(o['total_sub_total_header']) ]]</para></td>
+				</tr>		
+			</blockTable>
+		</section>
+
+
+	</story>
+	
+</document>
+

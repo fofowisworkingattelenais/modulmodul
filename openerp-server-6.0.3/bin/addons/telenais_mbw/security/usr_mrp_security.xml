@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate='0'>
+
+<!--
+ Users Groups
+-->
+	<record model="res.groups" id="group_mbw_usrMrp">
+        <field name="name">USR-MRP</field>
+        <field name="menu_access" eval=	"[	(4 ,ref('base.menu_mrp_root')),
+											(4 ,ref('mrp.menu_mrp_manufacturing')),
+											(4 ,ref('mrp.menu_mrp_bom')),
+											(4 ,ref('mrp.menu_mrp_configuration')),
+											(4 ,ref('mrp.menu_mrp_property')),
+											(4 ,ref('mrp.menu_mrp_property_action')),
+											(4 ,ref('mrp.menu_mrp_property_group_action')),
+											(4 ,ref('mrp.menu_mrp_routing_action')),
+											(4 ,ref('mrp.menu_mrp_bom_form_action')),
+											(4 ,ref('mrp.menu_mrp_bom_form_action2')),
+											(4 ,ref('mrp.menu_mrp_production_action')),
+											(4 ,ref('mrp.menu_pm_resources_config')),
+											(4 ,ref('mrp.menu_view_resource_search_mrp')),
+											(4 ,ref('mrp.menu_view_resource_calendar_search_mrp')),
+											(4 ,ref('mrp.menu_view_resource_calendar_leaves_search_mrp')),
+											(4 ,ref('mrp.menu_mrp_planning')),
+											(4 ,ref('mrp.menu_mrp_production_order_action')),
+											(4 ,ref('mrp.menu_report_mrp_production_orders_tree')),
+											(4 ,ref('mrp.next_id_77')),
+											(4 ,ref('mrp.menus_dash_mrp')),
+											(4 ,ref('mrp.menu_board_manufacturing')),
+											(4 ,ref('resource.menu_resource_config')),
+											(4 ,ref('resource.menu_view_resource_calendar_leaves_search')) ]"/>
+    										
+
+	</record>
+  
+    </data>
+</openerp>
+

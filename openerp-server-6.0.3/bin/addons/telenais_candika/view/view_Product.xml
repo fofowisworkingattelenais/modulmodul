@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+            
+        <record id="tree_candika_product" model="ir.ui.view">
+            <field name="name">tree Product - Candika</field>
+            <field name="model">product.product</field>
+            <field name="type">tree</field>
+           	<field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+				<data>
+					<field name="qty_available" position='replace'>
+                		<field name="qty_available" groups="telenais_candika.group_candika_managerSale"/>
+					</field>
+					<field name="virtual_available" position='replace'>
+               			<field name="virtual_available" groups="telenais_candika.group_candika_managerSale"/>
+					</field>
+        		</data>
+            </field>
+        </record>
+        
+        <record id="form_candika_product" model="ir.ui.view">
+            <field name="name">Form Product - Candika</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+			<field name="priority">40</field>
+            <field name="arch" type="xml">
+				<data>
+					<field name="qty_available" position='replace'>
+						<field name="qty_available" groups="telenais_candika.group_candika_managerSale"/>
+					</field>
+					
+					<separator string="Stocks" colspan="4" position='replace'>
+						<separator string="Stocks" colspan="4" groups="telenais_candika.group_candika_managerSale"/>
+					</separator>
+					
+					<button name="%(stock.action_view_change_product_quantity)d" string="Update" attrs="{'invisible': [('type', '=', 'service')]}"
+                            type="action" icon="gtk-execute" groups = "stock.group_stock_manager,stock.group_stock_user" position='replace'>
+                            
+						<button name="%(stock.action_view_change_product_quantity)d" string="Update" attrs="{'invisible': [('type', '=', 'service')]}"
+                        	type="action" icon="gtk-execute" groups = "stock.group_stock_manager,telenais_candika.group_candika_managerSale"/>
+                            
+					</button>
+					
+					
+					<field name="virtual_available" position='replace'>
+               			<field name="virtual_available" groups="telenais_candika.group_candika_managerSale"/>
+					</field>
+				</data>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>

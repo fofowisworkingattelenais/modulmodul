@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+	
+		<record model="ir.ui.menu" id="process.menu_process"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="process.menu_process_form"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="process.menu_process_node_form"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+		<record model="ir.ui.menu" id="process.menu_process_transition_form"> <field name="groups_id" eval="[(6, 0, [ref('base.group_erp_manager')])]" /></record>
+        
+	</data>
+</openerp>

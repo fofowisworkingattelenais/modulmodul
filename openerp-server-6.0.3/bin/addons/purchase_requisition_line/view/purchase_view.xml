@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="action_requisition_line_tree1" model="ir.actions.act_window">
+            <field name="name">Purchase requisition Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.requisition.line</field>
+            <field name="view_type">form</field>
+            <field name="view_id" eval="False"/>
+        </record>
+
+        <menuitem
+                action="action_requisition_line_tree1"
+                id="menu_action_requisition_line_tree1"
+                parent="purchase.menu_procurement_management"
+                groups="base.group_extended"
+                sequence="40"
+        />
+    </data>
+</openerp>

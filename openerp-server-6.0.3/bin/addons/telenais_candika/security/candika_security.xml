@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+<!--
+ Users Groups
+-->
+    <record model="res.groups" id="group_candika_bankStatement">
+        <field name="name">Bank Statement</field>
+    </record>
+
+    <record model="res.groups" id="group_candika_cashRegister">
+        <field name="name">Cash Register</field>
+    </record>
+    
+    <record model="res.groups" id="group_candika_managerSale">
+        <field name="name">Manager Sale</field>
+    </record>
+    
+    <record model="res.groups" id="group_candika_QualityControl">
+        <field name="name">Quality Control</field>
+    </record>
+
+
+   
+    </data>
+</openerp>
+

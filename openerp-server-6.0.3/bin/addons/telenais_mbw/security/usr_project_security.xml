@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate='0'>
+
+<!--
+ Users Groups
+-->
+	<record model="res.groups" id="group_mbw_usrProject">
+        <field name="name">USR-PROJECT</field>
+        <field name="menu_access" eval=	"[	(4 ,ref('base.menu_project_report')),
+											(4 ,ref('project.menu_project_task_user_tree')),
+											(4 ,ref('project.next_id_86')),
+											(4 ,ref('project.menu_board_project')),
+											(4 ,ref('base.menu_main_pm')),
+											(4 ,ref('base.menu_main_pm')),
+											(4 ,ref('project.menu_project_management')),
+											(4 ,ref('project.menu_definitions')),
+											(4 ,ref('project.menu_open_view_project_all')),
+											(4 ,ref('project.menu_action_view_task')),
+											(4 ,ref('project.menu_tasks_config')),
+											(4 ,ref('project.menu_task_types_view'))]"/>
+    										
+
+	</record>
+  
+    </data>
+</openerp>
+

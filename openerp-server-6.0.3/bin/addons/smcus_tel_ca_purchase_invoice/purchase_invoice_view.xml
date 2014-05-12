@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="smcus_account_invoice_supplier_ca" model="ir.ui.view">
+            <field name="name">smcus.account.invoice.supplier.ca</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <field name="payment_term" position="after">
+                    <field name="smcus_ca_id"/>
+                </field>
+                <field name="residual" position="after">
+                    <label string="" colspan="2"/>
+                    <field name="smcus_amount_ca"/>
+                </field>
+
+            </field>
+        </record>
+    
+    </data>
+</openerp>

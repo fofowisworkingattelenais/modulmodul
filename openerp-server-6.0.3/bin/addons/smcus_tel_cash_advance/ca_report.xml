@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<report auto="False" 
+				id="cashadvance" 
+				model="smcus.cash.advance" 
+				name="ca" 
+				rml="smcus_tel_cash_advance/report/ca.rml" 
+				string="Cash Advance"/>
+				
+		
+    </data>
+</openerp>
+
+

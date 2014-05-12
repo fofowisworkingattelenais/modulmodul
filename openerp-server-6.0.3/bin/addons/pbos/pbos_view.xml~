@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Sequences for stock.move.pbos -->
+        <record id="seq_type_stock_move_pbos" model="ir.sequence.type">
+            <field name="name">PBOS</field>
+            <field name="code">stock.move.pbos</field>
+        </record>
+
+        <record id="seq_stock_move_pbos" model="ir.sequence">
+            <field name="name">PBOS</field>
+            <field name="code">stock.move.pbos</field>
+            <field name="prefix">B</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+
+	<!-- Tampilan Form -->
+    <data>
+        <record id="stock_move_pbos_form" model="ir.ui.view">
+            <field name="name">stock.move.pbos.form</field>
+            <field name="model">stock.move.pbos</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="PBOS">
+                    <group col="6" colspan="4">
+                        <field name="doc_number"/>
+                        <field name="product_id"/>
+                        <field name="part_numb"/>
+                        <newline/>
+                        <field name="due_date"/>
+                        <field name="batch_no"/>
+                        <field name="rendement_std"/>
+			<field name="batch_size"/>
+			<field name="print_and_check"/>
+			<field name="check_date"/>
+                    </group>
+<!-- Tampilan notebok (PBOS Line) -->
+                    <notebook colspan="4">
+                        <page string="PBOS Line">
+                          <field colspan="4" name="move_pbos_line" nolabel="1" mode="tree,form">
+                                <tree string="PBOS Lines">
+                                    <field name="product_id" colspan="4" on_change="onchange_product(product_id)"/>
+                                    <field name="manufacturer_pname"/>
+                                    <field name="product_uom"/>
+                                    <!--<field name="amount"/>-->
+                                </tree>
+				<form string="PBOS Lines">
+                                    <field name="product_id" colspan="4" on_change="onchange_product(product_id)"/>
+                                    <field name="manufacturer_pname"/>
+                                    <field name="product_uom"/>
+                                    <!--<field name="amount"/>-->
+                                </form>
+			</field>
+
+                        <group col="6" colspan="4">
+                                <field name="print_and_check"/>
+                                <field name="check_date"/>
+                        </group>
+
+<!-- Button setelah PBOS Line -->
+			<group col="11" colspan="4">
+                              <field name="state" readonly="1"/>
+	                        <button name="action_draft" states="cancel" string="Set to Draft" type="object" icon="gtk-convert"/>
+                                <button name="action_cancel" states="validated" string="Cancel" type="object" icon="gtk-cancel"/>
+                                <button name="action_validate" states="draft" string="Validated" type="object" icon="gtk-go-forward"/>
+				<button name="action_validate" states="draft" string="Produced" type="object" icon="gtk-go-forward"/>
+                            </group>
+                        </page>
+
+<!-- Notebook page 2 : Notes -->
+                        <page string="Notes">
+                            <field colspan="4" name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+<!-- Tampilan List beserta header untuk filtering (search) -->
+       <record id="stock_move_pbos_filter" model="ir.ui.view">
+            <field name="name">stock.move.pbos.filter</field>
+            <field name="model">stock.move.pbos</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search PBOS">
+                 <group col='10' colspan='4'>
+                    <filter icon="terp-document-new" name="draft" string="Draft" domain="[('state','=','draft')]" separator="1" help="sadadsadsad"/>
+                    <filter icon="terp-check" name="validated" string="Validated" domain="[('state','=','validated')]" separator="1" help="Validated Cash Advance"/>
+                    <filter icon="terp-dialog-close" name="cancel" string="Cancelled" domain="[('state','=','cancel')]" separator="1" help="Cancelled"/>
+                    <separator orientation="vertical"/>
+			<field name="doc_number"/>        	        
+			<field name="product_id"/>
+			<field name="manufacturer_pname"/>
+        		<field name="check_date"/>
+                    	<field name="part_numb"/>
+                </group>
+                <newline/>
+                  <group expand="0" string="Group By..." colspan="4" col="10" groups="base.group_extended">
+                    <filter string="Supplier" icon="terp-partner" domain="[]" context="{'group_by':'product_id'}"/>
+                     <separator orientation="vertical"/>
+                    <filter string="State" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                     <separator orientation="vertical"/>
+                </group>
+              </search>
+            </field>
+        </record>
+
+<!-- tree view  -->
+        <record id="stock_move_pbos_tree" model="ir.ui.view">
+            <field name="name">stock.move.pbos.tree</field>
+            <field name="model">stock.move.pbos</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="grey:state=='cancel';blue:state in ('produced');red:state in ('draft')" string="PBOS">
+                   	<field name="product_id" colspan="4" on_change="onchange_product(product_id)"/>
+                   	<field name="doc_number"/>
+                   	<field name="part_numb"/>
+                	<field name="due_date"/>
+        	        <field name="batch_no"/>
+	                <field name="rendement_std"/>
+			<field name="batch_size"/>
+			<field name="print_and_check"/>
+			<field name="check_date"/>
+                </tree>
+            </field>
+        </record>
+
+<!-- Penempatan menu dan action ketika di klik akan tampil view apa -->
+        <record id="stock_move_pbos_action" model="ir.actions.act_window">
+            <field name="name">PBOS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move.pbos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_create_uid':uid}</field>
+            <field name="search_view_id" ref="stock_move_pbos_filter"/>
+            <field name="help">Use this menu to search within your purchase orders by references, supplier, products, etc. For each purchase order, you can track the products received, and control the supplier invoices.</field>
+        </record>
+        <menuitem action="stock_move_pbos_action" id="menu_stock_move_pbos_action" parent="stock.menu_stock_warehouse_mgmt" sequence="4" />
+    
+    </data>
+</openerp>
