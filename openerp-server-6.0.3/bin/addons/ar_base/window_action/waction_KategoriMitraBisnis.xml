@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_base_partnerCategory" model="ir.actions.act_window">
+			<field name="name">Kategori Mitra Bisnis</field>
+			<field name="res_model">res.partner.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_base_treePartnerCategory" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_partnerCategory"/>
+			<field name="act_window_id" ref="waction_base_partnerCategory"/>
+		</record>
+
+		<record id="wactionView_base_formPartnerCategory" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_partnerCategory"/>
+			<field name="act_window_id" ref="waction_base_partnerCategory"/>
+		</record>
+    </data>
+</openerp>

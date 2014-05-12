@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_base_partnerTitle" model="ir.ui.view">
+			<field name="name">Tree Titel Mitra Bisnis</field>
+			<field name="model">res.partner.title</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Titel Mitra Bisnis">
+                    <field name="name" select="1"/>
+                    <field name="shortcut" select="1"/>
+				</tree>
+			</field>
+		</record>
+
+        <record id="form_base_partnerTitle" model="ir.ui.view">
+            <field name="name">Form Titel Mitra Bisnis</field>
+            <field name="model">res.partner.title</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Negara">
+                    <field name="name" select="1"/>
+                    <field name="shortcut" select="1"/>
+                    <field name="domain" groups="base.group_extended"/>
+                </form>
+            </field>
+        </record>
+	</data>
+</openerp>

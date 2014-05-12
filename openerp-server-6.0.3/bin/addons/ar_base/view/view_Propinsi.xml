@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_base_propinsi" model="ir.ui.view">
+			<field name="name">Tree Propinsi</field>
+			<field name="model">res.country.state</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Propinsi">
+					<field name="country_id" string="Kode Negara"/>
+					<field name="code" string="Kode Propinsi"/>
+					<field name="name" string="Nama Propinsi"/>
+				</tree>
+			</field>
+		</record>
+
+        <record id="form_base_propinsi" model="ir.ui.view">
+            <field name="name">Form Propinsi</field>
+            <field name="model">res.country.state</field>
+            <field name="type">form</field>
+			<field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Propinsi">
+					<field name="code" string="Kode Propinsi" select="1"/>
+					<field name="name" string="Nama Propinsi" select="1"/>
+					<field name="country_id" string="Kode Negara" select="1"/>
+                </form>
+            </field>
+        </record>
+	</data>
+</openerp>
