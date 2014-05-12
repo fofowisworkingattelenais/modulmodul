@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="form_hr_karyawanPPH21" model="ir.ui.view">
+            <field name="name">Form Karyawan : ar_hr_pph21</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>   
+            <field name="arch" type="xml">
+				<data>
+					<notebook colspan="4" position="inside">
+						<page string="PPH 21">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="Konfigurasi PPH 21" colspan="2"/>
+									<field name="kategori_ptkp_id" widget="selection"/>
+									<field name="status_karyawan_pajak_id" widget="selection"/>
+									<field name="tipe_pph"/>
+								</group>
+								<group name="group_1_2" colspan="1" col="2">
+									<separator string="PN &amp; PPH 21 Sebelum Bergabung" colspan="2"/>
+									<field name="pn_kumulatif_sebelum" readonly="1"/>
+									<field name="pph_kumutalif_sebelum" readonly="1"/>
+									<field name="masa_pajak_bergabung_ids"/>
+								</group>								
+							</group>
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>     
+    </data>
+</openerp>

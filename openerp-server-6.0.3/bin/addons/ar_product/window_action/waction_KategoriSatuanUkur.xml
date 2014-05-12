@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="waction_product_kategoriSatuanUkur" model="ir.actions.act_window">
+			<field name="name">Kategori Satuan Ukur</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.uom.categ</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_product_treeKategoriSatuanUkur" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_product_kategoriSatuanUkur"/>
+			<field name="act_window_id" ref="waction_product_kategoriSatuanUkur"/>
+		</record>
+
+		<record id="wactionView_product_formKategoriSatuanUkur" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_product_kategoriSatuanUkur"/>
+			<field name="act_window_id" ref="waction_product_kategoriSatuanUkur"/>
+		</record>
+	</data>
+</openerp>

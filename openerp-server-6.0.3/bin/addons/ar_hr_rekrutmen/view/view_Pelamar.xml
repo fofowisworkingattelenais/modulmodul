@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_hr_pelamar" model="ir.ui.view">
+			<field name="name">Tree Pelamar</field>
+			<field name="model">hr.pelamar</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="1"/>
+			<field name="arch" type="xml">
+				<tree string="Pelamar">
+					<field name="kode"/>
+					<field name="name"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_hr_pelamar" model="ir.ui.view">
+			<field name="name">Form Pelamar</field>
+			<field name="model">hr.pelamar</field>
+			<field name="priority" eval="1"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Pelamar">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="# Pelamar" colspan="2"/>
+							<field name="kode" select="1"/>
+
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Pelamar" colspan="2"/>
+							<field name="name" select="1"/>
+							<field name="jenis_kelamin_id" widget="selection"/>							
+						</group>
+					</group>
+					<notebook colspan="4">
+						<page string="Informasi Pribadi">
+							<group name="group_2" colspan="4" col="2">
+								<group name="group_2_1" colspan="1" col="3">
+									<separator string="No. Identitas" colspan="3"/>
+									<field name="ktp"/>
+									<field name="expired_ktp" nolabel="1"/>
+									<field name="sim"/>
+									<field name="expired_sim" nolabel="1"/>
+									<field name="simb"/>
+									<field name="expired_simb" nolabel="1"/>
+									<field name="simb1"/>
+									<field name="expired_simb1" nolabel="1"/>	
+									<field name="simb2"/>
+									<field name="expired_simb2" nolabel="1"/>
+									<field name="simc"/>
+									<field name="expired_simc" nolabel="1"/>																											
+									<field name="npwp"/>
+									<field name="expired_npwp" nolabel="1"/>
+									<field name="passport"/>
+									<field name="expired_passport" nolabel="1"/>
+									<field name="kitas"/>
+									<field name="expired_kitas" nolabel="1"/>														
+									
+								</group>
+								<group name="group_2_2" colspan="1" col="2">
+									<separator string="Info Lain" colspan="2"/>
+									<field name="tempat_lahir"/>
+									<field name="tanggal_lahir"/>									
+									<field name="agama_id" widget="selection"/>
+									<field name="etnis_id" widget="selection"/>
+									<field name="status_pernikahan_id" widget="selection"/>
+								</group>																		
+							</group>						
+						</page>
+						<page string="Korespondensi">
+						</page>
+						<page string="Keluarga">
+							<group name="group_4" colspan="4" col="2">
+								<group name="group_4_1" colspan="1" col="2">
+									<separator string="pasangan" colspan="2"/>
+									<field name="nama_pasangan"/>
+									<field name="tanggal_menikah"/>
+								</group>
+								<group name="group_4_2" colspan="1" col="2">
+									<separator string="Orang Tua" colspan="2"/>
+									<field name="nama_ayah"/>
+									<field name="nama_ibu"/>
+								</group>
+								<group name="group_4_3" colspan="1" col="2">
+									<separator string="Anak" colspan="2"/>
+								</group>																
+							</group>
+							<field name="anak_ids" colspan="4" nolabel="1">
+								<tree string="Anak">
+									<field name="name"/>
+									<field name="urutan"/>
+									<field name="jenis_kelamin_id"/>
+									<field name="tanggal_lahir"/>
+								</tree>
+								<form string="Anak">
+									<field name="name"/>
+									<field name="urutan"/>
+									<field name="jenis_kelamin_id" widget="selection"/>
+									<field name="tanggal_lahir"/>
+								</form>								
+							</field>							
+						</page>
+						<page string="Pendidikan">
+							<separator string="Pendidikan Formal" colspan="4"/>
+							<field name="pendidikan_formal_ids" colspan="4" nolabel="1" mode="tree">
+								<tree string="Pendidikan Formal">
+									<field name="urutan"/>
+									<field name="name"/>
+									<field name="nama_sekolah"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="gpa"/>
+								</tree>
+								<form string="Pendidikan Formal">
+									<field name="urutan"/>
+									<field name="name"/>
+									<field name="nama_sekolah"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="gpa"/>
+									<field name="keterangan"/>
+								</form>								
+							</field>
+							
+							<separator string="Pendidikan Non-Formal" colspan="4"/>
+							<field name="pendidikan_non_formal_ids" colspan="4" nolabel="1" mode="tree">
+								<tree string="Pendidikan Non-Formal">
+									<field name="name"/>
+									<field name="nama_institusi"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+								</tree>
+								<form string="Pendidikan Non-Formal">
+									<field name="name"/>
+									<field name="nama_institusi"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="keterangan"/>
+								</form>								
+							</field>									
+						</page>						
+					</notebook>
+					<group name="group_3" colspan="4" col="3">
+						<group name="group_3_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state" select="1"/>
+						</group>
+						<group name="group_3_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>									
+						<group name="group_3_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+						</group>									
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

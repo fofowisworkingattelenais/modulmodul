@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_hr_prosesSeleksi" model="ir.actions.act_window">
+			<field name="name">Proses Seleksi</field>
+			<field name="res_model">hr.proses_seleksi</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_hr_treeProsesSeleksi" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_hr_prosesSeleksi"/>
+			<field name="act_window_id" ref="waction_hr_prosesSeleksi"/>
+		</record>
+
+		<record id="wactionView_hr_formprosesSeleksi" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_prosesSeleksi"/>
+			<field name="act_window_id" ref="waction_hr_prosesSeleksi"/>
+		</record>
+    </data>
+</openerp>

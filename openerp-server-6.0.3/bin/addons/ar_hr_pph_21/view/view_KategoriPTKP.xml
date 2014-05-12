@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_kategoriPTKP" model="ir.ui.view">
+            <field name="name">Tree PTKP</field>
+            <field name="model">hr.kategori_ptkp</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Kategori PTKP">
+                    <field name="name"/>
+                    <field name="kode"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_kategoriPTKP" model="ir.ui.view">
+            <field name="name">Form PTKP</field>
+            <field name="model">hr.kategori_ptkp</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Kategori PTKP">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Kategori PTKP"/>
+                	 		<field name="name"/>
+                	 		<field name="kode"/> 
+                	 		<field name="ptkp_tahunan"/>            	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_kategoriPTKP" model="ir.ui.view">
+            <field name="name">Search PTKP</field>
+            <field name="model">hr.kategori_ptkp</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Kategori PTKP">
+                    <field name="name"/>
+                    <field name="kode"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

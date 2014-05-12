@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_hr_lamaranAdmin" model="ir.ui.view">
+			<field name="name">Tree Lamaran : Admin</field>
+			<field name="model">hr.lamaran</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="1"/>
+			<field name="arch" type="xml">
+				<tree string="Lamaran">
+					<field name="name"/>
+					<field name="pelamar_id"/>
+					<field name="lowongan_id"/>	
+					<field name="gaji_min"/>									
+					<field name="gaji_maks"/>	
+					<field name="state"/>									
+				</tree>
+			</field>
+		</record>
+		
+		<record id="search_hr_lamaranAdmin" model="ir.ui.view">
+			<field name="name">Search Lamaran : Admin</field>
+			<field name="model">hr.lamaran</field>
+			<field name="type">search</field>
+			<field name="priority" eval="1"/>
+			<field name="arch" type="xml">
+				<search string="Lamaran">
+					<field name="name"/>
+					<field name="pelamar_id"/>
+					<field name="lowongan_id"/>	
+					<field name="gaji_min"/>									
+					<field name="gaji_maks"/>	
+					<field name="state"/>									
+				</search>
+			</field>
+		</record>		
+
+		<record id="form_hr_lamaranAdmin" model="ir.ui.view">
+			<field name="name">Form Lamaran : Admin</field>
+			<field name="model">hr.lamaran</field>
+			<field name="priority" eval="1"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Lamaran">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Lamaran" colspan="2"/>
+							<field name="name" select="1"/>
+							<field name="pelamar_id" select="1"/>
+							<field name="lowongan_id" select="1"/>							
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Gaji" colspan="2"/>
+							<field name="gaji_min" select="1"/>
+							<field name="gaji_maks" select="1"/>							
+							<field name="gaji" select="1"/>
+						</group>	
+					</group>
+					<field name="proses_lamaran_ids" nolabel="1" colspan="4">
+						<tree string="Proses Lamaran">
+							<field name="name"/>
+							<field name="seleksi_id"/>
+							<field name="urutan"/>
+							<field name="state"/>
+						</tree>						
+						<form string="Proses Lamaran">
+							<group name="group_2" colspan="4" col="2">
+								<group name="group_2_1" colspan="1" col="2">
+									<separator string="Tahap Seleksi" colspan="2"/>
+									<field name="name" select="1"/>
+									<field name="seleksi_id" readonly="1"/>
+									<field name="urutan" readonly="1"/>
+								</group>
+								<group name="group_2_2" colspan="1" col="2">
+									<separator string="Detail Seleksi" colspan="2"/>
+								</group>	
+							</group>					
+							<separator string="Keterangan" colspan="4"/>
+							<field name="keterangan" colspan="4" nolabel="1"/>
+							<group name="group_3" colspan="4" col="3">		
+								<group name="group_3_1" colspan="1" col="2">
+									<separator string="Status" colspan="2"/>	
+									<field name="state"/>
+								</group>
+								<group name="group_3_2" colspan="1" col="2">
+									<separator string="Action" colspan="2"/>
+
+								</group>								
+								<group name="group_3_3" colspan="1" col="2">
+									<separator string="Workflow" colspan="2"/>
+									<button name="button_lulus" states="draft" string="Lulus" colspan="2" icon="gtk-ok"/>
+									<button name="button_tidakLulus" states="draft" string="Tidak Lulus" colspan="2" icon="gtk-no"/>
+								</group>																	
+							</group>
+						</form>					
+					</field>
+					<group name="group_4" colspan="4" col="3">										
+						<group name="group_4_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state" select="1"/>
+						</group>
+						<group name="group_4_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>								
+						<group name="group_4_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="button_seleksi" states="draft" string="Mulai Seleksi" colspan="2" icon="gtk-ok"/>
+							<button name="button_batal" states="draft" string="Batal" colspan="2" icon="gtk-cancel"/>
+							<button name="button_limitGaji" states="approval" string="Tentukan Limit" colspan="2" icon="gtk-ok"/>
+							<button name="button_negoGaji" states="limit_gaji" string="Nego Gaji" colspan="2" icon="gtk-ok"/>
+							<button name="button_diterima" states="nego_gaji" string="Diterima" colspan="2" icon="gtk-ok"/>
+							<button name="button_tidakDiterima" states="approval,nego_gaji,limit_gaji" string="Tidak Diterima" colspan="2" icon="gtk-no"/>
+						</group>										
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

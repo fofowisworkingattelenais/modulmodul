@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="waction_hr_form1721Induk" model="ir.actions.act_window">
+			<field name="name">Form 1721 Induk</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.form_1721_induk</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="search_hr_form1721Induk"/>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_hr_treeForm1721Induk" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_hr_form1721Induk"/>
+			<field name="act_window_id" ref="waction_hr_form1721Induk"/>
+		</record>
+
+		<record id="wactionView_hr_formForm1721Induk" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_form1721Induk"/>
+			<field name="act_window_id" ref="waction_hr_form1721Induk"/>
+		</record>
+	</data>
+</openerp>

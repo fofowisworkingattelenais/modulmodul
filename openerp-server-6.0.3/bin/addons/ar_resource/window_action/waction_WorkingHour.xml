@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="waction_resource_calendar" model="ir.actions.act_window">
+			<field name="name">Waktu Kerrja</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">resource.calendar</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="search_resource_calendar"/>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_resource_treeCalendar" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_resource_calendar"/>
+			<field name="act_window_id" ref="waction_resource_calendar"/>
+		</record>
+
+		<record id="wactionView_resource_formCalendar" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_resource_calendar"/>
+			<field name="act_window_id" ref="waction_resource_calendar"/>
+		</record>
+	</data>
+</openerp>

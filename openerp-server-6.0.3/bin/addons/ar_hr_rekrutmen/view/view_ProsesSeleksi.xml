@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_hr_prosesSeleksi" model="ir.ui.view">
+			<field name="name">Tree Proses Seleksi</field>
+			<field name="model">hr.proses_seleksi</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="1"/>
+			<field name="arch" type="xml">
+				<tree string="Proses Seleksi">
+					<field name="kode"/>
+					<field name="name"/>
+					<field name="active"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_hr_prosesSeleksi" model="ir.ui.view">
+			<field name="name">Form Proses Seleksi</field>
+			<field name="model">hr.proses_seleksi</field>
+			<field name="priority" eval="1"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Proses Seleksi">
+					<group colspan="4" col="2">
+						<group colspan="1" col="2">
+							<separator string="Proses Seleksi" colspan="2"/>
+							<field name="kode" select="1"/>
+							<field name="name" select="1"/>
+						</group>
+						<group colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="active"/>
+						</group>						
+					</group>
+					<field name="tahap_seleksi_ids" colspan="4" nolabel="1" mode="tree">
+						<tree string="Tahap Seleksi">
+							<field name="seleksi_id"/>
+							<field name="urutan"/>
+						</tree>
+						<form string="Tahap Seleksi">
+							<field name="seleksi_id"/>
+							<field name="urutan"/>
+						</form>						
+					</field>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

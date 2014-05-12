@@ -1,0 +1,251 @@
+<openerp>
+	<data>
+		<menuitem  
+			id="menu_hrApp_kepegawaianHeader" 
+			name="Kepegawaian" 
+			icon="STOCK_OPEN"		
+            web_icon="images/hr.png"
+            web_icon_hover="images/hr-hover.png"				
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_karyawanHeader" 
+			name="Karyawan" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_kepegawaianHeader"
+			sequence="1"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_karyawan" 
+			name="Karyawan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_karyawanHeader"
+			sequence="1"	
+			action="ar_hr.waction_hr_karyawan"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_kontrak" 
+			name="History" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_karyawanHeader"
+			sequence="2"	
+			action="ar_hr_kontrak.waction_hr_kontrak"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiHeader" 
+			name="Konfigurasi" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_kepegawaianHeader"
+			sequence="99"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiKaryawanHeader" 
+			name="Karyawan" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiHeader"
+			sequence="1"			
+		/>	
+
+		<menuitem  
+			id="menu_hrApp_konfigurasiDefaultKaryawan" 
+			name="Konfigurasi Default karyawan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiKaryawanHeader"
+			sequence="1"			
+			action="ar_hr.waction_hr_perusahaanHR"
+		/>
+				
+		<menuitem  
+			id="menu_hrApp_departmen" 
+			name="Departmen" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiKaryawanHeader"
+			sequence="2"			
+			action="ar_hr.waction_hr_departemen"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_jabatan" 
+			name="Jabatan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiKaryawanHeader"
+			sequence="3"			
+			action="ar_hr.waction_hr_jabatan"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_tipeHistory" 
+			name="Tipe History" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiKaryawanHeader"
+			sequence="4"			
+			action="ar_hr_kontrak.waction_hr_tipeHistory"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_tipeKontrak" 
+			name="Tipe Kontrak" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiKaryawanHeader"
+			sequence="5"			
+			action="ar_hr_kontrak.waction_hr_tipeKontrak"
+		/>			
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiWilayahHeader" 
+			name="Wilayah" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiHeader"
+			sequence="2"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_negara" 
+			name="Negara" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiWilayahHeader"
+			sequence="1"			
+			action="ar_base.waction_base_negara"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_propinsi" 
+			name="Propinsi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiWilayahHeader"
+			sequence="2"			
+			action="ar_base.waction_base_propinsi"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiIdentitasHeader" 
+			name="Identitas" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiHeader"
+			sequence="3"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_agama" 
+			name="Agama" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="1"			
+			action="ar_identitas.waction_identitas_agama"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_etnis" 
+			name="Etnis" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="2"			
+			action="ar_identitas.waction_identitas_etnis"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_golonganDarag" 
+			name="Golongan Darah" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="3"			
+			action="ar_identitas.waction_identitas_golonganDarah"
+		/>					
+		
+		<menuitem  
+			id="menu_hrApp_jenisKelamin" 
+			name="Jenis Kelamin" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="4"			
+			action="ar_identitas.waction_identitas_jenisKelamin"
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_statusPekerjaan" 
+			name="Status Pekerjaan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="5"			
+			action="ar_identitas.waction_identitas_statusPekerjaan"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_statusPernikahan" 
+			name="Status Pernikahan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiIdentitasHeader"
+			sequence="6"			
+			action="ar_identitas.waction_identitas_statusPernikahan"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiPendidikanHeader" 
+			name="Pendidikan" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiHeader"
+			sequence="4"			
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_kategoriInstitusi" 
+			name="Kategori Institusi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPendidikanHeader"
+			sequence="1"			
+			action="ar_pendidikan.waction_pendidikan_kategoriInstitusi"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_kepemilikanInstitusi" 
+			name="Kepemilikan Institusi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPendidikanHeader"
+			sequence="2"			
+			action="ar_pendidikan.waction_pendidikan_kepemilikanInstitusi"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_jenisJenjangPendidikan" 
+			name="Jenis Jenjang Pendidikan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPendidikanHeader"
+			sequence="3"			
+			action="ar_pendidikan.waction_pendidikan_jenisJenjangPendidikan"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_jenjangPendidikan" 
+			name="Jenjang Pendidikan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPendidikanHeader"
+			sequence="4"			
+			action="ar_pendidikan.waction_pendidikan_jenjangPendidikan"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiAbsensiHeader" 
+			name="Absensi" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiHeader"
+			sequence="5"			
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_periodeGaji" 
+			name="Periode kerja" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="1"			
+			action="ar_hr_kontrak.waction_hr_periodeGaji"
+		/>														
+		
+																								
+						
+
+	</data>
+</openerp>

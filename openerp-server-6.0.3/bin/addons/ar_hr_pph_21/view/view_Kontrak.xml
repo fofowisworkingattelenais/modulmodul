@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="form_hr_kontrakPPH21" model="ir.ui.view">
+            <field name="name">Form Kontrak : ar_hr_pph_21</field>
+            <field name="model">hr.contract</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_payroll.form_hr_kontrakPayroll"/>
+            <field name="arch" type="xml">
+            	<data>
+            		<field name="struct_id" string="Struktur Gaji" widget="selection" position="after">
+            			<field name="kategori_ptkp_id" widget="selection" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+            			<field name="tipe_pph" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+            			<field name="penghasilan_kumulatif_sebelum" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+            			<field name="pph_kumutalif_sebelum" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+            		</field>
+				</data>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

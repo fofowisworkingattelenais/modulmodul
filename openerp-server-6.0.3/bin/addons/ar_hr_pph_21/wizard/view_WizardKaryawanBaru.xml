@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_wizardKaryawanBaruPPH21" model="ir.ui.view">
+            <field name="name">Form Wizard Karyawan Baru : ar_hr_pph_21</field>
+            <field name="model">hr.wizard_karyawan_baru</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_kontrak.form_hr_wizardKaryawanBaru"/>
+            <field name="arch" type="xml">
+                <data>
+					<group name="group_1_5" colspan="1" col="2" position="after">
+						<group name="group_1_6" colspan="1" col="2">
+							<separator string="PPH 21 Sebelum Bergabung" colspan="2"/>
+							<field name="pn_kumulatif_sebelum"/>
+							<field name="pph_kumulatif_sebelum"/>
+						</group>
+					</group>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

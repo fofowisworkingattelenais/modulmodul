@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_product_daftarHarga" model="ir.ui.view">
+			<field name="name">Tree Daftar Harga</field>
+			<field name="model">product.pricelist</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Daftar Harga">
+					<field name="name" string="Daftar Harga"/>
+					<field name="type" string="Tipe Daftar Harga"/>
+					<field name="currency_id" string="Mata Uang"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_product_daftarHarga" model="ir.ui.view">
+			<field name="name">Form Daftar Harga</field>
+			<field name="model">product.pricelist</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Daftar Harga">
+					<field name="name" string="Daftar Harga" select="1"/>
+					<field name="active" string="Aktif" select="1"/>
+					<field name="type" string="Tipe Daftar Harga" select="1"/>
+					<field name="currency_id" string="Mata Uang" select="1"/>
+					<field colspan="4" name="version_id" model="tree" nolabel="1">
+						<form string="Versi Daftar Harga">
+							<field name="name" string="Daftar Harga" select="1"/>
+							<field name="active" string="Aktif" select="2"/>
+							<field name="date_start" string="Tanggal Mulai" select="1"/>
+							<field name="date_end" string="Tanggal Selesai" select="1"/>
+							<field colspan="4" name="items_id" nolabel="1" widget="one2many_list"/>
+						</form>
+						<tree string="Versi Daftar Harga">
+							<field name="name" string="Daftar Harga"/>
+							<field name="active" string="Aktif"/>
+							<field name="date_start" string="Tanggal Mulai"/>
+							<field name="date_end" string="Tanggal Selesai"/>
+						</tree>
+					</field>
+				</form>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

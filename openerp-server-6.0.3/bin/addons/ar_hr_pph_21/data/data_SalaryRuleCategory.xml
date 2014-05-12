@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      
+        
+        <record id="data_salaryRuleCateg_pph21" model="hr.salary.rule.category">
+            <field name="name">PPH 21</field>
+            <field name="code">PPH21</field>
+        </record>
+        
+        <!-- PENDAPATAN TERATUR -->
+        <record id="data_salaryRuleCateg_pph21A" model="hr.salary.rule.category">
+            <field name="name">Perhitungan PPH 21</field>
+            <field name="code">PPH21A</field>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AA" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Bruto</field>
+            <field name="code">PPH21AA</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+            
+        </record>   
+        
+        <record id="data_salaryRuleCateg_pph21AB" model="hr.salary.rule.category">
+            <field name="name">Biaya Jabatan Atas Pendapatan Teratur</field>
+            <field name="code">PPH21AB</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>     
+        
+        <record id="data_salaryRuleCateg_pph21AC" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Netto</field>
+            <field name="code">PPH21AC</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>                   
+
+        <record id="data_salaryRuleCateg_pph21AD" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Teratur Bruto S.D Bulan Lalu</field>
+            <field name="code">PPH21AD</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AE" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Teratur Bruto Bulan Ini</field>
+            <field name="code">PPH21AE</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AF" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Netto Disetahunkan</field>
+            <field name="code">PPH21AF</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21AG" model="hr.salary.rule.category">
+            <field name="name">PTKP</field>
+            <field name="code">PPH21AG</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AH" model="hr.salary.rule.category">
+            <field name="name">PKP</field>
+            <field name="code">PPH21AH</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>  
+        
+        <record id="data_salaryRuleCateg_pph21AI" model="hr.salary.rule.category">
+            <field name="name">PPH 21 Pertahun</field>
+            <field name="code">PPH21AI</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AJ" model="hr.salary.rule.category">
+            <field name="name">PKP (Dibulatkan)</field>
+            <field name="code">PPH21AJ</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AK" model="hr.salary.rule.category">
+            <field name="name">PPH 21 S.D. Bulan Ini</field>
+            <field name="code">PPH21AK</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21AL" model="hr.salary.rule.category">
+            <field name="name">PPH 21 S.D. Bulan Lalu</field>
+            <field name="code">PPH21AL</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>  
+        
+        <record id="data_salaryRuleCateg_pph21AM" model="hr.salary.rule.category">
+            <field name="name">PPH 21 Bulan Ini</field>
+            <field name="code">PPH21AM</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21AN" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Tidak Teratur S.D. Bulan Lalu</field>
+            <field name="code">PPH21AN</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21AO" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Tidak Teratur</field>
+            <field name="code">PPH21AO</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>                     
+        
+        <record id="data_salaryRuleCateg_pph21AP" model="hr.salary.rule.category">
+            <field name="name">Biaya Jabatan Atas Pendapatan Tidak Teratur</field>
+            <field name="code">PPH21AP</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21A"/>
+        </record>                                  
+
+        
+        <!--PERHITUNGAN PPH 21 GROSSUP-->
+        
+        <record id="data_salaryRuleCateg_pph21B" model="hr.salary.rule.category">
+            <field name="name">Perhitungan PPH 21 Gross-Up</field>
+            <field name="code">PPH21B</field>
+        </record>  
+        
+        <record id="data_salaryRuleCateg_pph21BA" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Bruto</field>
+            <field name="code">PPH21BA</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+            
+        </record>   
+        
+        <record id="data_salaryRuleCateg_pph21BB" model="hr.salary.rule.category">
+            <field name="name">Biaya Jabatan</field>
+            <field name="code">PPH21BB</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>     
+        
+        <record id="data_salaryRuleCateg_pph21BC" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Netto</field>
+            <field name="code">PPH21BC</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>                   
+
+        <record id="data_salaryRuleCateg_pph21BD" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Teratur Bruto S.D Bulan Lalu</field>
+            <field name="code">PPH21BD</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BE" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Teratur Bruto Bulan Ini</field>
+            <field name="code">PPH21BE</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BF" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Netto Disetahunkan</field>
+            <field name="code">PPH21BF</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21BG" model="hr.salary.rule.category">
+            <field name="name">PTKP</field>
+            <field name="code">PPH21BG</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BH" model="hr.salary.rule.category">
+            <field name="name">PKP</field>
+            <field name="code">PPH21BH</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>  
+        
+        <record id="data_salaryRuleCateg_pph21BI" model="hr.salary.rule.category">
+            <field name="name">PPH 21 Pertahun</field>
+            <field name="code">PPH21BI</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BJ" model="hr.salary.rule.category">
+            <field name="name">PKP (Dibulatkan)</field>
+            <field name="code">PPH21BJ</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BK" model="hr.salary.rule.category">
+            <field name="name">PPH 21 S.D. Bulan Ini</field>
+            <field name="code">PPH21BK</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record> 
+        
+        <record id="data_salaryRuleCateg_pph21BL" model="hr.salary.rule.category">
+            <field name="name">PPH 21 S.D. Bulan Lalu</field>
+            <field name="code">PPH21BL</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>  
+        
+        <record id="data_salaryRuleCateg_pph21BM" model="hr.salary.rule.category">
+            <field name="name">PPH 21 Bulan Ini</field>
+            <field name="code">PPH21BM</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>      
+        
+        <record id="data_salaryRuleCateg_pph21BN" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Tidak Teratur S.D. Bulan Lalu</field>
+            <field name="code">PPH21BN</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21BO" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Tidak Teratur</field>
+            <field name="code">PPH21BO</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>                     
+        
+        <record id="data_salaryRuleCateg_pph21BP" model="hr.salary.rule.category">
+            <field name="name">Biaya Jabatan Atas Pendapatan Tidak Teratur</field>
+            <field name="code">PPH21BP</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>
+        
+        <record id="data_salaryRuleCateg_pph21BQ" model="hr.salary.rule.category">
+            <field name="name">Tunjangan PPH</field>
+            <field name="code">PPH21BQ</field>
+            <field name="parent_id" ref="data_salaryRuleCateg_pph21B"/>
+        </record>                   
+
+        
+                                                  
+
+      
+        
+        
+
+    </data>
+</openerp>

@@ -1,0 +1,12 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrAnakPelamar","data_accessRight_hrAnakPelamar","model_hr_anak_pelamar",,1,1,1,1
+"data_accessRight_hrLamaran","data_accessRight_hrLamaran","model_hr_lamaran",,1,1,1,1
+"data_accessRight_hrLowongan","data_accessRight_hrLowongan","model_hr_lowongan",,1,1,1,1
+"data_accessRight_hrPelamar","data_accessRight_hrPelamar","model_hr_pelamar",,1,1,1,1
+"data_accessRight_hrPendidikanFormalPelamar","data_accessRight_hrPendidikanFormalPelamar","model_hr_pendidikan_formal_pelamar",,1,1,1,1
+"data_accessRight_hrPendidikanFormalNonPelamar","data_accessRight_hrPendidikanNonFormalPelamar","model_hr_pendidikan_non_formal_pelamar",,1,1,1,1
+"data_accessRight_hrProsesLamaran","data_accessRight_hrProsesLamaran","model_hr_proses_lamaran",,1,1,1,1
+"data_accessRight_hrProsesSeleksi","data_accessRight_hrProsesSeleksi","model_hr_proses_seleksi",,1,1,1,1
+"data_accessRight_hrSeleksi","data_accessRight_hrSeleksi","model_hr_seleksi",,1,1,1,1
+"data_accessRight_hrTahapSeleksi","data_accessRight_hrTahapSeleksi","model_hr_tahap_seleksi",,1,1,1,1
+

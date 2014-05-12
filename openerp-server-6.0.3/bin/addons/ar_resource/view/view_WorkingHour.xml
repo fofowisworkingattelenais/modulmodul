@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Search Views -->
+        <record id="tree_resource_calendar" model="ir.ui.view">
+            <field name="name">Tree Resource Calendar</field>
+            <field name="model">resource.calendar</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Waktu Kerja">
+                    <field name="name" string="Waktu Kerja"/>
+                    <field name="company_id" string="Perusahaan" select="1" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="form_resource_calendar" model="ir.ui.view">
+			<field name="name">Form Resource Calendar</field>
+			<field name="model">resource.calendar</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Waktu Kerja">
+				    <field name="name" string="Waktu Kerja"/>
+				    <field name="company_id" string="Perusahaan" groups="base.group_multi_company"/>
+				    <separator string="Detail" colspan="4"/>
+				    <field name="attendance_ids" colspan="4" nolabel="1">
+				    	<tree string="Detail Waktu Kerja">
+				    		<field name="name" string="Deskripsi"/>
+				    		<field name="dayofweek" string="Hari"/>
+				    		<field name="hour_from" string="Mulai"/>
+				    		<field name="hour_to" string="Akhir"/>
+				    	</tree>
+				    	<form string="Detail Waktu Kerja">
+				    		<group name="group_1" colspan="4" col="2">
+				    			<group name="group_1_1" colspan="1" col="2">
+				    				<separator string="Detail Waktu Kerja" colspan="2"/>
+				    				<field name="name" string="Deskripsi"/>
+				    				<field name="dayofweek" string="Hari"/>
+				    			</group>
+				    			<group name="group_1_2" colspan="1" col="2">
+				    				<separator string="Waktu Mulai &amp; Akhir" colspan="2"/>
+				    				<field name="hour_from" string="Mulai"/>
+				    				<field name="hour_to" string="Akhir"/>
+				    			</group>				    			
+				    		</group>
+				    	</form>
+				    </field>
+				</form>
+			</field>
+		</record>
+
+		<record id="search_resource_calendar" model="ir.ui.view">
+		<field name="name">Search Resource Calendar</field>
+		<field name="model">resource.calendar</field>
+		<field name="type">search</field>
+		<field name="arch" type="xml">
+			<search string="Waktu Kerja">
+			   <group>
+				   <field name="name" string="Waktu Kerja"/>
+				   <field name="company_id" string="Perusahaan" widget="selection" groups="base.group_multi_company"/>
+			   </group>
+		   </search>
+		</field>
+		</record>
+
+
+
+
+
+
+    </data>
+</openerp>

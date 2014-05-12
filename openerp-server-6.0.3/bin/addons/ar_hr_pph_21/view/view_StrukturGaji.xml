@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_strukturGajiPPH" model="ir.ui.view">
+            <field name="name">Form Struktur Gaji : PPH 21</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_payroll.form_hr_strukturGaji"/>
+            <field name="arch" type="xml">
+            	<data>
+            		<page string="Ketentuan Gaji" position="after">
+		        		<page string="Ketentuan PPH 21">
+							<separator string="Ketentuan PPH 21" colspan="4"/>
+							<field string="Ketentuan PPH 21" colspan="4" name="perhitungan_pph_ids" nolabel="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>            		
+		        		</page>
+            		</page>
+					<page string="Pensiun" position="after">
+						<page string="PPH 21">
+							<separator string="Non Gross-Up" colspan="4"/>
+							<field string="Non Gross-Up" colspan="4" name="perhitungan_pph_non_gross_up_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>
+							<separator string="Gross-Up" colspan="4"/>
+							<field string="Gross-Up" colspan="4" name="perhitungan_pph_gross_up_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>				
+						</page>																	                     	
+					</page>			
+				</data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

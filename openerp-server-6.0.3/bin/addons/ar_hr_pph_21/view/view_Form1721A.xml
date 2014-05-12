@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_form1721A" model="ir.ui.view">
+            <field name="name">Tree Form 1721-A</field>
+            <field name="model">hr.form_1721_a</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Form 1721-A">
+                	<field name="name"/>
+                	<field name="tahun_pajak_id"/>
+                	<field name="npwp_pemotong_pajak"/>
+                	<field name="nama_pemotong_pajak"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_form1721A" model="ir.ui.view">
+            <field name="name">Form Form 1721-A</field>
+            <field name="model">hr.form_1721_a</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Form 1721-A">
+                	<group name="group_1" colspan="4" col="3">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="SPT Tahunan 1721-A"/>
+                	 		<field name="name"/>
+							<field name="tahun_pajak_id" widget="selection"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Pemotong Pajak"/>
+                	 		<field name="npwp_pemotong_pajak"/>
+							<field name="nama_pemotong_pajak"/>
+                    	</group>                   	                    	
+                	</group>
+                	<notebook colspan="4">
+						<page string="Detail">
+							<field name="detail_form_1721_a_ids" colspan="4" nolabel="1">
+								<tree string="Detail Form 1721-A">
+									<field name="karyawan_id"/>
+									<field name="npwp"/>
+									<field name="penghasilan_bruto"/>
+									<field name="pph_21_terutang"/>
+									<field name="pph_ditanggung_pemerintah"/>
+								</tree>
+								<form string="Detail Form 1721-A">
+									<field name="karyawan_id"/>
+									<field name="npwp"/>
+									<field name="penghasilan_bruto"/>
+									<field name="pph_21_terutang"/>
+									<field name="pph_ditanggung_pemerintah"/>
+								</form>								
+							</field>
+						</page>
+						<page string="Keterangan">
+							<field name="keterangan" colspan="4" nolabel="1"/>
+						</page>
+                	</notebook>
+                	<group name="group_3" colspan="4" col="3">
+                		<group name="group_3_1" colspan="1" col="2">
+                			<separator string="Status" colspan="2"/>
+                			
+                		</group>
+                		<group name="group_3_2" colspan="1" col="2">
+                			<separator string="Action" colspan="2"/>
+                			<button name="hitung_ulang" string="Hitung Ulang" type="object" icon="gtk-execute" colspan="2"/>
+                			<button name="cetak_spt" string="Cetak" type="object" icon="gtk-print" colspan="2"/>
+                		</group>    
+                		<group name="group_3_3" colspan="1" col="2">
+                			<separator string="Workflow" colspan="2"/>
+
+                		</group>                		            		
+                	</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_form1721A" model="ir.ui.view">
+            <field name="name">Search Form 1721-A</field>
+            <field name="model">hr.form_1721_a</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Form 1721-A">
+                	<field name="name"/>
+                	<field name="tahun_pajak_id"/>
+                	<field name="npwp_pemotong_pajak"/>
+                	<field name="nama_pemotong_pajak"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

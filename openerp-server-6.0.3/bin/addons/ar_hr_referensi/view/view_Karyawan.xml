@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="form_hr_karyawanReferensi" model="ir.ui.view">
+            <field name="name">Karyawan ar_hr_referensi</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>   
+            <field name="arch" type="xml">
+				<data>
+					<page string="Informasi Umum" position="after">
+						<page string="Referensi &amp; Kerabat">
+							<separator string="Referensi" colspan="4"/>
+							<field name="referensi_ids" colspan="4" nolabel="1">
+								<tree string="Referensi">
+									<field name="name"/>
+									<field name="alamat"/>
+									<field name="telepon"/>
+									<field name="pekerjaan"/>
+								</tree>
+								<form string="Referensi">
+									<field name="name"/>
+									<field name="alamat"/>
+									<field name="telepon"/>
+									<field name="pekerjaan"/>
+								</form>								
+							</field>
+							<separator string="Kerabat" colspan="4"/>
+							<field name="kerabat_ids" colspan="4" nolabel="1">
+								<tree string="Kerabat">
+									<field name="name"/>
+									<field name="hubungan"/>
+								</tree>
+								<form string="Kerabat">
+									<field name="name"/>
+									<field name="hubungan"/>
+								</form>								
+							</field>							
+						</page>
+					</page>
+				</data>
+            </field>
+        </record>     
+   
+    </data>
+</openerp>

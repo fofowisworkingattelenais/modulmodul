@@ -1,0 +1,16 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrForm1721A1","data_accessRight_hrForm1721A1","model_hr_form_1721_a1",,1,1,1,1
+"data_accessRight_hrForm1721Induk","data_accessRight_hrForm1721Induk","model_hr_form_1721_induk",,1,1,1,1
+"data_accessRight_hrKategoriPTKP","data_accessRight_hrKategoriPTKP","model_hr_kategori_ptkp",,1,1,1,1
+"data_accessRight_hrStatusKaryawanPajak","data_accessRight_hrStatusKaryawanPajak","model_hr_status_karyawan_pajak",,1,1,1,1
+"data_accessRight_hrTarifPPH21NonNPWP","data_accessRight_hrTarifPPH21NonNPWP","model_hr_tarif_pph_21_non_npwp",,1,1,1,1
+"data_accessRight_hrTarifPPH21NPWP","data_accessRight_hrTarifPPH21NPWP","model_hr_tarif_pph_21_npwp",,1,1,1,1
+"data_accessRight_hrForm1721A","data_accessRight_hrForm1721A","model_hr_form_1721_a",,1,1,1,1
+"data_accessRight_hrDetailForm1721A","data_accessRight_hrDetailForm1721A","model_hr_detail_form_1721_a",,1,1,1,1
+"data_accessRight_hrForm1721II","data_accessRight_hrForm1721II","model_hr_form_1721_ii",,1,1,1,1
+"data_accessRight_hrDetailKeluarForm1721II","data_accessRight_hrDetailKeluarForm1721rII","model_hr_detail_keluar_form_1721_ii",,1,1,1,1
+"data_accessRight_hrDetailMasukForm1721II","data_accessRight_hrDetailMasukForm1721rII","model_hr_detail_masuk_form_1721_ii",,1,1,1,1
+"data_accessRight_hrDetailNPWPForm1721II","data_accessRight_hrDetailNPWPForm1721rII","model_hr_detail_npwp_form_1721_ii",,1,1,1,1
+
+
+

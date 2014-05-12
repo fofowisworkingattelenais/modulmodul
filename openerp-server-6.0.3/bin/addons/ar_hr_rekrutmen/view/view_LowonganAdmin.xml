@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_hr_lowonganAdmin" model="ir.ui.view">
+			<field name="name">Tree Lowongan : Admin</field>
+			<field name="model">hr.lowongan</field>
+			<field name="type">tree</field>
+			<field name="priority" eval="1"/>
+			<field name="arch" type="xml">
+				<tree string="Lowongan">
+					<field name="name"/>
+					<field name="posisi_id"/>
+					<field name="jumlah"/>
+					<field name="jumlah_diterima"/>
+					<field name="user_request_id"/>
+					<field name="tanggal_request"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_hr_lowonganAdmin" model="ir.ui.view">
+			<field name="name">Form Lowongan : Admin</field>
+			<field name="model">hr.lowongan</field>
+			<field name="priority" eval="1"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Lowongan">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Lowongan" colspan="2"/>
+							<field name="name" select="1"/>
+							<field name="posisi_id" select="1"/>
+							<field name="jumlah"/>
+							<field name="jumlah_diterima"/>
+							<field name="user_request_id"/>
+							<field name="tanggal_request"/>
+							<field name="proses_seleksi_id"/>
+							<field name="sequence_lamaran_id"/>
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Pra-syarat" colspan="2"/>
+						</group>
+					</group>
+					<group name="group_2" colspan="4" col="3">
+						<group name="group_2_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state" select="1"/>
+						</group>	
+						<group name="group_2_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>						
+						<group name="group_2_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="button_disetujui" states="request" string="Setujui Request" colspan="2" icon="gtk-ok"/>
+							<button name="button_seleksi" states="disetujui" string="Mulai Seleksi" colspan="2" icon="gtk-ok"/>																					
+							<button name="button_selesai" states="seleksi" string="Tutup Lowongan" colspan="2" icon="gtk-ok"/>							
+							<button name="button_batal" states="request,disetujui,seleksi" string="Batal" colspan="2" icon="gtk-cancel"/>							
+						</group>																	
+					</group>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

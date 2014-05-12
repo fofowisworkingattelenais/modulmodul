@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_product_kategoriProduk" model="ir.ui.view">
+			<field name="name">Tree Kategori Product</field>
+			<field name="model">product.category</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Kategori Produk">
+					<field name="name" string="Kategori"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_product_kategoriProduk" model="ir.ui.view">
+			<field name="name">Form Kategori Product</field>
+			<field name="model">product.category</field>
+			<field name="type">form</field>
+			<field name="priority" eval="18"/>
+			<field name="arch" type="xml">
+				<form string="Kategori Produk">
+					<field name="name" string="Nama Kategori" select="1"/>
+					<field name="parent_id" string="Kategori Induk" select="1"/>
+					<field name="sequence" string="Urutan"/>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

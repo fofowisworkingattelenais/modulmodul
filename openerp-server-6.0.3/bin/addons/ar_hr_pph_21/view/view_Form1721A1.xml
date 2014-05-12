@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_form1721A1" model="ir.ui.view">
+            <field name="name">Tree Form 1721-A1</field>
+            <field name="model">hr.form_1721_a1</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Form 1721-A1">
+                	<field name="name"/>
+                	<field name="nama_wajib_pajak"/>
+                	<field name="npwp_wajib_pajak"/>
+                	<field name="masa_pajak_mulai_id"/>
+                	<field name="masa_pajak_akhir_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_form1721A1" model="ir.ui.view">
+            <field name="name">Form Form 1721-A1</field>
+            <field name="model">hr.form_1721_a1</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Form 1721-A1">
+                	<group name="group_1" colspan="4" col="3">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="SPT Masa"/>
+                	 		<field name="name"/>
+							<field name="masa_pajak_mulai_id" widget="selection"/>
+							<field name="masa_pajak_akhir_id" widget="selection"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Pemotong Pajak"/>
+                	 		<field name="npwp_pemotong_pajak"/>
+							<field name="nama_pemotong_pajak"/>
+                    	</group>
+                		<group name="group_1_3" colspan="1" col="2">
+                	 		<separator colspan="2" string="Wajib Pajak"/>
+                	 		<field name="npwp_wajib_pajak"/>
+							<field name="nama_wajib_pajak"/>
+							<field name="alamat_wajib_pajak"/>
+                    	</group>                    	                    	
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Bagian A - Rincian Penghasilan">
+                			<field name="item_a_1"/>
+                			<newline/>
+                			<field name="item_a_2"/>
+                			<newline/>
+                			<field name="item_a_3"/>
+                			<newline/>
+                			<field name="item_a_4"/>
+                			<newline/>
+                			<field name="item_a_5"/>
+                			<newline/>
+                			<field name="item_a_6"/>
+                			<newline/>
+                			<field name="item_a_7"/>
+                			<newline/>
+                			<field name="item_a_8"/>
+                			<newline/>
+                			<field name="item_a_9"/>
+                			<newline/>
+                			<field name="item_a_10"/>
+                			<newline/>
+                			<field name="item_a_11"/>
+                			<newline/>
+                			<field name="item_a_12"/>
+                			<newline/>
+                			<field name="item_a_13"/>
+                			<newline/>
+                			<field name="item_a_14"/>
+                			<newline/>
+                			<field name="item_a_15"/>
+                			<newline/>
+                			<field name="item_a_16"/>
+                			<newline/>
+                			<field name="item_a_17"/>
+                			<newline/>
+                			<field name="item_a_18"/>
+                			<newline/>
+                			<field name="item_a_19"/>
+                			<newline/>
+                			<field name="item_a_20"/>
+                			<newline/> 
+                			<field name="item_a_21"/>
+                			<newline/>
+                			<separator string=" " colspan="4"/>
+                			<field name="item_a_22"/>
+                			<newline/>
+                			<field name="item_a_22a"/>
+                			<newline/>   
+                			<field name="item_a_22b"/>
+                			<newline/>              
+                			<separator string=" " colspan="4"/>  			             			
+                			<field name="item_a_23"/>
+                			<newline/>
+                			<field name="item_a_23a"/>
+                			<newline/>             
+                			<field name="item_a_23b"/>
+                			<newline/>                			   			 
+                			<separator string=" " colspan="4"/>
+                			<field name="item_a_24"/>
+                			<newline/>
+                			<field name="item_a_24a"/>
+                			<field name="item_a_24a_masa_pajak_id" widget="selection"/>
+                			<newline/>             
+                			<field name="item_a_24b"/>
+                			<field name="item_a_24b_masa_pajak_id" widget="selection"/>
+                			<newline/>                 			
+                			               			                			                			               			                			                			                			                			                			                			                			                			                			                			                			                			                			                			                			                			                			                			
+                		</page>
+                		<page string="Bagian B - Tanda Tangan &amp; Cap Perusahaan">
+                			<field name="pernyataan"/>
+                			<newline/> 
+                			<field name="nama_pemotong"/>
+                			<newline/> 
+                			<field name="npwp_pemotong"/>
+                			<newline/> 
+                			<field name="tanggal_pemotong"/>
+                			<newline/>
+                		</page>
+                	</notebook>
+                	<group name="group_3" colspan="4" col="3">
+                		<group name="group_3_1" colspan="1" col="2">
+                			<separator string="Status" colspan="2"/>
+                			<field name="state"/>
+                		</group>
+                		<group name="group_3_2" colspan="1" col="2">
+                			<separator string="Action" colspan="2"/>
+                			<button name="hitung_ulang" string="Hitung Ulang" type="object" icon="gtk-execute" colspan="2"/>
+                			<button name="cetak_spt" string="Cetak" type="object" icon="gtk-print" colspan="2"/>
+                		</group>    
+                		<group name="group_3_3" colspan="1" col="2">
+                			<separator string="Workflow" colspan="2"/>
+                			<button name="workflow_action_confirm" string="Konfirmasi" type="object" icon="gtk-yes" colspan="2"/>
+                			<button name="workflow_action_batal" string="Batal" type="object" icon="gtk-cancel" colspan="2"/>
+                		</group>                		            		
+                	</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_form1721A1" model="ir.ui.view">
+            <field name="name">Search Form 1721-A1</field>
+            <field name="model">hr.form_1721_a1</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Form 1721-A1">
+                	<field name="name"/>
+                	<field name="nama_wajib_pajak"/>
+                	<field name="npwp_wajib_pajak"/>
+                	<field name="masa_pajak_mulai_id"/>
+                	<field name="masa_pajak_akhir_id"/>                	
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

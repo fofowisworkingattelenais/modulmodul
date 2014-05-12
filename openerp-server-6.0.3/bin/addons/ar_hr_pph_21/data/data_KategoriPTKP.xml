@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_kategoriPTKP_BK" model="hr.kategori_ptkp">
+            <field name="name">BK</field>
+            <field name="kode">BK</field>
+            <field name="keterangan">Belum Kawin</field>
+            <field name="ptkp_tahunan">15840000.00</field>
+        </record>
+        
+        <record id="data_kategoriPTKP_K0" model="hr.kategori_ptkp">
+            <field name="name">K-0</field>
+            <field name="kode">K-0</field>
+            <field name="keterangan">Kawin - Anak 0</field>
+            <field name="ptkp_tahunan">17160000.00</field>
+        </record>  
+        
+        <record id="data_kategoriPTKP_K1" model="hr.kategori_ptkp">
+            <field name="name">K-1</field>
+            <field name="kode">K-1</field>
+            <field name="keterangan">Kawin - Anak 1</field>
+            <field name="ptkp_tahunan">18480000.00</field>
+        </record> 
+        
+        <record id="data_kategoriPTKP_K2" model="hr.kategori_ptkp">
+            <field name="name">K-2</field>
+            <field name="kode">K-2</field>
+            <field name="keterangan">Kawin - Anak 2</field>
+            <field name="ptkp_tahunan">19800000.00</field>
+        </record>
+        
+        <record id="data_kategoriPTKP_K3" model="hr.kategori_ptkp">
+            <field name="name">K-3</field>
+            <field name="kode">K-3</field>
+            <field name="keterangan">Kawin - Anak 3</field>
+            <field name="ptkp_tahunan">21120000.00</field>
+        </record>                                   
+    
+      
+      
+        
+        
+
+    </data>
+</openerp>

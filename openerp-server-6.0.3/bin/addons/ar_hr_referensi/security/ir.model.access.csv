@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrKerabat","data_accessRight_hrKerabat","model_hr_kerabat",,1,1,1,1
+"data_accessRight_hrReferensi","data_accessRight_hrReferensi","model_hr_referensi",,1,1,1,1
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+
+        <record id="form_hr_perusahaanPPH21" model="ir.ui.view">
+            <field name="name">Form Perusahaan Payroll</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_payroll.form_hr_perusahaanPayroll"/>
+            <field name="arch" type="xml">
+				<data>
+					<page string="Komponen Jamsostek" position="after">
+						<page string="PPH 21">
+							<field name="tahun_pajak_mulai_id"/>
+						</page>
+					</page>
+				</data>
+            </field>
+        </record>
+	</data>
+</openerp>

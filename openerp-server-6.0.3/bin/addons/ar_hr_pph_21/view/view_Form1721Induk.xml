@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_form1721Induk" model="ir.ui.view">
+            <field name="name">Tree Form 1721 Induk</field>
+            <field name="model">hr.form_1721_induk</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Form 1721 Induk">
+                	<field name="name"/>
+                    <field name="masa_pajak_id"/>
+                    <field name="jenis_spt"/>
+                    <field name="pembetulan_ke"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_form1721Induk" model="ir.ui.view">
+            <field name="name">Form Form 1721 Induk</field>
+            <field name="model">hr.form_1721_induk</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Form 1721 Induk">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="SPT Masa"/>
+                	 		<field name="name"/>
+                	 		<field name="masa_pajak_id" widget="selection"/>
+                	 		<field name="jenis_spt"/>             	 		
+                	 		<field name="pembetulan_ke"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Identitas Wajib Pajak"/>
+				            <field name="company_id" widget="selection"/>
+				            <field name="npwp"/>
+                    	</group>                    	
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Bagian A - Informasi Identitas Wajib Pajak">
+                			<field name="jumlah_penerima_penghasilan_6"/>
+                			<field name="jumlah_penghasilan_bruto_6" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_6" nolabel="1"/>
+                			<field name="jumlah_penerima_penghasilan_7"/>
+                			<field name="jumlah_penghasilan_bruto_7" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_7" nolabel="1"/>                			
+                			<field name="jumlah_penerima_penghasilan_8"/>
+                			<field name="jumlah_penghasilan_bruto_8" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_8" nolabel="1"/>                			
+                			<field name="jumlah_penerima_penghasilan_9"/>
+                			<field name="jumlah_penghasilan_bruto_9" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_9" nolabel="1"/>                			
+                			<field name="jumlah_penerima_penghasilan_10"/>
+                			<field name="jumlah_penghasilan_bruto_10" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_10" nolabel="1"/> 
+                			<field name="jumlah_penerima_penghasilan_11"/>
+                			<field name="jumlah_penghasilan_bruto_11" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_11" nolabel="1"/>                			               			
+                			<field name="jumlah_penerima_penghasilan_12"/>
+                			<field name="jumlah_penghasilan_bruto_12" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_12" nolabel="1"/>   
+                			<field name="jumlah_penerima_penghasilan_13"/>
+                			<field name="jumlah_penghasilan_bruto_13" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_13" nolabel="1"/>                 			             			
+                			<field name="jumlah_penerima_penghasilan_14"/>
+                			<field name="jumlah_penghasilan_bruto_14" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_14" nolabel="1"/>                 			
+                			<field name="jumlah_penerima_penghasilan_15"/>
+                			<field name="jumlah_penghasilan_bruto_15" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_15" nolabel="1"/>                 			
+                			<field name="jumlah_penerima_penghasilan_16"/>
+                			<field name="jumlah_penghasilan_bruto_16" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_16" nolabel="1"/>                 			
+                			<field name="jumlah_penerima_penghasilan_17"/>
+                			<field name="jumlah_penghasilan_bruto_17" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_17" nolabel="1"/>                 			
+                			<field name="jumlah_penerima_penghasilan_18"/>
+                			<field name="jumlah_penghasilan_bruto_18" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_18" nolabel="1"/>                 			
+                			<field name="jumlah_penerima_penghasilan_19"/>
+                			<field name="jumlah_penghasilan_bruto_19" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_19" nolabel="1"/>
+                			<separator colspan="4" string=" "/>
+                			<field name="jumlah_penerima_penghasilan"/>
+                			<field name="jumlah_penghasilan_bruto" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang" nolabel="1"/> 
+                			<separator colspan="4" string=" "/>
+                			<field name="item_21"/>
+                			<newline/>
+                			<separator colspan="4" string=" "/>
+                			<field name="item_22"/>
+                			<newline/>
+                			<separator colspan="4" string=" "/>
+                			<field name="item_23"/>
+                			<newline/>          
+                			<separator string=" " colspan="4"/>  
+                			<field name="item_24"/>
+                			<newline/>    
+                			<separator colspan="4" string=" "/>  
+                			<field name="item_25"/>
+                			<newline/>                 			
+                			<field name="item_25a"/>
+                			<newline/>  
+                			<field name="item_25b"/>
+                			<newline/>   
+                			<separator colspan="4" string=" "/>
+                			<field name="item_26"/>
+                			<newline/> 
+                			<separator colspan="4" string=" "/>
+                			<field name="item_27"/>
+                			<newline/> 
+                			<separator colspan="4" string=" "/>
+                			<field name="item_28_masa_pajak_id" widget="selection"/>
+                			<newline/>                  			               			                 			
+                		</page>
+                		<page string="Bagian C - Objek Pajak Final">
+                			<field name="jumlah_penerima_penghasilan_29"/>
+                			<field name="jumlah_penghasilan_bruto_29" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_29" nolabel="1"/>  
+                			<field name="jumlah_penerima_penghasilan_30"/>
+                			<field name="jumlah_penghasilan_bruto_30" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_30" nolabel="1"/>   
+                			<field name="jumlah_penerima_penghasilan_31"/>
+                			<field name="jumlah_penghasilan_bruto_31" nolabel="1"/>
+                			<field name="jumlah_pajak_terutang_31" nolabel="1"/>                 			             			              			
+                		</page>
+                		<page string="Bagian D - Lampiran">
+                			<field name="item_d_a"/>
+                			<newline/> 
+                			<field name="item_d_b"/>
+                			<newline/> 
+                			<field name="item_d_c"/>
+                			<newline/> 
+                			<field name="item_d_d"/>
+                			<newline/> 
+                			<field name="item_d_e"/>
+                			<newline/> 
+                			<field name="item_d_f"/>
+                			<newline/> 
+                			<field name="item_d_g"/>
+                			<newline/> 
+                			<field name="item_d_h"/>
+                			<newline/> 
+                			<field name="item_d_i"/>
+                			<field name="item_d_i_keterangan" nolabel="1"/>
+                		</page>
+                		<page string="Bagian E - Pernyataan dan Tanda Tangan">
+                			<field name="pernyataan"/>
+                			<newline/> 
+                			<field name="nama_pemotong"/>
+                			<newline/> 
+                			<field name="npwp_pemotong"/>
+                			<newline/> 
+                			<field name="tanggal_pemotong"/>
+                			<newline/>
+                		</page>
+                		<page string="Slip Gaji">
+                			<field name="payslip_ids" colspan="4" nolabel="1"/>
+                		</page>
+                	</notebook>
+                	<group name="group_3" colspan="4" col="3">
+                		<group name="group_3_1" colspan="1" col="2">
+                			<separator string="Status" colspan="2"/>
+                			<field name="state"/>
+                		</group>
+                		<group name="group_3_2" colspan="1" col="2">
+                			<separator string="Action" colspan="2"/>
+                			<button name="hitung_ulang" string="Hitung Ulang" type="object" icon="gtk-execute" colspan="2"/>
+                			<button name="cetak_spt" string="Cetak" type="object" icon="gtk-print" colspan="2"/>
+                		</group>    
+                		<group name="group_3_3" colspan="1" col="2">
+                			<separator string="Workflow" colspan="2"/>
+                			<button name="workflow_action_confirm" string="Konfirmasi" type="object" icon="gtk-yes" colspan="2"/>
+                			<button name="workflow_action_batal" string="Batal" type="object" icon="gtk-cancel" colspan="2"/>
+                		</group>                		            		
+                	</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_form1721Induk" model="ir.ui.view">
+            <field name="name">Search Form 1721 Induk</field>
+            <field name="model">hr.form_1721_induk</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Form 1721 Induk">
+                	<field name="name"/>
+                    <field name="masa_pajak_id"/>
+                    <field name="jenis_spt"/>
+                    <field name="pembetulan_ke"/>
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

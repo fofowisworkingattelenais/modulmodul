@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_product_satuanUkur" model="ir.ui.view">
+			<field name="name">Tree Satuan Ukur</field>
+			<field name="model">product.uom</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Satuan Ukur">
+                    <field name="name" select="1" string="Satuan Ukur"/>
+                    <field name="category_id" select="1" string="Kategori Satuan Ukur"/>
+                    <field name="factor"/>
+                    <field name="factor_inv"/>
+                    <field name="rounding" string="Pembulatan"/>
+                    <field name="active" string="Aktif"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="form_product_satuanUkur" model="ir.ui.view">
+			<field name="name">Form Satuan Ukur</field>
+			<field name="model">product.uom</field>
+			<field name="type">form</field>
+			<field name="priority" eval="18"/>
+			<field name="arch" type="xml">
+				<form string="Satuan Ukur">
+					<group colspan="4" col="2">
+						<group colspan="1" col="2">
+							<separator string="Satuan Ukur" colspan="2"/>
+				            <field name="name" select="1" string="Satuan Ukur"/>
+				            <field name="category_id" select="1" string="Kategori Satuan Ukur"/>
+				            <field name="active" string="Aktif"/>
+			            </group>
+			            <group colspan="1" col="2">
+			            	<separator string="Pengukuran" colspan="2"/>
+				            <field name="factor"/>
+				            <field name="factor_inv"/>
+				            <field name="rounding" string="Pembulatan"/>
+			            </group>
+                    </group>
+				</form>
+			</field>
+		</record>		
+	</data>
+</openerp>

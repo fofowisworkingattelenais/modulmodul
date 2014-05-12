@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="form_hr_payslipPPH21" model="ir.ui.view">
+            <field name="name">Form Payslip : ar_hr_pph_21</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_payroll.form_hr_payslip"/>
+            <field name="arch" type="xml">
+                <data>
+                    <page string="Keterangan" position="before">
+
+                    	<page string="PPH 21">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="Masa &amp; Tahun Pajak" colspan="2"/>
+									<field name="tahun_pajak_id"/>
+									<field name="masa_pajak_id"/>
+									<field name="jumlah_bulan"/>
+								</group> 								
+							</group>   
+
+                            <separator string="Perhitungan PPH 21 Non-Gross Up" colspan="4"/>
+                            <field name="perhitungan_pph_teratur_ids" colspan="4" nolabel="1">
+                                <tree string="Perhitungan PPH 21 Non-Gross Up" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Perhitungan PPH 21')]" widget="selection"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="total" string="Total"/>
+                                </tree>
+                            </field> 
+                            <field name="total_pph_non_gross_up"/>
+                            <separator string="Perhitungan PPH 21 Gross Up" colspan="4"/>
+                            <field name="perhitungan_pph_teratur_gross_up_ids" colspan="4" nolabel="1">
+                                <tree string="Perhitungan PPH 21 Gross-Up" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Perhitungan PPH 21 Gross-Up')]" widget="selection"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="total" string="Total"/>
+                                </tree> 
+                            </field>    
+                            <field name="total_pph_gross_up"/>                               
+                    	</page>
+                    	<page string="Slip Gaji Sebelum">
+                    		<field name="slip_sebelum_ids" colspan="4" nolabel="1"/>
+                    	</page>
+                    </page>
+					<field name="total_pendapatan_tidak_teratur" string="Pendapatan Tidak Teratur (+)" position="after">
+						<field name="total_tunjangan_pph" string="Tunjangan PPH 21 (+)"/>
+					</field>
+					
+					<field name="total_pensiun" string="Iuran Pensiun (-)" position="after">
+						<field name="total_pph" string="PPH 21 (-)"/>
+					</field>
+                </data>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>
+

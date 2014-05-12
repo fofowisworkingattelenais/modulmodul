@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="data_golonganDarah_a" model="identitas.golongan_darah">
+			<field name="kode">A</field>
+			<field name="name">A</field>
+		</record>
+		
+		<record id="data_golonganDarah_b" model="identitas.golongan_darah">
+			<field name="kode">B</field>
+			<field name="name">B</field>
+		</record>		
+		
+		<record id="data_golonganDarah_ab" model="identitas.golongan_darah">
+			<field name="kode">AB</field>
+			<field name="name">AB</field>
+		</record>		
+		
+		<record id="data_golonganDarah_o" model="identitas.golongan_darah">
+			<field name="kode">O</field>
+			<field name="name">O</field>
+		</record>		
+
+	</data>
+</openerp>

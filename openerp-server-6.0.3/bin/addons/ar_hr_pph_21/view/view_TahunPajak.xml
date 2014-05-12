@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+            
+        <record id="form_pajak_tahunPajakPPH21" model="ir.ui.view">
+            <field name="name">Form Tahun Pajak : PPH 21</field>
+            <field name="model">pajak.tahun_pajak</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_pajak.form_pajak_tahunPajak"/>
+            <field name="arch" type="xml">
+				<data>
+            		<notebook colspan="4" position="inside">
+            			<page string="PPH 21">
+            				<group name="group_1" colspan="4" col="2">
+            					<group name="group_1_1" colspan="1" col="2">
+            						<separator string="Biaya Jabatan" colspan="2"/>
+            						<field name="tarif_biaya_jabatan"/>
+            						<field name="max_biaya_jabatan"/>
+            					</group>                					
+            				</group>
+							<field name="tarif_pph21_npwp_ids" colspan="4" nolabel="1">
+								<tree string="Tarif PPH 21 Karyawan NPWP">
+									<field name="dari_jumlah"/>
+									<field name="sampai_jumlah"/>
+									<field name="tarif"/>
+									<field name="urutan"/>
+								</tree>
+								<form string="Tarif PPH 21 Karyawan NPWP">
+									<field name="dari_jumlah"/>
+									<field name="sampai_jumlah"/>
+									<field name="tarif"/>
+									<field name="urutan"/>
+								</form>								
+							</field>
+							<field name="tarif_pph21_npwp_non_ids" colspan="4" nolabel="1">
+								<tree string="Tarif PPH 21 Karyawan Non-NPWP">
+									<field name="dari_jumlah"/>
+									<field name="sampai_jumlah"/>
+									<field name="tarif"/>
+									<field name="urutan"/>
+								</tree>
+								<form string="Tarif PPH 21 Karyawan Non-NPWP">
+									<field name="dari_jumlah"/>
+									<field name="sampai_jumlah"/>
+									<field name="tarif"/>
+									<field name="urutan"/>
+								</form>	
+							</field>							
+            			</page>
+            		</notebook>
+				</data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

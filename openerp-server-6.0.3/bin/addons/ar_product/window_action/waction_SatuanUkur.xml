@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_product_satuanUkur" model="ir.actions.act_window">
+			<field name="name">Satuan Ukur</field>
+			<field name="res_model">product.uom</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_product_treeSatuanUkur" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_product_satuanUkur"/>
+			<field name="act_window_id" ref="waction_product_satuanUkur"/>
+		</record>
+
+		<record id="wactionView_product_formSatuanUkur" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_product_satuanUkur"/>
+			<field name="act_window_id" ref="waction_product_satuanUkur"/>
+		</record>
+    </data>
+</openerp>

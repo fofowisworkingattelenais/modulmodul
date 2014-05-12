@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--Workflow Header -->
+		<record id="wkf_hr_lowongan" model="workflow">
+			<field name="name">Workflow Lowongan</field>
+			<field name="osv">hr.lowongan</field>
+			<field name="on_create">True</field>
+		</record>
+
+<!-- Action -->
+		<!-- Action : request -->
+		<record id="act_hr_lowongan_request" model="workflow.activity">
+		   	<field name="wkf_id" ref="wkf_hr_lowongan"/>
+	    	<field name="flow_start">True</field>
+	    	<field name="name">request</field>
+		</record>
+
+		<!-- Action : disetujui -->
+		<record id="act_hr_lowongan_disetujui" model="workflow.activity">
+		    <field name="wkf_id" ref="wkf_hr_lowongan"/>
+		    <field name="name">disetujui</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_disetujui()</field>  
+		</record>
+		
+		<!-- Action : seleksi -->
+		<record id="act_hr_lowongan_seleksi" model="workflow.activity">
+		    <field name="wkf_id" ref="wkf_hr_lowongan"/>
+		    <field name="name">seleksi</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_seleksi()</field>  
+		</record>		
+
+	 	<!-- Action : selesai -->
+		<record id="act_hr_lowongan_selesai" model="workflow.activity">
+		    <field name="wkf_id" ref="wkf_hr_lowongan"/>
+		    <field name="name">selesai</field>
+			<field name="flow_stop">True</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_selesai()</field>
+		</record>
+
+	 	<!-- Action : batal -->
+		<record id="act_hr_lowongan_batal" model="workflow.activity">
+		    <field name="wkf_id" ref="wkf_hr_lowongan"/>
+		    <field name="name">batal</field>
+			<field name="flow_stop">True</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_batal()</field>
+		</record>
+
+<!-- Transisi -->
+		<!-- Transisi request - batal -->
+		<record id="transisi_hr_lowongan_request2Batal" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_request"/>
+			<field name="act_to" ref="act_hr_lowongan_batal"/>
+			<field name="signal">button_batal</field>
+		</record>
+		
+		<!-- Transisi request - disetujui -->
+		<record id="transisi_hr_lowongan_request2Disetujui" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_request"/>
+			<field name="act_to" ref="act_hr_lowongan_disetujui"/>
+			<field name="signal">button_disetujui</field>
+		</record>
+		
+		<!-- Transisi disetujui - batal -->
+		<record id="transisi_hr_lowongan_disetujui2Batal" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_disetujui"/>
+			<field name="act_to" ref="act_hr_lowongan_batal"/>
+			<field name="signal">button_batal</field>
+		</record>		
+		
+		<!-- Transisi disetujui - seleksi -->
+		<record id="transisi_hr_lowongan_disetujui2Seleksi" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_disetujui"/>
+			<field name="act_to" ref="act_hr_lowongan_seleksi"/>
+			<field name="signal">button_seleksi</field>
+		</record>		
+		
+		<!-- Transisi seleksi - batal -->
+		<record id="transisi_hr_lowongan_seleksi2Batal" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_seleksi"/>
+			<field name="act_to" ref="act_hr_lowongan_batal"/>
+			<field name="signal">button_batal</field>
+		</record>
+		
+		<!-- Transisi seleksi - selesai -->
+		<record id="transisi_hr_lowongan_seleksi2Selesai" model="workflow.transition">
+			<field name="act_from" ref="act_hr_lowongan_seleksi"/>
+			<field name="act_to" ref="act_hr_lowongan_selesai"/>
+			<field name="signal">button_selesai</field>
+		</record>				
+		
+	</data>
+</openerp>

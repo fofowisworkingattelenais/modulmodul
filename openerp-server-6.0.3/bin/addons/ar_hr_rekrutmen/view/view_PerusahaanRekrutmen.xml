@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+        <record id="tree_hr_perusahaanRekrutmen" model="ir.ui.view">
+            <field name="name">Tree Perusahaan Rekrutmen</field>
+            <field name="model">res.company</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Konfigurasi Rekrutmen">
+                    <field name="name" string="Nama Perusahaan"/>
+					<field name="partner_id" string="Alamat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_perusahaanRekrutmen" model="ir.ui.view">
+            <field name="name">Form Perusahaan Rekrutmen</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Konfigurasi Rekrutmen">
+					<group colspan="4" col="2" name="group_1">
+						<group colspan="1" col="2" name="group_1_1">
+							<separator string="Perusahaan" colspan="2"/>
+						    <field name="name" string="Nama Perusahaan"/>
+				        	<field name="parent_id" string="Perusahaan Induk"/>
+                		</group>
+						<group colspan="1" col="2" name="group_1_2">
+							<separator string="Partner" colspan="2"/>
+						    <field name="partner_id" string="Partner"/>
+                		</group>                		
+					</group>
+					<notebook colspan="4">
+						<page string="Pengaturan">
+							<field name="sequence_lowongan_id"/>
+							<field name="sequence_pelamar_id"/>
+						</page>
+					
+					</notebook>
+				</form>
+            </field>
+        </record>
+	</data>
+</openerp>

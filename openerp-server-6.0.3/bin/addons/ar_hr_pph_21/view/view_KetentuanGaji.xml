@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- FORM PERHITUNGAN PPH 21  -->
+        <record id="form_hr_perhitunganPPH21" model="ir.ui.view">
+            <field name="name">Form Perhitungan PPH 21</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Ketentuan Gaji">
+                    <group name="group_1" colspan="4" col="2">
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Ketentuan Gaji" colspan="2"/>
+                    		<field name="name" string="Ketentuan Gaji"/>
+                    		<field name="code" string="Kode" select="1"/>
+                    		<field name="category_id" string="Kategori" widget="selection" domain="[('parent_id.name','=','Perhitungan PPH 21')]"/>
+                    	</group>
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Info Tambahan" colspan="2"/>
+                    		<field name="sequence" string="Urutan Perhitungan"/>
+                    		<field name="active" string="Aktif"/>
+                    		<field name="appears_on_payslip" string="Ditampilkan Pada Slip"/>
+                    		<field name="company_id" string="Perusahaan" widget="selection" groups="base.group_multi_company"/>
+                    	</group>                    	
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Perhitungan">
+                                <group col="4" colspan="6">
+                                    <separator colspan="4" string="Kondisi"/>
+                                    <field name="condition_select" string="Kondisi Berdasarkan"/><newline/>
+                                    <field name="condition_python" string="Kode Python" attrs="{'invisible':[('condition_select','&lt;&gt;','python')], 'required': [('condition_select','=','python')]}" colspan="4"/> <newline/>
+                                    <field name="condition_range" string="Rentang Berdasarkan" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <field name="condition_range_min" string="Minimal" colspan="2" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <field name="condition_range_max" string="Maksimal" colspan="2" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <separator colspan="4" string="Perhitungan"/>
+                                    <field name="amount_select" string="Jumlah Berdasarkan"/><newline/>
+                                    <field name="amount_percentage_base" string="Persen Berdasarkan" attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required': [('amount_select','=','percentage')]}"/><newline/>
+                                    <field name="quantity" string="Kuantitas" attrs="{'invisible':[('amount_select','=','code')], 'required':[('amount_select','!=','code')]}"/><newline/>
+                                    <field name="amount_fix"  string="Jumlah" attrs="{'invisible':[('amount_select','&lt;&gt;','fix')], 'required':[('amount_select','=','fix')]}"/><newline/>
+                                    <field name="amount_percentage" string="Jumlah" attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required':[('amount_select','=','percentage')]}"/>
+                                    <field colspan="4" name="amount_python_compute" string="Kode Python" attrs="{'invisible':[('amount_select','&lt;&gt;','code')], 'required':[('amount_select','=','code')]}"/>
+                                    <separator colspan="4" string="Kontribusi Pihak Ketiga"/>
+                                    <field name="register_id" string="Pihak Ketiga"/>
+                                </group>
+                        </page>
+                       <page string="Variabel Slip Gaji">
+                            <field name="input_ids" colspan="4" nolabel="1" mode="tree">
+                                <tree string="Variabel Slip Gaji">
+                                    <field name="name" string="Variabel"/>
+                                    <field name="code" string="Kode"/>
+                                </tree>
+                                <form string="Variabel Slip Gaji">
+                                    <field name="name" string="Variabel"/>
+                                    <field name="code" string="Kode"/>
+                                </form>                                    
+                            </field>
+                       </page>
+                        <page string="Deskrpsi">
+                            <field name="note" colspan="4" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record> 
+        
+        <!-- FORM PERHITUNGAN PPH 21 GROSS-UP -->
+        <record id="form_hr_perhitunganPPH21GrossUp" model="ir.ui.view">
+            <field name="name">Form Perhitungan PPH 21</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="type">form</field>
+            <field name="priority" eval="6"/>
+            <field name="arch" type="xml">
+                <form string="Ketentuan Gaji">
+                    <group name="group_1" colspan="4" col="2">
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Ketentuan Gaji" colspan="2"/>
+                    		<field name="name" string="Ketentuan Gaji"/>
+                    		<field name="code" string="Kode" select="1"/>
+                    		<field name="category_id" string="Kategori" widget="selection" domain="[('parent_id.name','=','Perhitungan PPH 21 Gross-Up')]"/>
+                    	</group>
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Info Tambahan" colspan="2"/>
+                    		<field name="sequence" string="Urutan Perhitungan"/>
+                    		<field name="active" string="Aktif"/>
+                    		<field name="appears_on_payslip" string="Ditampilkan Pada Slip"/>
+                    		<field name="company_id" string="Perusahaan" widget="selection" groups="base.group_multi_company"/>
+                    	</group>                    	
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Perhitungan">
+                                <group col="4" colspan="6">
+                                    <separator colspan="4" string="Kondisi"/>
+                                    <field name="condition_select" string="Kondisi Berdasarkan"/><newline/>
+                                    <field name="condition_python" string="Kode Python" attrs="{'invisible':[('condition_select','&lt;&gt;','python')], 'required': [('condition_select','=','python')]}" colspan="4"/> <newline/>
+                                    <field name="condition_range" string="Rentang Berdasarkan" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <field name="condition_range_min" string="Minimal" colspan="2" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <field name="condition_range_max" string="Maksimal" colspan="2" attrs="{'invisible':[('condition_select','&lt;&gt;','range')], 'required':[('condition_select','=','range')]}"/><newline/>
+                                    <separator colspan="4" string="Perhitungan"/>
+                                    <field name="amount_select" string="Jumlah Berdasarkan"/><newline/>
+                                    <field name="amount_percentage_base" string="Persen Berdasarkan" attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required': [('amount_select','=','percentage')]}"/><newline/>
+                                    <field name="quantity" string="Kuantitas" attrs="{'invisible':[('amount_select','=','code')], 'required':[('amount_select','!=','code')]}"/><newline/>
+                                    <field name="amount_fix"  string="Jumlah" attrs="{'invisible':[('amount_select','&lt;&gt;','fix')], 'required':[('amount_select','=','fix')]}"/><newline/>
+                                    <field name="amount_percentage" string="Jumlah" attrs="{'invisible':[('amount_select','&lt;&gt;','percentage')], 'required':[('amount_select','=','percentage')]}"/>
+                                    <field colspan="4" name="amount_python_compute" string="Kode Python" attrs="{'invisible':[('amount_select','&lt;&gt;','code')], 'required':[('amount_select','=','code')]}"/>
+                                    <separator colspan="4" string="Kontribusi Pihak Ketiga"/>
+                                    <field name="register_id" string="Pihak Ketiga"/>
+                                </group>
+                        </page>
+                       <page string="Variabel Slip Gaji">
+                            <field name="input_ids" colspan="4" nolabel="1" mode="tree">
+                                <tree string="Variabel Slip Gaji">
+                                    <field name="name" string="Variabel"/>
+                                    <field name="code" string="Kode"/>
+                                </tree>
+                                <form string="Variabel Slip Gaji">
+                                    <field name="name" string="Variabel"/>
+                                    <field name="code" string="Kode"/>
+                                </form>                                    
+                            </field>
+                       </page>
+                        <page string="Deskrpsi">
+                            <field name="note" colspan="4" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>         
+
+
+    </data>
+</openerp>
+

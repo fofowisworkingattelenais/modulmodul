@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_pajakTahunPajak","data_accessRight_pajakTahunPajak","model_pajak_tahun_pajak",,1,1,1,1
+"data_accessRight_pajakMasaPajak","data_accessRight_pajakMasaPajak","model_pajak_masa_pajak",,1,1,1,1
+
+

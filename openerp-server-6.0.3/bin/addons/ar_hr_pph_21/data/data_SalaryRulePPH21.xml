@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> 
+
+      
+	<!-- PERHITUNGAN PPH 21 NON GROSS-UP-->
+	
+        <record id="data_salary_pendapatanBrutoLalu1" model="hr.salary.rule">
+            <field name="name">Pendapatan Teratur Brutto S.D Bulan Lalu</field>
+            <field name="sequence" eval="101"/>
+            <field name="code">PBL1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AD"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for sebelum in payslip.slip_sebelum_ids:
+		result += sebelum.total_pendapatan_teratur + sebelum.total_asuransi</field>
+        </record>
+        
+        <record id="data_salary_pendapatanTTLalu1" model="hr.salary.rule">
+            <field name="name">Pendapatan Tidak Teratur Brutto S.D Bulan Lalu</field>
+            <field name="sequence" eval="102"/>
+            <field name="code">PBTTL1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AN"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for sebelum in payslip.slip_sebelum_ids:
+		result += sebelum.total_pendapatan_tidak_teratur</field>
+        </record>        	
+        
+        <record id="data_salary_pendapatanBrutoSkr1" model="hr.salary.rule">
+            <field name="name">Pendapatan Teratur Bulan Ini</field>
+            <field name="sequence" eval="103"/>
+            <field name="code">PBS1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AE"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PT + categories.ASR</field>
+        </record>
+        
+        <record id="data_salary_pendapatanTTBrutoSkr1" model="hr.salary.rule">
+            <field name="name">Pendapatan Tidak Teratur Bulan Ini</field>
+            <field name="sequence" eval="104"/>
+            <field name="code">PTTBS1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AO"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PTT</field>
+        </record>                
+	
+        <record id="data_salary_pendapatanBruto1" model="hr.salary.rule">
+            <field name="name">Pendapatan Brutto</field>
+            <field name="sequence" eval="105"/>
+            <field name="code">PB1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AA"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21AD + categories.PPH21AE + categories.PPH21AN</field>
+        </record>
+        
+        <record id="data_salary_biayaJabatan1" model="hr.salary.rule">
+            <field name="name">Biaya Jabatan</field>
+            <field name="sequence" eval="106"/>
+            <field name="code">BJ1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AB"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">max_biaya = payslip.tahun_pajak_id.max_biaya_jabatan * payslip.jumlah_bulan
+if (categories.PPH21AA * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00)) > max_biaya:
+	result = round(payslip.tahun_pajak_id.max_biaya_jabatan / 1.00) * -1.00 * payslip.jumlah_bulan
+else:
+	result = -1.00 * round(categories.PPH21AA * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00)) * payslip.jumlah_bulan</field>
+        </record>
+        
+        <record id="data_salary_biayaJabatanTT1" model="hr.salary.rule">
+            <field name="name">Biaya Jabatan Atas Pendapatan Tidak Teratur</field>
+            <field name="sequence" eval="107"/>
+            <field name="code">BJTT1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">max_biaya = payslip.tahun_pajak_id.max_biaya_jabatan * payslip.jumlah_bulan
+if categories.PPH21AB > max_biaya:
+	result = 0.0
+else:
+	jabatan = ((categories.PPH21AO) * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00))
+	sisa = max_biaya - abs(categories.PPH21AB)
+	if sisa &lt;= jabatan:
+		result = jabatan
+	else:
+		result = sisa</field>
+        </record>                
+        
+        <record id="data_salary_pendapatanNetto1" model="hr.salary.rule">
+            <field name="name">Pendapatan Netto</field>
+            <field name="sequence" eval="108"/>
+            <field name="code">PN1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AC"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21AA + categories.PPH21AB - categories.PEN
+if payslip.slip_sebelum_ids:
+	for slip in payslip.slip_sebelum_ids:
+		result -= slip.total_pensiun</field>
+        </record> 
+        
+        <record id="data_salary_pendapatanNettoSetahun1" model="hr.salary.rule">
+            <field name="name">Pendapatan Netto Disetahunkan</field>
+            <field name="sequence" eval="109"/>
+            <field name="code">PNS1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AF"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (categories.PPH21AC * 12.00) / payslip.jumlah_bulan + categories.PPH21AO + categories.PPH2121AP</field>
+        </record>        
+        
+        <record id="data_salary_ptkp1" model="hr.salary.rule">
+            <field name="name">PTKP</field>
+            <field name="sequence" eval="110"/>
+            <field name="code">PTKP1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AG"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -1.00 * employee.kategori_ptkp_id.ptkp_tahunan</field>
+        </record> 
+        
+        <record id="data_salary_pkp1" model="hr.salary.rule">
+            <field name="name">PKP</field>
+            <field name="sequence" eval="111"/>
+            <field name="code">PTP1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AH"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21AF + categories.PPH21AG</field>
+        </record> 
+        
+        <record id="data_salary_pkpBulat1" model="hr.salary.rule">
+            <field name="name">PKP (Dibulatkan)</field>
+            <field name="sequence" eval="112"/>
+            <field name="code">PTPB1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AJ"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = round(categories.PPH21AH/1000.00) * 1000.00</field>
+        </record>        
+        
+        <record id="data_salary_pphSetahun1" model="hr.salary.rule">
+            <field name="name">PPH 21 Setahun</field>
+            <field name="sequence" eval="113"/>
+            <field name="code">PPHT1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AI"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+pengurang = 0.0
+if not employee.npwp or len(employee.npwp):
+	npwp = True
+else:
+	npwp = False
+	
+if payslip.tahun_pajak_id:
+	if npwp:
+		for ketentuan in payslip.tahun_pajak_id.tarif_pph21_npwp_ids:
+			if categories.PPH21AJ >= ketentuan.dari_jumlah:
+				if categories.PPH21AJ > ketentuan.sampai_jumlah:
+					if ketentuan.dari_jumlah == 0.00:
+						rentang = 0.00
+					else:
+						rentang = ketentuan.dari_jumlah - 1.00
+					result += (ketentuan.tarif/100.00) * (ketentuan.sampai_jumlah - rentang)
+					pengurang = ketentuan.sampai_jumlah
+				else:
+					result += (ketentuan.tarif/100.00) * (categories.PPH21AJ - pengurang)
+	else:					
+		for ketentuan in payslip.tahun_pajak_id.tarif_pph21_non_npwp_ids:
+			if categories.PPH21AJ >= ketentuan.dari_jumlah:
+				if categories.PPH21AJ > ketentuan.sampai_jumlah:
+					if ketentuan.dari_jumlah == 0.00:
+						rentang = 0.00
+					else:
+						rentang = ketentuan.dari_jumlah - 1.00
+					result += (ketentuan.tarif/100.00) * (ketentuan.sampai_jumlah - rentang)
+					pengurang = ketentuan.sampai_jumlah
+				else:
+					result += (ketentuan.tarif/100.00) * (categories.PPH21AJ - pengurang)</field>
+        </record> 
+        
+        <record id="data_salary_pphSkr1" model="hr.salary.rule">
+            <field name="name">PPH 21 S.D. Bulan Ini</field>
+            <field name="sequence" eval="114"/>
+            <field name="code">PPHSDS1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AK"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00 + (round((categories.PPH21AI / (12.00 / payslip.jumlah_bulan)) / 1.00) * 1.00)</field>
+        </record> 
+        
+        <record id="data_salary_pphLalu1" model="hr.salary.rule">
+            <field name="name">PPH 21 S.D. Bulan Lalu</field>
+            <field name="sequence" eval="115"/>
+            <field name="code">PPHSDL1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AL"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for slip in payslip.slip_sebelum_ids:
+		result += slip.total_pph</field>
+        </record>               
+        
+        <record id="data_salary_pphSebulan1" model="hr.salary.rule">
+            <field name="name">PPH 21 Bulan Ini</field>
+            <field name="sequence" eval="116"/>
+            <field name="code">PPHB1</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21AM"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21AK - categories.PPH21AL</field>
+        </record>  
+        
+	<!-- PERHITUNGAN PPH 21 GROSS-UP-->
+	
+        <record id="data_salary_pendapatanBrutoLalu2" model="hr.salary.rule">
+            <field name="name">Pendapatan Teratur Brutto S.D Bulan Lalu</field>
+            <field name="sequence" eval="201"/>
+            <field name="code">PBL2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BD"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for sebelum in payslip.slip_sebelum_ids:
+		#result = 8.00
+		result += sebelum.total_pendapatan_teratur + sebelum.total_asuransi</field>
+        </record>
+        
+        <record id="data_salary_pendapatanTTLalu2" model="hr.salary.rule">
+            <field name="name">Pendapatan Tidak Teratur Brutto S.D Bulan Lalu</field>
+            <field name="sequence" eval="202"/>
+            <field name="code">PBTTL2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BN"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for sebelum in payslip.slip_sebelum_ids:
+		result += sebelum.total_pendapatan_tidak_teratur</field>
+        </record>        	
+        
+        <record id="data_salary_pendapatanBrutoSkr2" model="hr.salary.rule">
+            <field name="name">Pendapatan Teratur Bulan Ini</field>
+            <field name="sequence" eval="203"/>
+            <field name="code">PBS2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BE"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PT + categories.ASR</field>
+        </record>
+        
+        
+        <record id="data_salary_tunjanganPPH2" model="hr.salary.rule">
+            <field name="name">Tunjangan PPH 21</field>
+            <field name="sequence" eval="204"/>
+            <field name="code">TPPH2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BQ"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21AM</field>
+        </record>        
+        
+        <record id="data_salary_pendapatanTTBrutoSkr2" model="hr.salary.rule">
+            <field name="name">Pendapatan Tidak Teratur Bulan Ini</field>
+            <field name="sequence" eval="205"/>
+            <field name="code">PTTBS2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BO"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PTT</field>
+        </record>                
+	
+        <record id="data_salary_pendapatanBruto2" model="hr.salary.rule">
+            <field name="name">Pendapatan Brutto</field>
+            <field name="sequence" eval="206"/>
+            <field name="code">PB2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BA"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21BD + categories.PPH21BE + categories.PPH21BQ</field>
+        </record>
+        
+        <record id="data_salary_biayaJabatan2" model="hr.salary.rule">
+            <field name="name">Biaya Jabatan</field>
+            <field name="sequence" eval="207"/>
+            <field name="code">BJ2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BB"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">max_biaya = payslip.tahun_pajak_id.max_biaya_jabatan * payslip.jumlah_bulan
+if (categories.PPH21BA * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00)) > max_biaya:
+	result = round(payslip.tahun_pajak_id.max_biaya_jabatan / 1.00) * -1.00 * payslip.jumlah_bulan
+else:
+	result = -1.00 * round(categories.PPH21BA * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00)) * payslip.jumlah_bulan</field>	
+        </record>
+        
+        <record id="data_salary_biayaJabatanTT2" model="hr.salary.rule">
+            <field name="name">Biaya Jabatan Atas Pendapatan Tidak Teratur</field>
+            <field name="sequence" eval="208"/>
+            <field name="code">BJTT2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BP"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00</field>
+            <field name="amount_python_compute">max_biaya = payslip.tahun_pajak_id.max_biaya_jabatan * payslip.jumlah_bulan
+if categories.PPH21BB > max_biaya:
+	result = 0.0
+else:
+	jabatan = ((categories.PPH21BO) * (payslip.tahun_pajak_id.tarif_biaya_jabatan / 100.00))
+	sisa = max_biaya - abs(categories.PPH21BB)
+	if sisa &lt;= jabatan:
+		result = jabatan
+	else:
+		result = sisa</field>            
+        </record>                
+        
+        <record id="data_salary_pendapatanNetto2" model="hr.salary.rule">
+            <field name="name">Pendapatan Netto</field>
+            <field name="sequence" eval="209"/>
+            <field name="code">PN2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BC"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21BA + categories.PPH21BB - categories.PEN
+if payslip.slip_sebelum_ids:
+	for slip in payslip.slip_sebelum_ids:
+		result -= slip.total_pensiun</field>
+        </record> 
+        
+        <record id="data_salary_pendapatanNettoSetahun2" model="hr.salary.rule">
+            <field name="name">Pendapatan Netto Disetahunkan</field>
+            <field name="sequence" eval="210"/>
+            <field name="code">PNS2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BF"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (categories.PPH21BC * 12.00) / payslip.jumlah_bulan</field>
+        </record>        
+        
+        <record id="data_salary_ptkp2" model="hr.salary.rule">
+            <field name="name">PTKP</field>
+            <field name="sequence" eval="211"/>
+            <field name="code">PTKP2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BG"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = -1.00 * employee.kategori_ptkp_id.ptkp_tahunan</field>
+        </record> 
+        
+        <record id="data_salary_pkp2" model="hr.salary.rule">
+            <field name="name">PKP</field>
+            <field name="sequence" eval="212"/>
+            <field name="code">PTP2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BH"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21BF + categories.PPH21BG</field>
+        </record> 
+        
+        <record id="data_salary_pkpBulat2" model="hr.salary.rule">
+            <field name="name">PKP (Dibulatkan)</field>
+            <field name="sequence" eval="213"/>
+            <field name="code">PTPB2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BJ"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = round(categories.PPH21BH/1000.00) * 1000.00</field>
+        </record>        
+        
+        <record id="data_salary_pphSetahun2" model="hr.salary.rule">
+            <field name="name">PPH 21 Setahun</field>
+            <field name="sequence" eval="214"/>
+            <field name="code">PPHT2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BI"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+pengurang = 0.0
+if not employee.npwp or len(employee.npwp):
+	npwp = True
+else:
+	npwp = False
+	
+if payslip.tahun_pajak_id:
+	if npwp:
+		for ketentuan in payslip.tahun_pajak_id.tarif_pph21_npwp_ids:
+			if categories.PPH21BJ >= ketentuan.dari_jumlah:
+				if categories.PPH21BJ > ketentuan.sampai_jumlah:
+					if ketentuan.dari_jumlah == 0.00:
+						rentang = 0.00
+					else:
+						rentang = ketentuan.dari_jumlah - 1.00
+					result += (ketentuan.tarif/100.00) * (ketentuan.sampai_jumlah - rentang)
+					pengurang = ketentuan.sampai_jumlah
+				else:
+					result += (ketentuan.tarif/100.00) * (categories.PPH21BJ - pengurang)
+	else:					
+		for ketentuan in payslip.tahun_pajak_id.tarif_pph21_non_npwp_ids:
+			if categories.PPH21BJ >= ketentuan.dari_jumlah:
+				if categories.PPH21BJ > ketentuan.sampai_jumlah:
+					if ketentuan.dari_jumlah == 0.00:
+						rentang = 0.00
+					else:
+						rentang = ketentuan.dari_jumlah - 1.00
+					result += (ketentuan.tarif/100.00) * (ketentuan.sampai_jumlah - rentang)
+					pengurang = ketentuan.sampai_jumlah
+				else:
+					result += (ketentuan.tarif/100.00) * (categories.PPH21BJ - pengurang)</field>
+        </record> 
+        
+        <record id="data_salary_pphSkr2" model="hr.salary.rule">
+            <field name="name">PPH 21 S.D. Bulan Ini</field>
+            <field name="sequence" eval="215"/>
+            <field name="code">PPHSDS2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BK"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00 + (round((categories.PPH21BI / (12.00 / payslip.jumlah_bulan)) / 1.00) * 1.00)</field>
+        </record> 
+        
+        <record id="data_salary_pphLalu2" model="hr.salary.rule">
+            <field name="name">PPH 21 S.D. Bulan Lalu</field>
+            <field name="sequence" eval="216"/>
+            <field name="code">PPHSDL2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BL"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = 0.00
+if payslip.slip_sebelum_ids:
+	for slip in payslip.slip_sebelum_ids:
+		result += slip.total_pph</field>
+        </record>               
+        
+        <record id="data_salary_pphSebulan2" model="hr.salary.rule">
+            <field name="name">PPH 21 Bulan Ini</field>
+            <field name="sequence" eval="217"/>
+            <field name="code">PPHB2</field>
+            <field name="category_id" ref="data_salaryRuleCateg_pph21BM"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.PPH21BK - categories.PPH21BL</field>
+        </record>        
+        
+
+        
+  
+        
+  
+        
+
+    </data>
+</openerp>
