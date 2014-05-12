@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="form_base_sequenceBulanan" model="ir.ui.view">
+            <field name="name">Form Sequence Bulanan</field>
+            <field name="model">base.sequence_bulan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<form string="Sequence Bulanan">
+					<field name="sequence_id"/>
+					<field name="tahun"/>
+					<field name="bulan_id"/>
+					<field name="sequence_bulan_id"/>
+				</form>
+            </field>
+        </record>
+        
+        <record id="tree_base_sequenceBulanan" model="ir.ui.view">
+            <field name="name">Tree Sequence Bulanan</field>
+            <field name="model">base.sequence_bulan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+				<form string="Sequence Bulanan">
+					<field name="sequence_id"/>
+					<field name="tahun"/>
+					<field name="bulan_id"/>
+					<field name="sequence_bulan_id"/>
+				</form>
+            </field>
+        </record>
+                
+	</data>
+</openerp>

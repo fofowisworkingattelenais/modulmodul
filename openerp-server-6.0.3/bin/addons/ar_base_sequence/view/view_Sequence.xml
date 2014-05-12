@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="form_base_baseSequence" model="ir.ui.view">
+            <field name="name">Form Base Sequence</field>
+            <field name="model">ir.sequence</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+				<data>
+					<notebook position="inside">
+						<page string="Sequence Berdasarkan Bulan">
+							<field name="sequence_bulanan_ids" mode="tree" colspan="4" nolabel="1">
+								<tree string="Sequence Berdasarkan Bulan" editable="bottom">
+									<field name="tahun"/>
+									<field name="bulan_id" widget="selection"/>
+									<field name="sequence_bulan_id"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>
+	</data>
+</openerp>

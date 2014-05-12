@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem 	id="menu_base_sequenceBulanan" 
+					parent="base.next_id_5" 
+					name="Sequence Bulanan"					
+					action="waction_base_sequenceBulanan" 
+					/>			
+					
+			
+							
+	</data>
+</openerp>

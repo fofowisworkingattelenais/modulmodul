@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_base_sequenceBulanan" model="ir.actions.act_window">
+			<field name="name">Sequence Bulanan</field>
+			<field name="res_model">base.sequence_bulan</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_base_treeSequenceBulanan" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_sequenceBulanan"/>
+			<field name="act_window_id" ref="waction_base_sequenceBulanan"/>
+		</record>
+
+		<record id="wactionView_base_formSequenceBulanan" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_sequenceBulanan"/>
+			<field name="act_window_id" ref="waction_base_sequenceBulanan"/>
+		</record>
+    </data>
+</openerp>
