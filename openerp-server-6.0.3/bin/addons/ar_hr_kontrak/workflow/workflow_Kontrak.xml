@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!-- Workflow-->
+		<record id="workflow_hr_kontrak" model="workflow">
+			<field name="name">Kontrak</field>
+			<field name="osv">hr.contract</field>
+			<field name="on_create">True</field>
+		</record>
+		
+		<!-- Action : draft -->
+		<record id="act_hr_kontrak_draft" model="workflow.activity">
+		   	<field name="wkf_id" ref="workflow_hr_kontrak"/>
+		    	<field name="flow_start">True</field>
+		    	<field name="name">draft</field>
+		</record>
+
+		
+		<!-- Action : valid -->
+		<record id="act_hr_kontrak_valid" model="workflow.activity">
+		    <field name="wkf_id" ref="workflow_hr_kontrak"/>
+		    <field name="name">valid</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_valid()</field>  
+		</record>		
+		
+		<!-- Action : selesai -->
+		<record id="act_hr_kontrak_selesai" model="workflow.activity">
+		    <field name="wkf_id" ref="workflow_hr_kontrak"/>
+		    <field name="name">selesai</field>
+			<field name="flow_stop">True</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_selesai()</field>  
+		</record>		
+		
+	 	<!-- Action : batal -->
+		<record id="act_hr_kontrak_batal" model="workflow.activity">
+		    <field name="wkf_id" ref="workflow_hr_kontrak"/>
+		    <field name="name">batal</field>
+			<field name="flow_stop">True</field>
+			<field name="kind">function</field>
+			<field name="action">workflow_action_batal()</field>
+		</record>
+		
+	<!-- Transisi -->
+		
+		<!-- Transisi Draft - Valid -->
+		<record id="transisi_hr_kontrak_draft2Valid" model="workflow.transition">
+			<field name="act_from" ref="act_hr_kontrak_draft"/>
+			<field name="act_to" ref="act_hr_kontrak_valid"/>
+			<field name="signal">button_valid</field>
+		</record>
+		
+		<!-- Transisi Draft - Batal -->
+		<record id="transisi_hr_kontrak_draft2Batal" model="workflow.transition">
+			<field name="act_from" ref="act_hr_kontrak_draft"/>
+			<field name="act_to" ref="act_hr_kontrak_batal"/>
+			<field name="signal">button_batal</field>
+		</record>		
+		
+		<!-- Transisi valid - selesai  -->
+		<record id="transisi_hr_kontrak_valid2Selesai" model="workflow.transition">
+			<field name="act_from" ref="act_hr_kontrak_valid"/>
+			<field name="act_to" ref="act_hr_kontrak_selesai"/>
+			<field name="signal">button_selesai</field>
+		</record>		
+		
+
+
+	</data>
+</openerp>

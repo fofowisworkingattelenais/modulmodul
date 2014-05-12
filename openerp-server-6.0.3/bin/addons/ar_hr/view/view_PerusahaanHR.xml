@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+        <record id="tree_hr_perusahaanHR" model="ir.ui.view">
+            <field name="name">Tree Perusahaan HR</field>
+            <field name="model">res.company</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Konfigurasi Default Kepegawaian">
+                    <field name="name" string="Nama Perusahaan"/>
+					<field name="partner_id" string="Alamat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_perusahaanHR" model="ir.ui.view">
+            <field name="name">Form Perusahaan HR</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Konfigurasi Default HR">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Perusahaan" colspan="2"/>
+						    <field name="name" string="Nama Perusahaan"/>
+				        	<field name="parent_id" string="Perusahaan Induk"/>
+                		</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Partner" colspan="2"/>
+						    <field name="partner_id" string="Partner"/>
+                		</group>                		
+					</group>
+					<notebook colspan="4">
+						<page string="Pengaturan Umum">
+
+						</page>
+					</notebook>
+				</form>
+            </field>
+        </record>
+	</data>
+</openerp>

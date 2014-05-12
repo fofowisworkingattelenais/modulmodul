@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<delete model="hr.salary.rule.category" id="hr_payroll.BASIC"/>
+		<delete model="hr.salary.rule.category" id="hr_payroll.ALW"/>
+		<delete model="hr.salary.rule.category" id="hr_payroll.GROSS"/>
+		<delete model="hr.salary.rule.category" id="hr_payroll.DED"/>
+		<delete model="hr.salary.rule.category" id="hr_payroll.NET"/>
+		<delete model="hr.salary.rule.category" id="hr_payroll.COMP"/>
+
+    </data>
+</openerp>

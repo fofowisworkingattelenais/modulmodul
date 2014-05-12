@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+         <record id="tree_hr_tipeKontrak" model="ir.ui.view">
+            <field name="name">Tree Tipe Kontrak</field>
+            <field name="model">hr.contract.type</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tipe Kontrak">
+                    <field name="name" string="Tipe Kontrak"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_tipeKontrak" model="ir.ui.view">
+            <field name="name">Form Tipe Kontrak</field>
+            <field name="model">hr.contract.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tipe Kontrak">
+                    <field colspan="4" name="name" string="Tipe Kontrak"/>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="search_hr_tipeKontrak" model="ir.ui.view">
+            <field name="name">Search Tipe Kontrak</field>
+            <field name="model">hr.contract.type</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Contract Type">
+                    <field name="name" string="Tipe Kontrak"/>
+               </search>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

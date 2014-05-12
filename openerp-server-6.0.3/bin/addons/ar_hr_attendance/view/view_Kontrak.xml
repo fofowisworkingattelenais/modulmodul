@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+   
+        
+        <record id="form_hr_kontrakAbsensi" model="ir.ui.view">
+            <field name="name">Form Kontrak : Absensi</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="ar_hr_kontrak.form_hr_kontrak"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+					<field name="periode_gaji_id" string="Periode Kerja" attrs="{'required':[('required_absensi','=',1)]}" position="after">
+						<field name="pola_kerja_id" string="Pola Kerja" attrs="{'required':[('required_absensi','=',1)]}" widget="selection"/>
+					</field>
+				</data>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

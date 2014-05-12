@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_kontribusi" model="ir.ui.view">
+            <field name="name">Tree Kontribusi</field>
+            <field name="model">hr.contribution.register</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Kontribusi Perusahaan">
+                    <field name="name" string="Kontribusi"/>
+                    <field name="company_id" string="Perusahaan" groups="base.group_multi_company" widget="selection"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_kontribusi" model="ir.ui.view">
+            <field name="name">Form Kontribusi</field>
+            <field name="model">hr.contribution.register</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Kontribusi Perusahaan">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Kontribusi"/>
+                	 		<field name="name"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Perusahaan / Pihak Ketiga"/>
+				            <field name="company_id" string="Perusahaan" groups="base.group_multi_company" widget="selection"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="note" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_kontribusi" model="ir.ui.view">
+            <field name="name">Search Kontribusi</field>
+            <field name="model">hr.contribution.register</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Kontribusi Perusahaan">
+                	<field name="name"/>
+                	<field name="company_id" string="Perusahaan" groups="base.group_multi_company" widget="selection"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

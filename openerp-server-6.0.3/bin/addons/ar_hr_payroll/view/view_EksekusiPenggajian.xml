@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_eksekusiPenggajian" model="ir.ui.view">
+            <field name="name">Tree Eksekusi Penggajian</field>
+            <field name="model">hr.employee_salary_run</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Eksekusi Penggajian">
+                	<field name="name"/>
+                	<field name="employee_id"/>
+                    <field name="jadwal_penggajian_id"/>
+                    <field name="payslip_line_id"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_eksekusiPenggajian" model="ir.ui.view">
+            <field name="name">Form Eksekusi Penggajian</field>
+            <field name="model">hr.employee_salary_run</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Eksekusi Penggajian">
+                	<field name="name"/>
+                	<field name="employee_id"/>
+                    <field name="jadwal_penggajian_id"/>
+                    <field name="payslip_line_id"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_eksekusiPenggajian" model="ir.ui.view">
+            <field name="name">Search Eksekusi Penggajian</field>
+            <field name="model">hr.employee_salary_run</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Eksekusi Penggajian">
+                	<field name="employee_id"/>
+                    <field name="jadwal_penggajian_id"/>
+                    <field name="payslip_line_id"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

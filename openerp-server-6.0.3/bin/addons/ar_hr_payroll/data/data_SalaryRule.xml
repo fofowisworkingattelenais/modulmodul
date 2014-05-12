@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>       
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jhtPerusahaan" model="hr.salary.rule">
+            <field name="name">JHT Kontribusi Perusahaan</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">JHTP</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanHariTua"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+			<field name="register_id" ref="data_contribution_subsidiPerusahaan"/>
+        </record>       
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jhtKaryawan" model="hr.salary.rule">
+            <field name="name">JHT Kontribusi Karyawan</field>
+            <field name="sequence" eval="2"/>
+            <field name="code">JHTK</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanHariTua"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+        </record> 
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jkPerusahaan" model="hr.salary.rule">
+            <field name="name">JK Kontribusi Perusahaan</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">JHTP</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanKematian"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+			<field name="register_id" ref="data_contribution_subsidiPerusahaan"/>
+        </record>       
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jkKaryawan" model="hr.salary.rule">
+            <field name="name">JK Kontribusi Karyawan</field>
+            <field name="sequence" eval="2"/>
+            <field name="code">JHTK</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanKematian"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+        </record> 
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jpkPerusahaan" model="hr.salary.rule">
+            <field name="name">JPK Kontribusi Perusahaan</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">JHTP</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanPemeliharaanKesehatan"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+			<field name="register_id" ref="data_contribution_subsidiPerusahaan"/>
+        </record>       
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jpkKaryawan" model="hr.salary.rule">
+            <field name="name">JPK Kontribusi Karyawan</field>
+            <field name="sequence" eval="2"/>
+            <field name="code">JHTK</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanPemeliharaanKesehatan"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+        </record>  
+  
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jkkKaryawan" model="hr.salary.rule">
+            <field name="name">JKK Kontribusi Karyawan</field>
+            <field name="sequence" eval="2"/>
+            <field name="code">JKKK</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanKecelakaanKerja"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+        </record>   
+        
+        <record context="{'buat_jadwal':True}" id="data_salaryRule_jkkPerusahaan" model="hr.salary.rule">
+            <field name="name">JKK Kontribusi Perusahaan</field>
+            <field name="sequence" eval="1"/>
+            <field name="code">JKKP</field>
+            <field name="category_id" ref="ar_hr_payroll.data_ruleCategory_jaminanKecelakaanKerja"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">fix</field>
+            <field name="quantity">1.0</field>
+            <field name="amount_fix">1000000.00</field>
+			<field name="jadwal_pembayaran">bulan</field>
+			<field name="pilih_tanggal">31</field>
+			<field name="register_id" ref="data_contribution_subsidiPerusahaan"/>
+        </record>       
+                                                                     
+    </data>
+</openerp>

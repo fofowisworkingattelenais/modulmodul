@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>            
+        <record id="data_kodeAbsen_H" model="hr.kode_absen">
+            <field name="name">Hadir</field>
+            <field name="kode">H</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_H"/>
+        </record> 
+        
+        <record id="data_kodeAbsen_HKA" model="hr.kode_absen">
+            <field name="name">Hadir Kurang Absen</field>
+            <field name="kode">HKA</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_H"/>
+        </record>         
+        
+        <record id="data_kodeAbsen_O" model="hr.kode_absen">
+            <field name="name">Libur</field>
+            <field name="kode">O</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_O"/>
+        </record>  
+        
+        <record id="data_kodeAbsen_M" model="hr.kode_absen">
+            <field name="name">Mangkir</field>
+            <field name="kode">M</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_O"/>
+        </record>   
+        
+        <record id="data_kodeAbsen_I" model="hr.kode_absen">
+            <field name="name">Ijin</field>
+            <field name="kode">I</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_I"/>
+        </record>      
+        
+        <record id="data_kodeAbsen_S" model="hr.kode_absen">
+            <field name="name">Sakit</field>
+            <field name="kode">S</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_S"/>
+        </record> 
+        
+        <record id="data_kodeAbsen_CT" model="hr.kode_absen">
+            <field name="name">Cuti tahunan</field>
+            <field name="kode">CT</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>   
+        
+        <record id="data_kodeAbsen_CH" model="hr.kode_absen">
+            <field name="name">Cuti haid</field>
+            <field name="kode">CH</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CK"/>
+        </record> 
+        
+        <record id="data_kodeAbsen_CHL" model="hr.kode_absen">
+            <field name="name">Cuti hamil</field>
+            <field name="kode">CHL</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CK"/>
+        </record>   
+        
+        <record id="data_kodeAbsen_CAM" model="hr.kode_absen">
+            <field name="name">Cuti anak menikah</field>
+            <field name="kode">CAM</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record> 
+        
+        <record id="data_kodeAbsen_CKA" model="hr.kode_absen">
+            <field name="name">Cuti kelahiran anak</field>
+            <field name="kode">CKA</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>       
+        
+        <record id="data_kodeAbsen_CM" model="hr.kode_absen">
+            <field name="name">Cuti menikah</field>
+            <field name="kode">CM</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>    
+        
+        <record id="data_kodeAbsen_CML" model="hr.kode_absen">
+            <field name="name">Cuti melahirkan</field>
+            <field name="kode">CML</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CK"/>
+        </record>   
+        
+        <record id="data_kodeAbsen_CTB" model="hr.kode_absen">
+            <field name="name">Cuti tidak dibayar</field>
+            <field name="kode">CTB</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CTB"/>
+        </record>     
+        
+        <record id="data_kodeAbsen_CKM" model="hr.kode_absen">
+            <field name="name">Cuti keluarga meninggal</field>
+            <field name="kode">CKM</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>      
+        
+        <record id="data_kodeAbsen_CAM" model="hr.kode_absen">
+            <field name="name">Cuti anak menikah</field>
+            <field name="kode">CAM</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>
+        
+        <record id="data_kodeAbsen_CIM" model="hr.kode_absen">
+            <field name="name">Cuti istri menikah</field>
+            <field name="kode">CIM</field>
+			<field name="jenis_absen_id" ref="data_jenisAbsensi_CT"/>
+        </record>                                                     
+                                    
+                                       
+    </data>
+</openerp>

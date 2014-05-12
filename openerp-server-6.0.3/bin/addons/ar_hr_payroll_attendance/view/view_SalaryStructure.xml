@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="form_hr_strukturGajiAbsensiPayroll" model="ir.ui.view">
+            <field name="name">Form Struktur Gaji : ar_hr_payroll_attendance</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_payroll.form_hr_strukturGaji"/>
+            <field name="arch" type="xml">
+                <data>
+					<notebook colspan="4">
+						<page string="Pengali Lembur">
+							<field name="pengali_lembur_ids" nolabel="1" colspan="4" mode="tree,form">
+								<tree string="Pengali Lembur" editable="bottom">
+									<field name="status_hari"/>
+									<field name="jam_min"/>
+									<field name="jam_maks"/>
+									<field name="pengali"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>
+                </data>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>
+

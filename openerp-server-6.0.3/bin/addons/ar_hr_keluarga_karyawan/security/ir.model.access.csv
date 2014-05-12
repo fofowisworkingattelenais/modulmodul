@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrAnakKaryawan","data_accessRight_hrAnakKaryawan","model_hr_anak_karyawan",,1,1,1,1
+
+

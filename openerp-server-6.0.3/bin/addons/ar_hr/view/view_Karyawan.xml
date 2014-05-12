@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_karyawan" model="ir.ui.view">
+            <field name="name">Tree Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">tree</field>          
+            <field name="arch" type="xml">
+                <tree string="Karyawan">
+                	<field name="nip" string="NIP"/>
+                    <field name="name" string="Nama Karyawan"/>   
+                    <field name="job_id" string="Jabatan"/>
+                    <field name="department_id" string="Departemen"/>
+                    <field name="parent_id" string="Manajer"/>
+                    <field name="status_karyawan"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="search_hr_karyawan" model="ir.ui.view">
+            <field name="name">Search Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">search</field>          
+            <field name="arch" type="xml">
+                <search string="Karyawan">
+                    <field name="name" string="Nama Karyawan"/>  
+                    <field name="nip"/> 
+                    <field name="parent_id" string="Manajer"/>
+                    <field name="status_karyawan"/>
+                </search>
+            </field>
+        </record>        
+
+       <record id="form_hr_karyawan" model="ir.ui.view">
+            <field name="name">Form Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>         
+            <field name="arch" type="xml">
+                <form string="Karyawan">
+                    <group name="group_1" colspan="4" col="3">
+                    	<group name="group_1_1" colspan="1" col="2">
+		                	<separator string="Karyawan" colspan="2"/>
+		                	<field name="nip"/>
+		                    <field name="name" string="Karyawan" select="1"/>
+		                    <field name="user_id" string="Login"/>
+	                    </group>
+	                    <group name="group_1_2" colspan="1" col="2">
+	                    	<separator string="Informasi Pekerjaan" colspan="2"/>
+	                    	<field name="company_id" string="Perusahaan" readonly="1"/>
+	                    	<field name="department_id" string="Departemen" readonly="1"/>
+	                    	<field name="job_id" string="Jabatan" readonly="1"/>
+	                    	<field name="parent_id" string="Manajer" readonly="1"/>
+	                    </group>
+	                    <group name="group_1_3" colspan="1" col="2">
+	                    	<separator string="Photo" colspan="2"/>
+	                    	<label string=" "/>
+	                    	<field name="photo" widget="image" nolabel="1"/>
+                    	</group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Informasi Umum">
+                        	<group name="group_2" colspan="4" col="2">
+		                        <group name="group_2_1" col="3" colspan="1">
+		                            <separator colspan="3" string="No. Identitas"/>
+									<field name="ktp"/>
+									<field name="expired_ktp" nolabel="1"/>
+									<field name="npwp"/>
+									<field name="expired_npwp" nolabel="1"/>
+									<field name="sim"/>
+									<field name="expired_sim" nolabel="1"/>
+									<field name="simb"/>
+									<field name="expired_simb" nolabel="1"/>									
+									<field name="simb1"/>
+									<field name="expired_simb1" nolabel="1"/>									
+									<field name="simb2"/>
+									<field name="expired_simb2" nolabel="1"/>									
+									<field name="simc"/>
+									<field name="expired_simc" nolabel="1"/>	
+									<field name="passport"/>
+									<field name="expired_passport" nolabel="1"/>																	
+									<field name="kitas"/>
+									<field name="expired_kitas" nolabel="1"/>									
+									
+		                        </group>
+		                        <group name="group_2_2" col="2" colspan="1">
+		                            <separator string="Informasi Pribadi" colspan="2"/>
+	                            	<field name="tempat_lahir"/>
+	                            	<field name="tanggal_lahir"/>
+	                            	<field name="jenis_kelamin_id" widget="selection"/>
+	                            	<field name="agama_id" widget="selection"/>
+	                            	<field name="etnis_id" widget="selection"/>
+	                            	<field name="status_pernikahan_id" widget="selection"/>
+		                        </group>
+		                        <group name="group_2_3" col="2" colspan="1">
+		                            <separator string="Korespondensi" colspan="2"/>
+								    <field name="work_phone" string="Telepon"/>
+								    <field name="mobile_phone" string="Seluler"/>
+								    <field name="work_email" string="Email" widget="email"/>
+		                        </group>
+                            </group>                           
+                        </page>                        
+                        <page string="Catatan">
+                            <field colspan="4" nolabel="1" name="notes"/>
+                        </page>
+                    </notebook>
+                    <group name="group_3" colspan="4" col="3">
+                    	<group name="group_3_1" colspan="1" col="2">
+                    		<separator string="Status" colspan="2"/>
+                    		<field name="status_karyawan"/>
+                    	</group>
+                    	<group name="group_3_2" colspan="1" col="2">
+                    		<separator string="Action" colspan="2"/>
+                    	</group>                    
+                    	<group name="group_3_3" colspan="1" col="2">
+                    		<separator string="Workflow" colspan="2"/>
+                    	</group>                    		
+                    </group>
+                </form>
+            </field>
+        </record>    
+    </data>
+</openerp>

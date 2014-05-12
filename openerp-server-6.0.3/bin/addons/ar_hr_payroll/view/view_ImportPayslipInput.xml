@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_importPayslipInput" model="ir.ui.view">
+            <field name="name">Tree Import Payslip Input</field>
+            <field name="model">hr.import_payslip_input</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Import Payslip Input">
+                	<field name="name"/>
+					<field name="run_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_importPayslipInput" model="ir.ui.view">
+            <field name="name">Form Import Payslip Input</field>
+            <field name="model">hr.import_payslip_input</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Payslip Input">
+                	<field name="name"/>
+					<field name="run_id" domain="[('state','=','draft')]"/>
+					<notebook colspan="4">
+						<page string="Detail">
+							<field name="import_detail_payslip_input_ids" colspan="4" nolabel="1">
+								<tree string="Detail">
+									<field name="employee_id"/>
+									<field name="kode"/>
+									<field name="jumlah"/>
+								</tree>
+								<form string="Detail">
+									<field name="employee_id"/>
+									<field name="kode"/>
+									<field name="jumlah"/>
+								</form>								
+							</field>
+						</page>
+						<page string="Keterangan">
+							<field name="keterangan" colspan="4"/>
+						</page>
+					</notebook>
+					<group name="group_1" colspan="4" col="3">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state"/>
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+							<button name="%(waction_hr_wizardImportDataPayroll)d" string="Import Dari File" colspan="2" type="action"/>
+							
+						</group>
+						<group name="group_1_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="workflow_action_confirm" type="object" string="Confirm" colspan="2"/>
+							<button name="workflow_action_batal" type="object" string="Batal" colspan="2"/>
+						</group>												
+					</group>
+                    
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_importPayslipInput" model="ir.ui.view">
+            <field name="name">Search Import Payslip Input</field>
+            <field name="model">hr.import_payslip_input</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Import Payslip Input">
+                	<field name="name"/>
+					<field name="run_id"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="form_hr_karyawanKontrak" model="ir.ui.view">
+            <field name="name">Karyawan : ar_hr_kontrak</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>   
+            <field name="arch" type="xml">
+				<data>					
+					<page string="Informasi Umum" position="after">
+						<page string="History">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="Awal Bergabung" colspan="2"/>
+									<field name="tanggal_bergabung"/>
+								</group>							
+								<group name="group_1_2" colspan="1" col="2">
+									<separator string="History Aktif" colspan="2"/>
+									<field name="contract_id" string="History Aktif"/>
+								</group>
+							</group>
+							<field name="contract_ids" mode="tree" colspan="4" readonly="1" nolabel="1">
+								<tree string="History">
+								    <field name="name" string="# History"/>
+								    <field name="tanggal_mulai"/>
+								    <field name="tipe_history_id"/>
+								    <field name="state"/>
+								</tree>							
+							</field>
+						</page>
+					</page>
+				</data>
+            </field>
+        </record>     
+    </data>
+</openerp>

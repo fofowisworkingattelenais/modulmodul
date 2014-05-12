@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+         <record id="tree_hr_tipeHistory" model="ir.ui.view">
+            <field name="name">Tree Tipe History</field>
+            <field name="model">hr.tipe_history</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Tipe History">
+                    <field name="name" string="Tipe History"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_tipeHistory" model="ir.ui.view">
+            <field name="name">Form Tipe History</field>
+            <field name="model">hr.tipe_history</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tipe History">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2">
+                			<separator string="Tipe History" colspan="2"/>
+                			<field name="kode"/>
+                			<field name="name"/>
+                		</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                			<separator string="Status Data" colspan="2"/>
+                			<field name="active"/>
+                		</group>                		
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Diaplikasikan Pada">
+                			<field name="kode_python_karyawan" colspan="4" nolabel="1"/>
+                		</page>
+                		<page string="Dijalankan ketika Valid">
+                			<field name="kode_python" colspan="4" nolabel="1"/>
+            			</page>
+            			<page string="Field Yang Dicopy Dari History Sebelumnya">
+            				<field name="field_copy_ids" nolabel="1" colspan="4">
+            					<tree string="Field">
+            						<field name="name"/>
+            					</tree>
+            				</field>
+            			</page>
+                		<page string="Keterangan">
+                			<field name="keterangan" colspan="4" nolabel="1"/>
+            			</page>            			
+                	</notebook>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="search_hr_tipeHistory" model="ir.ui.view">
+            <field name="name">Search Tipe History</field>
+            <field name="model">hr.tipe_history</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Tipe History">
+                    <field name="name" string="Tipe History"/>
+               </search>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

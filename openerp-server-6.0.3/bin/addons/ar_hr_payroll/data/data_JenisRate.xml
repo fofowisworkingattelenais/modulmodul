@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_jenisRate_JHTKaryawan" model="hr.jenis_rate">
+            <field name="name">JHT Kontribusi Karyawan</field>
+            <field name="kode">JHT-K</field>
+        </record>
+
+        <record id="data_jenisRate_JHTPerusahaan" model="hr.jenis_rate">
+            <field name="name">JHT Kontribusi Perusahaan</field>
+            <field name="kode">JHT-P</field>
+        </record>        
+        
+        <record id="data_jenisRate_JKKaryawan" model="hr.jenis_rate">
+            <field name="name">JK Kontribusi Karyawan</field>
+            <field name="kode">JK-K</field>
+        </record> 
+        
+        <record id="data_jenisRate_JKPerusahaan" model="hr.jenis_rate">
+            <field name="name">JK Kontribusi Perusahaan</field>
+            <field name="kode">JK-P</field>
+        </record>    
+        
+        <record id="data_jenisRate_JPKKaryawan" model="hr.jenis_rate">
+            <field name="name">JPK Kontribusi Karyawan</field>
+            <field name="kode">JPK-K</field>
+        </record>  
+        
+        <record id="data_jenisRate_JPKPerusahaan" model="hr.jenis_rate">
+            <field name="name">JPK Kontribusi Perusahaan</field>
+            <field name="kode">JPK-P</field>
+        </record>   
+        
+        <record id="data_jenisRate_JKKKaryawan" model="hr.jenis_rate">
+            <field name="name">JKK Kontribusi Karyawan</field>
+            <field name="kode">JKK-K</field>
+        </record> 
+        
+        <record id="data_jenisRate_JKKPerusahaan" model="hr.jenis_rate">
+            <field name="name">JKK Kontribusi Perusahaan</field>
+            <field name="kode">JKK-P</field>
+        </record>                                          
+                                                   
+                                      
+    </data>
+</openerp>

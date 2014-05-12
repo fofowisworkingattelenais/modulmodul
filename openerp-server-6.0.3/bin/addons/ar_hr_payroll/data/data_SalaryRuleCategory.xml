@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_ruleCategory_pendapatanTeratur" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Teratur</field>
+            <field name="code">PT</field>
+        </record>
+            
+        <record id="data_ruleCategory_gapok" model="hr.salary.rule.category">
+            <field name="name">Gaji Pokok</field>
+            <field name="code">GAPOK</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>
+        
+        <record id="data_ruleCategory_tunjanganPPH" model="hr.salary.rule.category">
+            <field name="name">Tunjangan PPH</field>
+            <field name="code">TPPH21</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>        
+        
+        <record id="data_ruleCategory_tunjangan" model="hr.salary.rule.category">
+            <field name="name">Tunjangan</field>
+            <field name="code">TNJ</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>
+        
+        <record id="data_ruleCategory_honorarium" model="hr.salary.rule.category">
+            <field name="name">Honorarium, dan Imbalan Lain Sejenisnya</field>
+            <field name="code">HILS</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>        
+        
+        <record id="data_ruleCategory_premi" model="hr.salary.rule.category">
+            <field name="name">Premi Asuransi Yang Dibayar Penerima Kerja</field>
+            <field name="code">PRM</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>        
+        
+        <record id="data_ruleCategory_natura" model="hr.salary.rule.category">
+            <field name="name">Penerimaan Dalam Bentuk Natura &amp; Dan Kenikmatan Lainnya</field>
+            <field name="code">NTR</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTeratur"/>
+        </record>        
+
+        <record id="data_ruleCategory_pendapatanTidakTeratur" model="hr.salary.rule.category">
+            <field name="name">Pendapatan Tidak Teratur</field>
+            <field name="code">PTT</field>
+        </record>
+        
+        <record id="data_ruleCategory_tantiem" model="hr.salary.rule.category">
+            <field name="name">Tantiem</field>
+            <field name="code">TTM</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTidakTeratur"/>
+        </record>  
+        
+        <record id="data_ruleCategory_bonus" model="hr.salary.rule.category">
+            <field name="name">Bonus</field>
+            <field name="code">BNS</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTidakTeratur"/>
+        </record>  
+        
+        <record id="data_ruleCategory_gratifikasi" model="hr.salary.rule.category">
+            <field name="name">Gratifikasi</field>
+            <field name="code">GTF</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTidakTeratur"/>
+        </record>     
+        
+        <record id="data_ruleCategory_jasaProduksi" model="hr.salary.rule.category">
+            <field name="name">Jasa Prosuksi</field>
+            <field name="code">JPR</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTidakTeratur"/>
+        </record>        
+        
+        <record id="data_ruleCategory_thr" model="hr.salary.rule.category">
+            <field name="name">THR</field>
+            <field name="code">THR</field>
+            <field name="parent_id" ref="data_ruleCategory_pendapatanTidakTeratur"/>
+        </record>                       
+        
+        <record id="data_ruleCategory_potongan" model="hr.salary.rule.category">
+            <field name="name">Potongan</field>
+            <field name="code">POT</field>
+        </record>   
+        
+        <record id="data_ruleCategory_jamsostekKaryawan" model="hr.salary.rule.category">
+            <field name="name">Jamsostek Kontribusi Karyawan</field>
+            <field name="code">JAMK</field>
+        </record>  
+        
+        <record id="data_ruleCategory_jamsostekPerusahaan" model="hr.salary.rule.category">
+            <field name="name">Jamsostek Kontribusi Perusahaan</field>
+            <field name="code">JAMP</field>
+        </record>  
+        
+        <record id="data_ruleCategory_asuransi" model="hr.salary.rule.category">
+            <field name="name">Asuransi</field>
+            <field name="code">ASR</field>
+        </record> 
+        
+        <record id="data_ruleCategory_asuransiDefault" model="hr.salary.rule.category">
+            <field name="name">Asuransi</field>
+            <field name="code">ASR1</field>
+            <field name="parent_id" ref="data_ruleCategory_asuransi"/>
+        </record>
+        
+        <record id="data_ruleCategory_jaminanKematian" model="hr.salary.rule.category">
+            <field name="name">Jaminan Kematian</field>
+            <field name="code">JK</field>
+            <field name="parent_id" ref="data_ruleCategory_asuransi"/>
+        </record>
+        
+        <record id="data_ruleCategory_jaminanPemeliharaanKesehatan" model="hr.salary.rule.category">
+            <field name="name">Jaminan Pemeliharaan Kesehatan</field>
+            <field name="code">JPK</field>
+            <field name="parent_id" ref="data_ruleCategory_asuransi"/>
+        </record>                
+        
+        <record id="data_ruleCategory_jaminanKecelakaanKerja" model="hr.salary.rule.category">
+            <field name="name">Jaminan Kecelakaan Kerja</field>
+            <field name="code">JKK</field>
+            <field name="parent_id" ref="data_ruleCategory_asuransi"/>
+        </record>                     
+                
+        <record id="data_ruleCategory_pensiun" model="hr.salary.rule.category">
+            <field name="name">Pensiun</field>
+            <field name="code">PEN</field>
+        </record>  
+        
+        <record id="data_ruleCategory_pensiunHeader" model="hr.salary.rule.category">
+            <field name="name">Pensiun</field>
+            <field name="code">PEN1</field>
+            <field name="parent_id" ref="data_ruleCategory_pensiun"/>
+        </record>
+        
+        <record id="data_ruleCategory_jaminanHariTua" model="hr.salary.rule.category">
+            <field name="name">Jaminan Hari Tua</field>
+            <field name="code">JHT</field>
+            <field name="parent_id" ref="data_ruleCategory_pensiun"/>
+        </record>                                                    
+                                      
+    </data>
+</openerp>

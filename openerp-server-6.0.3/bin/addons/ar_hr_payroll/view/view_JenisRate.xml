@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_jenisRate" model="ir.ui.view">
+            <field name="name">Tree Jenis Rate</field>
+            <field name="model">hr.jenis_rate</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Jenis Rate">
+                	<field name="kode"/>
+                	<field name="name"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_jenisRate" model="ir.ui.view">
+            <field name="name">Form Jenis Rate</field>
+            <field name="model">hr.jenis_rate</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Jenis Rate">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Jenis Rate"/>
+                	 		<field name="name"/>
+                	 		<field name="kode"/>         	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_jenisRate" model="ir.ui.view">
+            <field name="name">Search Jenis Rate</field>
+            <field name="model">hr.jenis_rate</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Jenis Rate">
+                	<field name="kode"/>
+                	<field name="name"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>            
+        <record id="data_jenisAbsensi_H" model="hr.jenis_absen">
+            <field name="name">Hadir kerja</field>
+            <field name="kode">H</field>
+			<field name="tipe">absen</field>
+        </record> 
+        
+        <record id="data_jenisAbsensi_O" model="hr.jenis_absen">
+            <field name="name">Tidak masuk kerja karena tidak ada jadwal</field>
+            <field name="kode">O</field>
+			<field name="tipe">absen</field>
+        </record>  
+        
+        <record id="data_jenisAbsensi_M" model="hr.jenis_absen">
+            <field name="name">Tidak bekerja tanpa pemberitahuan terlebih dahulu</field>
+            <field name="kode">M</field>
+			<field name="tipe">absen</field>
+        </record>   
+        
+        <record id="data_jenisAbsensi_I" model="hr.jenis_absen">
+            <field name="name">Tidak bekerja dengan meminta surat ijin</field>
+            <field name="kode">I</field>
+			<field name="tipe">absen</field>
+        </record>      
+        
+        <record id="data_jenisAbsensi_S" model="hr.jenis_absen">
+            <field name="name">Tidak bekerja karena sakit</field>
+            <field name="kode">S</field>
+			<field name="tipe">absen</field>
+        </record>   
+        
+        <record id="data_jenisAbsensi_AI" model="hr.jenis_absen">
+            <field name="name">Tugas luar</field>
+            <field name="kode">AI</field>
+			<field name="tipe">absen</field>
+        </record>    
+        
+        <record id="data_jenisAbsensi_CT" model="hr.jenis_absen">
+            <field name="name">Cuti tahunan</field>
+            <field name="kode">CT</field>
+			<field name="tipe">cuti</field>
+        </record>   
+        
+        <record id="data_jenisAbsensi_CK" model="hr.jenis_absen">
+            <field name="name">Cuti khusus</field>
+            <field name="kode">CK</field>
+			<field name="tipe">cuti</field>
+        </record>     
+        
+        <record id="data_jenisAbsensi_CTB" model="hr.jenis_absen">
+            <field name="name">Cuti tidak dibayar</field>
+            <field name="kode">CTB</field>
+			<field name="tipe">cuti</field>
+        </record>                                      
+                                       
+    </data>
+</openerp>

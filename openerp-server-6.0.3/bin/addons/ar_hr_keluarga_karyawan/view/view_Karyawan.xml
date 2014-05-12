@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="form_hr_karyawanKeluarga" model="ir.ui.view">
+            <field name="name">Kategori Karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>   
+            <field name="arch" type="xml">
+				<data>
+					<page string="Informasi Umum" position="after">
+						<page string="Keluarga">
+							<group name="group_5" colspan="2" col="2">
+								<separator string="Pasangan" colspan="2"/>
+								<field name="nama_pasangan"/>
+								<field name="tanggal_menikah"/>
+							</group>
+							<group name="group_6" colspan="2" col="2">
+								<separator string="Orang Tua" colspan="2"/>
+								<field name="nama_ayah"/>
+								<field name="nama_ibu"/>
+							</group>
+							<group name="group_7" colspan="2" col="2">
+								<separator string="Anak" colspan="2"/>
+								<field name="jumlah_anak"/>
+							</group>											
+							<field name="anak_ids" colspan="4" nolabel="1">
+								<tree string="Anak">
+									<field name="name"/>
+									<field name="urutan"/>
+									<field name="jenis_kelamin_id"/>
+									<field name="tanggal_lahir"/>
+								</tree>
+								<form string="Anak">
+									<field name="name"/>
+									<field name="urutan"/>
+									<field name="jenis_kelamin_id" widget="selection"/>
+									<field name="tanggal_lahir"/>
+								</form>								
+							</field>			
+						</page>
+					</page>
+				</data>
+            </field>
+        </record>     
+   
+    </data>
+</openerp>

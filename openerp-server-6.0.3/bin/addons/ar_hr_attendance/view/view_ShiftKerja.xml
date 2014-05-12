@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_shiftKerja" model="ir.ui.view">
+            <field name="name">Tree Shift Kerja</field>
+            <field name="model">hr.shift_kerja</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Shift Kerja">
+                    <field name="name"/>
+					<field name="jam_masuk" widget="float_time"/>
+					<field name="jam_keluar" widget="float_time"/>
+					<field name="mulai_istirahat" widget="float_time"/>
+					<field name="selesai_istirahat" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_shiftKerja" model="ir.ui.view">
+            <field name="name">Form Shift Kerja</field>
+            <field name="model">hr.shift_kerja</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Shift Kerja">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Shift Kerja"/>
+                	 		<field name="name"/>            	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	                   	
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Waktu Kerja">
+				        	<group name="group_2" colspan="4" col="2">
+				        		<group name="group_2_1" colspan="1" col="2">
+				        	 		<separator colspan="2" string="Jam Masuk &amp; Keluar"/>
+								    <field name="jam_masuk" widget="float_time"/>
+								    <field name="jam_keluar" widget="float_time"/>
+				            	</group>    
+				        		<group name="group_2_2" colspan="1" col="2">
+				        	 		<separator colspan="2" string="Istirahat"/>
+								    <field name="mulai_istirahat" widget="float_time"/>
+								    <field name="selesai_istirahat" widget="float_time"/>
+				            	</group>				            	                	                   	
+				        	</group>                			
+                		</page>
+                		<page string="Keterangan">
+                			<field name="keterangan" colspan="4" nolabel="1"/>
+                		</page>
+                	</notebook>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_shiftKerja" model="ir.ui.view">
+            <field name="name">Search Shift Kerja</field>
+            <field name="model">hr.shift_kerja</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Shift Kerja">
+                    <field name="name"/>
+					<field name="jam_masuk"/>
+					<field name="jam_keluar"/>
+					<field name="mulai_istirahat"/>
+					<field name="selesai_istirahat"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

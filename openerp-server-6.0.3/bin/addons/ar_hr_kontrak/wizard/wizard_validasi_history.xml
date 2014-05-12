@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_hr_wizardValidasiHistory" model="ir.ui.view">
+            <field name="name">Wizard Validasi History</field>
+            <field name="model">hr.wizard_validasi_history</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Validasi History">
+                    <separator colspan="4" string="Wizard ini akan mengvalidasi History yang dipilih"/>
+					<button name="Validasi" type="workflow" string="Validasi" icon="gtk-execute"/>
+					<button icon="gtk-cancel" special="cancel" string="Batal"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardValidasiHistory" model="ir.actions.act_window">
+			<field name="name">Validasi History</field>
+			<field name="res_model">hr.wizard_validasi_history</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_wizardValidasiHistory"/>
+			<field name="target">new</field>
+       </record>        
+       
+        <record model="ir.values" id="value_hr_wizardValidasiHistory">
+            <field name="model_id" ref="model_hr_contract" />
+            <field name="object" eval="1" />
+            <field name="name">Validasi History</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('waction_hr_wizardValidasiHistory'))" />
+            <field name="key">action</field>
+            <field name="model">hr.contract</field>
+        </record>        
+
+    </data>
+</openerp>
+

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<document filename="Slip Gaji.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<template pageSize="(29.7cm,21.0cm)" title="Riwayat Pembayaran Gaji" author="Andhitia Rama" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>	
+		</pageTemplate>
+	</template>
+	
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+		
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>		
+		
+				
+		
+		<blockTableStyle id="TABEL_STANDAR">		
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>			
+			
+		
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<para>RIWAYAT PEMBAYARAN GAJI</para>
+		<para><font color="white"> </font></para>
+		<blockTable colWidths="3cm,1cm,23.7cm">
+			<tr>
+				<td><para>Karyawan</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ nama_karyawan() ]]</para></td>
+			</tr>
+			<tr>
+				<td><para>NIP</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ nip_karyawan() ]]</para></td>
+			</tr>		
+			<tr>
+				<td><para>Tahun</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ tahun_laporan() ]]</para></td>
+			</tr>				
+		</blockTable>
+		<para><font color="white"> </font></para>
+		
+		<section>
+			<blockTable>
+				<tr>
+					<td><para>KODE</para></td>
+					<td><para>KETENTUAN</para></td>
+					<td><para>JAN</para></td>
+					<td><para>FEB</para></td>
+					<td><para>MAR</para></td>
+					<td><para>APR</para></td>
+					<td><para>MEI</para></td>
+					<td><para>JUN</para></td>
+					<td><para>JUL</para></td>
+					<td><para>AGU</para></td>
+					<td><para>SEP</para></td>
+					<td><para>OKT</para></td>
+					<td><para>NOV</para></td>
+					<td><para>DES</para></td>
+					<td><para>TOTAL</para></td>
+				</tr>
+				
+				<tr>
+					[[ repeatIn(isi_laporan(), 'isi') ]]
+					<td><para>[[ isi['kode'] ]]</para></td>
+					<td><para>[[ isi['ketentuan'] ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['01'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['02'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['03'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['04'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['05'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['06'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['07'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['08'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['09'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['10'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['11'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['12'], True) ]]</para></td>
+					<td><para>[[ locale.format('%.2f', isi['total'], True) ]]</para></td>
+				</tr>				
+			</blockTable>
+		</section>
+	</story>
+
+</document>

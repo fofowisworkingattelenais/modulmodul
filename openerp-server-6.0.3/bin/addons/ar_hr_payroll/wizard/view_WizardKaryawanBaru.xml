@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_wizardKaryawanBaruPayroll" model="ir.ui.view">
+            <field name="name">Form Wizard Karyawan Baru : ar_hr_payroll</field>
+            <field name="model">hr.wizard_karyawan_baru</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_kontrak.form_hr_wizardKaryawanBaru"/>
+            <field name="arch" type="xml">
+                <data>
+					<field name="wage" position="after">
+						<field name="struct_id"/>
+						<field name="periode_gaji_id"/>
+					</field>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

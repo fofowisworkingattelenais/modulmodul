@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_wizardBuatTimesheet" model="ir.ui.view">
+            <field name="name">Form Wizard Buat Timesheet</field>
+            <field name="model">hr.wizard_buat_timesheet</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+					<field name="periode_kerja_id"/>
+					<field name="detail_periode_kerja_id" domain="[('periode_gaji_id','=',periode_kerja_id)]"/>
+					<button name="jalankan_wizard" type="object" string="Ok" colspan="2" icon="gtk-ok"/>
+					<button special="cancel" string="Batal" icon="gtk-cancel" colspan="2"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardBuatTimesheet" model="ir.actions.act_window">
+            <field name="name">Buat Timesheet</field>
+            <field name="res_model">hr.wizard_buat_timesheet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>        
+    </data>
+</openerp>

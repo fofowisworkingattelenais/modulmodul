@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+data_accessRight_hrAbsensi,data_accessRight_hrAbsensi,model_hr_absensi,,1,1,1,1
+data_accessRight_hrJenisAbsen,data_accessRight_hrJenisAbsen,model_hr_jenis_absen,,1,1,1,1
+data_accessRight_hrKodeAbsen,data_accessRight_hrKodeAbsen,model_hr_kode_absen,,1,1,1,1
+data_accessRight_hrLiburNasional,data_accessRight_hrLiburNasional,model_hr_libur_nasional,,1,1,1,1
+data_accessRight_hrKetentuanAbsensi,data_accessRight_hrKetentuanAbsensi,model_hr_ketentuan_absensi,,1,1,1,1
+data_accessRight_hrShiftKerja,data_accessRight_hrShiftKerja,model_hr_shift_kerja,,1,1,1,1
+data_accessRight_hrPolaKerja,data_accessRight_hrPolaKerja,model_hr_pola_kerja,,1,1,1,1
+data_accessRight_hrDetailPolaKerja,data_accessRight_hrDetailPolaKerja,model_hr_detail_pola_kerja,,1,1,1,1
+data_accessRight_hrTimesheetKaryawan,data_accessRight_hrTimesheetKaryawan,model_hr_timesheet_karyawan,,1,1,1,1
+data_accessRight_hrPerhitunganTimesheet,data_accessRight_hrPerhitunganTimesheet,model_hr_perhitungan_timesheet,,1,1,1,1
+data_accessRight_hrKetentuanCuti,data_accessRight_hrKetentuanCuti,model_hr_ketentuan_cuti,,1,1,1,1
+data_accessRight_hrDetailKetentuanCuti,data_accessRight_hrDetailKetentuanCuti,model_hr_detail_ketentuan_cuti,,1,1,1,1
+data_accessRight_hrCutiKerja,data_accessRight_hrCutiKerja,model_hr_cuti_kerja,,1,1,1,1
+data_accessRight_hrLembur,data_accessRight_hrLembur,model_hr_lembur,,1,1,1,1

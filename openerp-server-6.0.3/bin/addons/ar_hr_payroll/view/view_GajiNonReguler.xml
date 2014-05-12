@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_gajiNonreguler" model="ir.ui.view">
+            <field name="name">Tree Pendapatan Tidak Teratur</field>
+            <field name="model">hr.gaji_nonreguler</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Gaji Non-Reguler">
+                	<field name="name"/>
+                	<field name="tanggal_penggajian"/>
+                	<field name="salary_rule_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_gajiNonreguler" model="ir.ui.view">
+            <field name="name">Form Pendapatan Tidak Teratur</field>
+            <field name="model">hr.gaji_nonreguler</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Gaji Non-Reguler">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2">
+                			<separator string="Gaji Non-Reguler" colspan="2"/>
+                			<field name="name"/>
+                			<field name="salary_rule_id" widget="selection"  domain="[('category_id.parent_id.name','=','Pendapatan Tidak Teratur')]"/>
+                		</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                			<separator string="Tanggal Penggajian" colspan="2"/>
+                			<field name="tanggal_penggajian"/>
+                		</group>                		
+                	</group>
+					<notebook colspan="4">
+						<page string="Detail Gaji Non-Reguler">
+							<field name="detail_gaji_nonreguler_ids" colspan="4" nolabel="1" mode="tree">
+								<tree string="Detail Gaji Non-Reguler">
+									<field name="employee_id"/>
+								</tree>
+								<form string="Detail Gaji Non-Reguler">						
+									<field name="employee_id"/>
+								</form>								
+							</field>
+						</page>
+						<page string="Keterangan">
+							<field name="keterangan" colspan="4" nolabel="1"/>
+						</page>
+					</notebook>
+					<group name="group_3" colspan="4" col="3">
+						<group name="group_3_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>					
+                    		<field name="state"/>
+                		</group>
+                		<group name="group_3_2" colspan="1" col="2">
+                			<separator string="Action" colspan="2"/>
+                		
+                		</group>
+                		<group name="group_3_3" colspan="1" col="2">
+                			<separator string="Workflow" colspan="2"/>
+                			<button name="workflow_action_confirm" type="object" string="Confirm" colspan="2" icon="gtk-yes" states="draft"/>
+                			<button name="workflow_action_batal" type="object" string="Batal" colspan="2" icon="gtk-cancel" states="draft,confirm"/>
+                		</group>
+            		</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_gajiNonreguler" model="ir.ui.view">
+            <field name="name">Search Pendapatan Tidak Teratur</field>
+            <field name="model">hr.gaji_nonreguler</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Gaji Non-Reguler">
+					<field name="salary_rule_id"/>
+					<field name="tanggal_penggajian"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

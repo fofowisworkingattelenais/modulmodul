@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <record id="form_hr_perusahaanKontrak" model="ir.ui.view">
+            <field name="name">Form Perusahaan : ar_hr_kontrak</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr.form_hr_perusahaanHR"/>
+            <field name="arch" type="xml">
+				<data>
+					<notebook position="inside">
+						<page string="History Karyawan">
+							<group name="group_1" colspan="4" col="2">
+								<group name="group_1_1" colspan="1" col="2">
+									<separator string="Sequence" colspan="2"/>
+									<field name="sequence_kontrak_id"/>
+								</group>
+							</group>
+						</page>
+					</notebook>
+				</data>
+            </field>
+        </record>
+	</data>
+</openerp>

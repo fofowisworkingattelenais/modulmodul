@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+        <record id="tree_hr_perusahaanPayroll" model="ir.ui.view">
+            <field name="name">Tree Perusahaan Payroll</field>
+            <field name="model">res.company</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Konfigurasi Payroll">
+                    <field name="name" string="Nama Perusahaan"/>
+					<field name="partner_id" string="Alamat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_perusahaanPayroll" model="ir.ui.view">
+            <field name="name">Form Perusahaan Payroll</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Konfigurasi Payroll">
+					<group colspan="4" col="2" name="group_1">
+						<group colspan="1" col="2" name="group_1_1">
+							<separator string="Perusahaan" colspan="2"/>
+						    <field name="name" string="Nama Perusahaan"/>
+				        	<field name="parent_id" string="Perusahaan Induk"/>
+                		</group>
+						<group colspan="1" col="2" name="group_1_2">
+							<separator string="Partner" colspan="2"/>
+						    <field name="partner_id" string="Partner"/>
+                		</group>                		
+					</group>
+					<notebook colspan="4">
+						<page string="Pengaturan Umum">
+							<group name="group_2" colspan="4" col="2">
+								<group name="group_2_1" colspan="1" col="2">
+									<separator string="Sequence" colspan="2"/>
+									<field name="sequence_gaji_id"/>
+									<field name="sequence_batch_gaji_id"/>
+									<field name="sequence_gaji_nonreguler_id"/>
+									<field name="sequence_import_variabel_id"/>
+								</group>								
+							</group>
+						</page>
+						<page string="Komponen Jamsostek">
+							<field name="komponen_jamsostek_ids" colspan="4" nolabel="1"/>
+						</page>
+					
+					</notebook>
+				</form>
+            </field>
+        </record>
+	</data>
+</openerp>

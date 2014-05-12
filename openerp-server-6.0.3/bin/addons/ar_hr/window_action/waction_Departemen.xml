@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_hr_departemen" model="ir.actions.act_window">
+			<field name="name">Departemen</field>
+			<field name="res_model">hr.department</field>
+			<field name="search_view_id" ref="search_hr_departemen"/>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_hr_treeDepartemen" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_hr_departemen"/>
+			<field name="act_window_id" ref="waction_hr_departemen"/>
+		</record>
+
+		<record id="wactionView_hr_formDepartemen" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_departemen"/>
+			<field name="act_window_id" ref="waction_hr_departemen"/>
+		</record>
+    </data>
+</openerp>

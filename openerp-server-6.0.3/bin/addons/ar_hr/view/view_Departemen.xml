@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+        <record id="tree_hr_departemen" model="ir.ui.view">
+            <field name="name">Tree Departemen</field>
+            <field name="model">hr.department</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Departemen">
+                    <field name="name" string="Departemen"/>
+                    <field name="parent_id" string="Departemen Induk"/>    
+                    <field name="manager_id" string="Manajer"/>                             
+                </tree>
+            </field>
+        </record>
+        
+        <record id="search_hr_departemen" model="ir.ui.view">
+            <field name="name">Search Departemen</field>
+            <field name="model">hr.department</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Departemen">
+                    <field name="name" string="Departemen"/>
+                    <field name="parent_id" string="Departemen Induk"/>    
+                    <field name="manager_id" string="Manajer"/>                             
+                </search>
+            </field>
+        </record>        
+
+        <record id="form_hr_departemen" model="ir.ui.view">
+            <field name="name">Form Departemen</field>
+            <field name="model">hr.department</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Departemen">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2">
+                			<separator string="Departemen" colspan="2"/>
+				     		<field name="name" string="Departemen"/>
+				        	<field name="parent_id" string="Departemen Induk"/>
+			        	</group>
+			        	<group name="group_1_2" colspan="1" col="2">
+			        		<separator string="Manajer" colspan="2"/>
+				        	<field name="manager_id" string="Manajer"/> 
+			        	</group>
+                    </group>                                      
+				</form>
+            </field>
+        </record>
+	</data>
+</openerp>

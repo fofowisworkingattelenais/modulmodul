@@ -1,0 +1,142 @@
+<openerp>
+	<data>		
+	
+		<menuitem  
+			id="menu_hrApp_absensiHeader" 
+			name="Absensi" 
+			icon="STOCK_OPEN"
+			parent="ar_hr_standar_app.menu_hrApp_kepegawaianHeader"
+			sequence="2"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_absensiKaryawan" 
+			name="Absensi Karyawan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_absensiHeader"
+			sequence="1"	
+			action="ar_hr_attendance.waction_hr_absensi"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_timesheetKaryawan" 
+			name="Timesheet Karyawan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_absensiHeader"
+			sequence="2"	
+			action="ar_hr_attendance.waction_hr_timesheetKaryawan"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_buatTimesheetKaryawan" 
+			name="Buat Timesheet Karyawan" 
+			icon="STOCK_EXECUTE"
+			parent="menu_hrApp_absensiHeader"
+			sequence="3"	
+			action="ar_hr_attendance.waction_hr_wizardBuatTimesheet"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_sesuaikanLiburNasional" 
+			name="Sesuaikan Libur Nasional" 
+			icon="STOCK_EXECUTE"
+			parent="menu_hrApp_absensiHeader"
+			sequence="4"	
+			action="ar_hr_attendance.waction_hr_wizardSesuaikanLiburNasional"		
+		/>		
+		
+
+		
+		<menuitem  
+			id="menu_hrApp_cutiKerja" 
+			name="Cuti Kerja" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_absensiHeader"
+			sequence="6"	
+			action="ar_hr_attendance.waction_hr_cutiKerja"		
+		/>				
+		
+		<menuitem  
+			id="menu_hrApp_lembur" 
+			name="Lembur" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_absensiHeader"
+			sequence="7"	
+			action="ar_hr_attendance.waction_hr_lembur"		
+		/>						
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiDefaultAbsensi" 
+			name="Konfigurasi Default Absensi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="1"	
+			action="ar_hr_attendance.waction_hr_perusahaanAbsensi"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_jenisAbsen" 
+			name="Jenis Absen" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="2"	
+			action="ar_hr_attendance.waction_hr_jenisAbsen"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_kodeAbsen" 
+			name="Kode Absen" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="3"	
+			action="ar_hr_attendance.waction_hr_kodeAbsen"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_liburNasional" 
+			name="Libur Nasional" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="3"	
+			action="ar_hr_attendance.waction_hr_liburNasional"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanAbsensi" 
+			name="Ketentuan Absensi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="4"	
+			action="ar_hr_attendance.waction_hr_ketentuanAbsensi"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_shiftKerja" 
+			name="Shift Kerja" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="5"	
+			action="ar_hr_attendance.waction_hr_shiftKerja"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_polaKerja" 
+			name="Pola Kerja" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="6"	
+			action="ar_hr_attendance.waction_hr_polaKerja"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanCuti" 
+			name="Ketentuan Cuti" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiAbsensiHeader"
+			sequence="7"	
+			action="ar_hr_attendance.waction_hr_ketentuanCuti"		
+		/>									
+		
+
+	</data>
+</openerp>

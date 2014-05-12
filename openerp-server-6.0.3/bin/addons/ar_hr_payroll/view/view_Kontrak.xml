@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="form_hr_kontrakPayroll" model="ir.ui.view">
+            <field name="name">Form Kontrak : ar_hr_payroll</field>
+            <field name="model">hr.contract</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="ar_hr_kontrak.form_hr_kontrak"/>
+            <field name="arch" type="xml">
+            	<data>
+					<field name="wage" string="Gaji Pokok" position="after">
+						<field name="struct_id" string="Struktur Gaji" widget="selection" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+					</field>
+					<page string="Catatan" position="before">
+						<page string="Ketentuan Penggajian" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Ketentuan Penggajian" colspan="4"/>
+							<field name="salary_rule_ids" colspan="4" nolabel="1"/>
+						</page>					
+						<page string="Pendapatan" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Pendapatan Teratur" colspan="4"/>
+							<field name="pendapatan_teratur_ids" colspan="4" nolabel="1" readonly="1"/>
+							<separator string="Pendapatan Tidak Teratur" colspan="4"/>
+							<field name="pendapatan_tidak_teratur_ids" colspan="4" nolabel="1" readonly="1"/>
+						</page>
+						<page string="Potongan" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field name="potongan_ids" colspan="4" nolabel="1" readonly="1"/>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field name="potongan_kontribusi_ids" colspan="4" nolabel="1" readonly="1"/>							
+						</page>	
+						<page string="Asuransi" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field name="asuransi_ids" colspan="4" nolabel="1"/>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field name="asuransi_kontribusi_ids" colspan="4" nolabel="1"/>							
+						</page>	
+						<page string="Pensiun" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field name="pensiun_ids" colspan="4" nolabel="1" readonly="1"/>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field name="pensiun_kontribusi_ids" colspan="4" nolabel="1" readonly="1"/>							
+						</page>																	
+						<page string="Rate Karyawan" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<field name="rate_karyawan_ids" nolabel="1" colspan="4">
+								<tree string="Rate Karyawan">
+								    <field name="jenis_rate_id"/>                    
+								    <field name="jumlah"/>
+								</tree>
+								<form string="Rate Karyawan">
+								    <field name="jenis_rate_id"/>                    
+								    <field name="jumlah"/>
+								</form>								
+							</field>
+						</page>										
+		            	<page string="Jamsostek" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+							<separator string="Ketentuan Perhitungan Jamsostek" colspan="4"/>
+							<field name="jamsostek_ids" colspan="4" nolabel="1"/>     
+		            	</page> 
+	            	</page>				
+				</data>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

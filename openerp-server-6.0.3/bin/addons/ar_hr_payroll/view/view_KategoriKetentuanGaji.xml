@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_kategoriKetentuanGaji" model="ir.ui.view">
+            <field name="name">Tree Kategori Ketentuan Gaji</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="type">tree</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <tree string="Kategori Ketentuan Gaji">
+                    <field name="name" string="Kategori Ketentuan"/>
+                    <field name="code" string="Kode"/>
+                    <field name="parent_id" string="Kategori Induk"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_kategoriKetentuanGaji" model="ir.ui.view">
+            <field name="name">Form Kategori Ketentuan Gaji</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="type">form</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Kategori Ketentuan Gaji">
+                	<group name="group_1" col="4" colspan="2">
+                		<group name="group_1_1" col="1" colspan="2">
+                	 		<separator colspan="2" string="Kategori Ketentuan"/>
+                	 		<field name="name" string="Kategori Ketentuan"/>
+                	 		<field name="code" string="Kode"/>             	 		
+                    	</group>
+                		<group name="group_1_2" col="1" colspan="2">
+                	 		<separator colspan="2" string="Kategori"/>
+				            <field name="parent_id" string="Kategori Induk"/>
+				            <field name="company_id" string="Perusahaan"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="note" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_kategoriKetentuanGaji" model="ir.ui.view">
+            <field name="name">Search Kategori Ketentuan Gaji</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="type">search</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="Kategori Ketentuan Gaji">
+                    <field name="name" string="Kategori Ketentuan"/>
+                    <field name="code" string="Kode"/>
+                    <field name="parent_id" string="Kategori Induk"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_ketentuanCuti" model="ir.ui.view">
+            <field name="name">Tree Ketentuan Cuti</field>
+            <field name="model">hr.ketentuan_cuti</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ketentuan Cuti">
+                    <field name="employee_id"/>
+                    <field name="tahun"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_ketentuanCuti" model="ir.ui.view">
+            <field name="name">Form Ketentuan Cuti</field>
+            <field name="model">hr.ketentuan_cuti</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ketentuan Cuti">
+                    <field name="employee_id"/>
+                    <field name="tahun"/>
+					<field name="detail_ketentuan_cuti_ids" colspan="4" nolabel="1">
+						<tree string="Detail Ketentuan Cuti">
+							<field name="kode_absen_id"/>
+							<field name="jumlah_diperbolehkan"/>
+							<field name="jumlah_digunakan"/>
+						</tree>
+						<form string="Detail Ketentuan Cuti">
+							<field name="kode_absen_id" widget="selection"/>
+							<field name="jumlah_diperbolehkan"/>
+							<field name="jumlah_digunakan"/>
+							<field name="cuti_kerja_ids" nolabel="1" colspan="4"/>
+						</form>
+					</field>
+					<group name="group_1" colspan="4" col="3">
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state"/>
+						</group>
+						<group name="group_1_3" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>						
+						<group name="group_1_4" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="workflow_action_confirm" type="object" colspan="2" string="Confirm" states="draft"/>
+							<button name="workflow_action_batal" type="object" colspan="2" string="Batal" states="confirm"/>
+							<button name="button_set_draft" type="object" colspan="2" string="Kembalikan Ke Draft" states="batal"/>
+						</group>						
+					</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_ketentuanCuti" model="ir.ui.view">
+            <field name="name">Search Ketentuan Cuti</field>
+            <field name="model">hr.ketentuan_cuti</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Ketentuan Cuti">
+                    <field name="employee_id"/>
+                    <field name="tahun"/>
+                    <field name="state"/>
+
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

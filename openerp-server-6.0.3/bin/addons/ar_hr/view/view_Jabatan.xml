@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+        <record id="tree_hr_jabatan" model="ir.ui.view">
+            <field name="name">Tree Jabatan</field>
+            <field name="model">hr.job</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Jabatan">
+					<field name="name" string="Jabatan"/>
+					<field name="department_id" string="Departemen"/>
+					<field name="expected_employees" string="Jumlah Karyawan Yang Diharapkan"/>
+					<field name="no_of_employee" string="Jumlah Karyawan"/>
+					<field name="no_of_recruitment" string="Jumlah Karyawan Yang Harus Direkrut"/>
+					<field name="state" string="Status"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="search_hr_jabatan" model="ir.ui.view">
+            <field name="name">Search Jabatan</field>
+            <field name="model">hr.job</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Jabatan">
+                    <field name="name" string="Jabatan"/>
+                    <field name="department_id" string="Departemen"/>    
+                </search>
+            </field>
+        </record>        
+
+        <record id="form_hr_jabatan" model="ir.ui.view">
+            <field name="name">Form Jabatan</field>
+            <field name="model">hr.job</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Jabatan">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2">
+                			<separator string="Jabatan" colspan="2"/>
+				     		<field name="name" string="jabatan"/>
+				        	<field name="department_id" string="Department"/>
+			        	</group>
+			        	<group name="group_1_2" colspan="1" col="2">
+			        		<separator string="Jumlah Karyawan" colspan="2"/>
+							<field name="expected_employees" string="Jumlah Karyawan Yang Diharapkan"/>
+							<field name="no_of_employee" string="Jumlah Karyawan"/>
+							<field name="no_of_recruitment" string="Jumlah Karyawan Yang Harus Direkrut"/> 
+			        	</group>
+                    </group>
+                    <notebook colspan="4">
+                    	<page string="Job Description">
+                    		<separator string="Job Description" colspan="4"/>
+                    		<field name="description" colspan="4" nolabel="1"/>
+                    		<separator string="Job Requirement" colspan="4"/>
+                    		<field name="requirements" colspan="4" nolabel="1"/>                    		
+                    	</page>
+                    	<page string="Karyawan">
+                    	
+                    	</page>
+                    </notebook>                                      
+				</form>
+            </field>
+        </record>
+	</data>
+</openerp>

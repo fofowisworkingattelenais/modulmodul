@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrPendidikanFormal","data_accessRight_hrPendidikanFormal","model_hr_pendidikan_formal",,1,1,1,1
+"data_accessRight_hrPendidikanNonFormal","data_accessRight_hrPendidikanNonFormal","model_hr_pendidikan_non_formal",,1,1,1,1
+
+
+
+
+

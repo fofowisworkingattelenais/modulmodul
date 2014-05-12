@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<document filename="Slip Gaji.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<template pageSize="(21.0cm, 29.7cm)" title="Slip Gaji" author="Andhitia Rama" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="19.0cm" height="27.7cm"/>	
+		</pageTemplate>
+	</template>
+	
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet> 
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+		
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+		
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>		
+		
+				
+		
+		<blockTableStyle id="TABEL_STANDAR">		
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>			
+			
+		
+		</blockTableStyle>
+		
+	</stylesheet>
+	
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<blockTable>
+			<para>[[repeatIn(objects,'o')]]</para>
+			<tr>
+				<td><para>Periode Kerja</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ o.detail_periode_gaji_id.name ]]</para></td>
+			</tr>	
+			<tr>
+				<td><para>NIP</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ o.employee_id.nip ]]</para></td>
+			</tr>	
+			<tr>
+				<td><para>Nama Karyawan</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ o.employee_id.name ]]</para></td>
+			</tr>		
+			<tr>
+				<td><para>Tanggal Bergabung</para></td>
+				<td><para>:</para></td>
+				<td><para>[[ o.employee_id.tanggal_bergabung ]]</para></td>
+			</tr>													
+		</blockTable>
+		
+		<para><font color="white"> </font></para>
+		
+		<para>A. PENDAPATAN</para>
+		<para><font color="white"> </font></para>
+		<section>
+			<para>[[repeatIn(o.detail_pendapatan_teratur_ids, 'pendapatan_teratur')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ pendapatan_teratur.name ]]</td>
+					<td>[[ locale.format('%.2f',pendapatan_teratur.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		
+		<section>
+			<para>[[repeatIn(o.detail_pendapatan_tidak_teratur_ids, 'pendapatan_tdk_teratur')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ pendapatan_tdk_teratur.name ]]</td>
+					<td>[[ locale.format('%.2f', pendapatan_tdk_teratur.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		<para><font color="white"> </font></para>
+		<blockTable colWidths="6cm,13cm">
+			<tr>
+				<td>SUB-TOTAL</td>
+				<td>[[ locale.format('%.2f',o.total_pendapatan_teratur + o.total_pendapatan_tidak_teratur, True) ]]</td>
+			</tr>
+		</blockTable>			
+		
+		<para><font color="white"> </font></para>
+		
+		<para>B. POTONGAN</para>
+		<para><font color="white"> </font></para>
+		<section>
+			<para>[[repeatIn(o.detail_potongan_ids, 'potongan')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ potongan.name ]]</td>
+					<td>[[ locale.format('%.2f', potongan.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		
+		<section>
+			<para>[[repeatIn(o.detail_asuransi_ids, 'asuransi')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ asuransi.name ]]</td>
+					<td>[[ locale.format('%.2f', asuransi.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		
+		<section>
+			<para>[[repeatIn(o.detail_pensiun_ids, 'pensiun')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ pensiun.name ]]</td>
+					<td>[[ locale.format('%.2f', pensiun.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		<para><font color="white"> </font></para>
+		<blockTable colWidths="6cm,13cm">
+			<tr>
+				<td>SUB-TOTAL</td>
+				<td>[[ locale.format('%.2f',o.total_potongan + o.total_asuransi + o.total_pensiun, True) ]]</td>
+			</tr>
+		</blockTable>			
+		
+		<para><font color="white"> </font></para>
+		
+		<para>C. SUBSIDI PERUSAHAAN</para>	
+		<para><font color="white"> </font></para>
+		<section>
+			<para>[[repeatIn(o.detail_potongan_perusahaan_ids, 'subsidi_potongan')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ subsidi_potongan.name ]]</td>
+					<td>[[ locale.format('%.2f', subsidi_potongan.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		
+		<section>
+			<para>[[repeatIn(o.detail_asuransi_perusahaan_ids, 'subsidi_asuransi')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ subsidi_asuransi.name ]]</td>
+					<td>[[ locale.format('%.2f', subsidi_asuransi.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>	
+		
+		<section>
+			<para>[[repeatIn(o.detail_pensiun_perusahaan_ids, 'subsidi_pensiun')]]</para>
+			<blockTable colWidths="6cm,13cm">
+				<tr>
+					<td>[[ subsidi_pensiun.name ]]</td>
+					<td>[[ locale.format('%.2f', subsidi_pensiun.total, True) ]]</td>
+				</tr>
+			</blockTable>
+		</section>							
+		<para><font color="white"> </font></para>
+		<blockTable colWidths="6cm,13cm">
+			<tr>
+				<td>SUB-TOTAL</td>
+				<td>[[ locale.format('%.2f',o.total_potongan_perusahaan + o.total_asuransi_perusahaan + o.total_pensiun_perusahaan, True) ]]</td>
+			</tr>
+		</blockTable>	
+		<para><font color="white"> </font></para>	
+		<blockTable colWidths="6cm,13cm">
+			<tr>
+				<td>Total Remunerasi</td>
+				<td>[[ locale.format('%.2f',o.total_thp, True) ]]</td>
+			</tr>
+		</blockTable>		
+	</story>
+
+</document>

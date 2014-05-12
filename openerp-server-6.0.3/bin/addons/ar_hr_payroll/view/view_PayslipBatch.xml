@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- payslip runs -->
+
+        <record id="search_hr_payslipRun" model="ir.ui.view">
+            <field name="name">Search Payslip Run</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="type">search</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="Search Payslip Run">
+                    <filter icon="terp-document-new" string="Draft" domain="[('state','=','draft')]" help="Draft Payslip Batches"/>
+                    <filter icon="terp-camera_test" string="Done" domain="[('state','=','close')]" help="Done Payslip Batches"/>
+                    <separator orientation="vertical"/>
+                    <field name="name"/>
+					<field name="detail_periode_gaji_id"/>
+					<field name="tanggal_slip"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="tree_hr_payslipRun" model="ir.ui.view">
+            <field name="name">Tree Payslip Run</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="type">tree</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <tree string="Tree Payslip Run">
+                    <field name="name" string="# Batch"/>
+                    <field name="tanggal_slip"/>
+                    <field name="detail_periode_gaji_id"/>
+                    <field name="date_start" string="Tanggal Mulai" groups="base.group_extended"/>
+                    <field name="date_end" string="Tanggal Akhir" groups="base.group_extended"/>
+                    <field name="state" string="Status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_payslipRun" model="ir.ui.view">
+            <field name="name">Form Payslip Run</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="type">form</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Payslip Batch">
+                    <group name="group_1" colspan="4" col="2" >
+                    	<group name="group_1_1" colspan="1" col="2" >
+                    		<separator string="Batch Gaji" colspan="2"/>
+		                    <field name="name" string="# Batch"/>
+		                    <field name="credit_note" groups="base.group_extended"/>
+                        </group>
+                        <group name="group_1_2" colspan="1" col="2" >
+                        	<separator string="Periode Gaji" colspan="2"/>
+                        	<field name="tanggal_slip"/>
+                        	<field name="detail_periode_gaji_id" domain="[('state','=','aktif')]"/>
+		                    <field name="date_start" string="Tanggal Mulai" groups="base.group_extended"/>
+		                    <field name="date_end" string="Tanggal Akhir" groups="base.group_extended"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Slip Gaji">
+                            <field name="slip_ids" colspan="4" nolabel="1" mode="tree">
+                            	<tree string="Slip Gaji">
+                            		<field name="number" string="# Gaji"/>
+                            		<field name="employee_id" string="Karyawan"/>
+                            		<field name="name" string="Deskripsi"/>
+                            		<field name="detail_periode_gaji_id"/>
+                            		<field name="state" string="Status"/>
+                            	</tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group name="group_2" colspan="4" col="3">
+                    	<group name="group_2_1" colspan="1" col="2">
+                    		<separator string="Status" colspan="2"/>
+                        	<field name="state" string="Status"/>
+                        </group>
+                        <group name="group_2_2" colspan="1" col="2">
+                        	<separator string="Action" colspan="2"/>
+                        	<button name="action_buat_payslip" string="Buat Payslip" colspan="2" states="draft" type="object" icon="gtk-execute"/>
+                    	</group>
+                    	<group name="group_2_3" colspan="1" col="2">
+                    		<separator string="Workflow" colspan="2"/>
+                        	<button name="close_payslip_run" type="object" icon="terp-camera_test" string="Close" states="draft" colspan="2"/>
+                        	<button string="Set to Draft" icon="terp-stock_effects-object-colorize" name="draft_payslip_run" type="object" states="close" colspan="2"/>
+                    	</group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_importDataPayroll" model="ir.ui.view">
+            <field name="name">Tree Import Data Payroll</field>
+            <field name="model">hr.import_data_payroll</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Import Data Payroll">
+                    <field name="employee_id"/>
+                    <field name="detail_periode_gaji_id"/>
+                    <field name="var1"/>
+                    <field name="var2"/>
+                    <field name="var3"/>
+                    <field name="var4"/>
+                    <field name="var5"/>
+                    <field name="proses"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_importDataPayroll" model="ir.ui.view">
+            <field name="name">Form Import Data Payroll</field>
+            <field name="model">hr.import_data_payroll</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Import Data Payroll">
+                	<group name="group_1" col="2" colspan="4">
+                		<group name="group_1_1" col="2" colspan="1">
+                	 		<separator colspan="2" string="Data Import"/>
+                	 		<field name="employee_id"/>
+                	 		<field name="detail_periode_gaji_id"/>
+                	 		<field name="proses"/>             	 		
+                    	</group>
+                		<group name="group_1_2" col="2" colspan="1">
+                	 		<separator colspan="2" string="Nilai"/>
+				            <field name="var1"/>
+				            <field name="var2"/>
+				            <field name="var3"/>
+				            <field name="var4"/>
+				            <field name="var5"/>
+                    	</group>                    	
+                	</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_importDataPayroll" model="ir.ui.view">
+            <field name="name">Search Import Data Payroll</field>
+            <field name="model">hr.import_data_payroll</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Import Data Payroll">
+                    <field name="employee_id"/>
+                    <field name="detail_periode_gaji_id"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

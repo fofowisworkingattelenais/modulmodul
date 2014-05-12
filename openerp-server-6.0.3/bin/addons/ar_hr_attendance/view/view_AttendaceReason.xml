@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_attendanceReason" model="ir.ui.view">
+            <field name="name">Tree Attendance Reason</field>
+            <field name="model">hr.action.reason</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Alasan Absen">
+                    <field name="name" string="Alasan"/>
+                    <field name="action_type" string="Tipe"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_attendanceReason" model="ir.ui.view">
+            <field name="name">Form Attendance Reason</field>
+            <field name="model">hr.action.reason</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Alasan Absen">
+                    <field name="name" string="Alasan"/>
+                    <field name="action_type" string="Tipe"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,278 @@
+<openerp>
+	<data>		
+		<menuitem  
+			id="menu_hrApp_konfigurasiPajakHeader" 
+			name="Pajak" 
+			icon="STOCK_OPEN"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiHeader"
+			sequence="6"			
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_tahunPajak" 
+			name="Tahun Pajak" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPajakHeader"
+			sequence="1"			
+			action="ar_pajak.waction_pajak_tahunPajak"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_kategoriPTKP" 
+			name="Kategori PTKP" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPajakHeader"
+			sequence="2"			
+			action="ar_hr_pph_21.waction_hr_kategoriPTKP"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiPayrollHeader" 
+			name="Payroll" 
+			icon="STOCK_OPEN"
+			parent="ar_hr_standar_app.menu_hrApp_konfigurasiHeader"
+			sequence="7"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_konfigurasiDefaultPayroll" 
+			name="Konfigurasi Default Payroll" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="1"			
+			action="ar_hr_payroll.waction_hr_perusahaanPayroll"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_kategoriKetentuanGaji" 
+			name="Kategori Ketentuan Gaji" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="2"			
+			action="ar_hr_payroll.waction_hr_kategoriKetentuanGaji"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiHeader" 
+			name="Ketentuan Gaji" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="3"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiAdmin" 
+			name="Ketentuan Gaji : Admin" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="1"			
+			action="ar_hr_payroll.waction_hr_ketentuanGaji"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPendapatanTeratur" 
+			name="Pendapatan Teratur" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="2"			
+			action="ar_hr_payroll.waction_hr_ketentuanGajiPendapatanTeratur"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPendapatanTidakTeratur" 
+			name="Pendapatan Tidak Teratur" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="3"			
+			action="ar_hr_payroll.waction_hr_ketentuanGajiPendapatanTidakTeratur"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPotongan" 
+			name="Potongan" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="4"			
+			action="ar_hr_payroll.waction_hr_ketentuanGajiPotongan"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiAsuransi" 
+			name="Asuransi" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="5"			
+			action="ar_hr_payroll.waction_hr_ketentuanGajiAsuransi"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPensiun" 
+			name="Pensiun" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="6"			
+			action="ar_hr_payroll.waction_hr_ketentuanGajiPensiun"
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPPH21" 
+			name="Perhitungan PPH 21" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="7"			
+			action="ar_hr_pph_21.waction_hr_perhitunganPPH21"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_ketentuanGajiPPH21GrossUp" 
+			name="Perhitungan PPH 21 Gross-Up" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_ketentuanGajiHeader"
+			sequence="7"			
+			action="ar_hr_pph_21.waction_hr_perhitunganPPH21GrossUp"
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_strukturGaji" 
+			name="Struktur Gaji" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="4"	
+			action="ar_hr_payroll.waction_hr_strukturGaji"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_jenisRate" 
+			name="Jenis Rate" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="5"	
+			action="ar_hr_payroll.waction_hr_jenisRate"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_kontribusiPerusahaan" 
+			name="Kontribusi Perusahaan/Pihak Ketiga" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_konfigurasiPayrollHeader"
+			sequence="6"	
+			action="ar_hr_payroll.waction_hr_kontribusi"		
+		/>																																											
+
+		<menuitem  
+			id="menu_hrApp_remunerasilHeader" 
+			name="Remunerasi" 
+			icon="STOCK_OPEN"
+			parent="ar_hr_standar_app.menu_hrApp_kepegawaianHeader"
+			sequence="3"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_slipGaji" 
+			name="Slip Gaji" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="1"	
+			action="ar_hr_payroll.waction_hr_payslip"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_batchSlipGaji" 
+			name="Batch Slip Gaji" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="2"	
+			action="ar_hr_payroll.waction_hr_payslipRun"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_gajiNonreguler" 
+			name="Gaji Non-Reguler" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="3"	
+			action="ar_hr_payroll.waction_hr_gajiNonreguler"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_importVariabelGaji" 
+			name="Import Variabel Slip Gaji" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="4"	
+			action="ar_hr_payroll.waction_hr_importPayslipInput"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_prosesJadwalPenggajian" 
+			name="Mulai Jadwal Penggajian" 
+			icon="STOCK_EXECUTE"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="5"	
+			action="ar_hr_payroll.waction_hr_wizardMulaiJadwalPenggajian"		
+		/>		
+		
+		<menuitem  
+			id="menu_hrApp_lowLevelObjectRemunerasi" 
+			name="Low Level Object" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="6"	
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_jadwalPenggajian" 
+			name="Jadwal Penggajian" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="1"	
+			action="ar_hr_payroll.waction_hr_jadwalPenggajian"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_eksekusiPenggajian" 
+			name="Eksekusi Penggajian" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_remunerasilHeader"
+			sequence="2"	
+			action="ar_hr_payroll.waction_hr_eksekusiPenggajian"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_pajakHeader" 
+			name="Pajak" 
+			icon="STOCK_OPEN"
+			parent="ar_hr_standar_app.menu_hrApp_kepegawaianHeader"
+			sequence="4"			
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_sptMasa" 
+			name="SPT Massa" 
+			icon="STOCK_OPEN"
+			parent="menu_hrApp_pajakHeader"
+			sequence="1"		
+		/>	
+		
+		<menuitem  
+			id="menu_hrApp_sptMassa1721Induk" 
+			name="SPT Massa 1721-Induk" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_sptMasa"
+			sequence="1"	
+			action="ar_hr_pph_21.waction_hr_form1721Induk"		
+		/>
+		
+		<menuitem  
+			id="menu_hrApp_sptMassa1721A1" 
+			name="SPT Massa 1721-A1" 
+			icon="STOCK_JUSTIFY_FILL"
+			parent="menu_hrApp_sptMasa"
+			sequence="2"	
+			action="ar_hr_pph_21.waction_hr_form1721A1"		
+		/>																				
+																								
+						
+
+	</data>
+</openerp>

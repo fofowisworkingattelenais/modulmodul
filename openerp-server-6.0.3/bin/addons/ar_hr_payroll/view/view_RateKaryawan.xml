@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_rateKaryawan" model="ir.ui.view">
+            <field name="name">Tree Rate Karyawan</field>
+            <field name="model">hr.rate_karyawan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Rate Karyawan">
+                	<field name="employee_id"/>
+                    <field name="contract_id"/>
+                    <field name="jenis_rate_id"/>                    
+                    <field name="jumlah"/>                    
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_rateKaryawan" model="ir.ui.view">
+            <field name="name">Form Rate Karyawan</field>
+            <field name="model">hr.rate_karyawan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Rate Karyawan">
+                	<field name="employee_id"/>
+                    <field name="contract_id"/>
+                    <field name="jenis_rate_id"/>                    
+                    <field name="jumlah"/> 
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_rateKaryawan" model="ir.ui.view">
+            <field name="name">Search Rate Karyawan</field>
+            <field name="model">hr.rate_karyawan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Rate Karyawan">
+                    <field name="contract_id"/>
+                    <field name="jenis_rate_id"/>                    
+                    <field name="jumlah"/> 
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

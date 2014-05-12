@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="data_tipeHistory_karyawanBaru" model="hr.tipe_history">
+            <field name="name">Karyawan Baru</field>
+            <field name="kode">NEW</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')		
+if kontrak.type_id.name == 'PKWT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'kontrak', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'PKWTT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'tetap', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'Probition':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'probation', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','draft')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : True,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : True,
+			'required_remunerasi' : True,
+			'required_absensi' : True,			
+			}
+			
+value.update(value_1)</field>
+		</record>
+
+        <record id="data_tipeHistory_karyawanImport" model="hr.tipe_history">
+            <field name="name">Import</field>
+            <field name="kode">IMPORT</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')		
+if kontrak.type_id.name == 'PKWT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'kontrak', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'PKWTT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'tetap', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'Probition':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'probation', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','draft')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : True,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : True,
+			'required_remunerasi' : True,
+			'required_absensi' : True,			
+			}
+			
+value.update(value_1)</field>
+		</record>
+		
+        <record id="data_tipeHistory_rehire" model="hr.tipe_history">
+            <field name="name">Re-Hire</field>
+            <field name="kode">REHIRE</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')		
+if kontrak.type_id.name == 'PKWT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'kontrak', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'PKWTT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'tetap', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'Probition':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'probation', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})</field>
+			<field name="kode_python_karyawan">kriteria = ['|','|','|','|',('status_karyawan','=','draft'),('status_karyawan','=','phk'),('status_karyawan','=','pensiun'),('status_karyawan','=','pensiun_dini'),('status_karyawan','=','resign')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : True,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : True,
+			'required_remunerasi' : True,
+			'required_absensi' : True,			
+			}
+			
+value.update(value_1)</field>
+		</record>		
+		
+        <record id="data_tipeHistory_lulusProbation" model="hr.tipe_history">
+            <field name="name">Lulus Probation</field>
+            <field name="kode">LULUS</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')		
+if kontrak.type_id.name == 'PKWT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'kontrak', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'PKWTT':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'tetap', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})
+elif kontrak.type_id.name == 'Probition':
+	obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'probation', 'company_id' : kontrak.company_id.id, 'department_id' : kontrak.department_id.id, 'job_id' : kontrak.job_id.id, 'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False, 'tanggal_bergabung' : kontrak.tanggal_mulai, 'pn_kumulatif_sebelum' : kontrak.penghasilan_kumulatif_sebelum, 'pph_kumutalif_sebelum' : kontrak.pph_kumutalif_sebelum})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','probation')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : True,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : True,
+			'required_remunerasi' : True,
+			'required_absensi' : True,			
+			}
+			
+value.update(value_1)</field>
+		</record>		
+        
+        <record id="data_tipeHistory_mutasi" model="hr.tipe_history">
+            <field name="name">Mutasi</field>
+            <field name="kode">MUT</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+val =	{
+		'company_id' : kontrak.company_id.id,
+		'department_id' : kontrak.department_id.id,
+		'job_id' : kontrak.job_id.id,
+		'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False,
+		}
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], val)</field>
+			<field name="kode_python_karyawan">kriteria = ['|','|',('status_karyawan','=','tetap'),('status_karyawan','=','kontrak'),('status_karyawan','=','probation')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : False,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : False,
+			'required_absensi' : True,			
+			}
+		
+value.update(value_1)</field>
+			<field name="field_copy_ids" eval="[	(4, ref('hr_contract.field_hr_contract_type_id')), 
+    												(4, ref('hr_contract.field_hr_contract_wage')),
+        											(4, ref('hr_payroll.field_hr_contract_struct_id')),
+        											(4, ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'))]"/>          
+        </record>        
+        
+        <record id="data_tipeHistory_promosiDemosi" model="hr.tipe_history">
+            <field name="name">Promosi/Demosi</field>
+            <field name="kode">PRD</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+val =	{
+		'company_id' : kontrak.company_id.id,
+		'department_id' : kontrak.department_id.id,
+		'job_id' : kontrak.job_id.id,
+		'parent_id' : kontrak.manager_id and kontrak.manager_id.id or False,
+		}
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], val)</field>            
+			<field name="kode_python_karyawan">kriteria = ['|','|',('status_karyawan','=','tetap'),('status_karyawan','=','kontrak'),('status_karyawan','=','probation')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : True,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : True,
+			'required_ruang_lingkup_pekerjaan' : True,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : True,
+			'required_absensi' : True,			
+			}
+		
+value.update(value_1)</field>
+			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id')])]"/>              
+        </record>        
+        
+        <record id="data_tipeHistory_gaji" model="hr.tipe_history">
+            <field name="name">Perubahan Gaji</field>
+            <field name="kode">SAL</field>
+            <field name="kode_python">True</field>
+			<field name="kode_python_karyawan">kriteria = ['|','|',('status_karyawan','=','tetap'),('status_karyawan','=','kontrak'),('status_karyawan','=','probation')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : False,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : True,
+			'visibilitas_absensi' : False,
+			'required_ruang_lingkup_pekerjaan' : False,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : True,
+			'required_absensi' : False,			
+			}
+		
+value.update(value_1)</field>        
+     			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id'), 
+            												ref('ar_hr_kontrak.field_hr_contract_company_id'),
+            												ref('hr_contract.field_hr_contract_department_id'),
+            												ref('hr_contract.field_hr_contract_job_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_manager_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_periode_gaji_id'),
+            												ref('hr_payroll.field_hr_contract_struct_id'),
+            												ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'),
+            												ref('ar_hr_attendance.field_hr_contract_pola_kerja_id')])]"/> 
+        </record>
+        
+        <record id="data_tipeHistory_pensiun" model="hr.tipe_history">
+            <field name="name">Pensiun</field>
+            <field name="kode">PEN</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'pensiun'})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','tetap')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : False,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : False,
+			'visibilitas_absensi' : False,
+			'required_ruang_lingkup_pekerjaan' : False,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : False,
+			'required_absensi' : False,			
+			}
+		
+value.update(value_1)</field> 
+     			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id'), 
+     														ref('hr_contract.field_hr_contract_wage'),
+            												ref('ar_hr_kontrak.field_hr_contract_company_id'),
+            												ref('hr_contract.field_hr_contract_department_id'),
+            												ref('hr_contract.field_hr_contract_job_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_manager_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_periode_gaji_id'),
+            												ref('hr_payroll.field_hr_contract_struct_id'),
+            												ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'),
+            												ref('ar_hr_attendance.field_hr_contract_pola_kerja_id')])]"/> 
+        </record>        
+        
+        <record id="data_tipeHistory_resign" model="hr.tipe_history">
+            <field name="name">Resign</field>
+            <field name="kode">RES</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'resign'})</field>
+			<field name="kode_python_karyawan">kriteria = ['|',('status_karyawan','=','tetap'),('status_karyawan','=','kontrak')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : False,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : False,
+			'visibilitas_absensi' : False,
+			'required_ruang_lingkup_pekerjaan' : False,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : False,
+			'required_absensi' : False,			
+			}
+		
+value.update(value_1)</field> 
+     			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id'), 
+     														ref('hr_contract.field_hr_contract_wage'),
+            												ref('ar_hr_kontrak.field_hr_contract_company_id'),
+            												ref('hr_contract.field_hr_contract_department_id'),
+            												ref('hr_contract.field_hr_contract_job_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_manager_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_periode_gaji_id'),
+            												ref('hr_payroll.field_hr_contract_struct_id'),
+            												ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'),
+            												ref('ar_hr_attendance.field_hr_contract_pola_kerja_id')])]"/> 
+        </record>         
+        
+        <record id="data_tipeHistory_pensiunDini" model="hr.tipe_history">
+            <field name="name">Pensiun Dini</field>
+            <field name="kode">PEND</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'pensiun_dini'})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','tetap')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : False,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : False,
+			'visibilitas_absensi' : False,
+			'required_ruang_lingkup_pekerjaan' : False,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : False,
+			'required_absensi' : False,			
+			}
+		
+value.update(value_1)</field>
+     			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id'), 
+     														ref('hr_contract.field_hr_contract_wage'),
+            												ref('ar_hr_kontrak.field_hr_contract_company_id'),
+            												ref('hr_contract.field_hr_contract_department_id'),
+            												ref('hr_contract.field_hr_contract_job_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_manager_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_periode_gaji_id'),
+            												ref('hr_payroll.field_hr_contract_struct_id'),
+            												ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'),
+            												ref('ar_hr_attendance.field_hr_contract_pola_kerja_id')])]"/> 
+        </record> 
+        
+        <record id="data_tipeHistory_phk" model="hr.tipe_history">
+            <field name="name">PHK</field>
+            <field name="kode">PHK</field>
+            <field name="kode_python">obj_karyawan = self.pool.get('hr.employee')
+obj_karyawan.write(cr, uid, [kontrak.employee_id.id], {'status_karyawan' : 'phk'})</field>
+			<field name="kode_python_karyawan">kriteria = [('status_karyawan','=','tetap')]
+obj_employee = self.pool.get('hr.employee')
+karyawan_ids = obj_employee.search(cr, uid, kriteria)
+
+value_1 =	{
+			'visibilitas_ruang_lingkup_pekerjaan' : False,
+			'visibilitas_kategori_karyawan' : False,
+			'visibilitas_remunerasi' : False,
+			'visibilitas_absensi' : False,
+			'required_ruang_lingkup_pekerjaan' : False,
+			'required_kategori_karyawan' : False,
+			'required_remunerasi' : False,
+			'required_absensi' : False,			
+			}
+		
+value.update(value_1)</field> 
+     			<field name="field_copy_ids" eval="[(6, 0, 	[ref('hr_contract.field_hr_contract_type_id'), 
+     														ref('hr_contract.field_hr_contract_wage'),
+            												ref('ar_hr_kontrak.field_hr_contract_company_id'),
+            												ref('hr_contract.field_hr_contract_department_id'),
+            												ref('hr_contract.field_hr_contract_job_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_manager_id'),
+            												ref('ar_hr_kontrak.field_hr_contract_periode_gaji_id'),
+            												ref('hr_payroll.field_hr_contract_struct_id'),
+            												ref('ar_hr_payroll.field_hr_contract_rate_karyawan_ids'),
+            												ref('ar_hr_attendance.field_hr_contract_pola_kerja_id')])]"/> 
+        </record>                
+        
+        
+        
+
+    </data>
+</openerp>

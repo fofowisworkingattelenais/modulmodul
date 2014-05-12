@@ -1,0 +1,91 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2004-TODAY OpenERP SA (<http://openerp.com>).
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
+import time
+from osv import fields, osv
+from tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+import decimal_precision as dp
+import netsvc
+from tools.translate import _
+from datetime import datetime
+
+
+class wizard_karyawan_baru(osv.osv_memory):
+    _name = 'hr.wizard_karyawan_baru'
+    _description = 'Wizard Karyawan Baru'
+
+
+    _columns =  {
+                'company_id' : fields.many2one('res.company', 'Perusahaan', required=True),
+                'employee_id' : fields.many2one('hr.employee', 'Karyawan', domain=[('status_karyawan','=','draft')], required=True),
+                'department_id' : fields.many2one('hr.department', 'Unit Kerja', required=True),
+                'job_id' : fields.many2one('hr.job', 'Jabatan', required=True),
+                'manager_id' : fields.many2one('hr.employee', 'Atasan'),
+                'tipe_kontrak_id': fields.many2one('hr.contract.type', 'Tipe Kontrak', required=True),  
+                'wage' : fields.float('Gaji Pokok', Digits=(16,2), required=True), 
+                'opsi_mulai' : fields.selection([('segera','Segera'),('jadwal','Jadwal'),('manual','Manual')], 'Opsi Mulai History', required=True),
+                'tanggal_mulai_history' : fields.date('Tanggal Mulai Berlaku'),
+                }
+                
+    def buat_riwayat(self, cr, uid, ids, context={}):
+        obj_wizard_karyawan_baru = self.pool.get('hr.wizard_karyawan_baru')
+        obj_contract = self.pool.get('hr.contract')
+        obj_mode_data = self.pool.get('ir.model.data')
+        
+        tipe_history_id = obj_mode_data.get_object_reference(cr, uid, 'ar_hr_kontrak', 'data_tipeHistory_karyawanBaru')
+        
+        wizard_karyawan_baru = obj_wizard_karyawan_baru.browse(cr, uid, ids, context)[0]
+        
+        res =   {
+                'name' : '/',
+                'employee_id' : wizard_karyawan_baru.employee_id.id,
+                'company_id' : wizard_karyawan_baru.company_id.id,
+                'department_id' : wizard_karyawan_baru.department_id.id,
+                'job_id' : wizard_karyawan_baru.job_id.id,
+                'manager_id' : wizard_karyawan_baru.manager_id and wizard_karyawan_baru.manager_id.id or False,
+                'type_id' : wizard_karyawan_baru.tipe_kontrak_id.id,
+                'wage' : wizard_karyawan_baru.wage,
+                'tipe_history_id' : tipe_history_id[0],
+                }
+                
+        if wizard_karyawan_baru.opsi_mulai == 'jadwal':
+            res.update({'tanggal_mulai' : wizard_karyawan_baru.tanggal_mulai_history, 'mulai_otomatis' : True}) 
+                
+        kontrak_id = obj_contract.create(cr, uid, res, context)
+        
+        wkf_service = netsvc.LocalService('workflow')      
+        
+        if wizard_karyawan_baru.opsi_mulai == 'segera':
+            wkf_service.trg_validate(uid, 'hr.contract', kontrak_id, 'button_valid', cr)
+            
+        
+        return {'type': 'ir.actions.act_window_close'}
+        
+    def batal(self, cr, uid, ids, context={}):
+        return {'type': 'ir.actions.act_window_close'}
+        
+        
+                
+wizard_karyawan_baru()
+
+
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

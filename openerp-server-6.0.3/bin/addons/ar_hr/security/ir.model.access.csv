@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrEmployeeCategory","data_accessRight_hrEmployeeCategory","hr.model_hr_employee_category",,1,1,1,1
+"data_accessRight_hrJob","data_accessRight_hrJob","hr.model_hr_job",,1,1,1,1
+"data_accessRight_hrEmployee","data_accessRight_hrEmployee","hr.model_hr_employee",,1,1,1,1
+"data_accessRight_hrDepartment","data_accessRight_hrDepartment","hr.model_hr_department",,1,1,1,1
+"data_accessRight_resUsers","data_accessRight_resUsers","base.model_res_users",,1,1,1,1
+"data_accessRight_irSequence","data_accessRight_irSequence","base.model_ir_sequence",,1,1,1,1
+"data_accessRight_resCompany","data_accessRight_resCompany","base.model_res_company",,1,1,1,1
+

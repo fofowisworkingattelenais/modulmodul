@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_ketentuanAbsensi" model="ir.ui.view">
+            <field name="name">Tree Ketentuan Absensi</field>
+            <field name="model">hr.ketentuan_absensi</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ketentuan Absensi">
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <field name="satuan_ukur_id"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_ketentuanAbsensi" model="ir.ui.view">
+            <field name="name">Form Ketentuan Absensi</field>
+            <field name="model">hr.ketentuan_absensi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ketentuan Absensi">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Ketentuan Absensi"/>
+                	 		<field name="name"/>
+                	 		<field name="kode"/> 
+                	 		<field name="satuan_ukur_id" widget="selection"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	
+                	</group>
+                	<notebook colspan="4">
+		            	<page string="Perhitungan">
+		            		<field name="perhitungan_python" colspan="4" nolabel="1"/>
+		            	</page>
+		            	<page string="Keterangan">
+		            		<field name="keterangan" colspan="4" nolabel="1"/>
+		        		</page>
+	        		</notebook>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_ketentuanAbsensi" model="ir.ui.view">
+            <field name="name">Search Ketentuan Absensi</field>
+            <field name="model">hr.ketentuan_absensi</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Ketentuan Absensi">
+                    <field name="name"/>
+                    <field name="kode"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

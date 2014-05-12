@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_contribution_subsidiPerusahaan" model="hr.contribution.register">
+            <field name="name">Subsidi Perusahaan</field>
+            <field name="code">SUB</field>
+        </record>                                            
+                                      
+    </data>
+</openerp>

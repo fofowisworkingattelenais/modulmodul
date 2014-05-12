@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_hr_wizardMulaiJadwalPenggajian" model="ir.ui.view">
+            <field name="name">Wizard Mulai Jadwal Penggajian</field>
+            <field name="model">hr.wizard_manual_salary_run_start</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Manual Salary Run Start">
+					<field name="tanggal_penggajian"/>
+					<newline/>
+					<button name="jalankan" type="object" string="Jalankan" icon="gtk-execute" colspan="1"/>
+					<button icon="gtk-cancel" special="cancel" string="Cancel" colspan="1"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardMulaiJadwalPenggajian" model="ir.actions.act_window">
+             <field name="name">Mulai Jadwal Penggajian</field>
+             <field name="res_model">hr.wizard_mulai_jadwal_penggajian</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="form_hr_wizardMulaiJadwalPenggajian"/>
+             <field name="target">new</field>
+       </record>        
+
+    </data>
+</openerp>
+

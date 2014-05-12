@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_hr_kontrakSelesai" model="ir.actions.act_window">
+			<field name="name">History Karyawan : Selesai</field>
+			<field name="res_model">hr.contract</field>
+			<field name="search_view_id" ref="search_hr_kontrak"/>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('state','=','selesai')]</field>
+		</record>
+
+		 <record id="wactionView_hr_treeKontrakSelesai" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_hr_kontrak"/>
+			<field name="act_window_id" ref="waction_hr_kontrakSelesai"/>
+		</record>
+
+		<record id="wactionView_hr_formKontrakSelesai" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_kontrak"/>
+			<field name="act_window_id" ref="waction_hr_kontrakSelesai"/>
+		</record>
+    </data>
+</openerp>

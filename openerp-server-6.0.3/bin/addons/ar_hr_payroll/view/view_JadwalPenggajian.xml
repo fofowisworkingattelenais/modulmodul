@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_jadwalPenggajian" model="ir.ui.view">
+            <field name="name">Tree Jadwal Penggajian</field>
+            <field name="model">hr.jadwal_penggajian</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Jadwal Penggajian">
+                	<field name="name"/>
+					<field name="salary_rule_id"/>
+					<field name="tanggal_penggajian"/>
+					<field name="tanggal_selanjutnya"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_jadwalPenggajian" model="ir.ui.view">
+            <field name="name">Form Jadwal Penggajian</field>
+            <field name="model">hr.jadwal_penggajian</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Jadwal Penggajian">
+                	<field name="name"/>
+					<field name="salary_rule_id"/>
+					<field name="tanggal_penggajian"/>
+					<field name="tanggal_selanjutnya"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_jadwalPenggajian" model="ir.ui.view">
+            <field name="name">Search Jadwal Penggajian</field>
+            <field name="model">hr.jadwal_penggajian</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Jadwal Penggajian">
+                	<field name="name"/>
+					<field name="salary_rule_id"/>
+					<field name="tanggal_penggajian"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

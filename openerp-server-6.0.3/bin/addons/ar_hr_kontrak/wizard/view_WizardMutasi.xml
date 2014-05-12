@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="waction_hr_wizardMutasi" model="ir.actions.act_window">
+            <field name="name">Mutasi Karyawan</field>
+            <field name="res_model">hr.wizard_mutasi</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="form_hr_wizardMutasi" model="ir.ui.view">
+            <field name="name">Form Wizard Mutasi</field>
+            <field name="model">hr.wizard_mutasi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Karyawan" colspan="2"/>
+							<field name="employee_id"/>
+						</group>						
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Ruang Lingkup Pekerjaan" colspan="2"/>
+							<field name="company_id"/>
+							<field name="department_id"/>	
+							<field name="manager_id"/>					
+						</group>	
+						<group name="group_1_3" colspan="1" col="2">
+							<separator string="Waktu Berlaku" colspan="2"/>
+							<field name="opsi_mulai"/>
+							<field name="tanggal_mulai_history" attrs="{'required':[('opsi_mulai','=','jadwal')],'invisible':[('opsi_mulai','!=','jadwal')]}"/>
+						</group>																	
+					</group>
+					<button name="buat_riwayat" type="object" string="Ok" colspan="2" icon="gtk-ok"/>
+					<button special="cancel" string="Batal" icon="gtk-cancel" colspan="2"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

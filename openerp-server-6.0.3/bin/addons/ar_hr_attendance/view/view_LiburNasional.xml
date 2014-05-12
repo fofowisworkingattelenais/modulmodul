@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_liburNasional" model="ir.ui.view">
+            <field name="name">Tree Libur Nasional</field>
+            <field name="model">hr.libur_nasional</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Libur Nasional">
+                    <field name="name"/>
+                    <field name="tanggal"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_liburNasional" model="ir.ui.view">
+            <field name="name">Form Libur Nasional</field>
+            <field name="model">hr.libur_nasional</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Libur Nasional">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Libur Nasional"/>
+                	 		<field name="name"/>
+                	 		<field name="tanggal"/> 
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" colspan="4" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_liburNasional" model="ir.ui.view">
+            <field name="name">Search Libur Nasional</field>
+            <field name="model">hr.libur_nasional</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Libur Nasional">
+                    <field name="name"/>
+                    <field name="tanggal"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_lembur" model="ir.ui.view">
+            <field name="name">Tree Lembur</field>
+            <field name="model">hr.lembur</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Lembur">
+                    <field name="name"/>
+					<field name="employee_id"/>
+					<field name="tanggal_permohonan"/>
+					<field name="flag_sebelum"/>
+					<field name="jumlah_menit_sebelum"/>
+					<field name="flag_setelah"/>
+					<field name="jumlah_menit_setelah"/>
+					<field name="state"/>
+					<button name="workflow_action_confirm" type="object" colspan="2" string="Confirm" icon="gtk-go-forward" states="draft"/>
+					<button name="workflow_action_disetujui" type="object" colspan="2" string="Disetujui" icon="gtk-apply" states="confirm"/>
+					<button name="workflow_action_ditolak" type="object" colspan="2" string="Ditolak" icon="gtk-stop" states="confirm"/>					
+				</tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_lembur" model="ir.ui.view">
+            <field name="name">Form Lembur</field>
+            <field name="model">hr.lembur</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Lembur">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Permohonan"/>
+                	 		<field name="name"/>       
+                	 		<field name="employee_id"/>
+                	 		<field name="tanggal_permohonan"/>	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Detail Permohonan"/>
+                	 		<group name="group_1_2_1" colspan="2" col="4">
+                	 			<field name="flag_sebelum" string="Sebelum Shift"/>
+                	 			<field name="jumlah_menit_sebelum" nolabel="1"/>
+                	 			<label string="menit"/>
+                	 			<field name="flag_setelah" string="Setelah Shift"/>
+                	 			<field name="jumlah_menit_setelah" nolabel="1"/>
+                	 			<label string="menit"/>                	 			
+                	 		</group>
+                    	</group>                    	                   	
+                	</group>
+					<separator string="Keterangan" colspan="4"/>
+					<field name="keterangan" colspan="4" nolabel="1"/>
+					<group name="group_3" colspan="4" col="3">
+						<group name="group_3_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state"/>
+						</group>
+						<group name="group_3_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>	
+						<group name="group_3_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="workflow_action_confirm" type="object" colspan="2" string="Confirm" icon="gtk-yes" states="draft"/>
+							<button name="workflow_action_disetujui" type="object" colspan="2" string="Disetujui" icon="gtk-yes" states="confirm"/>
+							<button name="workflow_action_ditolak" type="object" colspan="2" string="Ditolak" icon="gtk-no" states="confirm"/>
+							<button name="workflow_action_batal" type="object" colspan="2" string="Batal" icon="gtk-cancel" states="confirm"/>
+						</group>											
+					</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_lembur" model="ir.ui.view">
+            <field name="name">Search Lembur</field>
+            <field name="model">hr.lembur</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Lembur">
+                    <field name="name"/>
+					<field name="employee_id"/>
+					<field name="tanggal_permohonan"/>
+					<field name="flag_sebelum"/>
+					<field name="jumlah_menit_sebelum"/>
+					<field name="flag_setelah"/>
+					<field name="jumlah_menit_setelah"/>
+					<field name="state"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

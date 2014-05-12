@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_hr_kategoriKaryawan" model="ir.ui.view">
+			<field name="name">Tree Kategori Karyawan</field>
+			<field name="model">hr.employee.category</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Kategori Karyawan">
+					<field name="name" string="Kategori Karyawan"/>
+					<field name="parent_id" string="Kategori Induk"/>
+				</tree>
+			</field>
+		</record>
+		
+		<record id="search_hr_kategoriKaryawan" model="ir.ui.view">
+			<field name="name">Search Kategori Karyawan</field>
+			<field name="model">hr.employee.category</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Kategori Karyawan">
+					<field name="name" string="Kategori Karyawan"/>
+					<field name="parent_id" string="Kategori Induk"/>
+				</search>
+			</field>
+		</record>		
+
+		<record id="form_hr_kategoriKaryawan" model="ir.ui.view">
+			<field name="name">Form Kategori Karyawan</field>
+			<field name="model">hr.employee.category</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Kategori Karyawan">
+					<field name="name" string="Kategori Karyawan"/>
+					<field name="parent_id" string="Kategori Induk"/>
+				</form>
+			</field>
+		</record>
+	</data>
+</openerp>

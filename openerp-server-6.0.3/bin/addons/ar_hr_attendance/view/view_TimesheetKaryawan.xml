@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_timesheetKaryawan" model="ir.ui.view">
+            <field name="name">Tree Timesheet Karyawan</field>
+            <field name="model">hr.timesheet_karyawan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Timesheet Karyawan">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="pola_kerja_id"/>
+                    <field name="detail_periode_kerja_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_timesheetKaryawan" model="ir.ui.view">
+            <field name="name">Form Timesheet Karyawan</field>
+            <field name="model">hr.timesheet_karyawan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Timesheet Karyawan">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Karyawan"/>
+                	 		<field name="name"/>  
+                	 		<field name="employee_id" on_change="onchange_employee_id(employee_id)"/>
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Pola Kerja"/>
+                	 		<field name="pola_kerja_id"/>   
+                	 		<field name="detail_periode_kerja_id"/> 				            
+                    	</group>                    	
+                	</group>
+					<notebook colspan="4">
+						<page string="Absensi">
+							<field name="absensi_ids" nolabel="1" colspan="4"/>
+						</page>
+						<page string="Perhitungan Absensi">
+							<field name="perhitungan_timesheet_ids" nolabel="1" colspan="4">
+								<tree string="Perhitungan Timesheet" editable="bottom">
+									<field name="kode"/>
+									<field name="name"/>
+									<field name="satuan_ukur_id" widget="selection"/>
+									<field name="hasil"/>
+								</tree>
+							</field>
+						</page>
+						<page string="Keterangan">
+							<field name="keterangan" nolabel="1" colspan="4"/>
+						</page>
+					</notebook>
+					<group name="group_2" colspan="4" col="3">
+						<group name="group_2_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state"/>
+						</group>
+						<group name="group_2_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+							<button name="buat_absensi" string="Buat Absensi" type="object" colspan="2" icon="gtk-execute" states="draft"/>
+							<button name="button_action_hitung_timesheet" string="Hitung Timesheet" type="object" colspan="2" icon="gtk-execute" states="confirm"/>
+							<button name="button_action_validasi_absensi" string="Validasi Absensi" type="object" colspan="2" icon="gtk-execute" states="confirm"/>
+						</group>					
+						<group name="group_2_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="workflow_action_confirm" string="Konfirmasi" type="object" colspan="2" icon="gtk-yes" states="draft"/>
+							<button name="workflow_action_selesai" string="Selesai" type="object" colspan="2" icon="gtk-yes" states="confirm"/>
+							<button name="workflow_action_batal" string="Batal" type="object" colspan="2" icon="gtk-cancel" states="draft,confirm"/>
+						</group>							
+					</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_timesheetKaryawan" model="ir.ui.view">
+            <field name="name">Search Timesheet Karyawan</field>
+            <field name="model">hr.timesheet_karyawan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Timesheet Karyawan">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="pola_kerja_id"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

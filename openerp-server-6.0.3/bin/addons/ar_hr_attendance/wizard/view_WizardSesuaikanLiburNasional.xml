@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_wizardSesuaikanLiburNasional" model="ir.ui.view">
+            <field name="name">Form wizard Sesuaikan Libur Nasional</field>
+            <field name="model">hr.wizard_sesuaikan_libur_nasional</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="Periode Libur" colspan="2"/>
+							<field name="periode_libur"/>
+							<field name="tahun"/>
+							<field name="bulan_id" widget="selection" attrs="{'required':[('periode_libur','=','bulan')],'invisible':[('periode_libur','=','tahun')]}"/>
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Diterapkan Pada" colspan="2"/>
+							<field name="absensi"/>
+						</group>
+					</group>
+					<button special="cancel" string="Batal" icon="gtk-cancel" colspan="2"/>	
+					<button name="jalankan_wizard" type="object" string="Jalankan" colspan="2" icon="gtk-ok"/>							
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardSesuaikanLiburNasional" model="ir.actions.act_window">
+            <field name="name">Sesuaikan Libur Nasional</field>
+            <field name="res_model">hr.wizard_sesuaikan_libur_nasional</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>        
+    </data>
+</openerp>

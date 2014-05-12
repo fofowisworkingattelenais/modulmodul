@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="waction_hr_importDataPayroll" model="ir.actions.act_window">
+			<field name="name">Import Data Payroll</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">hr.import_data_payroll</field>
+			<field name="view_type">form</field>
+			<field name="search_view_id" ref="search_hr_importDataPayroll"/>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="wactionView_hr_treeImportDataPayroll" model="ir.actions.act_window.view">
+			<field eval="10" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_hr_importDataPayroll"/>
+			<field name="act_window_id" ref="waction_hr_importDataPayroll"/>
+		</record>
+
+		<record id="wactionView_hr_formImportDataPayroll" model="ir.actions.act_window.view">
+			<field eval="20" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_importDataPayroll"/>
+			<field name="act_window_id" ref="waction_hr_importDataPayroll"/>
+		</record>
+	</data>
+</openerp>

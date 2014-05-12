@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="tree_hr_strukturGaji" model="ir.ui.view">
+            <field name="name">Tree Struktur Gaji</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="type">tree</field>
+            <field name="sequence" eval="1"/>
+            <field name="arch" type="xml">
+                <tree string="Struktur Gaji">
+                    <field name="name" string="Struktur Gaji"/>
+                    <field name="code" string="Kode"/>
+                    <field name="company_id" string="Perusahaan" widget="selection"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="search_hr_strukturGaji" model="ir.ui.view">
+            <field name="name">Search Struktur Gaji</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="type">search</field>
+             <field name="sequence" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="Struktur Gaji">
+                    <group col="8" colspan="4">
+                        <field name="name" string="Struktur Gaji"/>
+                        <field name="code" string="Kode"/>
+                    </group>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+
+        <record id="form_hr_strukturGaji" model="ir.ui.view">
+            <field name="name">Form Struktur Gaji</field>
+            <field name="model">hr.payroll.structure</field>
+            <field name="type">form</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Struktur Gaji">
+                    <group name="group_1" colspan="4" col="2">
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Struktur Gaji" colspan="2"/>
+		                    <field name="name" string="Struktur Gaji" select="1"/>
+		                    <field name="code" string="Kode" select="1"/>                    		
+                    	</group>
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Informasi Tambahan" colspan="2"/>
+		                    <field name="company_id" string="Perusahaan" widget="selection"/>                 		
+                    	</group>
+                    </group>
+					<notebook colspan="4">
+						<page string="Pendapatan">
+							<separator string="Pendapatan Teratur" colspan="4"/>
+							<field string="Pendapatan Teratur" colspan="4" name="pendapatan_teratur_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>
+							<separator string="Pendapatan Tidak Teratur" colspan="4"/>
+							<field string="Pendapatan Tidak Teratur" colspan="4" name="pendapatan_tidak_teratur_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field> 							                     	
+						</page>
+						<page string="Potongan">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field string="Potongan" colspan="4" name="potongan_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field string="Potongan" colspan="4" name="potongan_kontribusi_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>														                     	
+						</page>	
+						<page string="Asuransi">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field string="Asuransi" colspan="4" name="asuransi_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field string="Asuransi" colspan="4" name="asuransi_kontribusi_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>																					                     	
+						</page>		
+						<page string="Pensiun">
+							<separator string="Beban Karyawan" colspan="4"/>
+							<field string="Pensiun" colspan="4" name="pensiun_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>
+							<separator string="Kontribusi Perusahaan" colspan="4"/>
+							<field string="Pensiun" colspan="4" name="pensiun_kontribusi_ids" nolabel="1" readonly="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>																					                     	
+						</page>			
+						<page string="Jamsostek">
+							<separator string="Komponen Jamsostek" colspan="4"/>
+							<field string="Komponen Jamsostek" colspan="4" name="jamsostek_ids" nolabel="1">
+								<tree>
+									<field name="name" string="Ketentuan"/>
+									<field name="code" string="Kode"/>
+									<field name="category_id" string="Kategori"/>
+									<field name="sequence" string="Urutan" groups="base.group_extended"/>
+								</tree>
+							</field>																					                     	
+						</page>																					
+						<page string="Ketentuan Gaji">
+							<field string="Ketentuan Gaji" colspan="4" name="rule_ids" nolabel="1" domain="[('parent_rule_id','=',False)]">
+							 <tree>
+								<field name="name" string="Ketentuan"/>
+								<field name="code" string="Kode"/>
+								<field name="category_id" string="Kategori"/>
+								<field name="sequence" string="Urutan" groups="base.group_extended"/>
+							 </tree>
+							</field>
+						</page>					
+						<page string="Rate Per Struktur">
+							<field name="rate_structure_ids" colspan="4" nolabel="1">
+								<tree string="Rate Per Struktur">
+									<field name="jenis_rate_id"/>
+									<field name="jumlah"/>
+								</tree>
+								<form string="Rate Per Struktur">
+									<field name="jenis_rate_id"/>
+									<field name="jumlah"/>
+								</form>                         		
+							</field>
+						</page>
+					</notebook>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

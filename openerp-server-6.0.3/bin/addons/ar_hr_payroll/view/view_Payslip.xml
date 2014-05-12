@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <record id="tree_hr_payslip" model="ir.ui.view">
+            <field name="name">Tree Payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">tree</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <tree colors="blue:state in ('confirm','hr_check','accont_check');black:state == 'new';gray:state == 'cancel'" string="Slip Gaji">
+                    <field name="number" string="# Slip Gaji"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="name" string="Deskripsi"/>
+                    <field name="tanggal_slip"/>
+                    <field name="detail_periode_gaji_id"/>
+                    <field name="date_from" string="Tanggal Mulai"/>
+                    <field name="date_to" string="Tanggal Akhir"/>
+                    <field name="state" string="Status"/>
+                    <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    <field name="payslip_run_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_hr_payslip" model="ir.ui.view">
+            <field name="name">Form Payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">form</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Slip Gaji">
+                    <group name="group_1" colspan="4" col="2">
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Slip Gaji" colspan="2"/>
+                    		<field name="number" string="# Slip Gaji"/>	
+                    		<field name="employee_id" string="Karyawan" domain="['|','|',('status_karyawan','=','kontrak'),('status_karyawan','=','tetap'),('status_karyawan','=','probation')]" on_change="onchange_karyawan_id(employee_id)"/>
+                    		<field name="name" string="Deskripsi"/>
+			                <field name="company_id" string="Perusahaan" widget="selection"/>
+			                <field name="payslip_run_id" string="Batch Gaji" domain="[('state','=','draft')]"/>
+			                <field name="paid" string="Dibayar" readonly="1"/>                    		
+                    	</group>
+                    	<group name="group_1_1" colspan="1" col="2">
+                    		<separator string="Periode Penggajian" colspan="2"/>
+                    		<field name="tanggal_slip"/>
+                    		<field name="detail_periode_gaji_id"/>
+                    		<field name="date_from" string="Tanggal Mulai" groups="base.group_extended"/>
+                    		<field name="date_to" string="Tanggal Akhir" groups="base.group_extended"/>                    	
+                    		<separator string="Informasi Tambahan" colspan="2"/>
+                        	<field name="contract_id" string="Kontrak" groups="base.group_extended"/>
+                        	<field name="struct_id" string="Struktur Gaji" groups="base.group_extended"/>
+                        	<field name="credit_note" string="Nota Kredit" groups="base.group_extended"/>
+                    	</group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Variabel Slip Gaji">
+                            <field name="input_line_ids" colspan="4" nolabel="1">
+                                <tree string="Variabel" editable="bottom">
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="code" string="Kode"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="contract_id" string="Kontrak" groups="base.group_extended"/>
+                                    <field name="sequence" groups="base.group_extended"/>
+                                </tree>
+                                <form string="Payslip Line">
+                                    <group>
+                                        <field name="name" select="1"/>
+                                        <field name="code" select="1"/>
+                                        <field name="payslip_id"/>
+                                        <field name="sequence" groups="base.group_extended"/>
+                                        <field name="amount"/>
+                                        <field name="contract_id" groups="base.group_extended"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Pendapatan">
+                            <field name="detail_pendapatan_teratur_ids" colspan="4" nolabel="1">
+                                <tree string="Pendapatan Teratur" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Pendapatan Teratur')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Pendapatan Teratur"/>
+                                </tree> 
+                            </field> 
+                            
+                            <field name="detail_pendapatan_tidak_teratur_ids" colspan="4" nolabel="1">
+                                <tree string="Pendapatan Tidak Teratur" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Pendapatan Tidak Teratur')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Pendapatan Tidak Teratur"/>
+                                </tree> 
+                            </field>  
+                                                                	
+                        </page>
+                        <page string="Potongan">
+                            <field name="detail_potongan_ids" colspan="4" nolabel="1">
+                                <tree string="Potongan" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Potongan')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Potongan"/>
+                                </tree> 
+                            </field> 
+                            <field name="detail_potongan_karyawan_ids" colspan="2" nolabel="1">
+                                <tree string="Potongan Kontribusi Karyawan" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Potongan')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Potongan Kontribusi Karyawan"/>
+                                </tree> 
+                            </field> 
+                            <field name="detail_potongan_perusahaan_ids" colspan="2" nolabel="1">
+                                <tree string="Potongan Kontribusi Perusahaan" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Potongan')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Potongan Kontribusi Perusahaan"/>
+                                </tree> 
+                            </field>                                                                                             	
+                        </page>      
+                    	<page string="Asuransi">
+                            <field name="detail_asuransi_ids" colspan="4" nolabel="1">
+                                <tree string="Asuransi" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Asuransi')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Asuransi"/>
+                                </tree>  
+                            </field>   
+                            <field name="detail_asuransi_karyawan_ids" colspan="2" nolabel="1">
+                                <tree string="Asuransi Kontribusi Karyawan" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Asuransi')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Asuransi Kontribusi Karyawan"/>
+                                </tree>  
+                            </field> 
+                            <field name="detail_asuransi_perusahaan_ids" colspan="2" nolabel="1">
+                                <tree string="Asuransi Kontribusi Perusahaan" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Asuransi')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Asuransi Kontribusi Karyawan"/>
+                                </tree>  
+                            </field>                               
+                    	</page> 
+                    	<page string="Pensiun">
+                            <field name="detail_pensiun_ids" colspan="4" nolabel="1">
+                                <tree string="Pensiun" editable="bottom" colors="blue:total == 0">
+                                    <field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Pensiun')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Iuran Pensiun"/>
+                                </tree> 
+                            </field>   
+                            <field name="detail_pensiun_karyawan_ids" colspan="2" nolabel="1">
+                                <tree string="Pensiun Kontribusi Karyawan" colors="blue:total == 0">
+                                    <field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Pensiun')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Iuran Pensiun Kontribusi Karyawan"/>
+                                </tree> 
+                            </field> 
+                            <field name="detail_pensiun_perusahaan_ids" colspan="2" nolabel="1">
+                                <tree string="Pensiun Kontribusi Perusahaan" colors="blue:total == 0">
+                                    <field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="category_id" string="Kategori" domain="[('parent_id.name','=','Pensiun')]" widget="selection"/>
+                                    <field name="sequence"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Iuran Pensiun Kontribusi Perusahaan"/>
+                                </tree> 
+                            </field>                                                         
+                    	</page>                    	                                         
+                        <page string="Jamsostek">
+                            <field name="detail_jamsostek_ids" colspan="4" nolabel="1">
+                                <tree string="Perhitungan Jamsostek" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Perhitungan Jamsostek"/>
+                                </tree>  
+                            </field>           
+                            <field name="total_jamsostek"/>
+                            <newline/>              
+                            <field name="detail_jamsostek_perusahaan_ids" colspan="2" nolabel="1">
+                                <tree string="Jamsostek Kontribusi Perusahaan" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Kontribusi Perusahaan"/>
+                                </tree> 
+                            </field>   
+                            <field name="detail_jamsostek_karyawan_ids" colspan="2" nolabel="1">
+                                <tree string="Jamsostek Kontribusi Karyawan" editable="bottom" colors="blue:total == 0">
+                                	<field name="code" string="Kode"/>
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total" sum="Total Kontribusi Karyawan"/>
+                                </tree> 
+                            </field>                                                    
+                        </page>
+                        <page string="Perhitungan Gaji" >
+                            <field name="line_ids" colspan="4" nolabel="1">
+                                <tree string="Struktur Gaji" editable="bottom" colors="blue:total == 0">
+                                    <field name="name" string="Deskripsi"/>
+                                    <field name="code" string="Kode"/>
+                                    <field name="category_id" string="Kategori"/>
+                                    <field name="sequence" invisible="1"/>
+                                    <field name="quantity" string="Kuantitas"/>
+                                    <field name="rate" string="Rate"/>
+                                    <field name="amount" string="Jumlah"/>
+                                    <field name="total" string="Total"/>
+                                </tree>
+                                <form string="Struktur Gaji">
+                                    <group>
+                                        <field name="name" select="1"/>
+                                        <field name="code" select="1"/>
+                                        <field name="category_id"/>
+                                        <field name="sequence" groups="base.group_extended"/>
+                                        <field name="quantity"/>
+                                        <field name="rate"/>
+                                        <field name="amount"/>
+                                        <field name="total"/>
+                                        <field name="salary_rule_id" groups="base.group_extended"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                       <page string="Keterangan">
+				            <field name="note" colspan="4" nolabel="1"/>
+                       </page>
+
+                    </notebook>
+                    <group name="group_3" col="3" colspan="4">
+                    	<group name="group_3_1" col="2" colspan="1">
+                    		<separator string="Status" colspan="2"/>
+                    		<field name="state" string="Status"/>
+                		</group>
+                    	<group name="group_3_2" col="2" colspan="1">
+							<separator string="Pendapatan" colspan="2"/>
+							<field name="total_pendapatan_teratur" string="Pendapatan Teratur (+)"/>
+							<field name="total_pendapatan_tidak_teratur" string="Pendapatan Tidak Teratur (+)"/>
+							<separator string="Potongan" colspan="2"/>
+							<field name="total_potongan" string="Potongan (-)"/>
+							<field name="total_asuransi" string="Asuransi (-)"/> 
+						 	<field name="total_pensiun" string="Iuran Pensin (-)"/>
+						 	<separator string="Subsidi Perusahaan" colspan="2"/>
+							<field name="total_potongan_perusahaan" string="Potongan (+)"/>
+							<field name="total_asuransi_perusahaan" string="Asuransi (+)"/> 
+						 	<field name="total_pensiun_perusahaan" string="Iuran Pensin (+)"/>						 	
+						 	<separator string="Take Home Pay" colspan="2"/>
+							<field name="total_thp"/>
+                		</group>
+                    	<group name="group_3_3" col="2" colspan="1">
+                    		<separator string="Action" colspan="2"/>
+                    		<button string="Variabel Slip" name="action_cari_payslip_input" type="object" colspan="2" icon="gtk-execute"/>
+                    		<button string="Hitung Ulang" icon="gtk-execute" name="compute_sheet" type="object" states="draft" colspan="2"/>
+                    		<button string="Refund" icon="gtk-execute" name="refund_sheet" states="confirm,done" type='object' colspan="2"/>   
+                    		<button string="Slip Gaji" icon="gtk-print" name="%(report_hr_salipGaji)d" states="draft,confirm,done" type='action' colspan="2"/>                    	
+                    		<separator string="Workflow" colspan="2"/>
+			                <button string="Cancel" icon="terp-dialog-close" name="cancel_sheet" states="draft,hr_check,confirm,verify" colspan="2"/>                        
+			                <button string="Set to Draft" icon="terp-stock_effects-object-colorize" name="draft" states="cancel" colspan="2"/>
+			                <button string="Confirm" icon="terp-camera_test" name="hr_verify_sheet" states="draft" colspan="2"/>
+                		</group>                		                        
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="search_hr_payslip" model="ir.ui.view">
+            <field name="name">Search Payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">search</field>
+             <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <search string="Search Payslips">
+                    <group>
+                        <filter icon="terp-document-new" string="Draft" domain="[('state','=','draft')]" help="Draft Slip"/>
+                        <filter icon="terp-camera_test" string="Done" domain="[('state','=','done')]" help="Done Slip"/>
+                        <separator orientation="vertical"/>
+                        <field name="number"/>
+                        <field name="employee_id"/>
+                        <field name="name"/>
+                        <field name="date_from"/>
+                        <field name="payslip_run_id"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Employees" icon="terp-personal" name="employee_id" context="{'group_by':'employee_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="PaySlip Batch" name="payslip_run_id" icon="terp-folder-orange" context="{'group_by':'payslip_run_id'}"/>
+                        <separator orientation="vertical" groups="base.group_multi_company"/>
+                        <filter string="Companies" name="company_id" groups="base.group_multi_company" icon="terp-go-home" context="{'group_by':'company_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="States" name="state" icon="terp-stock_effects-object-colorize" context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
+

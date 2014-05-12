@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_polaKerja" model="ir.ui.view">
+            <field name="name">Tree Pola Kerja</field>
+            <field name="model">hr.pola_kerja</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Pola Kerja">
+                    <field name="name"/>
+					<field name="kode"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_polaKerja" model="ir.ui.view">
+            <field name="name">Form Pola Kerja</field>
+            <field name="model">hr.pola_kerja</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Pola Kerja">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Pola Kerja"/>
+                	 		<field name="name"/>   
+                	 		<field name="kode"/>         	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="active"/>
+                    	</group>                    	                   	
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Detail Pola Kerja">
+               				<field name="detail_pola_kerja_ids" nolabel="1" colspan="4">
+               					<tree string="Detail Pola Kerja">
+               						<field name="name"/>
+               						<field name="kerja"/>
+               						<field name="shift_kerja_id"/>
+               					</tree>
+               					<form string="Detail Pola Kerja">
+               						<field name="name"/>
+               						<field name="kerja"/>
+               						<field name="shift_kerja_id"/>
+               					</form>               					
+               				</field>
+                		</page>
+                		<page string="Keterangan">
+                			<field name="keterangan" colspan="4" nolabel="1"/>
+                		</page>
+                	</notebook>
+                	<group name="group_2" colspan="4" col="2">
+                		<group name="group_2_1" colspan="1" col="2">
+                			<separator string="Action" colspan="2"/>
+                			<button name="button_action_cek_pola_kerja" string="Cek Pola Kerja" type="object" icon="gtk-execute" colspan="2"/>
+                		</group>
+                	</group>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_polaKerja" model="ir.ui.view">
+            <field name="name">Search Pola Kerja</field>
+            <field name="model">hr.pola_kerja</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Pola Kerja">
+                    <field name="name"/>
+					<field name="kode"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

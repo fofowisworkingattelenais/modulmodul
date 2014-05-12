@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<delete model="hr.payroll.structure" id="hr_payroll.structure_base"/>
+		
+		<delete model="hr.salary.rule" id="hr_payroll.hr_rule_basic"/>
+		<delete model="hr.salary.rule" id="hr_payroll.hr_rule_taxable"/>
+		<delete model="hr.salary.rule" id="hr_payroll.hr_rule_net"/>
+
+    </data>
+</openerp>

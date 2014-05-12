@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_absensi" model="ir.ui.view">
+            <field name="name">Tree Absensi</field>
+            <field name="model">hr.absensi</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Absensi">
+                	<field name="karyawan_id"/>
+                    <field name="tanggal"/>
+                    <field name="kode_absen_id"/>
+                    <field name="shift_kerja_id"/>
+        	 		<field name="jam_masuk"/>
+        	 		<field name="jam_keluar"/>
+        	 		<field name="mulai_istirahat"/>
+        	 		<field name="selesai_istirahat"/>  
+		            <field name="realisasi_jam_masuk"/>
+		            <field name="realisasi_mulai_istirahat"/>
+		            <field name="realisasi_selesai_istirahat"/>                    
+		            <field name="realisasi_jam_keluar"/>        	 		                  
+                    <field name="state"/>
+                    <button name="workflow_action_confirm" string="Confirm" type="object" colspan="2" icon="gtk-apply" states="draft"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_absensi" model="ir.ui.view">
+            <field name="name">Form Absensi</field>
+            <field name="model">hr.absensi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Absensi">
+                	<group name="group_1" colspan="4" col="2">
+                		<group name="group_1_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Absensi"/>
+                	 		<field name="karyawan_id"/>
+				            <field name="tanggal"/>  
+				            <field name="shift_kerja_id"/>
+				            <field name="kode_absen_id"/>         	 		
+                    	</group>
+                		<group name="group_1_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Waktu Kerja Seharusnya"/>
+                	 		<field name="jam_masuk"/>
+                	 		<field name="jam_keluar"/>
+                	 		<field name="mulai_istirahat"/>
+                	 		<field name="selesai_istirahat"/>
+                    	</group>    
+                		<group name="group_1_3" colspan="1" col="2">
+                	 		<separator colspan="2" string="Realisasi Waktu Kerja"/>
+				            <field name="realisasi_jam_masuk"/>
+				            <field name="realisasi_mulai_istirahat"/>
+				            <field name="realisasi_selesai_istirahat"/>                    
+				            <field name="realisasi_jam_keluar"/>
+                    	</group> 
+                		<group name="group_1_4" colspan="1" col="2">
+                	 		<separator colspan="2" string="Perhitungan"/>
+				            <field name="overtime_datang"/>
+				            <field name="terlambat_datang"/>
+				            <field name="overtime_pulang"/>
+				            <field name="cepat_pulang"/>
+                    	</group>     
+                		<group name="group_1_5" colspan="1" col="2">
+                	 		<separator colspan="2" string="Overtime"/>
+				            <field name="lembur_id"/>
+				            <field name="overtime_datang_diakui"/>
+				            <field name="overtime_pulang_diakui"/>
+                    	</group>                     	                 	                    	                	
+                	</group>
+                	<group name="group_2" colspan="4" col="3">
+                		<group name="group_2_1" colspan="1" col="2" >
+                	 		<separator colspan="2" string="Status"/>
+				            <field name="state"/>        	 		
+                    	</group>
+                		<group name="group_2_2" colspan="1" col="2">
+                	 		<separator colspan="2" string="Action"/>
+                    	</group>    
+                		<group name="group_2_3" colspan="1" col="2">
+                	 		<separator colspan="2" string="Workflow"/>
+							<button name="workflow_action_confirm" string="Confirm" type="object" colspan="2" icon="gtk-yes" states="draft"/>
+                    	</group>                     	                	
+                	</group>                	
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_absensi" model="ir.ui.view">
+            <field name="name">Search Absensi</field>
+            <field name="model">hr.absensi</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Absensi">
+                	<field name="karyawan_id"/>
+                    <field name="tanggal"/>
+                    <field name="kode_absen_id"/>
+                    <field name="shift_kerja_id"/>
+                    <field name="state"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

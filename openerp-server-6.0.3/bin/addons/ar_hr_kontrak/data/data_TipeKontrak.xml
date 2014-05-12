@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="data_contractType_probition" model="hr.contract.type">
+            <field name="name">Probition</field>
+        </record>
+        
+        <record id="data_contractType_pkwt" model="hr.contract.type">
+            <field name="name">PKWT</field>
+        </record>                
+        
+        <record id="data_contractType_pkwtt" model="hr.contract.type">
+            <field name="name">PKWTT</field>
+        </record>        
+        
+        
+
+    </data>
+</openerp>

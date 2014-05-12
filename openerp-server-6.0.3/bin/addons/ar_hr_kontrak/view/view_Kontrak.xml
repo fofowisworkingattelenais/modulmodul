@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_kontrak" model="ir.ui.view">
+            <field name="name">Tree Kontrak</field>
+            <field name="model">hr.contract</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="History">
+                    <field name="name" string="# History"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="tanggal_mulai" string="Tanggal Mulai Berlaku"/>
+                    <field name="tipe_history_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="search_hr_kontrak" model="ir.ui.view">
+            <field name="name">Search Kontrak</field>
+            <field name="model">hr.contract</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="History">
+                    <field name="name" string="# History"/>
+                    <field name="employee_id" string="Karyawan"/>
+                    <field name="tipe_history_id"/>
+                </search>
+            </field>
+        </record>        
+        
+        <record id="form_hr_kontrak" model="ir.ui.view">
+            <field name="name">Form Kontrak</field>
+            <field name="model">hr.contract</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Kontrak">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="History Karyawan" colspan="2"/>
+							<field name="name" string="# History"/>
+							<field name="employee_id" string="Karyawan"/>
+							<field name="tipe_history_id" widget="selection" on_change="onchange_tipe_history_id(tipe_history_id)"/>
+							<field name="history_sebelum_id"/>
+						</group>
+						<group name="group_1_2" colspan="1" col="2">
+							<separator string="Mulai &amp; Selesai" colspan="2"/>
+							<field name="tanggal_mulai" string="Tanggal Mulai Berlaku"/>
+						</group>						
+						
+					</group>
+					<notebook colspan="4">
+						<page string="Detail History">
+							<group name="group_3" colspan="4" col="2">
+								<group name="group_3_1" colspan="1" col="2" attrs="{'invisible':[('visibilitas_kategori_karyawan','=',0)]}">
+									<separator string="Kontrak" colspan="2"/>
+									<field name="type_id" string="Jenis Kontrak" widget="selection" attrs="{'required':[('required_kategori_karyawan','=',1)]}"/>						
+									<field name="date_start" string="Mulai" attrs="{'required':[('required_kategori_karyawan','=',1)]}"/>
+									<field name="date_end" string="Akhir" attrs="{'required':[('required_kategori_karyawan','=',1)]}"/>
+								</group>							
+								<group name="group_3_2" colspan="1" col="2" attrs="{'invisible':[('visibilitas_ruang_lingkup_pekerjaan','=',0)]}">
+									<separator string="Ruang Lingkup Pekerjaan" colspan="2"/>
+									<field name="company_id" widget="selection" attrs="{'required':[('required_ruang_lingkup_pekerjaan','=',1)]}"/>
+									<field name="department_id" string="Unit Kerja" attrs="{'required':[('required_ruang_lingkup_pekerjaan','=',1)]}"/>
+									<field name="job_id" string="Jabatan" attrs="{'required':[('required_ruang_lingkup_pekerjaan','=',1)]}"/>
+									<field name="manager_id" domain="['|', ('status_karyawan','=','tetap'),('status_karyawan','=','kontrak')]"/>
+								</group>
+								<group name="group_3_3" colspan="1" col="2" attrs="{'invisible':[('visibilitas_remunerasi','=',0)]}">
+									<separator string="Gaji" colspan="2"/>
+									<field name="wage" string="Gaji Pokok" attrs="{'required':[('required_remunerasi','=',1)]}"/>
+								</group>					
+								<group name="group_3_4" colspan="1" col="2" attrs="{'invisible':[('visibilitas_absensi','=',0)]}">
+									<separator string="Waktu Kerja" colspan="2"/>
+									<field name="periode_gaji_id" string="Periode Kerja" widget="selection" attrs="{'required':[('required_absensi','=',1)]}"/>
+								</group>											
+							</group>
+						</page>
+						<page string="Catatan">
+							<field name="notes" colspan="4" nolabel="1"/>
+						</page>
+						<page string="Visibilitas" groups="base.group_extended">
+							<group name="group_4" colspan="4" col="2">
+								<group name="group_4_1" colspan="1" col="2">
+									<separator string="Visibilitas" colspan="2"/>
+									<field name="visibilitas_ruang_lingkup_pekerjaan"/>
+									<field name="visibilitas_kategori_karyawan"/>
+									<field name="visibilitas_remunerasi"/>
+									<field name="visibilitas_absensi"/>
+								</group>
+								<group name="group_4_2" colspan="1" col="2">
+									<separator string="Field Wajib" colspan="2"/>
+									<field name="required_ruang_lingkup_pekerjaan"/>
+									<field name="required_kategori_karyawan"/>
+									<field name="required_remunerasi"/>
+									<field name="required_absensi"/>
+								</group>								
+							</group>
+						</page>
+					</notebook>
+					<group name="group_2" colspan="4" col="3">
+						<group name="group_2_1" colspan="1" col="2">
+							<separator string="Status" colspan="2"/>
+							<field name="state"/>
+						</group>
+						<group name="group_2_2" colspan="1" col="2">
+							<separator string="Action" colspan="2"/>
+						</group>					
+						<group name="group_2_3" colspan="1" col="2">
+							<separator string="Workflow" colspan="2"/>
+							<button name="button_valid" string="Valid" colspan="2" states="draft" icon="gtk-go-forward"/>
+							<button name="button_selesai" string="Selesai" colspan="2" states="valid"/>
+						</group>												
+					</group>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

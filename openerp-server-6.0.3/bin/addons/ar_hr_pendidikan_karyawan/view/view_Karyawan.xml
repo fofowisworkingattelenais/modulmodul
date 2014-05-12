@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="form_hr_karyawanPendidikan" model="ir.ui.view">
+            <field name="name">Karyawan : ar_hr_pendidikan_karyawan</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+			<field name="inherit_id" ref="ar_hr.form_hr_karyawan"/>   
+            <field name="arch" type="xml">
+				<data>
+					<page string="Informasi Umum" position="after">
+						<page string="Pendidikan">
+							<separator string="Pendidikan Formal" colspan="4"/>
+							<field name="pendidikan_formal_ids" colspan="4" nolabel="1" mode="tree">
+								<tree string="Pendidikan Formal">
+									<field name="urutan"/>
+									<field name="name"/>
+									<field name="nama_sekolah"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="gpa"/>
+								</tree>
+								<form string="Pendidikan Formal">
+									<field name="urutan"/>
+									<field name="name"/>
+									<field name="nama_sekolah"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="gpa"/>
+									<field name="keterangan"/>
+								</form>								
+							</field>
+							
+							<separator string="Pendidikan Non-Formal" colspan="4"/>
+							<field name="pendidikan_non_formal_ids" colspan="4" nolabel="1" mode="tree">
+								<tree string="Pendidikan Non-Formal">
+									<field name="name"/>
+									<field name="nama_institusi"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+								</tree>
+								<form string="Pendidikan Non-Formal">
+									<field name="name"/>
+									<field name="nama_institusi"/>
+									<field name="tahun_masuk"/>
+									<field name="tahun_selesai"/>
+									<field name="keterangan"/>
+								</form>								
+							</field>									
+						</page>
+					</page>
+				</data>
+            </field>
+        </record>    
+    </data>
+</openerp>

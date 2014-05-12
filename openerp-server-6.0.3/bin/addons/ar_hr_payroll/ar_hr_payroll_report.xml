@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report id="report_hr_salipGaji" 
+        		auto="False" 
+        		model="hr.payslip" 
+        		name="hr.slip_gaji"
+                rml="ar_hr_payroll/report/slip_gaji.rml" 
+                string="Slip Gaji"
+                menu="False"/>
+                
+        <report id="report_hr_riwayatPembayaranGaji" 
+        		auto="False" 
+        		model="hr.payslip" 
+        		name="hr.riwayat_pembayaran_gaji"
+                rml="ar_hr_payroll/report/riwayat_pembayaran_gaji.rml" 
+                string="Riwayat Pembayaran Gaji"
+                menu="False"/>                
+
+    </data>
+</openerp>

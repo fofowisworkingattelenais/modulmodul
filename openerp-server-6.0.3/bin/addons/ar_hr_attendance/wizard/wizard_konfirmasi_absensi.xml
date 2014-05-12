@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_hr_wizardKonfirmasiAbsensi" model="ir.ui.view">
+            <field name="name">Wizard Konfirmasi Absensi</field>
+            <field name="model">hr.wizard_konfirmasi_absensi</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Konfirmasi Absensi">
+                    <separator colspan="4" string="Wizard ini akan mengkonfirmasi absensi yang dipilih"/>
+					<button name="konfirmasi_absensi" type="object" string="Konfirmasi" icon="gtk-execute"/>
+					<button icon="gtk-cancel" special="cancel" string="Batal"/>
+                </form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardKonfirmasiAbsensi" model="ir.actions.act_window">
+			<field name="name">Konfirmasi Absensi</field>
+			<field name="res_model">hr.wizard_konfirmasi_absensi</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_hr_wizardKonfirmasiAbsensi"/>
+			<field name="target">new</field>
+       </record>        
+       
+        <record model="ir.values" id="value_hr_wizardKonfirmasiAbsensi">
+            <field name="model_id" ref="model_hr_absensi" />
+            <field name="object" eval="1" />
+            <field name="name">Konfirmasi Absensi</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('waction_hr_wizardKonfirmasiAbsensi'))" />
+            <field name="key">action</field>
+            <field name="model">hr.absensi</field>
+        </record>        
+
+    </data>
+</openerp>
+

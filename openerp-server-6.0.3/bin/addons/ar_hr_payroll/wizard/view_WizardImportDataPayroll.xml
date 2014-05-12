@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="waction_hr_wizardImportDataPayroll" model="ir.actions.act_window">
+            <field name="name">Import Data Payroll</field>
+            <field name="res_model">hr.wizard_import_data_payroll</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="form_hr_wizardImportDataPayroll" model="ir.ui.view">
+            <field name="name">Form Wizard Import Data Payroll</field>
+            <field name="model">hr.wizard_import_data_payroll</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<separator string="File Data" colspan="2"/>
+							<field name="data_payroll" filename="file_data_payroll"/>
+							<field name="file_data_payroll"/>
+						</group>												
+					</group>
+					<button name="import_data_payroll" type="object" string="Ok" colspan="2" icon="gtk-ok"/>
+					<button special="cancel" string="Batal" icon="gtk-cancel" colspan="2"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

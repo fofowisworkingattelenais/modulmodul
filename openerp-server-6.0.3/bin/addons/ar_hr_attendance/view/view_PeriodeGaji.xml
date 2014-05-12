@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>            
+        <record id="form_hr_periodeGajiAttendance" model="ir.ui.view">
+            <field name="name">Form Periode Gaji : Attandence</field>
+            <field name="model">hr.periode_gaji</field>
+            <field name="inherit_id" ref="ar_hr_kontrak.form_hr_periodeGaji"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<data>
+					<field name="detail_periode_gaji_ids" nolabel="1" colspan="4" position="replace">
+						<notebook colspan="4">
+							<page string="Detail Periode Gaji">
+						    	<field name="detail_periode_gaji_ids" nolabel="1" colspan="4">
+						    		<tree string="Detail Periode Gaji">
+						    			<field name="name"/>
+						    			<field name="tanggal_mulai"/>
+						    			<field name="tanggal_akhir"/>
+						    			<field name="state"/>
+						    		</tree>
+						    		<form string="Detail Periode Gaji">
+						    			<field name="name"/>
+						    			<field name="tanggal_mulai"/>
+						    			<field name="tanggal_akhir"/>
+						    			<field name="state"/>
+						    			<button name="workflow_action_aktif" type="object" string="Aktif" colspan="2" states="draft"/>
+						    			<button name="workflow_action_selesai" type="object" string="Aktif" colspan="2" states="aktif"/>
+						    		</form>                		
+						    	</field>
+		            		</page>
+		            		<page string="Ketentuan Absensi">
+		            			<field name="ketentuan_absensi_ids" colspan="4" nolabel="1"/>
+		            		</page>
+		            	</notebook>
+                	</field>
+				</data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

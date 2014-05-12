@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_perhitunganTimesheet" model="ir.ui.view">
+            <field name="name">Tree Perhitungan Timesheet</field>
+            <field name="model">hr.perhitungan_timesheet</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Perhitungan Timesheet">
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <field name="satuan_ukur_id"/>
+                    <field name="hasil"/>
+                    <field name="timesheet_id"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_perhitunganTimesheet" model="ir.ui.view">
+            <field name="name">Form Perhitungan Timesheet</field>
+            <field name="model">hr.perhitungan_timesheet</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Perhitungan Timesheet">
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <field name="satuan_ukur_id"/>
+                    <field name="hasil"/>
+                    <field name="timesheet_id"/>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_perhitunganTimesheet" model="ir.ui.view">
+            <field name="name">Search Perhitungan Timesheet</field>
+            <field name="model">hr.perhitungan_timesheet</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Perhitungan Timesheet">
+                    <field name="name"/>
+                    <field name="kode"/>
+                    <field name="satuan_ukur_id"/>
+                    <field name="hasil"/>
+                    <field name="timesheet_id"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

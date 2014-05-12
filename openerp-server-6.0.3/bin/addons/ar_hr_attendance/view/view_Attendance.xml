@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_attendance" model="ir.ui.view">
+            <field name="name">Tree Attendance</field>
+            <field name="model">hr.attendance</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Absensi Karyawan">
+                	<field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="action"/>
+                    <field name="action_desc"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="form_hr_attendance" model="ir.ui.view">
+            <field name="name">Form Attendance</field>
+            <field name="model">hr.attendance</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Absensi Karyawan">
+                    <field name="employee_id"  />
+                    <field name="name"  />
+                    <field name="action"  />
+                    <field name="action_desc"  />
+                </form>
+            </field>
+        </record>
+
+
+
+        <record model="ir.ui.view" id="search_hr_attendance">
+            <field name="name">Search Attendance</field>
+            <field name="model">hr.attendance</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Absensi Karyawan">
+                    <filter icon="terp-stock_align_left_24" string="My Attendance" domain="[('employee_id.user_id.id', '=', uid)]" />
+                    <separator orientation="vertical"/>
+                    <filter icon="terp-go-today" string="Today" name="today" domain="[('name','&gt;=',current_date),('name','&lt;=',current_date)]" />
+                    <separator orientation="vertical"/>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="action"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter name="employee" string="Employee" icon="terp-personal" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Day" icon="terp-go-today" domain="[]" context="{'group_by':'day'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+ 
+    </data>
+</openerp>

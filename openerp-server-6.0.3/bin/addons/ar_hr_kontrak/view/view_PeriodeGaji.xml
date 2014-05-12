@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_hr_periodeGaji" model="ir.ui.view">
+            <field name="name">Tree Periode Gaji</field>
+            <field name="model">hr.periode_gaji</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Periode Gaji">
+                    <field name="name"/>
+                    <field name="kode"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_hr_periodeGaji" model="ir.ui.view">
+            <field name="name">Form Periode Gaji</field>
+            <field name="model">hr.periode_gaji</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Periode Gaji">
+                	<group name="group_1" col="2" colspan="4">
+                		<group name="group_1_1" col="2" colspan="1">
+                	 		<separator colspan="2" string="Periode Gaji"/>
+                	 		<field name="name"/>
+                	 		<field name="kode"/>             	 		
+                    	</group>
+                		<group name="group_1_2" col="2" colspan="1">
+                	 		<separator colspan="2" string="Status Data"/>
+				            <field name="active"/>
+                    	</group>                    	
+                	</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" colspan="4" nolabel="1"/>
+                	<field name="detail_periode_gaji_ids" nolabel="1" colspan="4">
+                		<tree string="Detail Periode Gaji">
+                			<field name="name"/>
+                			<field name="tanggal_mulai"/>
+                			<field name="tanggal_akhir"/>
+                			<field name="state"/>
+                		</tree>
+                		<form string="Detail Periode Gaji">
+                			<field name="name"/>
+                			<field name="tanggal_mulai"/>
+                			<field name="tanggal_akhir"/>
+                			<field name="state"/>
+                			<button name="workflow_action_aktif" type="object" string="Aktif" colspan="2" states="draft"/>
+                			<button name="workflow_action_selesai" type="object" string="Aktif" colspan="2" states="aktif"/>
+                		</form>                		
+                	</field>
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_hr_periodeGaji" model="ir.ui.view">
+            <field name="name">Search Periode Gaji</field>
+            <field name="model">hr.periode_gaji</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Periode Gaji">
+                    <field name="name"/>
+                    <field name="kode"/>
+               </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

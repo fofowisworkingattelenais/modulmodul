@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="form_hr_wizardCetakRiwayatPembayaranGaji" model="ir.ui.view">
+            <field name="name">Form Wizard Cetak Riwayat Pembayaran Gaji</field>
+            <field name="model">hr.wizard_cetak_riwayat_pembayaran_gaji</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<form string="Cetak Riwayat Pembayaran Gaji">
+					<field name="employee_id"/>
+					<field name="tahun"/>
+					<button name="cetak_laporan" string="Cetak" type="object" icon="gtk-print" colspan="2"/>
+					<button special="cancel" string="Batal" icon="gtk-cancel" colspan="2"/>
+				</form>
+            </field>
+        </record>
+        
+        <record id="waction_hr_wizardCetakRiwayatPembayaranGaji" model="ir.actions.act_window">
+            <field name="name">Cetak Riwayat Pembayaran Gaji</field>
+            <field name="res_model">hr.wizard_cetak_riwayat_pembayaran_gaji</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>        
+    </data>
+</openerp>

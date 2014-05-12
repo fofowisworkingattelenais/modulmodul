@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_hrTipeHistory","data_accessRight_hrTipeHistory","model_hr_tipe_history",,1,1,1,1
+"data_accessRight_hrPeriodeGaji","data_accessRight_hrPeriodeGaji","model_hr_periode_gaji",,1,1,1,1
+"data_accessRight_hrDetailPeriodeGaji","data_accessRight_hrDetailPeriodeGaji","model_hr_detail_periode_gaji",,1,1,1,1
+"data_accessRight_hrContractType","data_accessRight_hrContractType","hr_contract.model_hr_contract_type",,1,1,1,1
+"data_accessRight_hrContract","data_accessRight_hrContract","hr_contract.model_hr_contract",,1,1,1,1
+
