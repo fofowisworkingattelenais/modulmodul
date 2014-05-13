@@ -58,13 +58,25 @@ class account_move_line(osv.osv):
         state = context.get('state', False)
         where_move_state = ''
         where_move_lines_by_date = ''
-
+# START FILTER BY DATE
         if context.get('date_from', False) and context.get('date_to', False):
             if initial_bal:
                 where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date < '" +context['date_from']+"')"
             else:
                 where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date >= '" +context['date_from']+"' AND date <= '"+context['date_to']+"')"
 
+        if context.get('date_begin', False):
+            if initial_bal:
+                where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date < '" +context['date_from']+"')"
+            else:
+                where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date < '" +context['date_begin']+"')"
+
+        if context.get('date_end', False):
+            if initial_bal:
+                where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date < '" +context['date_end']+"')"
+            else:
+                where_move_lines_by_date = " AND " +obj+".move_id IN (SELECT id FROM account_move WHERE date > '" +context['date_end']+"')"
+# END FILTER BY DATE
         if state:
             if state.lower() not in ['all']:
                 where_move_state= " AND "+obj+".move_id IN (SELECT id FROM account_move WHERE account_move.state = '"+state+"')"

@@ -93,18 +93,12 @@ class trial_balance(report_sxw.rml_parse):
 
     def get_begin_bal(self,form):
         saldo_awal = []
-        ctx = self.context.copy()
-        ctx['date_from'] = form['date_from']
 
-        object_move = self.pool.get('account.move').search(self.cr, self.uid, [('date', '<', ctx['date_from'])])
-        print object_move
-        # dt = time.strftime('%Y-%m-%d')
-        # ids = self.search(cr, uid, [('date_start', '<=', dt), ('date_stop', '>=', dt)])
+        ctx = self.context.copy()
+        ctx['date_begin'] = form['date_from']
 
         ids = self.pool.get('account.account').search(self.cr, self.uid, [('type', '<>', '')])
-        begin = self.pool.get('account.account').browse(self.cr, self.uid, ids)
-        print self.uid
-
+        begin = self.pool.get('account.account').browse(self.cr, self.uid, ids, ctx)
         for beg_bal in begin:
             res = {
                 'begin_debit': beg_bal.debit,
@@ -114,11 +108,15 @@ class trial_balance(report_sxw.rml_parse):
         return saldo_awal
 
 
-    def get_ending_bal(self, end_date):
+    def get_ending_bal(self, form):
         saldo_akhir= []
 
+        ctx = self.context.copy()
+        ctx['date_end'] = form['date_to']
+
+
         ids = self.pool.get('account.account').search(self.cr, self.uid, [('type', '<>', '')])
-        begin = self.pool.get('account.account').browse(self.cr, self.uid, ids)
+        begin = self.pool.get('account.account').browse(self.cr, self.uid, ids, ctx)
 
         for end_bal in begin:
             res = {
@@ -141,7 +139,7 @@ class trial_balance(report_sxw.rml_parse):
         credit_akhir = []
 
         begining = self.get_begin_bal(form)
-        ending = self.get_ending_bal(ctx['date_to'])
+        ending = self.get_ending_bal(form)
 
         for j in range(0, len(ending)):
             debit_end = ending[j]['end_debit']
