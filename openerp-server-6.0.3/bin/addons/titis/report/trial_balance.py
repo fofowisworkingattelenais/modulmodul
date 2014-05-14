@@ -139,16 +139,16 @@ class trial_balance(report_sxw.rml_parse):
         credit_akhir = []
 
         begining = self.get_begin_bal(form)
-        ending = self.get_ending_bal(form)
+        # ending = self.get_ending_bal(form)
 
-        for j in range(0, len(ending)):
-            debit_end = ending[j]['end_debit']
-            credit_end = ending[j]['end_credit']
+        # for j in range(0, len(ending)):
+        #     debit_end = ending[j]['end_debit']
+        #     credit_end = ending[j]['end_credit']
 
-            debit_akhir.append(debit_end)
-            credit_akhir.append(credit_end)
-        debit_e = 0
-        credit_e = 0
+            # debit_akhir.append(debit_end)
+            # credit_akhir.append(credit_end)
+        # debit_e = 0
+        # credit_e = 0
 
         for i in range(0, len(begining)):
             debit_begin = begining[i]['begin_debit']
@@ -189,15 +189,15 @@ class trial_balance(report_sxw.rml_parse):
                 'end_date': form['date_to'],
                 'begin_debit': debit_awal[debit_b],
                 'begin_credit': credit_awal[credit_b],
-                'end_debit': debit_akhir[debit_e],
-                'end_credit': credit_akhir[credit_e],
+                'end_debit': (debit_awal[debit_b] + akun.debit) - (credit_awal[credit_b] + akun.credit),
+                # 'end_credit': credit_awal[credit_b] - akun.credit,
             }
 
             self.isi_laporan.append(res)
             debit_b += 1
             credit_b += 1
-            debit_e += 1
-            credit_e += 1
+            # debit_e += 1
+            # credit_e += 1
 
         return self.isi_laporan
 

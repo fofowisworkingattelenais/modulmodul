@@ -130,7 +130,7 @@
 			<blockSpan start="1,0" stop="1,1"/>		
 			<blockSpan start="2,0" stop="3,0"/>	
 			<blockSpan start="4,0" stop="5,0"/>
-			<blockSpan start="6,0" stop="7,0"/>
+			<blockSpan start="6,0" stop="6,1"/>
 			
 		</blockTableStyle>
 		
@@ -149,7 +149,7 @@
 	
 	<story>
 		<section>
-			<blockTable colWidths="100.0,170.0,90.0,90.0,90.0,90.0,90.0,90.0" style="TABEL_STANDAR" repeatRows="2">
+			<blockTable colWidths="100.0,250.0,90.0,90.0,90.0,90.0,100.0" style="TABEL_STANDAR" repeatRows="2">
 				<tr>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Account Code</para></td>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Account Description</para></td>
@@ -158,7 +158,7 @@
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Transaction</para></td>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Ending Balance</para></td>
-					<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+
 				</tr>
 				<tr>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Account Code</para></td>
@@ -167,8 +167,7 @@
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Credit</para></td>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Debet</para></td>
 					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Credit</para></td>
-					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Debit</para></td>
-					<td><para style="JUDUL_KATEGORI" alignment="CENTER">Credit</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER"> </para></td>
 				</tr>
 				<tr>
 					[[ repeatIn(isi_laporan(data['form']), 'a') ]]
@@ -178,8 +177,7 @@
 					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['begin_credit']) ]]</para></td>
 					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['debit']) ]]</para></td>
 					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['credit']) ]]</para></td>
-					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['end_debit']) ]]</para></td>
-					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ formatLang(a['end_credit']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ formatLang(a['end_debit']) ]]</para></td>
 				</tr>
 			</blockTable>
 		</section>
