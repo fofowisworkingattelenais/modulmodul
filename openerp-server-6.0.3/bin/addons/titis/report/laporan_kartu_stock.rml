@@ -145,8 +145,25 @@
 		</blockTable>
 		
 		<para><font color="white"> </font></para>
-		
+
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+
 		<section>
+		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,3cm,5.5cm,0.5cm,4.5cm">
+			<tr>
+				[[ repeatIn(isi_saldo(data['form']), 'sasa') ]]
+				<td><para style="JUDUL_KATEGORI">STOK AWAL</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  sasa['saldo_awal'] ]]</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="RIGHT">Tanggal</para></td>
+				<td><para style="ISI_TABEL_ITEM">:</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  sasa['date_from'] ]] - [[  sasa['date_to'] ]]</para></td>
+			</tr>
+		</blockTable>
+
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
 
 		<blockTable style="TABEL_STANDAR" colWidths="3.5cm,2.5cm,2.5cm,6cm,4cm">
 			<tr>								
@@ -176,9 +193,9 @@
 			<tr>								
 				<td><para style="JUDUL_KATEGORI">STOK AKHIR</para></td>
 				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  a['stok'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM">[[  sasa['saldo_akhir'] ]]</para></td>
 			</tr>
-                </blockTable>
+		</blockTable>
 
 		</section>
 
