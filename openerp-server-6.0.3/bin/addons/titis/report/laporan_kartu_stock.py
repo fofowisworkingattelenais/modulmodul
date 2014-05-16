@@ -240,12 +240,12 @@ class laporan_kartu_stock(report_sxw.rml_parse):
 
 
             res = {
-                'masuk_awal' :query[i]['masuk_awal'] or 0.000,
-                'keluar_awal' : query[i]['keluar_awal'] or 0.000,
-                'masuk' : query[i]['masuk'] or 0.000,
-                'keluar' : query[i]['keluar'] or 0.000,
+                'masuk_awal' :query[i]['masuk_awal'] or 0.000 or '0.0',
+                'keluar_awal' : query[i]['keluar_awal'] or 0.000 or '0.0',
+                'masuk' : query[i]['masuk'] or 0.000 or '0.0',
+                'keluar' : query[i]['keluar'] or 0.000 or '0.0',
                 'saldo_awal': (query[i]['masuk_awal'] or 0.000 + query[i]['keluar_awal'] or 0.000) or '0.0',
-                'saldo_akhir':  ((query[i]['masuk_awal'] or 0.000 + query[i]['keluar_awal'] or 0.000) + query[i]['hasil'] or 0.000) or '0.0',
+                'saldo_akhir':  ((query[i]['masuk_awal'] or 0.000 + query[i]['keluar_awal'] or 0.000) or 0.000 + query[i]['hasil']or 0.000) or '0.0',
                 'date_from': form['date_from'],
                 'date_to': form['date_to']
             }
