@@ -174,12 +174,12 @@ class laporan_kartu_stock(report_sxw.rml_parse):
         i = 0
 
         self.cr.execute("   SELECT \
-                                sum(B5.product_qty)   masuk_awal, \
-                                sum(B4.product_qty) keluar_awal, \
-                                sum(B2.product_qty) masuk, \
-                                sum(B3.product_qty) keluar, \
-                                sum(B2.product_qty) - sum(B3.product_qty) hasil, \
-                                sum(B5.product_qty)  - sum(B5.product_qty) saldo_awal \
+                                COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
+                                COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
+                                COALESCE(sum(B2.product_qty), 0.000) masuk,\
+                                COALESCE(sum(B3.product_qty), 0.000) keluar,\
+                                COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
+                                COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal\
                             FROM stock_move A \
                                 LEFT JOIN (SELECT A2.id,A2.product_qty \
                                     FROM  \
@@ -187,7 +187,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C \
                                                 ON A2.location_dest_id = C.id \
                                     WHERE 	C.id = %s \
-                                            AND (A2.date BETWEEN %s AND %s))\
+                                            AND (A2.date > %s AND A2.date < %s))\
                                     B2 ON A.id = B2.id \
                                 LEFT JOIN (SELECT A3.id, A3.product_qty \
                                     FROM \
@@ -195,7 +195,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C2 \
                                                 ON A3.location_id = C2.id \
                                     WHERE 	C2.id = %s \
-                                            AND (A3.date BETWEEN %s AND %s) ) \
+                                            AND (A3.date > %s AND A3.date < %s) ) \
                                      B3 ON A.id = B3.id \
                                 LEFT JOIN (SELECT A4.id, A4.product_qty \
                                     FROM \
@@ -239,13 +239,25 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                 query[i]['keluar'] = 0.000
 
 
+            masuk_awal =  query[i]['masuk_awal'] or 0.000
+            keluar_awal = query[i]['keluar_awal'] or 0.000
+            keluar = query[i]['keluar'] or 0.000
+            masuk = query[i]['masuk'] or 0.000
+            hasil =  query[i]['hasil'] or 0.000
+            # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
+            # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
+            saldo_awal = (masuk_awal + keluar_awal)  or 0.0
+            saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
+            if masuk is None or '' or 0.0:
+                saldo_akhir = saldo_awal - keluar
+
             res = {
-                'masuk_awal' :query[i]['masuk_awal'] or 0.000 or '0.0',
-                'keluar_awal' : query[i]['keluar_awal'] or 0.000 or '0.0',
-                'masuk' : query[i]['masuk'] or 0.000 or '0.0',
-                'keluar' : query[i]['keluar'] or 0.000 or '0.0',
-                'saldo_awal': (query[i]['masuk_awal'] or 0.000 + query[i]['keluar_awal'] or 0.000) or '0.0',
-                'saldo_akhir':  ((query[i]['masuk_awal'] or 0.000 + query[i]['keluar_awal'] or 0.000) or 0.000 + query[i]['hasil']or 0.000) or '0.0',
+                'masuk_awal' :masuk_awal,
+                'keluar_awal' : keluar_awal,
+                'masuk' : masuk,
+                'keluar' : keluar,
+                'saldo_awal': saldo_awal or '0.0',
+                'saldo_akhir': saldo_akhir or '0.0',
                 'date_from': form['date_from'],
                 'date_to': form['date_to']
             }
@@ -277,7 +289,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                     WHERE product_id = %s \
                     AND A.state = %s \
                     AND (A.location_dest_id = %s OR A.location_id = %s)\
-					AND (A.date BETWEEN %s AND %s)\
+					AND (A.date > %s AND A.date < %s)\
                     ORDER BY A.date " ,
                     (form['location_id'], form['location_id'], form['product_id'], 'done', form['location_id'], form['location_id'], form['date_from'], form['date_to']))
         query = self.cr.dictfetchall()
