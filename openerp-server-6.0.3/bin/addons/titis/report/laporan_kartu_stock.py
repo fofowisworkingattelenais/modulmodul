@@ -246,7 +246,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
             hasil =  query[i]['hasil'] or 0.000
             # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
             # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
-            saldo_awal = (masuk_awal + keluar_awal)  or 0.0
+            saldo_awal = (masuk_awal - keluar_awal)  or 0.0
             saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
             if masuk is None or '' or 0.0:
                 saldo_akhir = saldo_awal - keluar
