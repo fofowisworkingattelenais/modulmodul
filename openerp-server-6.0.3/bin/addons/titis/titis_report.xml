@@ -19,28 +19,28 @@
 				model="titis.bank_payment" 
 				name="cetakan_voucher" 
 				rml="titis/report/cetakan_voucher.rml" 
-				string="Voucher"/>
+				string="List Ceque"/>
 		
 		<report auto="False" 
 				id="report_titis_cetakanVoucher" 
 				model="titis.bank_receipt" 
 				name="cetakan_voucher" 
 				rml="titis/report/cetakan_voucher.rml" 
-				string="Voucher"/>
+				string="List Ceque"/>
 
 		<report auto="False" 
 				id="report_titis_cetakanVoucher" 
 				model="titis.cash_payment" 
 				name="cetakan_voucher" 
 				rml="titis/report/cetakan_voucher.rml" 
-				string="Voucher"/>
+				string="List Ceque"/>
 
 		<report auto="False" 
 				id="report_titis_cetakanVoucher" 
 				model="titis.cash_receipt" 
 				name="cetakan_voucher" 
 				rml="titis/report/cetakan_voucher.rml" 
-				string="Voucher"/>
+				string="List Ceque"/>
 		
         <!--start ticket 5 -->
 
@@ -52,6 +52,13 @@
 				string="Transmital Advice"
                 multi="True"/>
 
+        <report auto="False"
+				id="supplier_invoice"
+				model="account.invoice"
+				name="supplier_invoice"
+				rml="titis/report/supplier_invoice.rml"
+				string="Voucher"
+                multi="True"/>
 
         <report auto="False"
 				id="kwitansi"
