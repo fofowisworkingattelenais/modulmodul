@@ -202,6 +202,29 @@
 		<blockValign value="TOP"/>
     </blockTableStyle>
 
+    <blockTableStyle id="TABEL_BAWAH1">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="2,-1"/>
+        <lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/>
+		<blockValign value="TOP"/>
+    </blockTableStyle>
+
+    <blockTableStyle id="TABEL_BAWAH11">
+		<lineStyle kind="BOX" colorName="#000000"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,0"/>
+        <lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="LEFT"/>
+		<blockValign value="TOP"/>
+    </blockTableStyle>
 
 <blockTableStyle id="TABEL_ATAS_BAWAH_JUDUL">
 			<blockAlignment value="RIGHT"/>
@@ -212,9 +235,10 @@
 			<lineStyle kind="LINEAFTER" colorName="#000000" start="2,0" stop="-1,-1"/>
 </blockTableStyle>
 
-	  <paraStyle name="JUDUL" fontName="Helvetica-BoldOblique" fontSize="18.0" alignment="CENTER" />
+	  <paraStyle name="JUDUL" fontName="Helvetica-BoldOblique" fontSize="14.0" alignment="CENTER" />
 	  <paraStyle name="NORMAL" fontSize="8.0"/>
 	  <paraStyle name="NORMAL_1" fontSize="8.0" alignment="CENTER"/>
+	  <paraStyle name="NORMAL_11" fontSize="6.0" alignment="CENTER"/>
 	  <paraStyle name="NORMAL_2" fontSize="6.0" alignment="LEFT"/>
 	  <paraStyle name="NORMAL_3" fontSize="8.0" alignment="RIGHT"/>
 	  <paraStyle name="NORMAL_4" fontSize="8.0" alignment="LEFT"/>
@@ -238,12 +262,12 @@
 
   </stylesheet>
   <story>
-  				<para style="terp_default_8">
+  				<para style="">
       				<font color="white"> </font>
    				</para>
-    				<para style="JUDUL">LIST CEQUE</para>
+    				<para style="JUDUL">LIST DAFTAR PEMBAYARAN</para>
 
-   				<para style="terp_default_8">
+   				<para style="">
       				<font color="white"> </font>
     				</para>
 
@@ -252,454 +276,58 @@
 
     <para style="SPACE">[[ repeatIn(objects,'voucher') ]]</para>
     <blockTable colWidths="2.5cm,0.4cm,5.6cm,2cm,2.5cm,0.4cm,5.6cm" style="LAYOUT">
-      <tr>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2">No</para></td>
-			<td><para style="COSTUM_2">:</para></td>
-			<td><para style="COSTUM_2">[[ voucher.number ]]</para></td>
-      </tr>
-      <tr>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2">Date</para></td>
-			<td><para style="COSTUM_2">:</para></td>
-			<td><para style="COSTUM_2">[[ formatLang(voucher.date , date=True) or '' ]]</para></td>
-      </tr>
-
-      <tr>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2"></para></td>
-			<td><para style="COSTUM_2">Cash/Bank</para></td>
-			<td><para style="COSTUM_2">:</para></td>
-			<td><para style="COSTUM_2"></para></td>
-
-      </tr>
-
+        <tr>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+            <td><para style="COSTUM_2"></para></td>
+        </tr>
      </blockTable>
-
-     <para><font color="white"> </font></para>
-     <para><font color="white"> </font></para>
-
-
-		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
-			<tr>
-
-				<td><para style="NORMAL_4"><font color="white">_</font>Pay To</para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Unit Code</para></td>
-			        <td><para style="NORMAL_4"><font color="white">_</font>[[voucher.project_id.name]]</para></td>
-			</tr>
-		</blockTable>
-		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
-			<tr>
-
-				<td><para style="NORMAL_4"><font color="white">_</font>Cheque Number</para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Department Code</para></td>
-			        <td><para style="NORMAL_4"><font color="white">_</font></para></td>
-			</tr>
-		</blockTable>
-		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
-			<tr>
-
-				<td><para style="NORMAL_4"><font color="white">_</font>Cheque Due Date</para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Transaction Type</para></td>
-			        <td><para style="NORMAL_4"><font color="white">_</font></para></td>
-			</tr>
-		</blockTable>
-
-
-    <blockTable style="JUDUL_TABEL" colWidths="19cm">
-		<tr>
-			<td>
-				<para style="SPACE">[[ repeatIn(objects,'voucher') ]]</para>
-
-
-				<blockTable colWidths="1cm,13.5cm,4.5cm" style="JUDUL_TABEL">
-				  <tr>
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="NORMAL_1">No.</para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="NORMAL_1">Description</para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="NORMAL_1">Amount</para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-				  </tr>
-				</blockTable>
-				<para><seqReset id="nourut"/></para>
-				<section>
-				<para style="">[[ repeatIn(voucher.line_ids,'a') ]] </para>
-				<blockTable colWidths="1cm,13.5cm,4.5cm" style="TABEL_ATAS_2">
-				  <tr>
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="NORMAL_1"><seq id="nourut"/></para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="NORMAL_4"><font color="white">_</font>[[ a.name ]]</para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-
-					<td>
-					  <blockTable>
-						<tr>
-							<td>
-								<para style="COSTUM">[[ voucher.currency_id.symbol ]]<font color="white">_</font> [[ a.amount ]]</para>
-							</td>
-						</tr>
-					  </blockTable>
-					</td>
-				  </tr>
-				</blockTable>
-				</section>
-				<blockTable colWidths="14.5cm,4.5cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_3">Total <font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-						</td>
-						<td>
-							<para style="COSTUM">[[ voucher.currency_id.symbol ]] [[ voucher.amount ]] <font color="white">_</font></para>
-						</td>
-					</tr>
-				</blockTable>
-
-				<blockTable colWidths="19cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_4"><font color="white">_</font>Say :  [[ convert(voucher.amount) ]]</para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-						</td>
-
-					</tr>
-				</blockTable>
-				<blockTable colWidths="19cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_4">[[voucher.narration]]</para>
-							<para style="NORMAL_4"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-						</td>
-
-					</tr>
-				</blockTable>
-
-
-
-				<blockTable colWidths="7cm,6cm,6cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_1">Originator</para>
-						</td>
-						<td>
-							<para style="NORMAL_1">Approved By<font color="white">_</font></para>
-						</td>
-						<td>
-							<para style="NORMAL_1">Received By<font color="white">_</font></para>
-						</td>
-					</tr>
-				</blockTable>
-
-
-				<blockTable colWidths="7cm,6cm,6cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_4"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font>Staf Adm. Personalia Keuangan</para>
-						</td>
-						<td>
-							<para style="NORMAL_4"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font>Finance Director</para>
-						</td>
-						<td>
-							<para style="NORMAL_4"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-						</td>
-
-					</tr>
-				</blockTable>
-
-
-
-
-				<blockTable colWidths="7cm,6cm,6cm" style="JUDUL_TABEL">
-					<tr>
-						<td>
-							<para style="NORMAL_1">[[ formatLang(voucher.date , date=True) or '' ]]</para>
-						</td>
-						<td>
-							<para style="NORMAL_1">[[ formatLang(voucher.date , date=True) or '' ]]<font color="white">_</font></para>
-						</td>
-						<td>
-							<para style="NORMAL_1">[[ formatLang(voucher.date , date=True) or '' ]]<font color="white">_</font></para>
-						</td>
-					</tr>
-				</blockTable>
-			</td>
-		</tr>
-	</blockTable>
-	<!--<para style="">[[ repeatIn(objects,'voucher') ]]</para>
-    [[ convert(voucher.amount,voucher.currency_id.name) ]]
-	<blockTable colWidths="524.0" style="">
-      <tr>
-        <td>
-          <para style="">[[ get_title(voucher.type) ]]</para>
-        </td>
-      </tr>
-    </blockTable>
-    <para style="">
-      <font color="white"> </font>
-    </para>
-    <blockTable colWidths="52.0,123.0,50.0,198.0,42.0,59.0" style="">
-      <tr>
-        <td>
-          <para style="">Number:</para>
-        </td>
-        <td>
-          <para style="">[[ voucher.number ]]</para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-        <td>
-          <para style="">Date:</para>
-        </td>
-        <td>
-          <para style="">[[ formatLang(voucher.date , date=True) or '' ]]</para>
-        </td>
-      </tr>
-    </blockTable>
-    <blockTable colWidths="52.0,123.0,50.0,198.0,42.0,59.0" style="">
-      <tr>
-        <td>
-          <para style="">State:</para>
-        </td>
-        <td>
-          <para style="">PRO-FORMA [[ ((voucher.state == 'proforma') or removeParentNode('para')) and '' ]]</para>
-          <para style="">Draft[[ ((voucher.state == 'draft') or removeParentNode('para')) and '' ]]</para>
-          <para style="">Canceled [[ ((voucher.state == 'cancel') or removeParentNode('para')) and '' ]]</para>
-          <para style="">Posted [[ ((voucher.state == 'posted') or removeParentNode('para')) and '' ]]</para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-        <td>
-          <para style="">Currency:</para>
-        </td>
-        <td>
-          <para style="">[[ voucher.currency_id.symbol ]]</para>
-        </td>
-      </tr>
-    </blockTable>
-    <para style="">
-      <font color="white"> </font>
-    </para>
-    <blockTable colWidths="381.0,144.0" style="">
-      <tr>
-        <td>
-          <para style="">Particulars</para>
-        </td>
-        <td>
-          <para style="">Amount</para>
-        </td>
-      </tr>
-    </blockTable>
-    <para style="">
-      <font color="white"> </font>
-    </para>
+    <para><seqReset id="nourut"/></para>
     <section>
-      <para style="">[[ repeatIn(get_lines(voucher),'p') ]] </para>
-      <blockTable colWidths="380.0,144.0" style="">
-        <tr>
-          <td>
-            <para style="">Account :</para>
-          </td>
-          <td>
-            <para style="">
-              <font color="white"> </font>
-            </para>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <para style="">[[ p['pname'] ]]</para>
-          </td>
-          <td>
-            <para style="">[[ p['amount'] ]] [[ voucher.currency_id.symbol ]]</para>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <para style="">[[ p['ref'] ]] </para>
-          </td>
-          <td>
-            <para style="">
-              <font color="white"> </font>
-            </para>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <para style="">Account : [[ p['aname'] ]] </para>
-          </td>
-          <td>
-            <para style="">
-              <font color="white"> </font>
-            </para>
-          </td>
-        </tr>
-      </blockTable>
-      <para style="">
-        <font color="white"> </font>
-      </para>
+        [[ repeatIn(objects,'o') ]]
+        <blockTable colWidths="2cm,6cm,7.5cm,5cm" style="LAYOUT">
+            <tr>
+                <td><para style="NORMAL_11"><font color="white">_</font>[[ o.journal_id.name ]] </para></td>
+                <td><para style="NORMAL_1"><font color="white">_</font> </para></td>
+                <td><para style="NORMAL_1"><font color="white">_</font> </para></td>
+                <td><para style="NORMAL_3"><font color="white">_</font>[[ o.date ]]</para></td>
+            </tr>
+        </blockTable>
+
+        <blockTable colWidths="1cm,7cm,7.5cm,5cm" style="TABEL_BAWAH">
+            <tr>
+                <td><para style="NORMAL_1"><font color="white">_</font>N0. </para></td>
+                <td><para style="NORMAL_1"><font color="white">_</font>PAID TO</para></td>
+                <td><para style="NORMAL_1"><font color="white">_</font>DESCRIPTION</para></td>
+                <td><para style="NORMAL_1"><font color="white">_</font>AMOUNT</para></td>
+            </tr>
+        </blockTable>
     </section>
-    <para style="">
-      <font color="white"> </font>
-    </para>
-    <blockTable colWidths="380.0,144.0" style="">
-      <tr>
-        <td>
-          <para style="">Through : </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="">[[ voucher.journal_id.name or '' ]] </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="">On Account of : </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="">[[ get_on_account(voucher) ]]</para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="">Amount (in words) : </para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <para style="">[[ convert(voucher.amount,voucher.currency_id.name) ]]</para>
-        </td>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-      </tr>
+    <blockTable colWidths="1cm,7cm,7.5cm,1cm,4cm" style="TABEL_BAWAH1">
+        <tr>
+            <para style="">[[ repeatIn(voucher.line_ids,'a') ]] </para>
+            <td><para style="NORMAL_1"> <seq id="nourut"/></para></td>
+            <td><para style="NORMAL_2"><font color="white">_</font> [[ a.name ]] </para></td>
+            <td><para style="NORMAL_2"><font color="white">_</font> [[ a.name ]]</para></td>
+            <td><para style="NORMAL_2"><font color="white">_</font>[[o.journal_id.currency.symbol ]] </para></td>
+            <td><para style="NORMAL_3"> [[ a.amount]]<font color="white">__</font></para></td>
+
+        </tr>
     </blockTable>
-    <para style="">
-      <font color="white"> </font>
-    </para>
-    <blockTable colWidths="380.0,144.0" style="">
-      <tr>
-        <td>
-          <para style="">
-            <font color="white"> </font>
-          </para>
-        </td>
-        <td>
-          <para style="">[[ voucher.amount ]] [[ voucher.currency_id.symbol ]]</para>
-        </td>
-      </tr>
-    </blockTable>-->
+    <section>
+        <blockTable colWidths="15.5cm,1cm,4cm" style="TABEL_BAWAH11">
+
+            <tr>
+                <td><para style="NORMAL_3">CEK [[o.journal_id.name]]<font color="white">_</font></para></td>
+                <td><para style="NORMAL_2"><font color="white">_</font>[[o.journal_id.currency.symbol ]] </para></td>
+                <td><para style="NORMAL_3"> [[ o.amount]]<font color="white">__</font></para></td>
+
+            </tr>
+        </blockTable>
+    </section>
   </story>
 </document>

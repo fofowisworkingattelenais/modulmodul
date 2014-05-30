@@ -42,5 +42,9 @@ import transmital
 import kwitansi
 import purchase_requisition_line
 import supplier_invoice
+import bank_payment
+import bank_receipt
+import cash_payment
+import cash_receipt
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
