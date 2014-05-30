@@ -44,7 +44,7 @@ class bank_receipt(report_sxw.rml_parse):
 
     def get_lines(self, voucher):
         result = []
-        if voucher.type in 'payment':
+        if voucher.type in 'receipt':
             type = voucher.line_ids and voucher.line_ids[0].type or False
             for move in voucher.move_ids:
                 res = {}
@@ -80,11 +80,11 @@ class bank_receipt(report_sxw.rml_parse):
 
     def get_on_account(self, voucher):
         name = ""
-        if voucher.type == 'payment':
-            name = "Payment from "+str(voucher.partner_id.name)
+        if voucher.type == 'receipt':
+            name = "Receipt from "+str(voucher.partner_id.name)
         return name
 
-report_sxw.report_sxw('report.bank_receipt','titis.bank_payment','addons/titis/report/bank_receipt.rml',parser=bank_receipt, header=False)
+report_sxw.report_sxw('report.bank_receipt','titis.bank_receipt','addons/titis/report/bank_receipt.rml',parser=bank_receipt, header=False)
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
