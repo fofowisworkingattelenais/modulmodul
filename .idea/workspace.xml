@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5a4decf-fd49-4810-9745-9561af419cb6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_report_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_requisition.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_webkit/purchase_requisition.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/requisition.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_webkit/requisition.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/titis_report.xml" />
+    </list>
+    <ignored path="modulmodul.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="modulmodul" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="cash_receipt.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="8" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="1764">
+              <folding>
+                <element signature="e#980#1021#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchase_requisition.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_requisition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="218" column="84" selection-start="10215" selection-end="10215" vertical-scroll-proportion="0.0" vertical-offset="3798" max-vertical-offset="5112">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchase_requisition.rml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_webkit/purchase_requisition.rml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4392">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchase_requisition.rml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_requisition.rml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4392">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1548">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sale_order.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account_print_invoice.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+              <folding>
+                <element signature="e#979#992#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__openerp__.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="0" selection-start="4784" selection-end="4784" vertical-scroll-proportion="0.44964027" vertical-offset="1586" max-vertical-offset="2214">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bank_receipt.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="0" selection-start="2972" selection-end="2972" vertical-scroll-proportion="0.0" vertical-offset="1204" max-vertical-offset="1764">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/ledger.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/ledger.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/project_project.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_PurchaseRequisition.xml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/fb_supplier_invoice.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/fb_supplier_invoice.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.py" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.rml" />
+        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_requisition.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="25" />
+    <option name="width" value="1366" />
+    <option name="height" value="743" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rscp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rscp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rscp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rscp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report_scp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="80" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="104" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="110" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1019" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="91" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="106" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1015" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp" />
+      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/report" />
+      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/purchase_requisition" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_webkit" />
+      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/report" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modulmodul" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5a4decf-fd49-4810-9745-9561af419cb6" name="Default" comment="" />
+      <created>1400496287858</created>
+      <updated>1400496287858</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1366" height="743" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2248697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/cash_receipt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="12" selection-start="4879" selection-end="4879" vertical-scroll-proportion="0.0" vertical-offset="3139" max-vertical-offset="3726" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/telenais_gdi/object_other/mrp_bom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="51" selection-start="2243" selection-end="2243" vertical-scroll-proportion="0.0" vertical-offset="842" max-vertical-offset="1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/project_invoice_approval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6961326" vertical-offset="378" max-vertical-offset="1044" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/stock/wizard/stock_move.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="317" column="8" selection-start="13418" selection-end="13418" vertical-scroll-proportion="0.3323442" vertical-offset="5540" max-vertical-offset="6156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/_purchase_requisition_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="107" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.17210683" vertical-offset="806" max-vertical-offset="3672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="68" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.3323442" vertical-offset="860" max-vertical-offset="4284" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/_purchase_requisition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="0" selection-start="4986" selection-end="4986" vertical-scroll-proportion="0.26183844" vertical-offset="1634" max-vertical-offset="3402" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase/purchase_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="204" column="73" selection-start="12071" selection-end="12071" vertical-scroll-proportion="0.33147633" vertical-offset="3553" max-vertical-offset="9144" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_PurchaseRequisition.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="4" selection-start="1921" selection-end="1921" vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="1692" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/account_voucher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="558" column="84" selection-start="19646" selection-end="19646" vertical-scroll-proportion="-0.30083567" vertical-offset="10080" max-vertical-offset="11178" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/sale/sale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="298" column="19" selection-start="17454" selection-end="17454" vertical-scroll-proportion="0.632312" vertical-offset="5011" max-vertical-offset="22104" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/sale_journal/sale_journal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="16" selection-start="3455" selection-end="3455" vertical-scroll-proportion="0.632312" vertical-offset="1303" max-vertical-offset="1692" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/project/project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="0" selection-start="5273" selection-end="5273" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="13680" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2490" column="12" selection-start="84884" selection-end="84884" vertical-scroll-proportion="0.2506964" vertical-offset="44730" max-vertical-offset="91296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/project_timesheet/project_timesheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="8" selection-start="8473" selection-end="8473" vertical-scroll-proportion="0.7827298" vertical-offset="2653" max-vertical-offset="4266" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/requisition_approval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="28" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/project_requisition_approval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.17142858" vertical-offset="372" max-vertical-offset="864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/project_project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="6" selection-start="2124" selection-end="2124" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1134" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/base/res/res_user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="396" column="0" selection-start="19535" selection-end="19535" vertical-scroll-proportion="15.440111" vertical-offset="1441" max-vertical-offset="10926" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase/purchase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="266" column="0" selection-start="14544" selection-end="14879" vertical-scroll-proportion="0.0" vertical-offset="4446" max-vertical-offset="15300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/bank_payment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="11" selection-start="4287" selection-end="4287" vertical-scroll-proportion="0.0" vertical-offset="1793" max-vertical-offset="3456" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/board/board_Voucher.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="29" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.09198813" vertical-offset="617" max-vertical-offset="1638" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/data/data_VoucherType.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.8971428" vertical-offset="496" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/window_action/waction_BankPayment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="43" selection-start="456" selection-end="463" vertical-scroll-proportion="0.33126935" vertical-offset="91" max-vertical-offset="648" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="27" selection-start="1491" selection-end="1491" vertical-scroll-proportion="1.0231884" vertical-offset="313" max-vertical-offset="954" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/account_print_invoice.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="491" column="47" selection-start="28286" selection-end="28308" vertical-scroll-proportion="0.8072289" vertical-offset="8570" max-vertical-offset="9108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/account_print_invoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.19892474" vertical-offset="286" max-vertical-offset="864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="0" selection-start="4711" selection-end="4711" vertical-scroll-proportion="-0.14173229" vertical-offset="1620" max-vertical-offset="3672" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="28" selection-start="897" selection-end="897" vertical-scroll-proportion="0.7118644" vertical-offset="54" max-vertical-offset="3600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="244" column="41" selection-start="16749" selection-end="16749" vertical-scroll-proportion="1.2146893" vertical-offset="3962" max-vertical-offset="12798" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6451613" vertical-offset="240" max-vertical-offset="936">
+          <folding>
+            <element signature="e#979#1009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="19" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.6885813" vertical-offset="430" max-vertical-offset="1008" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="0" selection-start="0" selection-end="3362" vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1710" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="40" selection-start="1385" selection-end="1385" vertical-scroll-proportion="-0.09199318" vertical-offset="612" max-vertical-offset="1818" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="62" selection-start="16333" selection-end="16333" vertical-scroll-proportion="-6.978761" vertical-offset="8011" max-vertical-offset="12798" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="35" selection-start="859" selection-end="859" vertical-scroll-proportion="0.42" vertical-offset="360" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="325" column="4" selection-start="20624" selection-end="20624" vertical-scroll-proportion="0.57069844" vertical-offset="5515" max-vertical-offset="6102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="323" column="11" selection-start="20474" selection-end="20474" vertical-scroll-proportion="0.0" vertical-offset="5465" max-vertical-offset="6066" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="1726" selection-end="1733" vertical-scroll-proportion="0.69335604" vertical-offset="421" max-vertical-offset="1764" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="11" selection-start="16961" selection-end="16961" vertical-scroll-proportion="0.0" vertical-offset="5466" max-vertical-offset="12726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="0" selection-start="16553" selection-end="16553" vertical-scroll-proportion="0.0" vertical-offset="3270" max-vertical-offset="12708">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="2972" selection-end="2972" vertical-scroll-proportion="0.0" vertical-offset="1204" max-vertical-offset="1764">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="8" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="1764">
+          <folding>
+            <element signature="e#980#1021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_requisition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="84" selection-start="10215" selection-end="10215" vertical-scroll-proportion="0.0" vertical-offset="3798" max-vertical-offset="5112">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_webkit/purchase_requisition.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_requisition.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <folding>
+            <element signature="e#979#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="0" selection-start="4784" selection-end="4784" vertical-scroll-proportion="0.44964027" vertical-offset="1586" max-vertical-offset="2214">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
