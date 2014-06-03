@@ -14,24 +14,15 @@
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU Affero General Public License
+#    You should have
+# received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-import time
-from report import report_sxw
 
-class account_invoice(report_sxw.rml_parse):
-    def __init__(self, cr, uid, name, context):
-        super(account_invoice, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update({
-            'time': time,
-        })
-report_sxw.report_sxw(
-    'report.account_invoice',
-    'account.invoice',
-    'addons/report_scp/report/account_print_invoice.rml',
-    parser=account_invoice
-)
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+import account_print_invoice
+import order
+import sale_order
+import laporan_kartu_stock
+import requisition

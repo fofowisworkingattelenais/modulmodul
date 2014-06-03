@@ -204,7 +204,9 @@
 
     <blockTableStyle id="TABEL_BAWAH1">
 		<lineStyle kind="BOX" colorName="#000000"/>
-		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="2,-1"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,-1"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="2,0" stop="2,-1"/>
+		<lineStyle kind="LINEAFTER" colorName="#000000" start="4,0" stop="4,-1"/>
         <lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
 		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
 		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
@@ -262,15 +264,10 @@
 
   </stylesheet>
   <story>
-  				<para style="">
-      				<font color="white"> </font>
-   				</para>
-    				<para style="JUDUL">LIST DAFTAR PEMBAYARAN</para>
+    <para style="">	<font color="white"> </font></para>
+    <para style="JUDUL">LIST DAFTAR PEMBAYARAN</para>
 
-   				<para style="">
-      				<font color="white"> </font>
-    				</para>
-
+   	<para style=""> <font color="white"> </font></para>
     <para><font color="white"> </font></para>
     <para><font color="white"> </font></para>
 
@@ -289,16 +286,16 @@
     <para><seqReset id="nourut"/></para>
     <section>
         [[ repeatIn(objects,'o') ]]
-        <blockTable colWidths="2cm,6cm,7.5cm,5cm" style="LAYOUT">
+        <blockTable colWidths="9cm,1cm,5.5cm,5cm" style="LAYOUT">
             <tr>
-                <td><para style="NORMAL_11"><font color="white">_</font>[[ o.journal_id.name ]] </para></td>
+                <td><para style="NORMAL_2"><font color="white">_</font>[[ o.journal_id.name ]] </para></td>
                 <td><para style="NORMAL_1"><font color="white">_</font> </para></td>
                 <td><para style="NORMAL_1"><font color="white">_</font> </para></td>
                 <td><para style="NORMAL_3"><font color="white">_</font>[[ o.date ]]</para></td>
             </tr>
         </blockTable>
 
-        <blockTable colWidths="1cm,7cm,7.5cm,5cm" style="TABEL_BAWAH">
+        <blockTable colWidths="1cm,7.1cm,7.3cm,5.1cm" style="TABEL_BAWAH">
             <tr>
                 <td><para style="NORMAL_1"><font color="white">_</font>N0. </para></td>
                 <td><para style="NORMAL_1"><font color="white">_</font>PAID TO</para></td>
@@ -307,24 +304,26 @@
             </tr>
         </blockTable>
     </section>
-    <blockTable colWidths="1cm,7cm,7.5cm,1cm,4cm" style="TABEL_BAWAH1">
+    <blockTable colWidths="1cm,0.10cm,7cm,0.10cm,7.2cm,1.1cm,4cm" style="TABEL_BAWAH1">
         <tr>
             <para style="">[[ repeatIn(voucher.line_ids,'a') ]] </para>
             <td><para style="NORMAL_1"> <seq id="nourut"/></para></td>
-            <td><para style="NORMAL_2"><font color="white">_</font> [[ a.name ]] </para></td>
-            <td><para style="NORMAL_2"><font color="white">_</font> [[ a.name ]]</para></td>
-            <td><para style="NORMAL_2"><font color="white">_</font>Rp </para></td>
+            <td><para style="NORMAL_2">   </para></td>
+            <td><para style="NORMAL_2"> [[ a.name ]] </para></td>
+            <td><para style="NORMAL_2">   </para></td>
+            <td><para style="NORMAL_2">  [[ a.name ]]</para></td>
+            <td><para style="NORMAL_2"> <font color="white">_</font>[[o.journal_id.currency.symbol ]] </para></td>
             <td><para style="NORMAL_3"> [[ a.amount]]<font color="white">__</font></para></td>
 
         </tr>
     </blockTable>
     <section>
-        <blockTable colWidths="15.5cm,1cm,4cm" style="TABEL_BAWAH11">
-
+        <blockTable colWidths="15.40cm,1.10cm,4cm" style="TABEL_BAWAH11">
             <tr>
                 <td><para style="NORMAL_3">CEK [[o.journal_id.name]]<font color="white">_</font></para></td>
-                <td><para style="NORMAL_2"><font color="white">_</font>Rp </para></td>
+                <td><para style="NORMAL_2"><font color="white">_</font>[[o.journal_id.currency.symbol ]] </para></td>
                 <td><para style="NORMAL_3"> [[ o.amount]]<font color="white">__</font></para></td>
+
             </tr>
         </blockTable>
     </section>

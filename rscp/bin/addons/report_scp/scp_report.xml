@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!--<report auto="False" -->
+				<!--id="report_titis_poNoPPN" -->
+				<!--model="purchase.order" -->
+				<!--name="po_no_ppn" -->
+				<!--rml="titis/report/po_no_ppn.rml" -->
+				<!--string="PO Without VAT"/>-->
+
+		<!--<report auto="False" -->
+				<!--id="report_titis_poPPN" -->
+				<!--model="purchase.order" -->
+				<!--name="po_ppn" -->
+				<!--rml="titis/report/po_ppn.rml" -->
+				<!--string="PO With VAT"/>-->
+
+		<!--<report auto="False"-->
+				<!--id="report_bank_payment"-->
+				<!--model="titis.bank_payment" -->
+				<!--name="bank_payment"-->
+				<!--rml="titis/report/bank_payment.rml"-->
+				<!--string="List Ceque"/>-->
+		<!---->
+		<!--<report auto="False" -->
+				<!--id="report_bank_receipt"-->
+				<!--model="titis.bank_receipt" -->
+				<!--name="cetakan_voucher" -->
+				<!--rml="titis/report/bank_receipt.rml"-->
+				<!--string="Receipt"/>-->
+
+		<!--<report auto="False" -->
+				<!--id="report_cash_payment"-->
+				<!--model="titis.cash_payment" -->
+				<!--name="cash_payment"-->
+				<!--rml="titis/report/cash_payment.rml"-->
+				<!--string="List Ceque"/>-->
+
+		<!--<report auto="False" -->
+				<!--id="laporan_kartu_stock"-->
+				<!--model="titis.cash_receipt" -->
+				<!--name="cetakan_voucher" -->
+				<!--rml="titis/report/cash_receipt.rml"-->
+				<!--string="Receipt"/>-->
+		
+        <!--start ticket 5 -->
+
+		<!--<report auto="False"-->
+				<!--id="transmital_advice"-->
+				<!--model="account.invoice"-->
+				<!--name="transmital"-->
+				<!--rml="titis/report/transmital.rml"-->
+				<!--string="Transmital Advice"-->
+                <!--multi="True"/>-->
+
+        <!--<report auto="False"-->
+				<!--id="supplier_invoice"-->
+				<!--model="account.invoice"-->
+				<!--name="supplier_invoice"-->
+				<!--rml="titis/report/supplier_invoice.rml"-->
+				<!--string="Voucher"-->
+                <!--multi="True"/>-->
+
+        <!--<report auto="False"-->
+				<!--id="kwitansi"-->
+				<!--model="account.invoice"-->
+				<!--name="kwitansi"-->
+				<!--rml="titis/report/kwitansi.rml"-->
+				<!--string="Kwitansi"-->
+                <!--multi="True"/>-->
+
+        <report auto="False"
+				id="purchase_order"
+				model="purchase.order"
+				name="purchase_order"
+				rml="report_scp/report/order.rml"
+				string="Purchase Order SCP "
+                multi="True"/>
+
+        <report auto="False"
+                id="report_purchase_requisition"
+                model="purchase.requisition"
+                name="purchase.requisition"
+                rml="report_scp/report/purchase_requisition.rml"
+                string="Purchase Requisition SCP"/>
+
+        <report auto="False"
+                id="report_sale_order"
+                model="sale.order"
+                name="sale.order"
+                rml="report_scp/report/sale_order.rml"
+                string="Sale Order SCP"/>
+
+        <report auto="False"
+                id="account_invoices"
+                model="account.invoice"
+                name="account.invoice"
+                rml="report_scp/report/account_print_invoice.rml"
+                string="Invoices SCP"
+                attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/',''))"
+                attachment_use="1"
+                multi="True"/>
+
+
+
+
+		<menuitem 	id="menu_titis_WizardLaporanKartuStock"
+					parent="stock.next_id_61"
+					name="Kartu Stock"
+					sequence="500"
+					action="waction_titis_wizardKartuStock" />
+
+
+    </data>
+</openerp>

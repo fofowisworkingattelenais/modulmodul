@@ -19,19 +19,6 @@
 #
 ##############################################################################
 
-import time
-from report import report_sxw
+import wizard_kartu_stock
 
-class account_invoice(report_sxw.rml_parse):
-    def __init__(self, cr, uid, name, context):
-        super(account_invoice, self).__init__(cr, uid, name, context=context)
-        self.localcontext.update({
-            'time': time,
-        })
-report_sxw.report_sxw(
-    'report.account_invoice',
-    'account.invoice',
-    'addons/report_scp/report/account_print_invoice.rml',
-    parser=account_invoice
-)
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

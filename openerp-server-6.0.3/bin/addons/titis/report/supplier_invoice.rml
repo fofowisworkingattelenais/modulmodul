@@ -163,7 +163,8 @@
 		<blockValign value="TOP"/>
     </blockTableStyle>
     <blockTableStyle id="TABEL_ATAS_2">
-              	<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+        <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,1"/>
+        <lineStyle kind="LINEAFTER" colorName="#000000" start="2,-1" stop="2,0"/>
 		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
 		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
 		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
@@ -173,6 +174,18 @@
     </blockTableStyle>
     <blockTableStyle id="JUDUL_TABEL">
 		<lineStyle kind="GRID" colorName="#000000"/>
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockAlignment value="RIGHT"/>
+		<blockValign value="TOP"/>
+    </blockTableStyle>
+
+    <blockTableStyle id="JUDUL_TABEL_CUSTOM">
+        <lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+        <lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="0,1"/>
+        <lineStyle kind="LINEAFTER" colorName="#000000" start="2,-1" stop="-1,-1"/>
 		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
 		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
 		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
@@ -239,7 +252,7 @@
 
   </stylesheet>
     <story>
-        <para style="terp_default_8"><font color="white"> </font></para>
+        <para style="JUDUL2"><font color="white"> </font></para>
 
 
         <blockTable colWidths="10.5cm,8.5cm" style="LAYOUT">
@@ -251,12 +264,12 @@
 
 
 
-        <para style="terp_default_8"><font color="white"> </font></para>
+        <para style="COSTUM_2"><font color="white"> </font></para>
         <para><font color="white"> </font></para>
         <para><font color="white"> </font></para>
 
-        <para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
-        <para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+        <para style="COSTUM_2">[[ repeatIn(objects,'o') ]]</para>
+        <para style="COSTUM_2">[[ setLang(o.partner_id.lang) ]]</para>
 
         <blockTable colWidths="2.5cm,0.4cm,5.6cm,2cm,2.5cm,0.4cm,5.6cm" style="LAYOUT">
             <tr>
@@ -351,23 +364,41 @@
 <!--				<para style="">[[ repeatIn(objects,'a') ]] </para> -->
                 <para>[[ repeatIn(o.invoice_line,'a') ]]</para>
 
-				<blockTable colWidths="1cm,13.5cm,4.5cm" style="TABEL_ATAS_2">
+				<blockTable colWidths="1cm,0.1cm,13.4cm,0.5cm,4cm" style="TABEL_ATAS_2">
 				  <tr>
 				    <td>
 					  <blockTable>
 						<tr><td><para style="NORMAL_1"><seq id="nourut"/></para></td></tr>
 					  </blockTable>
 					</td>
+
 					<td>
 					  <blockTable>
-						<tr><td><para style="NORMAL_4"><font color="white">_</font>[[ a.product_id.name]] - [[ a.name]] </para></td></tr>
+						<tr><td><para style="NORMAL_4"> </para></td></tr>
 					  </blockTable>
 					</td>
+
+					<td>
+					  <blockTable>
+						<tr><td><para style="NORMAL_4">[[ a.product_id.name]]   [[ a.name]] </para></td></tr>
+					  </blockTable>
+					</td>
+
 					<td>
 					  <blockTable>
 						<tr>
 							<td>
-								<para style="COSTUM">[[ voucher.currency_id.symbol ]]<font color="white">_</font> [[ a.price_subtotal ]]</para>
+								<para style="COSTUM"> [[ o.currency_id.symbol ]] </para>
+							</td>
+						</tr>
+					  </blockTable>
+					</td>
+
+					<td>
+					  <blockTable>
+						<tr>
+							<td>
+								<para style="COSTUM"> [[ a.price_subtotal ]]</para>
 							</td>
 						</tr>
 					  </blockTable>
@@ -375,14 +406,30 @@
 				  </tr>
 				</blockTable>
 				</section>
-				<blockTable colWidths="14.5cm,4.5cm" style="JUDUL_TABEL">
+
+				<blockTable colWidths="14.5cm,0.5cm,4cm" style="JUDUL_TABEL_CUSTOM">
+
+					<tr>
+						<td>
+							<para style="COSTUM">Tax <font color="white">_</font></para>
+						</td>
+						<td>
+							<para style="COSTUM">[[ o.currency_id.symbol ]]</para>
+						</td>
+						<td>
+							<para style="COSTUM"> [[ o.amount_tax ]] <font color="white">_</font></para>
+						</td>
+					</tr>
+
 					<tr>
 						<td>
 							<para style="NORMAL_3">Total <font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
 						</td>
 						<td>
-							<para style="COSTUM">[[ o.currency_id.symbol ]] [[ o.amount_total ]] <font color="white">_</font></para>
+							<para style="NORMAL_3">[[ o.currency_id.symbol ]] </para>
+						</td>
+						<td>
+							<para style="COSTUM"> [[ o.amount_total ]] <font color="white">_</font></para>
 						</td>
 					</tr>
 				</blockTable>

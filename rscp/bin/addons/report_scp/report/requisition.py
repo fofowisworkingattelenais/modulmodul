@@ -31,7 +31,7 @@ class requisition(report_sxw.rml_parse):
             'time': time,
         })
    
-report_sxw.report_sxw('report.purchase.requisition','purchase.requisition','addons/purchase_requisition/report/purchase_requisition.rml',parser=requisition)
+report_sxw.report_sxw('report.purchase_requisition_scp','purchase.requisition','addons/report_scp/report/purchase_requisition.rml',parser=requisition)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
