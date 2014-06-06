@@ -34,11 +34,23 @@
                 attachment_use="1"
                 multi="True"/>
 
-		<menuitem 	id="menu_titis_WizardLaporanKartuStock"
+		<menuitem 	id="menu_report_scp_WizardLaporanKartuStock"
 					parent="stock.next_id_61"
 					name="Kartu Stock"
 					sequence="500"
-					action="waction_titis_wizardKartuStock" />
+					action="waction_report_scp_wizardKartuStock" />
+
+        <menuitem 	id="menu_titis_WizardReportTrialBalance"
+					parent="account.menu_finance_reporting"
+					name="Trial Balance"
+					sequence="511"
+					action="waction_titis_wizardTrialBalance" />
+
+        <menuitem 	id="menu_titis_WizardLedger"
+					parent="account.menu_finance_reporting"
+					name="Ledger"
+					sequence="502"
+					action="waction_titis_wizardLedger" />
 
 
     </data>

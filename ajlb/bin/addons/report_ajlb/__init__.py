@@ -18,6 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from ajlb.bin.addons.report_ajlb import report, wizard
+
+import wizard
+import report
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

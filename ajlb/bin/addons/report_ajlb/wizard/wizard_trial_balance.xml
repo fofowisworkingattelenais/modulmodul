@@ -2,9 +2,9 @@
 <openerp>
     <data>
 
-        <record id="form_titis_wizardTrialBalance" model="ir.ui.view">
+        <record id="form_report_ajlb_wizardTrialBalance" model="ir.ui.view">
             <field name="name">Form Wizard Trial Balance</field>
-            <field name="model">titis.wizard_trial_balance</field>
+            <field name="model">report_ajlb.wizard_trial_balance</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Report Trial Balance">
@@ -22,13 +22,13 @@
             </field>
         </record>
 
-        <record id="waction_titis_wizardTrialBalance" model="ir.actions.act_window">
+        <record id="waction_report_ajlb_wizardTrialBalance" model="ir.actions.act_window">
             <field name="name">Trial Balance</field>
-            <field name="res_model">titis.wizard_trial_balance</field>
+            <field name="res_model">report_ajlb.wizard_trial_balance</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-			<field name="view_id" ref="form_titis_wizardTrialBalance"/>
+			<field name="view_id" ref="form_report_ajlb_wizardTrialBalance"/>
             <field name="target">new</field>
         </record>
     </data>

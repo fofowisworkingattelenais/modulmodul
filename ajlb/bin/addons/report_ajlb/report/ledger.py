@@ -214,7 +214,7 @@ class laporan_ledger(report_sxw.rml_parse):
 
 report_sxw.report_sxw('report.laporan_ledger',
                       'account.account',
-                      'addons/report_scp/report/ledger.rml',
+                      'addons/report_ajlb/report/ledger.rml',
                       parser=laporan_ledger,
                       header='internal')
 

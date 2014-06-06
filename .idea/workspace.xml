@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5a4decf-fd49-4810-9745-9561af419cb6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml" />
+    <list default="true" id="819401b7-04fe-4952-bbb4-68350d60d8e4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/trial_balance.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/trial_balance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="modulmodul.iws" />
@@ -29,56 +42,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scp_report.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
+      <file leaf-file-name="wizard_ledger.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="38" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="918">
+            <state line="42" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1044">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sale_order.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py">
+      <file leaf-file-name="wizard_trial_balance.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="40" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="756">
+            <state line="43" column="22" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1062">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sale_order.rml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml">
+      <file leaf-file-name="wizard_trial_balance.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="104" selection-start="5543" selection-end="5543" vertical-scroll-proportion="-6.6296296" vertical-offset="2017" max-vertical-offset="8964">
+            <state line="24" column="24" selection-start="1066" selection-end="1066" vertical-scroll-proportion="-8.592592" vertical-offset="200" max-vertical-offset="738">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py">
+      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/ar_base_amount_to_text/object_other/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1602">
+            <state line="15" column="49" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.rml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml">
+      <file leaf-file-name="ledger.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="309" column="16" selection-start="9894" selection-end="9894" vertical-scroll-proportion="-11.962963" vertical-offset="5239" max-vertical-offset="10728">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account_print_invoice.rml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="535" column="70" selection-start="26011" selection-end="26011" vertical-scroll-proportion="0.33271375" vertical-offset="9451" max-vertical-offset="10494">
-              <folding />
+            <state line="53" column="0" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.9031142" vertical-offset="432" max-vertical-offset="4104">
+              <folding>
+                <element signature="e#990#1031#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,51 +102,27 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/ledger.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/ledger.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/project_project.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_PurchaseRequisition.xml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/fb_supplier_invoice.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/fb_supplier_invoice.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_requisition.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_ledger.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_ledger.xml" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml" />
         <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/titis_report.xml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/laporan_kartu_stock.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/__openerp__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/menu/scp_report.xml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase/__openerp__.py" />
-        <option value="$PROJECT_DIR$/rscp/openerp_server.egg-info/SOURCES.txt" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/openerp_server.egg-info/SOURCES.txt" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/purchase/__openerp__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/requisition.py" />
         <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.rml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.rml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py" />
+        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
         <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/report_intrastat/report/invoice.py" />
-        <option value="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/report_intrastat/intrastat_report.xml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" />
+        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" />
       </list>
     </option>
   </component>
@@ -175,7 +157,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,51 +251,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="titis" />
+              <option name="myItemId" value="ar_base_amount_to_text" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar_base_amount_to_text" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="object_other" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="80" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="104" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="110" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1019" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="91" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="101" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="106" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1015" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings />
-    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report" />
+      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard" />
+      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb" />
       <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/report" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/purchase_requisition" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/menu" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_webkit" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/report" />
     </key>
   </component>
   <component name="RunManager">
@@ -461,31 +445,30 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b5a4decf-fd49-4810-9745-9561af419cb6" name="Default" comment="" />
-      <created>1400496287858</created>
-      <updated>1400496287858</updated>
+      <changelist id="819401b7-04fe-4952-bbb4-68350d60d8e4" name="Default" comment="" />
+      <created>1401875033559</created>
+      <updated>1401875033559</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2248697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24944155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -505,292 +488,300 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="584" column="0" selection-start="16329" selection-end="16329" vertical-scroll-proportion="0.0" vertical-offset="10176" max-vertical-offset="10620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="556" column="0" selection-start="26938" selection-end="26938" vertical-scroll-proportion="0.0" vertical-offset="9672" max-vertical-offset="10116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="0" selection-start="4711" selection-end="4711" vertical-scroll-proportion="-0.14173229" vertical-offset="1620" max-vertical-offset="3672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="897" selection-end="897" vertical-scroll-proportion="0.7118644" vertical-offset="54" max-vertical-offset="3600" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6451613" vertical-offset="240" max-vertical-offset="936">
-          <folding>
-            <element signature="e#979#1009#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="0" selection-end="3362" vertical-scroll-proportion="0.0" vertical-offset="1145" max-vertical-offset="1710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="40" selection-start="1385" selection-end="1385" vertical-scroll-proportion="-0.09199318" vertical-offset="612" max-vertical-offset="1818" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cetakan_voucher.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="62" selection-start="16333" selection-end="16333" vertical-scroll-proportion="-6.978761" vertical-offset="8011" max-vertical-offset="12798" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="0" selection-start="16553" selection-end="16553" vertical-scroll-proportion="0.0" vertical-offset="3270" max-vertical-offset="12708" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_receipt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="8" selection-start="3161" selection-end="3161" vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="1764" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_requisition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="84" selection-start="10215" selection-end="10215" vertical-scroll-proportion="0.0" vertical-offset="3798" max-vertical-offset="5112" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_webkit/purchase_requisition.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4392" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2972" selection-end="2972" vertical-scroll-proportion="0.4173765" vertical-offset="1123" max-vertical-offset="1710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="48" selection-start="468" selection-end="468" vertical-scroll-proportion="-3.543307" vertical-offset="1512" max-vertical-offset="17010" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="78" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.6639785" vertical-offset="203" max-vertical-offset="954" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062" />
+        <state line="35" column="22" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1134">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="1" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="13" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="61" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="756">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="1" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="146" max-vertical-offset="558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_stock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="550" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="21" selection-start="2274" selection-end="2279" vertical-scroll-proportion="0.33142856" vertical-offset="856" max-vertical-offset="2466" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_sale.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="42" selection-start="734" selection-end="735" vertical-scroll-proportion="0.31014493" vertical-offset="379" max-vertical-offset="1026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_account.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="41" selection-start="3618" selection-end="3618" vertical-scroll-proportion="0.89972144" vertical-offset="1909" max-vertical-offset="2754" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_purchase.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="556" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0" vertical-offset="1126" max-vertical-offset="1620">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/openerp_server.egg-info/SOURCES.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6859" column="0" selection-start="279268" selection-end="279320" vertical-scroll-proportion="0.38285714" vertical-offset="123328" max-vertical-offset="154800" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/openerp_server.egg-info/SOURCES.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6859" column="0" selection-start="279268" selection-end="279320" vertical-scroll-proportion="0.38172042" vertical-offset="123320" max-vertical-offset="154800" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/purchase/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="6" selection-start="2103" selection-end="2103" vertical-scroll-proportion="0.33333334" vertical-offset="830" max-vertical-offset="1368" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="60" selection-end="349" vertical-scroll-proportion="0.14516129" vertical-offset="0" max-vertical-offset="372" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="7" selection-start="2104" selection-end="2104" vertical-scroll-proportion="0.7688172" vertical-offset="668" max-vertical-offset="1368" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="23" selection-start="1606" selection-end="1686" vertical-scroll-proportion="0.40609136" vertical-offset="614" max-vertical-offset="1008" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="24" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.29441625" vertical-offset="856" max-vertical-offset="2232" />
+        <state line="22" column="0" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="18" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.7258883" vertical-offset="200" max-vertical-offset="594" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/sale/sale_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="61" selection-end="212" vertical-scroll-proportion="0.18897638" vertical-offset="0" max-vertical-offset="381" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_receipt.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="305" column="16" selection-start="19188" selection-end="19188" vertical-scroll-proportion="0.06685237" vertical-offset="5466" max-vertical-offset="12726" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="423" column="24" selection-start="22907" selection-end="22907" vertical-scroll-proportion="0.8915663" vertical-offset="7318" max-vertical-offset="13644" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="28" selection-start="1726" selection-end="1733" vertical-scroll-proportion="0.6935933" vertical-offset="525" max-vertical-offset="1710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/bank_payment.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="290" column="31" selection-start="0" selection-end="21099" vertical-scroll-proportion="-5.4074073" vertical-offset="5074" max-vertical-offset="6066" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/account_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="2462" selection-end="2462" vertical-scroll-proportion="1.0393701" vertical-offset="0" max-vertical-offset="1062" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/requisition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="150" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="40" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0" vertical-offset="253" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1167" max-vertical-offset="1548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="12" selection-start="1300" selection-end="1315" vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="756" />
+        <state line="28" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="918">
+        <state line="42" column="0" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="8" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0" vertical-offset="1252" max-vertical-offset="2232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="558" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="8" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="558" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/laporan_kartu_stock.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3798" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/laporan_kartu_stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6138" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_purchase.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="71" selection-start="553" selection-end="596" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="26" selection-start="673" selection-end="673" vertical-scroll-proportion="0.57954544" vertical-offset="282" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_stock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_account.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="0" selection-start="2167" selection-end="2339" vertical-scroll-proportion="-3.8148148" vertical-offset="1445" max-vertical-offset="2754" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="30" selection-start="421" selection-end="422" vertical-scroll-proportion="-3.9629629" vertical-offset="55" max-vertical-offset="3996" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="22" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1134">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/report_intrastat/report/invoice.py">
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="116" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.58456975" vertical-offset="361" max-vertical-offset="720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/report_intrastat/intrastat_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="39" selection-start="178" selection-end="178" vertical-scroll-proportion="0.29032257" vertical-offset="0" max-vertical-offset="372" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/purchase_requisition.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.916435" vertical-offset="1765" max-vertical-offset="4392" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/cash_payment.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="324" column="57" selection-start="20978" selection-end="21007" vertical-scroll-proportion="0.5487465" vertical-offset="5635" max-vertical-offset="6066" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/sale_order.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="104" selection-start="5543" selection-end="5543" vertical-scroll-proportion="-6.6296296" vertical-offset="2017" max-vertical-offset="8964">
+        <state line="6" column="42" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="756">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/order.rml">
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="16" selection-start="9894" selection-end="9894" vertical-scroll-proportion="-11.962963" vertical-offset="5239" max-vertical-offset="10728">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/account_print_invoice.rml">
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="535" column="70" selection-start="26011" selection-end="26011" vertical-scroll-proportion="0.33271375" vertical-offset="9451" max-vertical-offset="10494">
+        <state line="72" column="20" selection-start="3361" selection-end="3361" vertical-scroll-proportion="0.0" vertical-offset="1062" max-vertical-offset="2232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="31" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1134" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="18" selection-start="0" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="12" selection-start="0" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="576" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="522">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="14" selection-start="0" selection-end="1074" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="558" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="1" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="13" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="22" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1062">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/tools/amount_to_text_en.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="34" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.4385321" vertical-offset="337" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.5658153" vertical-offset="0" max-vertical-offset="509">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="0" selection-start="6598" selection-end="6598" vertical-scroll-proportion="0.40699816" vertical-offset="3145" max-vertical-offset="3690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="36" selection-start="378" selection-end="379" vertical-scroll-proportion="0.29401088" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="24" selection-start="1066" selection-end="1066" vertical-scroll-proportion="-8.592592" vertical-offset="200" max-vertical-offset="738">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/ar_base_amount_to_text/object_other/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="49" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.9031142" vertical-offset="432" max-vertical-offset="4104">
+          <folding>
+            <element signature="e#990#1031#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

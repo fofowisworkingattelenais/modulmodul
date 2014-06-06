@@ -212,7 +212,11 @@ class laporan_ledger(report_sxw.rml_parse):
 
         return self.isi_laporan
 
-report_sxw.report_sxw('report.laporan_ledger', 'account.account', 'addons/titis/report/ledger.rml', parser=laporan_ledger, header='internal')
+report_sxw.report_sxw('report.laporan_ledger',
+                      'account.account',
+                      'addons/report_scp/report/ledger.rml',
+                      parser=laporan_ledger,
+                      header='internal')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

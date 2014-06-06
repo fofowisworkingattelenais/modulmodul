@@ -201,7 +201,7 @@ class trial_balance(report_sxw.rml_parse):
 
         return self.isi_laporan
 
-report_sxw.report_sxw('report.trial_balance', 'account.account','addons/report_scp/report/trial_balance.rml',parser=trial_balance, header=False)
+report_sxw.report_sxw('report.trial_balance', 'account.account','addons/report_ajlb/report/trial_balance.rml',parser=trial_balance, header=False)
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

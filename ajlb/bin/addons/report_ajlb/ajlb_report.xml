@@ -2,17 +2,17 @@
 <openerp>
     <data>
 
-        <menuitem 	id="menu_titis_WizardReportTrialBalance"
-                    parent="account.menu_finance_reporting"
-                    name="Trial Balance"
-                    sequence="511"
-                    action="waction_titis_wizardTrialBalance" />
+        <menuitem 	id="menu_report_ajlb_WizardReportTrialBalance"
+					parent="account.menu_finance_reporting"
+					name="Trial Balance"
+					sequence="511"
+					action="waction_report_ajlb_wizardTrialBalance" />
 
-		<menuitem 	id="menu_titis_WizardLedger"
+        <menuitem 	id="menu_report_ajlb_WizardLedger"
 					parent="account.menu_finance_reporting"
 					name="Ledger"
 					sequence="502"
-					action="waction_titis_wizardLedger" />
+					action="waction_report_ajlb_wizardLedger" />
 
 
     </data>

@@ -28,7 +28,7 @@ from tools.translate import _
 
 
 class wizard_kartu_stock(osv.osv_memory):
-	_name = 'titis.kartu_stock'
+	_name = 'report_scp.kartu_stock'
 	_description = 'Wizard Kartu Stock'
 
 		

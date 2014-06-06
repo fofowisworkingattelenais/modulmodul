@@ -28,7 +28,7 @@ from tools.translate import _
 
 
 class wizard_trial_balance(osv.osv_memory):
-    _name = 'titis.wizard_trial_balance'
+    _name = 'report_ajlb.wizard_trial_balance'
     _description = 'Trial Balance'
 
     _columns = {

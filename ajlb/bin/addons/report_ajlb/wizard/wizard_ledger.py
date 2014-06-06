@@ -28,7 +28,7 @@ from tools.translate import _
 
 
 class wizard_ledger(osv.osv_memory):
-	_name = 'titis.wizard_ledger'
+	_name = 'report_ajlb.wizard_ledger'
 	_description = 'Wizard Ledger'
 
 		
