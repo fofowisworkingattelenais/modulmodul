@@ -42,6 +42,6 @@ report_sxw.report_sxw(
     'report.supplier_invoice',
     'account.invoice',
     'addons/titis/report/supplier_invoice.rml',
-    parser=supplier_invoice, header=False)
+    parser=supplier_invoice, header=True)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
