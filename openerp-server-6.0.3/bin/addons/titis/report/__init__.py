@@ -46,5 +46,7 @@ import bank_payment
 import bank_receipt
 import cash_payment
 import cash_receipt
+import bank_payment_voucher
+import cash_payment_voucher
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

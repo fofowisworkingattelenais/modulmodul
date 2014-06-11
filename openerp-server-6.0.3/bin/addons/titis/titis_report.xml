@@ -22,7 +22,14 @@
 				rml="titis/report/bank_payment.rml"
 				string="List Ceque"/>
 		
-		<report auto="False" 
+		<report auto="False"
+				id="report_bank_payment_voucher"
+				model="titis.bank_payment"
+				name="bank_payment_voucher"
+				rml="titis/report/bank_payment_voucher.rml"
+				string="Voucher"/>
+
+		<report auto="False"
 				id="report_bank_receipt"
 				model="titis.bank_receipt" 
 				name="cetakan_voucher" 
@@ -35,6 +42,14 @@
 				name="cash_payment"
 				rml="titis/report/cash_payment.rml"
 				string="List Ceque"/>
+
+		<report auto="False"
+				id="report_cash_payment_voucher"
+				model="titis.cash_payment"
+				name="cash_payment_voucher"
+				rml="titis/report/cash_payment_voucher.rml"
+				string="Voucher"/>
+
 
 		<report auto="False" 
 				id="report_cash_receipt"
