@@ -19,35 +19,29 @@
 #
 ##############################################################################
 
-import department_report
-import laporan_cashflow_direct
-import laporan_sales_report
-import ledger
-import income_statement
-import laporan_sales_report_customer
-import laporan_account_payable_aging
-import laporan_account_receivable
-import laporan_actual_vs_budget
-import laporan_kartu_stock
-import laporan_stok_total
-import laporan_account_payable_aging_by_vendor
-import laporan_account_receivable_by_customer
-import balance_sheet
-import trial_balance
-import po_no_ppn
-import po_ppn
-import cetakan_voucher
-import laporan_indirect_cashflow
-import transmital
-import kwitansi
-import purchase_requisition_line
-import supplier_invoice
-import bank_payment
-import bank_receipt
-import cash_payment
-import cash_receipt
-import bank_payment_voucher
-import cash_payment_voucher
-import expenses
+from datetime import time, date, datetime
+from report import report_sxw
+from tools.translate import _
+from tools import amount_to_text_en
+
+class expenses(report_sxw.rml_parse):
+    def __init__(self, cr, uid, name, context):
+        super(expenses, self).__init__(cr, uid, name, context=context)
+        self.localcontext.update({
+            'time': time,
+            'convert': self.convert,
+        })
+
+        self.context = context
+
+    def convert(self, amount):
+        amt_en = amount_to_text_en.amount_to_text(amount, 'en', 'Dolar')
+        return amt_en
+
+report_sxw.report_sxw(
+    'report.expenses',
+    'account.invoice',
+    'addons/titis/report/expenses.rml',
+    parser=expenses, header=False)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

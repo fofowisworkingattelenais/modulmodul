@@ -76,6 +76,15 @@
 				string="Voucher"
                 multi="True"/>
 
+
+        <report auto="False"
+				id="expenses"
+				model="account.invoice"
+				name="expenses"
+				rml="titis/report/expenses.rml"
+				string="Expenses"
+                multi="True"/>
+
         <report auto="False"
 				id="kwitansi"
 				model="account.invoice"
