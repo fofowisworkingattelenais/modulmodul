@@ -354,7 +354,7 @@
                     <para style="COSTUM_2"><b>:</b></para>
                 </td>
                 <td>
-                    <para style="COSTUM_2"> [[ convert(o.amount_total) ]]</para>
+                    <para style="COSTUM_2"> [[ convert(o.amount_total, o.currency_id.name) ]]</para>
                 </td>
                 <td><para><font color="white"> </font></para></td>
             </tr>
@@ -445,9 +445,6 @@
                 </td>
                 <td><para><font color="white"> </font></para></td>
             </tr>
-
-
-
 
         </blockTable>
 

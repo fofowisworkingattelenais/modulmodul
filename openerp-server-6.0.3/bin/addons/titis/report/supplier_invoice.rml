@@ -312,7 +312,7 @@
 				<blockTable colWidths="19cm" style="JUDUL_TABEL">
 					<tr>
 						<td>
-							<para style="NORMAL_4"><font color="white">_</font>Say :  [[ convert(o.amount_total) ]]</para>
+							<para style="NORMAL_4"><font color="white">_</font>Say :  [[ convert(o.amount_total, o.currency_id.name) ]]</para>
 							<para style="NORMAL_1"><font color="white">_</font></para>
 						</td>
 

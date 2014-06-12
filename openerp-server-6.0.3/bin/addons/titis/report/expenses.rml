@@ -400,7 +400,7 @@
             <tr>
                 <td>
                     <para style="NORMAL_1"><font color="white">_</font></para>
-                    <para style="COSTUM_2"><font color="white">_____</font>  Say : [[ convert(o.amount_total) ]] </para>
+                    <para style="COSTUM_2"><font color="white">_____</font>  Say : [[ convert(o.amount_total, o.currency_id.name) ]] </para>
                     <para style="NORMAL_1"><font color="white">_</font></para>
                 </td>
             </tr>

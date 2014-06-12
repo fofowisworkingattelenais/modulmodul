@@ -452,7 +452,7 @@
 	</blockTable>
 	<blockTable style="TABEL_ATAS" colWidths="16cm,3cm">
 		<tr>
-			<td><para><font color="white"> </font></para><para style="NORMAL"><font color="white">_</font><b>TERMS : [[ convert(o.amount_total) ]]</b></para></td>
+			<td><para><font color="white"> </font></para><para style="NORMAL"><font color="white">_</font><b>TERMS : [[ convert(o.amount_total, o.currency_id.name) ]]</b></para></td>
 			<td><para><font color="white"> </font></para><para style="NORMAL"><font color="white">_</font><b>INVOICE TOTAL :</b></para></td>
 
 		</tr>

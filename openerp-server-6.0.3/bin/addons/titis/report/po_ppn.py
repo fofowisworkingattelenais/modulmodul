@@ -24,6 +24,7 @@ from datetime import time, date, datetime
 from report import report_sxw
 
 from tools import amount_to_text_en
+from tools import amount_to_text_ind
 from tools.translate import _
 import time
 
@@ -43,9 +44,15 @@ class po_ppn(report_sxw.rml_parse):
         })
         self.context = context   
 
-    def convert(self, amount):
-        amt_en = amount_to_text_en.amount_to_text(amount, 'en', 'Dolar')
-        return amt_en
+    def convert(self, amount, currency):
+        cur = currency.encode('ascii','ignore')
+        if cur == 'IDR':
+            amt_ind = amount_to_text_ind.amount_to_text(amount, 'en', 'Rupiah')
+            return amt_ind
+        elif cur == 'USD':
+            amt_en = amount_to_text_en.amount_to_text(amount, 'en', 'Dolar')
+            return amt_en
+
         
 report_sxw.report_sxw('report.po_ppn', 'purchase.order','addons/titis/report/po_ppn.rml',parser=po_ppn, header=False)
 

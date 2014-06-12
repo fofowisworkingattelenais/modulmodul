@@ -467,7 +467,7 @@
 					<blockTable style="LAYOUT_JUDUL" colWidths="2.5cm,14.5cm">
 						<tr>								
 							<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
-							<td><para style="DESCRIPTION_4" ><b>Say :  [[ convert(o.amount_total) ]]</b></para></td>
+							<td><para style="DESCRIPTION_4" ><b>Say :  [[ convert(o.amount_total, o.pricelist_id.currency_id.name) ]]</b></para></td>
 						</tr>
 					</blockTable>
 				</td>
