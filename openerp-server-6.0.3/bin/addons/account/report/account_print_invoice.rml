@@ -159,6 +159,18 @@
 		<blockAlignment value="LEFT"/> 
 		<blockValign value="TOP"/>
     </blockTableStyle>		
+
+    <blockTableStyle id="LAYOUT_1">
+		<blockTopPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockBottomPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockLeftPadding lenght="0" start="0,0" stop="-1,-1"/>
+		<blockRightPadding lenght="0" start="0,0" stop="-1,-1"/>
+        <blockAlignment value="LEFT"/>
+        <blockValign value="TOP"/>
+        <lineStyle kind="LINEBEFORE" colorName="#000000" start="-1,-1" stop="-1,-1"/>
+
+    </blockTableStyle>
+
     <blockTableStyle id="TABEL_ATAS">
 		<lineStyle kind="BOX" colorName="#000000"/>
 		<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
@@ -374,40 +386,47 @@
 	        <td></td>
             <td><para><font color="white"> </font></para><para style="NORMAL">[[o.comment]]</para></td>
 	        <td> </td>
-
 	    </tr>
 	</blockTable>
-	<blockTable style="TABEL_ATAS_CUSTOM1" colWidths="16cm,3cm">
+	<blockTable style="TABEL_ATAS_CUSTOM1" colWidths="19cm">
 		<tr>
 			<td>
-				<blockTable style="LAYOUT" colWidths="0.5cm,7.8cm,2.5cm,3cm,1.5cm">
+				<blockTable style="LAYOUT_1" colWidths="0.5cm,8.5cm,2.5cm,3cm,1.5cm,3cm">
 					<tr>
 						<td><para style="NORMAL"><font color="white">_</font><u>No</u></para></td>
 						<td><para style="NORMAL"><font color="white">_</font><u>Item</u></para></td>
 						<td><para style="COSTUM_1"><font color="white">_</font><u>Unit Price([[ o.currency_id.name ]])</u></para></td>
 						<td><para style="COSTUM_1"><font color="white">_</font><u>Volume</u></para></td>
 						<td><para style="COSTUM_1"><font color="white">_</font><u>Satuan</u></para></td>
-
+                        <td><para style="COSTUM_1"><font color="white">_</font><u>Total([[ o.currency_id.name ]])</u></para></td>
 					</tr>
 				</blockTable>
 				<para><seqReset id="nourut"/></para>
 				<section>
 					<para>[[ repeatIn(o.invoice_line,'a') ]]</para>
-					<blockTable style="LAYOUT" colWidths="0.5cm,7.8cm,2.5cm,3cm,1.5cm">
+					<blockTable style="LAYOUT_1" colWidths="0.5cm,8.5cm,2.5cm,3cm,1.5cm,3cm">
 						<tr>
 							<td><para style="NORMAL"><font color="white">_</font><seq id="nourut"/></para></td>
 							<td><para style="NORMAL">[[ a.name ]]</para></td>
 							<td><para style="ANGKA"><font color="white">_</font>[[ a.price_unit ]]<font color="white">_</font></para></td>
 							<td><para style="COSTUM_1"><font color="white">_</font>[[ a.quantity ]]<font color="white">_</font></para></td>
 							<td><para style="COSTUM_1"><font color="white">_</font>[[ a.uos_id.name ]]</para></td>
-
+                            <td><para style="ANGKA"><font color="white">_</font>[[ a.price_subtotal ]]<font color="white">_</font></para></td>
 						</tr>
-
 					</blockTable>
 				</section>
-                        <para><font color="white"> </font></para>
-                        <para><font color="white"> </font></para>
-
+				<blockTable style="LAYOUT_1" colWidths="16cm,13cm">
+					<tr>
+						<td>
+                            <para><font color="white"> </font></para>
+                            <para><font color="white"> </font></para>
+						</td>
+						<td>
+                            <para><font color="white"> </font></para>
+                            <para><font color="white"> </font></para>
+						</td>
+					</tr>
+				</blockTable>
 				<blockTable style="TABEL_ATAS" colWidths="16cm,3cm">
                     <tr>
                         <para><font color="white"> </font></para>
@@ -424,28 +443,6 @@
                     <tr>
                         <para><font color="white"> </font></para>
                     </tr>
-				</blockTable>
-			</td>
-			<td>
-				<blockTable style="LAYOUT" colWidths="3cm">
-					<tr>
-						<td>
-							<blockTable style="LAYOUT" colWidths="3cm">
-								<tr>
-									<td><para style="COSTUM_1"><font color="white">____</font><u>Total([[ o.currency_id.name ]])</u></para></td>
-								</tr>
-							</blockTable>
-                                                        
-							<section>
-								<para>[[ repeatIn(o.invoice_line,'a') ]]</para>
-								<blockTable style="LAYOUT" colWidths="3cm">
-									<tr>
-										<td><para style="ANGKA"><font color="white">_</font>[[ a.price_subtotal ]]<font color="white">_</font></para></td>
-									</tr>
-								</blockTable>
-							</section>
-						</td>
-					</tr>
 				</blockTable>
 			</td>
 		</tr>
