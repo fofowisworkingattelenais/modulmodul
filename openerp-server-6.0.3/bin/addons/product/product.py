@@ -317,7 +317,8 @@ class product_template(osv.osv):
             return context['categ_id']
         md = self.pool.get('ir.model.data')
         res = md.get_object_reference(cr, uid, 'product', 'cat0') or False
-        return res and res[1] or False
+        # return res and res[1] or False
+        return ''
 
     def onchange_uom(self, cursor, user, ids, uom_id,uom_po_id):
         if uom_id:
@@ -328,7 +329,7 @@ class product_template(osv.osv):
         'company_id': lambda s,cr,uid,c: s.pool.get('res.company')._company_default_get(cr, uid, 'product.template', context=c),
         'type': lambda *a: 'product',
         'list_price': lambda *a: 1,
-        'cost_method': lambda *a: 'standard',
+        'cost_method': lambda *a: 'average',
         'supply_method': lambda *a: 'buy',
         'standard_price': lambda *a: 1,
         'sale_ok': lambda *a: 1,
@@ -341,7 +342,6 @@ class product_template(osv.osv):
         'uos_coeff' : lambda *a: 1.0,
         'mes_type' : lambda *a: 'fixed',
         'categ_id' : _default_category,
-        'type' : lambda *a: 'consu',
     }
 
     def _check_uom(self, cursor, user, ids, context=None):
