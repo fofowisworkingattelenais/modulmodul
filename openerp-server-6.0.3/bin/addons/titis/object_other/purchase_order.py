@@ -177,6 +177,7 @@ class purchase_order(osv.osv):
 
         'catatan': fields.text('Catatan'),
         'analytics_id':fields.many2one('account.analytic.plan.instance','Analytic Distribution',required=False ),
+        'subject_desc': fields.char('Subject PO', size=128, required=True, select=True, readonly=False),
 
         # override semua field total
         #				'amount_untaxed': fields.function(_amount_all, method=True, digits_compute= dp.get_precision('Purchase Price'), string='Untaxed Amount',

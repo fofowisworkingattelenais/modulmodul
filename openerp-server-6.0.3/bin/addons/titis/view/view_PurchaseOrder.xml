@@ -11,7 +11,7 @@
 					<field name="warehouse_id" on_change="onchange_warehouse_id(warehouse_id)" widget="selection" position="before">
 						<field name="project_id" on_change="onchange_project_id(project_id)"/>
 						<field name="purchase_type"/>
-						
+						<field name="subject_desc"/>
 					</field>
 
 					<group col="7" colspan="4" position="replace"/>
@@ -108,4 +108,3 @@
 
     </data>
 </openerp>
-
