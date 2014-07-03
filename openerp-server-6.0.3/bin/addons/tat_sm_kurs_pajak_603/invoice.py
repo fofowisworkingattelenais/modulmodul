@@ -293,6 +293,7 @@ class account_invoice(osv.osv):
         return total, total_currency, invoice_move_lines
 
     def action_move_create(self, cr, uid, ids, *args):
+        print 'wakkkkk'
         """Creates invoice related analytics and financial move lines"""
         ait_obj = self.pool.get('account.invoice.tax')
         cur_obj = self.pool.get('res.currency')
@@ -503,7 +504,7 @@ class account_invoice(osv.osv):
         return {
             'date_maturity': x.get('date_maturity', False),
             'partner_id': part,
-            'name': x['name'][:64],
+            'name': x['name'],
             'date': date,
             'debit': x['price']>0 and x['price'],
             'credit': x['price']<0 and -x['price'],

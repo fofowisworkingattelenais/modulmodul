@@ -182,7 +182,7 @@ class account_invoice(osv.osv):
     _order = "id desc"
 
     _columns = {
-        'name': fields.char('Description', size=64, select=True, readonly=True, states={'draft':[('readonly',False)]}),
+        'name': fields.char('Description', size=256, select=True, readonly=True, states={'draft':[('readonly',False)]}),
         #'project_id': fields.many2one(string='Project', obj='project.project', readonly=True,
                                       #states={'draft': [('readonly', False)]}),
         'origin': fields.char('Source Document', size=64, help="Reference of the document that produced this invoice.", readonly=True, states={'draft':[('readonly',False)]}),
@@ -282,7 +282,7 @@ class account_invoice(osv.osv):
             },
             help="Remaining amount due."),
         'payment_ids': fields.function(_compute_lines, method=True, relation='account.move.line', type="many2many", string='Payments'),
-        'move_name': fields.char('Journal Entry', size=64, readonly=True, states={'draft':[('readonly',False)]}),
+        'move_name': fields.char('Journal Entry', size=256, readonly=True, states={'draft':[('readonly',False)]}),
         'user_id': fields.many2one('res.users', 'Salesman', readonly=True, states={'draft':[('readonly',False)]}),
         'fiscal_position': fields.many2one('account.fiscal.position', 'Fiscal Position', readonly=True, states={'draft':[('readonly',False)]})
     }
@@ -947,7 +947,7 @@ class account_invoice(osv.osv):
         return {
             'date_maturity': x.get('date_maturity', False),
             'partner_id': part,
-            'name': x['name'][:64],
+            'name': x['name'],
             'date': date,
             'debit': x['price']>0 and x['price'],
             'credit': x['price']<0 and -x['price'],
@@ -1492,7 +1492,7 @@ class account_invoice_line(osv.osv):
     def move_line_get_item(self, cr, uid, line, context=None):
         return {
             'type':'src',
-            'name': line.name[:64],
+            'name': line.name,
             'price_unit':line.price_unit,
             'quantity':line.quantity,
             'price':line.price_subtotal,

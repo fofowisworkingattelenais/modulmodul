@@ -488,7 +488,7 @@ class account_move_line(osv.osv):
         return result
 
     _columns = {
-        'name': fields.char('Name', size=64, required=True),
+        'name': fields.char('Name', size=256, required=True),
         'quantity': fields.float('Quantity', digits=(16,2), help="The optional quantity expressed by this line, eg: number of product sold. The quantity is not a legal requirement but is very useful for some reports."),
         'product_uom_id': fields.many2one('product.uom', 'UoM'),
         'product_id': fields.many2one('product.product', 'Product'),
