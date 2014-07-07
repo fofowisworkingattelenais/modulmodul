@@ -2,9 +2,7 @@
 <document filename="Voucher.pdf">
   <template pageSize="(595.0,842.0)" title="Voucher" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
     <pageTemplate id="first">
-    <pageGraphics>
-    <image file="titis_logo.jpeg" x="11.5cm" y="25.65cm"/>
-    </pageGraphics>
+
       <frame id="first" x1="25.0" y1="25.0" width="539" height="772"/>
     </pageTemplate>
   </template>
@@ -265,7 +263,7 @@
   </stylesheet>
   <story>
     <para style="">	<font color="white"> </font></para>
-    <para style="JUDUL">LIST DAFTAR PEMBAYARAN</para>
+    <para style="JUDUL">LIST PEMBAYARAN</para>
 
    	<para style=""> <font color="white"> </font></para>
     <para><font color="white"> </font></para>
@@ -327,5 +325,70 @@
             </tr>
         </blockTable>
     </section>
+
+    <blockTable colWidths="20.5cm" style="LAYOUT">
+        <tr>
+            <td>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+            </td>
+        </tr>
+    </blockTable>
+
+    <blockTable colWidths="4.75cm,15.75cm" style="TABEL_BAWAH11">
+        <tr>
+            <td>
+                <para style="NORMAL_1">Prepared By</para>
+            </td>
+            <td>
+                <para style="NORMAL_1">Approved By</para>
+            </td>
+
+        </tr>
+    </blockTable>
+
+
+    <blockTable colWidths="4.75cm,5.5cm,5.5cm,4.75cm" style="JUDUL_TABEL">
+        <tr>
+            <td>
+                <para style="NORMAL_4"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font>Yulia Nurbaiti</para>
+            </td>
+            <td>
+                <para style="NORMAL_4"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font>Rosa Linda</para>
+            </td>
+            <td>
+                <para style="NORMAL_4"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font>Putu Widharmadi</para>
+            </td>
+
+            <td>
+                <para style="NORMAL_4"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font></para>
+                <para style="NORMAL_1"><font color="white">_</font>Nyoman Widana</para>
+            </td>
+
+        </tr>
+    </blockTable>
   </story>
 </document>
