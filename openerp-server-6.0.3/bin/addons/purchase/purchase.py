@@ -167,7 +167,7 @@ class purchase_order(osv.osv):
         ),
         'partner_ref': fields.char('Supplier Reference', states={'confirmed':[('readonly',True)], 'approved':[('readonly',True)],'done':[('readonly',True)]}, size=64),
         'date_order':fields.date('Date Ordered', required=True, states={'confirmed':[('readonly',True)], 'approved':[('readonly',True)]}, select=True, help="Date on which this document has been created."),
-        'date_approve':fields.date('Date Approved', readonly=1, select=True, help="Date on which purchase order has been approved"),
+        'date_approve':fields.date('Commencement Date', readonly=1, select=True, help="Date on which purchase order has been approved"),
         'partner_id':fields.many2one('res.partner', 'Supplier', required=True, states={'confirmed':[('readonly',True)], 'approved':[('readonly',True)],'done':[('readonly',True)]}, change_default=True),
         'partner_address_id':fields.many2one('res.partner.address', 'Address', required=True,
             states={'confirmed':[('readonly',True)], 'approved':[('readonly',True)],'done':[('readonly',True)]},domain="[('partner_id', '=', partner_id)]"),
@@ -227,6 +227,7 @@ class purchase_order(osv.osv):
         'partner_address_id': lambda self, cr, uid, context: context.get('partner_id', False) and self.pool.get('res.partner').address_get(cr, uid, [context['partner_id']], ['default'])['default'],
         'pricelist_id': lambda self, cr, uid, context: context.get('partner_id', False) and self.pool.get('res.partner').browse(cr, uid, context['partner_id']).property_product_pricelist_purchase.id,
         'company_id': lambda self,cr,uid,c: self.pool.get('res.company')._company_default_get(cr, uid, 'purchase.order', context=c),
+        'minimum_planned_date': ''
     }
     _sql_constraints = [
         ('name_uniq', 'unique(name)', 'Order Reference must be unique !'),
@@ -460,7 +461,7 @@ class purchase_order(osv.osv):
                         'product_uom': order_line.product_uom.id,
                         'product_uos': order_line.product_uom.id,
                         'date': order_line.date_planned,
-                        'date_expected': order_line.date_planned,
+                        # 'date_expected': order_line.date_planned,
                         'location_id': loc_id,
                         'location_dest_id': dest,
                         'picking_id': picking_id,

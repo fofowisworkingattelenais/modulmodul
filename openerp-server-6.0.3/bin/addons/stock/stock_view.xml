@@ -1124,10 +1124,11 @@
                             <field name="address_id" on_change="onchange_partner_in(address_id)" context="{'contact_display':'partner'}" colspan="4"/>
                             <field name="invoice_state" string="Invoice Control"/>
                             <field name="backorder_id" readonly="1" groups="base.group_extended"/>
+                            <field name="receive_date" />
                         </group>
                         <group colspan="2" col="2">
                             <field name="date"/>
-                            <field name="min_date" readonly="1"/>
+                            <field name="min_date" />
                             <field name="stock_journal_id" groups="base.group_extended" widget="selection"/>
                             <field name="project_id"/>
                         </group>
