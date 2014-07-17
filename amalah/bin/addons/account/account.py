@@ -598,7 +598,7 @@ class account_journal(osv.osv):
     _name = "account.journal"
     _description = "Journal"
     _columns = {
-        'name': fields.char('Journal Name', size=64, required=True),
+        'name': fields.char('Journal Name', size=256, required=True),
         'code': fields.char('Code', size=5, required=True, help="The code will be used to generate the numbers of the journal entries of this journal."),
         'type': fields.selection([('sale', 'Sale'),('sale_refund','Sale Refund'), ('purchase', 'Purchase'), ('purchase_refund','Purchase Refund'), ('cash', 'Cash'), ('bank', 'Bank and Cheques'), ('general', 'General'), ('situation', 'Opening/Closing Situation')], 'Type', size=32, required=True,
                                  help="Select 'Sale' for Sale journal to be used at the time of making invoice."\
@@ -1127,8 +1127,8 @@ class account_move(osv.osv):
             return [('id', '=', '0')]
 
     _columns = {
-        'name': fields.char('Number', size=64, required=True),
-        'ref': fields.char('Reference', size=64),
+        'name': fields.char('Number', size=256, required=True),
+        'ref': fields.char('Reference', size=256),
         'period_id': fields.many2one('account.period', 'Period', required=True, states={'posted':[('readonly',True)]}),
         'journal_id': fields.many2one('account.journal', 'Journal', required=True, states={'posted':[('readonly',True)]}),
         'state': fields.selection([('draft','Unposted'), ('posted','Posted')], 'State', required=True, readonly=True,
@@ -1519,7 +1519,7 @@ class account_move_reconcile(osv.osv):
     _name = "account.move.reconcile"
     _description = "Account Reconciliation"
     _columns = {
-        'name': fields.char('Name', size=64, required=True),
+        'name': fields.char('Name', size=256, required=True),
         'type': fields.char('Type', size=16, required=True),
         'line_id': fields.one2many('account.move.line', 'reconcile_id', 'Entry Lines'),
         'line_partial_ids': fields.one2many('account.move.line', 'reconcile_partial_id', 'Partial Entry lines'),

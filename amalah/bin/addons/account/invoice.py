@@ -182,7 +182,7 @@ class account_invoice(osv.osv):
     _order = "id desc"
 
     _columns = {
-        'name': fields.char('Description', size=64, select=True, readonly=True, states={'draft':[('readonly',False)]}),
+        'name': fields.char('Description', size=256, select=True, readonly=True, states={'draft':[('readonly',False)]}),
         'origin': fields.char('Source Document', size=64, help="Reference of the document that produced this invoice.", readonly=True, states={'draft':[('readonly',False)]}),
         'type': fields.selection([
             ('out_invoice','Customer Invoice'),
@@ -938,7 +938,7 @@ class account_invoice(osv.osv):
         return {
             'date_maturity': x.get('date_maturity', False),
             'partner_id': part,
-            'name': x['name'][:64],
+            'name': x['name'],
             'date': date,
             'debit': x['price']>0 and x['price'],
             'credit': x['price']<0 and -x['price'],
@@ -1483,7 +1483,7 @@ class account_invoice_line(osv.osv):
     def move_line_get_item(self, cr, uid, line, context=None):
         return {
             'type':'src',
-            'name': line.name[:64],
+            'name': line.name,
             'price_unit':line.price_unit,
             'quantity':line.quantity,
             'price':line.price_subtotal,
