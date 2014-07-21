@@ -176,7 +176,7 @@ class purchase_order(osv.osv):
 
 
         'catatan': fields.text('Catatan'),
-        'analytics_id':fields.many2one('account.analytic.plan.instance','Analytic Distribution',required=False ),
+        'analytics_id':fields.many2one('account.analytic.plan.instance','Analytic Distribution',required=True ),
         'subject_desc': fields.char('Subject PO', size=128, required=True, select=True, readonly=False),
 
         # override semua field total
@@ -291,6 +291,23 @@ class purchase_order(osv.osv):
 
     def wkf_confirm_order(self, cr, uid, ids, context=None):
         super(purchase_order, self).wkf_confirm_order(cr, uid, ids, context)
+
+        for o in self.browse(cr, uid, ids):
+            il = []
+            todo = []
+            for ol in o.order_line:
+                todo.append(ol.id)
+                if ol.product_id:
+                    a = ol.product_id.product_tmpl_id.property_account_expense.id
+                    if not a:
+                        a = ol.product_id.categ_id.property_account_expense_categ.id
+                    if not a:
+                        raise osv.except_osv(('Error !'), ('There is no expense account defined for this product: "%s" (id:%d)') % (ol.product_id.name, ol.product_id.id,))
+                else:
+                    a = self.pool.get('ir.property').get(cr, uid, 'property_account_expense_categ', 'product.category').id
+                fpos = o.fiscal_position or False
+                a = self.pool.get('account.fiscal.position').map_account(cr, uid, fpos, a)
+                il.append(self.inv_line_create(cr, uid, a, ol))
 
         for id in ids:
             if not self.create_sequence(cr, uid, id):
