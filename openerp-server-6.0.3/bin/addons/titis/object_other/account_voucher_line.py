@@ -33,26 +33,27 @@ class account_voucher_line(osv.osv):
 
 		if context.get('default_detail_type_selection', False):
 			res.update({'type' : context.get('default_detail_type_selection', False)})
-	
+
 		return res
-		
+
 	_columns =	{
 							'analytics_id' : fields.many2one(obj='account.analytic.plan.instance', string='Analytic Distribution'),
+                            'partner_id': fields.many2one(obj='res.partner', string='Partner'),
 							}
 
 	def compute_amount(self, cr, uid, move_id, journal_id, currency_id):
 		currency_pool = self.pool.get('res.currency')
 		obj_move = self.pool.get('account.move.line')
 		obj_journal = self.pool.get('account.journal')
-		
+
 		rs = {}
-		
+
 		line = obj_move.browse(cr, uid, [move_id])[0]
 		journal = obj_journal.browse(cr, uid, [journal_id])[0]
-		
+
 		currency_id = currency_id or journal.company_id.currency_id.id
 		company_currency = journal.company_id.currency_id.id
-		
+
 		#ine.reconcile_partial_id and line.amount_residual_currency < 0:
 		    # skip line that are totally used within partial reconcile
 		    #pass
@@ -69,14 +70,14 @@ class account_voucher_line(osv.osv):
 			    'amount_unreconciled': amount_unreconciled,
 				}
 		return rs
-		
+
 	def onchange_move_id(self, cr, uid, ids, move_id, journal_id, currency_id):
 		value = {}
 		domain = {}
 		warning = {}
-		
+
 		obj_move = self.pool.get('account.move.line')
-				
+
 		if move_id:
 			move = obj_move.browse(cr, uid, [move_id])[0]
 			value['account_id'] = move.account_id.id
@@ -87,9 +88,9 @@ class account_voucher_line(osv.osv):
 			value['amount'] = res['amount']
 			value['amount_original'] = res['amount_original']
 			value['amount_unreconciled'] = res['amount_unreconciled']
-			
+
 		return {'value' : value, 'domain' : domain, 'warning' : warning}
-		
+
 	def create_account_move_line(self, cr, uid, id):
 		obj_currency = self.pool.get('res.currency')
 		obj_tax = self.pool.get('account.tax')
@@ -99,30 +100,30 @@ class account_voucher_line(osv.osv):
 		line = self.browse(cr, uid, [id])[0]
 		total = 0.0
 		move_pair = []
-		
+
 		context = {}
 
 		# create one move line per voucher line where amount is not 0.0
 		if not line.amount:
 			return True, total, move_pair
-			
+
 		context_multi_currency = context.copy()
-		context_multi_currency.update({'date': line.voucher_id.date})					
+		context_multi_currency.update({'date': line.voucher_id.date})
 		company_currency = line.voucher_id.journal_id.company_id.currency_id.id
-		current_currency = line.voucher_id.currency_id.id		
-	
+		current_currency = line.voucher_id.currency_id.id
+
 		if line.amount == line.amount_unreconciled:
 			amount = line.move_line_id.amount_residual #residual amount in company currency
 		else:
 			amount = obj_currency.compute(cr, uid, current_currency, company_currency, line.untax_amount or line.amount, context=context_multi_currency)
-	
+
 		move_line = 	{
 									'journal_id' : line.voucher_id.journal_id.id,
 									'period_id' : line.voucher_id.period_id.id,
 									'name' : line.name and line.name or '/',
 									'account_id' : line.account_id.id,
 									'move_id' : line.voucher_id.move_id.id, #TODO
-									#'partner_id' : line.voucher_id.partner_id.id, #TODO
+									'partner_id' : line.partner_id.id, #TODO
 									'currency_id' : company_currency <> current_currency and current_currency or False,
 									'analytic_account_id' : line.account_analytic_id and line.account_analytic_id.id or False,
 									'analytics_id' : line.analytics_id and line.analytics_id.id or False,
@@ -131,7 +132,6 @@ class account_voucher_line(osv.osv):
 									'debit' : 0.0,
 									'date' : line.voucher_id.date
 									}
-					
 		if not amount:
 			raise osv.except_osv(_('Warning'),
 				_("Error while processing 'account.voucher %s' (id:%s), amount: %s !") % (line.voucher_id.name, line.voucher_id.id, line.voucher_id.amount))
@@ -158,14 +158,14 @@ class account_voucher_line(osv.osv):
 		if move_line.get('account_tax_id', False):
 			tax_data = obj_tax.browse(cr, uid, [move_line['account_tax_id']], context=context)[0]
 			if not (tax_data.base_code_id and tax_data.tax_code_id):
-				raise osv.except_osv(_('No Account Base Code and Account Tax Code!'),_("You have to configure account base code and account tax code on the '%s' tax!") % (tax_data.name))	
-			
+				raise osv.except_osv(_('No Account Base Code and Account Tax Code!'),_("You have to configure account base code and account tax code on the '%s' tax!") % (tax_data.name))
+
 		sign = (move_line['debit'] - move_line['credit']) < 0 and -1 or 1
 		move_line['amount_currency'] = company_currency <> current_currency and sign * line.amount or 0.0
 
 
 		line_id = obj_move_line.create(cr, uid, move_line)
-		
+
 		obj_move.write(cr, uid, [line.voucher_id.move_id.id], {})
 
 		# Kembalikan pasangan account.move.line
@@ -173,13 +173,10 @@ class account_voucher_line(osv.osv):
 			#TODO: Dua baris di bawah harusnya bisa jadi satu
 			move_pair.append(line_id)
 			move_pair.append(line.move_line_id.id)
-		
+
 		return True, total, move_pair
 
-		                  
-            
-            		
 
-							
-account_voucher_line()							
-	
+
+
+account_voucher_line()
