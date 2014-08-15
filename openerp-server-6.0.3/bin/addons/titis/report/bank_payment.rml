@@ -307,7 +307,7 @@
             <para style="">[[ repeatIn(voucher.line_ids,'a') ]] </para>
             <td><para style="NORMAL_1"> <seq id="nourut"/></para></td>
             <td><para style="NORMAL_2">   </para></td>
-            <td><para style="NORMAL_2"> [[ a.name ]] </para></td>
+            <td><para style="NORMAL_2"> [[ a.partner_id.name ]] </para></td>
             <td><para style="NORMAL_2">   </para></td>
             <td><para style="NORMAL_2">  [[ a.name ]]</para></td>
             <td><para style="NORMAL_2"> <font color="white">_</font>[[o.journal_id.currency.symbol ]] </para></td>

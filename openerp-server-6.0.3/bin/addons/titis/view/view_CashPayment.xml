@@ -88,6 +88,7 @@
                         <page string="Voucher Detail">
                             <field name="line_dr_ids" colspan="4" nolabel="1" height="140">                            
                                 <tree string="Voucher Detail" editable="bottom" colors="gray:amount==0">
+                                    <field name="partner_id" />
                                     <field name="move_line_id" domain="[('reconcile_id','=',False),('account_id.reconcile','=',True),('credit','>',0)]" on_change="onchange_move_id(move_line_id, parent.journal_id, parent.currency_id)" readonly="1"/>                                    
                                     <field name="account_id" domain="[('type','!=','view')]"/>
                                     <field name="analytics_id"/>

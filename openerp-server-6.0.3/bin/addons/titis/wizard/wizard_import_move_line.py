@@ -81,7 +81,7 @@ class wizard_import_move_line(osv.osv_memory):
                         'name' : move_line.name,
                         'type' : move_type,
                         'amount' : amount,
-                        
+                        'partner_id': move_line.partner_id.id
                         }
                 obj_account_voucher_line.create(cr, uid, val, context=context)
         return {'type': 'ir.actions.act_window_close'}

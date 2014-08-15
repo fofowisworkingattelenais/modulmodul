@@ -90,7 +90,7 @@ class account_voucher(osv.osv):
                          'project_id': fields.many2one(string='Project', obj='project.project', required=True),
 
                          'user_id': fields.many2one('res.users', 'Finance User', readonly=True, states={'draft':[('readonly',False)]}),
-
+                        'partner_id': fields.many2one(obj='res.partner', string='Partner'),
 
 
                         # APPROVAL
@@ -389,121 +389,121 @@ class account_voucher(osv.osv):
         context_multi_currency.update({'date': voucher.date})
 
         # membuat  account.move
-        move = 	{
-                        'name' : voucher.number,
-                        'journal_id' : voucher.journal_id.id,
-                        'narration ': voucher.narration,
-                        'date' : voucher.date,
-                        'ref' : 'ref', #TODO
-                        'period_id' : voucher.period_id and voucher.period_id.id or False
-                        }
-        move_id = obj_move.create(cr, uid, move)
+        for line in voucher.line_ids:
+            move = 	{
+                            'name' : voucher.number,
+                            'journal_id' : voucher.journal_id.id,
+                            'narration ': voucher.narration,
+                            'date' : voucher.date,
+                            'ref' : 'ref', #TODO
+                            'period_id' : voucher.period_id and voucher.period_id.id or False,
+                            'partner_id': line.partner_id.id
+                            }
+            move_id = obj_move.create(cr, uid, move)
 
-        # mengupdate field move_id voucher
-        self.write(cr, uid, [id], {'move_id' : move_id})
+            # mengupdate field move_id voucher
+            self.write(cr, uid, [id], {'move_id' : move_id})
 
-        # membuat baris pertama account.move.line
-        company_currency = voucher.journal_id.company_id.currency_id.id
-        current_currency = voucher.currency_id.id
-        debit = 0.0
-        credit = 0.0
-
-        # konversi amount ke dalam company currency
-
-        if voucher.type in ('purchase', 'payment'):
-            credit = obj_currency.compute(cr, uid, current_currency, company_currency, voucher.amount, context=context_multi_currency)
-        elif voucher.type in ('sale', 'receipt'):
-            debit = obj_currency.compute(cr, uid, current_currency, company_currency, voucher.amount, context=context_multi_currency)
-
-        if debit < 0:
-            credit = -debit
+            # membuat baris pertama account.move.line
+            company_currency = voucher.journal_id.company_id.currency_id.id
+            current_currency = voucher.currency_id.id
             debit = 0.0
-        if credit < 0:
-            debit = -credit
             credit = 0.0
-        sign = debit - credit < 0 and -1 or 1
 
-        line_partner = []
-        for line in voucher.line_ids:
-            line_partner.append(line.partner_id.id)
-        print line_partner
+            # konversi amount ke dalam company currency
 
+            if voucher.type in ('purchase', 'payment'):
+                credit = obj_currency.compute(cr, uid, current_currency, company_currency, voucher.amount, context=context_multi_currency)
+            elif voucher.type in ('sale', 'receipt'):
+                debit = obj_currency.compute(cr, uid, current_currency, company_currency, voucher.amount, context=context_multi_currency)
 
-        move_line = 	{
-                                    'name' : voucher.name or '/',
-                                    'debit' : debit,
-                                    'credit' : credit,
-                                    'account_id' : voucher.account_id.id,
-                                    'move_id' : move_id,
-                                    'journal_id' : voucher.journal_id.id,
-                                    'period_id' : voucher.period_id.id,
-                                    #TODO
-                                    # 'partner_id' : line_partner,
-                                    'currency_id' : company_currency <> current_currency and  current_currency or False,
-                                    'amount_currency' : company_currency <> current_currency and sign * voucher.amount or 0.0,
-                                    'date' : voucher.date,
-                                    'date_maturity' : voucher.date_due
-                                    }
+            if debit < 0:
+                credit = -debit
+                debit = 0.0
+            if credit < 0:
+                debit = -credit
+                credit = 0.0
+            sign = debit - credit < 0 and -1 or 1
 
-        obj_move_line.create(cr, uid, move_line)
-
-        # line_total untuk baris pertama
-        line_total = debit - credit
-
-        rec_list_ids = []
-
-        #TODO: Ini seperti nya ga usah
-        #line_total = debit - credits
-        #if inv.type == 'sale':
-            #line_total = line_total - currency_pool.compute(cr, uid, inv.currency_id.id, company_currency, inv.tax_amount, context=context_multi_currency)
-        #elif inv.type == 'purchase':
-            #line_total = line_total + currency_pool.compute(cr, uid, inv.currency_id.id, company_currency, inv.tax_amount, context=context_multi_currency)
-
-
-        # Create one account.move.line for each voucher.line
-        # line_partner = []
-        for line in voucher.line_ids:
-            line_result, line_amount, move_pair = obj_voucher_line.create_account_move_line(cr, uid, line.id)
-
-            if not line_result:
-                return False
-
-            if len(move_pair) > 0:
-                all_move_pair.append(move_pair)
-
-            line_total += line_amount
-
-        # Buat move.line untuk selisih kurs
-        currency = voucher.currency_id or voucher.journal_id.currency or voucher.journal_id.company_id.currency_id
-        if not obj_currency.is_zero(cr, uid, currency, line_total):
-            if not voucher.writeoff_acc_id:
-                raise osv.except_osv('Warning!', 'Please fill currency difference account')
-                return False
-
-            diff = line_total
 
             move_line = 	{
-                                        'name' : 'Currency difference for %s' % (voucher.number),
-                                        'debit' : diff < 0 and -diff or 0.0,
-                                        'credit' : diff > 0 and diff or 0.0,
-                                        'account_id' : voucher.writeoff_acc_id.id, #TODO
+                                        'name' : voucher.name or '/',
+                                        'debit' : debit,
+                                        'credit' : credit,
+                                        'account_id' : voucher.account_id.id,
                                         'move_id' : move_id,
                                         'journal_id' : voucher.journal_id.id,
                                         'period_id' : voucher.period_id.id,
+                                        #TODO
+                                        # 'partner_id' : line.partner_id.id,
+                                        'currency_id' : company_currency <> current_currency and  current_currency or False,
+                                        'amount_currency' : company_currency <> current_currency and sign * voucher.amount or 0.0,
                                         'date' : voucher.date,
+                                        'date_maturity' : voucher.date_due
                                         }
-
             obj_move_line.create(cr, uid, move_line)
 
 
-        # reconcile voucher line
-        for move_pair_item in all_move_pair:
-            obj_move_line.reconcile_partial(cr, uid, move_pair_item)
+            # line_total untuk baris pertama
+            line_total = debit - credit
 
-        # Post account.move
-        obj_move.post(cr, uid, [move_id], context={})
+            rec_list_ids = []
 
-        return True
+            #TODO: Ini seperti nya ga usah
+            #line_total = debit - credit
+            #if inv.type == 'sale':
+                #line_total = line_total - currency_pool.compute(cr, uid, inv.currency_id.id, company_currency, inv.tax_amount, context=context_multi_currency)
+            #elif inv.type == 'purchase':
+                #line_total = line_total + currency_pool.compute(cr, uid, inv.currency_id.id, company_currency, inv.tax_amount, context=context_multi_currency)
+
+
+            # Create one account.move.line for each voucher.line
+            for line in voucher.line_ids:
+                line_result, line_amount, move_pair = obj_voucher_line.create_account_move_line(cr, uid, line.id)
+
+                if not line_result:
+                    return False
+
+                if len(move_pair) > 0:
+                    all_move_pair.append(move_pair)
+
+                line_total += line_amount
+
+            # Buat move.line untuk selisih kurs
+            currency = voucher.currency_id or voucher.journal_id.currency or voucher.journal_id.company_id.currency_id
+
+
+            if not obj_currency.is_zero(cr, uid, currency, line_total):
+                if not voucher.writeoff_acc_id:
+                    raise osv.except_osv('Warning!', 'Please fill currency difference account')
+                    return False
+
+                diff = line_total
+                move_line = 	{
+                                            'name' : 'Currency difference for %s' % (voucher.number),
+                                            'debit' : diff < 0 and -diff or 0.0,
+                                            'credit' : diff > 0 and diff or 0.0,
+                                            'account_id' : voucher.writeoff_acc_id.id, #TODO
+                                            'move_id' : move_id,
+                                            'journal_id' : voucher.journal_id.id,
+                                            'period_id' : voucher.period_id.id,
+                                            'date' : voucher.date,
+                                            'partner_id' : line.partner_id.id,
+
+                                            }
+
+
+                obj_move_line.create(cr, uid, move_line)
+
+
+            # reconcile voucher line
+            for move_pair_item in all_move_pair:
+                obj_move_line.reconcile_partial(cr, uid, move_pair_item)
+
+            # Post account.move
+            obj_move.post(cr, uid, [move_id], context={})
+
+            return True
 
 
 
