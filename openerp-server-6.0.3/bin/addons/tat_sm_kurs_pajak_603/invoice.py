@@ -293,7 +293,6 @@ class account_invoice(osv.osv):
         return total, total_currency, invoice_move_lines
 
     def action_move_create(self, cr, uid, ids, *args):
-        print 'wakkkkk'
         """Creates invoice related analytics and financial move lines"""
         ait_obj = self.pool.get('account.invoice.tax')
         cur_obj = self.pool.get('res.currency')
@@ -553,7 +552,7 @@ class account_invoice_tax(osv.osv):
                 if inv.type in ('out_invoice','in_invoice'):
                     val['base_code_id'] = tax['base_code_id']
                     val['tax_code_id'] = tax['tax_code_id']
-                    
+
                     rate = 1
                     if company_currency <> inv.currency_id.id:
                         datek = inv.date_invoice or time.strftime('%Y-%m-%d')
@@ -591,7 +590,7 @@ class account_invoice_tax(osv.osv):
 
         for t in tax_grouped.values():
             t['base'] = cur_obj.round(cr, uid, cur, t['base'])
-            t['amount'] = cur_obj.round(cr, uid, cur, t['amount'])
+            t['amount'] = cur_obj.round(cr, uid, cur, t['base'] * 0.1)
             t['base_amount'] = cur_obj.round(cr, uid, cur, t['base_amount'])
             t['tax_amount'] = cur_obj.round(cr, uid, cur, t['tax_amount'])
         return tax_grouped
