@@ -27,6 +27,7 @@
             <field name="arch" type="xml">
                 <form string="Voucher Lines">
                     <field name="name"/>
+                    <field name="move_line_id"/>
                     <field name="account_id" domain="[('type','&lt;&gt;','view')]"/>
                     <field name="partner_id"/>
                     <field name="amount"/>
