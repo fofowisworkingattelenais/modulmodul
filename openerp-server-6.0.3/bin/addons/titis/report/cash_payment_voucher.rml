@@ -298,7 +298,7 @@
 							<para style="NORMAL_3">[[ o.currency_id.symbol ]] </para>
 						</td>
 						<td>
-							<para style="COSTUM"> [[ o.amount ]] <font color="white">_</font></para>
+							<para style="COSTUM"> [[ o.total_amount ]] <font color="white">_</font></para>
 						</td>
 					</tr>
 				</blockTable>

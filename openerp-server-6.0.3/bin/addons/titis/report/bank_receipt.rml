@@ -397,7 +397,7 @@
 							<para style="NORMAL_3">Total <font color="white">_</font></para>
 						</td>
 						<td>
-							<para style="COSTUM">[[ voucher.currency_id.symbol ]] [[ voucher.amount ]] <font color="white">_</font></para>
+							<para style="COSTUM">[[ voucher.currency_id.symbol ]] [[ voucher.total_amount ]] <font color="white">_</font></para>
 						</td>
 					</tr>
 				</blockTable>

@@ -156,12 +156,21 @@ class account_voucher(osv.osv):
             credit += l['amount']
         return abs(amount - abs(credit - debit))
 
+    def _compute_total(self, cr, uid, line_dr_ids, line_cr_ids, amount):
+        debit = credit = 0.0
+        for l in line_dr_ids:
+            debit += l['amount']
+        for l in line_cr_ids:
+            credit += l['amount']
+        return abs(credit - debit)
+
     def onchange_line_ids(self, cr, uid, ids, line_dr_ids, line_cr_ids, amount):
         if not line_dr_ids and not line_cr_ids:
             return {'value':{}}
         line_dr_ids = [x[2] for x in line_dr_ids]
         line_cr_ids = [x[2] for x in line_cr_ids]
-        return {'value': {'writeoff_amount': self._compute_writeoff_amount(cr, uid, line_dr_ids, line_cr_ids, amount)}}
+        return {'value': {'writeoff_amount': self._compute_writeoff_amount(cr, uid, line_dr_ids, line_cr_ids, amount),
+                          'total_amount': self._compute_total(cr, uid, line_dr_ids, line_cr_ids, amount)}}
 
     def _get_writeoff_amount(self, cr, uid, ids, name, args, context=None):
         if not ids: return {}
@@ -173,6 +182,18 @@ class account_voucher(osv.osv):
             for l in voucher.line_cr_ids:
                 credit += l.amount
             res[voucher.id] =  abs(voucher.amount - abs(credit - debit))
+        return res
+
+    def _get_total_amount(self, cr, uid, ids, name, args, context=None):
+        if not ids: return {}
+        res = {}
+        debit = credit = 0.0
+        for voucher in self.browse(cr, uid, ids, context=context):
+            for l in voucher.line_dr_ids:
+                debit += l.amount
+            for l in voucher.line_cr_ids:
+                credit += l.amount
+            res[voucher.id] = abs(credit - debit)
         return res
 
     _name = 'account.voucher'
@@ -233,6 +254,8 @@ class account_voucher(osv.osv):
         'comment': fields.char('Write-Off Comment', size=64, required=True, readonly=True, states={'draft': [('readonly', False)]}),
         'analytic_id': fields.many2one('account.analytic.account','Write-Off Analytic Account', readonly=True, states={'draft': [('readonly', False)]}),
         'writeoff_amount': fields.function(_get_writeoff_amount, method=True, string='Write-Off Amount', type='float', readonly=True),
+        'total_amount': fields.function(_get_total_amount, method=True, string='Total Amount', type='float', readonly=True),
+
     }
     _defaults = {
         'period_id': _get_period,
@@ -526,6 +549,7 @@ class account_voucher(osv.osv):
             elif ttype == 'receipt' and len(default['value']['line_dr_ids']) > 0:
                 default['value']['pre_line'] = 1
             default['value']['writeoff_amount'] = self._compute_writeoff_amount(cr, uid, default['value']['line_dr_ids'], default['value']['line_cr_ids'], price)
+            default['value']['total_amount'] = self._compute_total(cr, uid, default['value']['line_dr_ids'], default['value']['line_cr_ids'], price)
 
         return default
 
