@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_stock_incomingShipmets">
+        <field name="name">Stock Incoming Shipments Inherits</field>
+        <field name="type">form</field>
+        <field name="model">stock.picking.in</field>
+        <field name="inherit_id" ref="stock.view_picking_in_form"/>
+        <field name="arch" type="xml">
+        	<data>
+				<field name="stock_journal_id" position="after">
+					<field name="chk_import"/>
+				</field>
+
+				<field name="backorder_id" position="after">
+					<field name="nomor_dokumen_pabean" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
+
+				<field name="nomor_dokumen_pabean" position="after">
+					<field name="jenis_dokumen_id" widget="selection" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
+
+				<field name="jenis_dokumen_id" position="after">
+					<field name="tanggal_dokumen_pabean" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
+
+			</data>
+
+       </field>
+    </record>
+    
+    </data>
+</openerp>

@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"data_accessRight_gdiJenisDokumenPabean","data_accessRight_gdiJenisDokumenPabean","model_gdi_jenis_dokumen_pabean",,1,1,1,1
+

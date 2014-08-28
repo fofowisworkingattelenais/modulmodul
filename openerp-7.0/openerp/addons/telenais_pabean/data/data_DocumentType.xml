@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="data_jenisDokumenPabean_23" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.3</field>
+        </record>
+        
+        <record id="data_jenisDokumenPabean_20" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.0</field>
+        </record>        
+        
+        <record id="data_jenisDokumenPabean_40" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 4.0</field>
+        </record>         
+        
+        <record id="data_jenisDokumenPabean_30" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 3.0</field>
+        </record>               
+        
+        <record id="data_jenisDokumenPabean_25" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.0</field>
+        </record>           
+        
+        <record id="data_jenisDokumenPabean_261" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.6.1</field>
+        </record>           
+        
+        <record id="data_jenisDokumenPabean_262" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.6.2</field>
+        </record>           
+
+    </data>
+</openerp>
+

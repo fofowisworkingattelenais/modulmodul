@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<menuitem 	
+			id="menu_gdi_menuCetakRekapPemasukanBarang" 
+			parent="stock.next_id_61" 
+			action="waction_gdi_wizardCetakRekapPemasukanBarang"
+			name="Rekapitulasi Pemasukan Barang" />	
+
+		<menuitem 	
+			id="menu_gdi_menuCetakRekapPengeluaranBarang" 
+			parent="stock.next_id_61" 
+			action="waction_gdi_wizardCetakRekapPengeluaranBarang"
+			name="Rekapitulasi Pengeluaran Barang" />	
+																										
+	</data>
+</openerp>
