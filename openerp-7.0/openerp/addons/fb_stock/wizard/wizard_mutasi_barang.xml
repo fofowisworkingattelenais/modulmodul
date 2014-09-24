@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_fb_stock_wizardMutasiBarang" model="ir.ui.view">
+            <field name="name">Form Wizard Pertanggungjawaban Mutasi Barang</field>
+            <field name="model">fb_stock.wizard_mutasi_barang</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cetak Laporan Pertanggungjawaban Mutasi Barang ">
+					<field name="date_from"/>
+					<newline/>
+					<field name="date_to"/>
+					<newline/>
+                    <field name="parent_id" ref="product_category_all"/>
+                    <newline/>
+                    <field name="location_id" colspan="2"/>
+					<newline/>
+							<button special="cancel" string="Cancel" icon="gtk-cancel"/>
+						<button name="cetak_laporan" type="object" string="Print" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_fb_stock_wizardMutasiBarang" model="ir.actions.act_window">
+            <field name="name">Cetak Pertanggungjawaban Mutasi Barang</field>
+            <field name="res_model">fb_stock.wizard_mutasi_barang</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_fb_stock_wizardMutasiBarang"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem
+			id="menu_fb_stock_menuMutasiBarang"
+			parent="stock.next_id_61"
+			action="waction_fb_stock_wizardMutasiBarang"
+			name="Laporan Mutasi Barang" />
+    </data>
+</openerp>

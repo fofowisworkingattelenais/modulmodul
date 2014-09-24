@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<document filename="Rekapitulasi Penerimaan Barang.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<template pageSize="(29.7cm,21.0cm)" title="Rekapitulasi Penerimaan Barang" author="PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="28cm" height="19.0cm"/>
+		</pageTemplate>
+	</template>
+
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="6.0"
+			leading="7"
+			alignment="CENTER"
+
+		/>
+
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+		/>
+
+
+
+		<blockTableStyle id="TABEL_STANDAR">
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="GRID" colorName="black"/>
+			 <blockSpan  start="0,0" stop="0,1"/>
+			 <blockSpan  start="1,0" stop="1,0"/>
+			 <blockSpan  start="1,0" stop="9,0"/>
+			 <blockSpan  start="9,1" stop="9,1"/>
+			 <blockSpan  start="10,0" stop="16,0"/>
+			 <blockSpan  start="17,0" stop="19,0"/>
+			 <blockSpan  start="19,1" stop="19,1"/>
+
+
+			 <blockAlignment value="CENTER" start="0,0" stop="-1,1"/>
+			  <blockValign value="MIDDLE" start="0,0" stop="-1,1"/>
+			  <blockFont name="Helvetica" size="8"/>
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+		<para><seqReset id="nourut"/></para>
+		<para >1. LAPORAN POSISI BARANG PER DOKUMEN PABEAN</para>
+		<para style="JUDUL_LAPORAN">GUDANG BERIKAT PT. FD INDUSTRI INDONESIA</para>
+		<para style="JUDUL_LAPORAN">LAPORAN POSISI BARANG PER DOKUMEN PABEAN</para>
+		<para style="JUDUL_LAPORAN">PERIODE [[ date_from() ]] S/D [[ date_to() ]]</para>
+		<para><font color="white"> </font></para>
+
+		<section>
+			<blockTable style="TABEL_STANDAR" colWidths="0.5cm,1.3cm,1.3cm,1.7cm,1.7cm,2.0cm,2.0cm,1.2cm,1.2cm,1.2cm,1.3cm,1.3cm,1.7cm,1.7cm,2.2cm,1.2cm,1.2cm,1.0cm,1.0cm,1.3cm">
+				<tr>
+					<td><para style="JUDUL_KATEGORI">No.</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pemasukan</para></td>
+
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+					<td><para style="JUDUL_KATEGORI">Dokumen Pengeluaran</para></td>
+
+					<td><para style="JUDUL_KATEGORI">Saldo Barang</para></td>
+					<td><para style="JUDUL_KATEGORI">Saldo Barang</para></td>
+					<td><para style="JUDUL_KATEGORI">Saldo Barang</para></td>
+				</tr>
+				<tr>
+					<td><para style="JUDUL_KATEGORI">No.</para></td>
+					<td><para style="JUDUL_KATEGORI">JENIS</para></td>
+					<td><para style="JUDUL_KATEGORI">NO</para></td>
+					<td><para style="JUDUL_KATEGORI">TANGGAL</para></td>
+					<td><para style="JUDUL_KATEGORI">TGLMASUK</para></td>
+					<td><para style="JUDUL_KATEGORI">KODE</para></td>
+					<td><para style="JUDUL_KATEGORI">NAMA BARANG</para></td>
+					<td><para style="JUDUL_KATEGORI">SAT</para></td>
+					<td><para style="JUDUL_KATEGORI">JUM</para></td>
+					<td><para style="JUDUL_KATEGORI">NILAI</para></td>
+
+					<td><para style="JUDUL_KATEGORI">JENIS</para></td>
+					<td><para style="JUDUL_KATEGORI">NO</para></td>
+					<td><para style="JUDUL_KATEGORI">TANGGAL</para></td>
+					<td><para style="JUDUL_KATEGORI">TGL KELUAR</para></td>
+					<td><para style="JUDUL_KATEGORI">NAMA BARANG</para></td>
+					<td><para style="JUDUL_KATEGORI">JUMLAH</para></td>
+					<td><para style="JUDUL_KATEGORI">NILAI</para></td>
+
+					<td><para style="JUDUL_KATEGORI">JUM</para></td>
+					<td><para style="JUDUL_KATEGORI">SAT</para></td>
+					<td><para style="JUDUL_KATEGORI">NILAI</para></td>
+
+				</tr>
+
+				<tr>
+
+					[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+					<td><para style="JUDUL_KATEGORI"><font color="white">_</font><seq id="nourut"/></para></td>
+					<td><para style="JUDUL_KATEGORI" >[[ a['in_jenis_dokumen_pabean'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI" >[[ a['in_nomor_dokumen_pabean'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI" >[[ a['in_tanggal_dokumen_pabean'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI" >[[  a['in_tanggal'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI" >[[ a['kode_barang'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI" >[[  a['nama_product'] ]]  </para></td>
+				    <td><para style="JUDUL_KATEGORI" >[[  a['satuan_barang'] ]]</para></td>
+			    	<td><para style="JUDUL_KATEGORI"></para>[[  a['masuk'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[  a['in_price'] ]]</td>
+
+					<td><para style="JUDUL_KATEGORI">[[ a['out_jenis_dokumen_pabean'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI">[[ a['out_nomor_dokumen_pabean'] ]]</para></td>
+					<td><para style="JUDUL_KATEGORI"></para>[[  a['out_tanggal'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[ a['out_tanggal_dokumen_pabean'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[ a['nama_product'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[  a['keluar'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[  a['out_price'] ]]</td>
+
+					<td><para style="JUDUL_KATEGORI"></para>[[ a['saldo_awal'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para>[[ a['satuan_barang'] ]]</td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+
+
+				</tr>
+			</blockTable>
+		</section>
+	</story>
+
+</document>

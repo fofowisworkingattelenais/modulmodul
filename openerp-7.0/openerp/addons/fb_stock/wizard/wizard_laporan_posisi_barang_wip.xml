@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_fb_stock_wizard_laporan_posisi_barang_wip" model="ir.ui.view">
+            <field name="name">Form Wizard Posisi Barang Barang wip</field>
+            <field name="model">fb_stock.wizard_laporan_posisi_barang_wip</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cetak Laporan Posisi Barang Wip">
+					<field name="date_from"/>
+					<newline/>
+					<field name="date_to"/>
+					<newline/>
+                    <field name="location_id" colspan="2"/>
+					<newline/>
+							<button special="cancel" string="Cancel" icon="gtk-cancel"/>
+						<button name="cetak_laporan" type="object" string="Print" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_fb_stock_wizardLaporanPosisiBarangWip" model="ir.actions.act_window">
+            <field name="name">Cetak Laporan Posisi Barang Wip</field>
+            <field name="res_model">fb_stock.wizard_laporan_posisi_barang_wip</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_fb_stock_wizard_laporan_posisi_barang_wip"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem
+			id="menu_fb_stock_menuLaporanPosisiBarangWip"
+			parent="stock.next_id_61"
+			action="waction_fb_stock_wizardLaporanPosisiBarangWip"
+			name="Laporan Posisi Barang Wip" />
+    </data>
+</openerp>

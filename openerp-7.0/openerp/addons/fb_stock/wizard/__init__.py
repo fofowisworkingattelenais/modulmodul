@@ -21,5 +21,10 @@
 
 
 import wizard_kartu_stock
+import wizard_mutasi_barang
+import wizard_mutasi_barang_gb
+import wizard_posisi_barang
+import wizard_laporan_posisi_barang_wip
+import wizard_saldo_inventory
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

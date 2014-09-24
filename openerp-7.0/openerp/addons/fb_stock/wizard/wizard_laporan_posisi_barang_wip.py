@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution	
+#    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    $Id$
 #
@@ -28,35 +28,34 @@ from osv.orm import browse_record, browse_null
 from tools.translate import _
 
 
-class wizard_kartu_stock_category(osv.osv_memory):
-	_name = 'fb_stock.wizard_kartu_stock_category'
-	_description = 'Wizard Cetak Kartu Stock Berdasarkan Category'
-	
+class wizard_laporan_posisi_barang_wip(osv.osv_memory):
+	_name = 'fb_stock.wizard_laporan_posisi_barang_wip'
+	_description = 'Wizard Laporan Posisi Barang WIP'
+
 	_columns = {
-							'date_from' : fields.date(string='Date From', required=True),
-							'date_to' : fields.date(string='Date To', required=True),
-    						}
-    						
+		'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
+		'date_from': fields.date(string='Date From', required=True),
+		'date_to': fields.date(string='Date To', required=True)
+	}
+
 	def cetak_laporan(self, cr, uid, ids, context=None):
 		datas = {}
 		if context is None:
 			context = {}
-			
+
 		data = self.read(cr, uid, ids, [], context)[0]
-		
+
 		datas =	{
 				'ids' : context.get('active_ids', []),
 				'model' : 'stock.move',
 				'form' : data
 				}
-				
+
 		return	{
 				'type' : 'ir.actions.report.xml',
-				'report_name' : 'fb_stock.rekap_penerimaan_barang',
+				'report_name' : 'laporan_posisi_barang_wip',
 				'datas' : datas
-				}    						
-    
-
-wizard_kartu_stock_category()
+				}
 
 
+wizard_laporan_posisi_barang_wip()

@@ -32,6 +32,12 @@ Custom Report::
     "update_xml" : [
 
         "wizard/wizard_kartu_stock.xml",
+        "wizard/wizard_mutasi_barang.xml",
+        "wizard/wizard_mutasi_barang_gb.xml",
+        "wizard/wizard_posisi_barang.xml",
+        "wizard/wizard_laporan_posisi_barang_wip.xml",
+        "wizard/wizard_saldo_inventory.xml",
+
     ],
     "active": False,
     "installable": True,

@@ -22,6 +22,10 @@
 
 
 import laporan_kartu_stock
-
+import laporan_mutasi_barang
+import laporan_mutasi_barang_gb
+import laporan_posisi_barang
+import laporan_posisi_barang_wip
+import saldo_inventory
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

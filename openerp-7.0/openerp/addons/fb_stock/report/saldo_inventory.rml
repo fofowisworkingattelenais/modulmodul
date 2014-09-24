@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<document filename="Kartu Stock.pdf">
+
+	<template pageSize="(29.7cm,21.0cm)" title="Laporan Pertanggungjawaban Mutasi Barang GB" author="Faris Bassam,(PT Telenais Aset Tangguh)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>
+		</pageTemplate>
+	</template>
+
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="black" start="0,0" stop="12,0"/>
+			<lineStyle kind="LINEBELOW" colorName="black" start="0,0" stop="12,0"/>
+
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="12,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="black" start="0,-1" stop="12,-1"/>
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="black" start="0,0" stop="2,0"/>
+
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/>
+
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<story>
+		<para style="ISI_TABEL_ITEM_2">ll. LAPORAN PERTANGGUNGJAWABAN MUTASI BARANG</para>
+
+		<para >PT. LOISTA INDONESIA</para>
+		<para >REPORT SALDO INVENTORY</para>
+		<para >PERIODE [[ date_from() ]] S/D [[ date_to() ]]</para>
+		<para><font color="white"> </font></para>
+
+		<para><font color="white"> </font></para>
+
+		<para><seqReset id="nourut"/></para>
+		<blockTable style="TABEL_STANDAR" colWidths="1cm,2cm,4cm,1.5cm,2cm,2.75cm,2.75cm,3cm,2cm,2cm,4.5cm">
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">No.</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Kode Barang</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Nama Barang</para></td>
+
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Sat</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Kategori</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Lokasi</para></td>
+
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Kode Kulit</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Warna</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Harga Beli</para></td>
+
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Stock</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Total</para></td>
+			</tr>
+			<tr>
+				[[ repeatIn(nama_product(data['form']), 'nama_product') ]]
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"><seq id="nourut"/></para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['default_code'] ]]  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['nama_product'] ]]</para></td>
+
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['nama_uom'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_awal'] ]]  </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['pemasukan'] ]]  </para></td>
+
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['pengeluaran'] ]]  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_akhir'] ]]  </para></td>
+
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+
+			</tr>
+
+		</blockTable>
+
+                <para><font color="white"> </font></para>
+                <para><font color="white"> </font></para>
+	</story>
+
+</document>
+
