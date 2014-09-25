@@ -112,10 +112,11 @@ class saldo_inventory(report_sxw.rml_parse):
         nama_product = []
         saldo = []
 
-        self.cr.execute(" select distinct(d.product_id) as id from product_template a \
+        self.cr.execute(" select distinct(d.product_id) as id, e.name as location, a.standard_price as harga_beli from product_template a \
             left join product_category b on a.categ_id = b.parent_left \
             left join product_product c on a.id = c.product_tmpl_id \
             left join stock_move d on c.id = d.product_id \
+            left join stock_location e on d.location_id = e.id \
             where  d.product_id is not null and d.location_id = %s \
         " % form['location_id'][0])
         cat = self.cr.dictfetchall()
@@ -127,7 +128,6 @@ class saldo_inventory(report_sxw.rml_parse):
 
         if i < len(cat):
             for ii in cat:
-
                 self.cr.execute("   SELECT \
                                         COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
                                         COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
@@ -228,6 +228,10 @@ class saldo_inventory(report_sxw.rml_parse):
                         'nama_uom': product.uom_id.name,
                         'default_code': product.default_code,
                         'qty_available': product.qty_available,
+                        'category_name': product.categ_id.name,
+                        'location_name': ii['location'],
+                        'harga_beli': ii['harga_beli'],
+                        'total': product.qty_available * ii['harga_beli']
                     }
                     res.update(result)
                     nama_product.append(res)

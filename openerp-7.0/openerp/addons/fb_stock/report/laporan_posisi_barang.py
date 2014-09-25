@@ -454,8 +454,6 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                     keluar = query[i]['keluar'] or 0.000
                     masuk = query[i]['masuk'] or 0.000
                     hasil =  query[i]['hasil'] or 0.000
-                    # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
-                    # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
                     saldo_awal = (masuk_awal - keluar_awal)  or 0.0
                     saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
                     if masuk is None or '' or 0.0:
@@ -541,8 +539,11 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                 on A.product_uom = U.id \
                                 LEFT JOIN product_product Z \
                                 on A.product_id = Z.id \
+                                LEFT JOIN stock_picking P \
+                                on A.picking_id = P.id \
                                     WHERE \
                                         product_id = %s \
+                                        AND P.chk_import = 'true' \
                                         AND A.state = %s \
                                         AND (A.location_dest_id = %s OR A.location_id = %s) \
                                     GROUP BY U.name, Z.name_template \
@@ -582,21 +583,21 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                             'nama_barang': '',
                             'tanggal': '',
                             'masuk': '',
-                            'keluar':  '-',
-                            'stok':  '-',
+                            'keluar': '-',
+                            'stok': '-',
                             'start_date': '',
                             'end_date': '',
                             'satuan_barang': query[a]['satuan_barang'],
                             'nama_product':query[a]['nama_product'],
                             'kode_barang': '',
-                            'in_nomor_dokumen_pabean': 'zz',
+                            'in_nomor_dokumen_pabean': '',
                             'in_tanggal_dokumen_pabean': '',
                             'in_jenis_dokumen_pabean':'',
                             'in_tanggal':'',
                             'out_nomor_dokumen_pabean': '',
                             'out_tanggal_dokumen_pabean': '',
                             'out_jenis_dokumen_pabean':'',
-                            'out_tanggal':'',
+                            'out_tanggal': '',
                             'tanggal_dokumen_pabean':'',
                             'jenis_dokumen_pabean':'',
                             'masuk_awal' :masuk_awal,
@@ -605,8 +606,8 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                             'saldo_akhir': saldo_akhir or '0.0',
                             'date_from': form['date_from'],
                             'date_to': form['date_to'],
-                            'in_price': '' ,
-                            'out_price': '' ,
+                            'in_price': '',
+                            'out_price': ''
                     }
 
                     self.isi_laporan.append(resi)
@@ -682,16 +683,11 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                     if i < len(query):
                         while i < len(query):
 
-                            # if query[i]['debit'] is None or '':
-                            #     query[i]['debit'] = 0.000
-                            # if query[i]['kredit'] is None or '':
-                            #     query[i]['kredit'] = 0.000
-                            #
                             debit = query[i]['debit'] or 0.0
                             kredit = query[i]['kredit'] or 0.0
                             price = query[i]['price_unit'] or 0.0
                             saldo_awal += (debit - kredit)
-
+                            print price
                             res = {
                                 'no': i,
                                 'nama_barang': query[i]['nama_barang'],
@@ -707,20 +703,14 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                 'kode_barang': query[i]['kode_barang'],
                                 'in_price': debit * price ,
                                 'out_price': kredit * price ,
-                                # 'origin': query[i]['origin'],
-                                # 'references': query[i]['references'],
-                                # 'partner': query[i]['partner']
-                                # 'jenis_dokumen':query[i]['jenis_dokumen'],
                                 'in_nomor_dokumen_pabean': query[i]['in_nomor_dokumen_pabean'],
                                 'in_tanggal_dokumen_pabean': query[i]['in_tanggal_dokumen_pabean'],
                                 'in_jenis_dokumen_pabean':query[i]['in_jenis_dokumen_pabean'],
                                 'in_tanggal':query[i]['in_tanggal'],
-
                                 'out_nomor_dokumen_pabean': query[i]['out_nomor_dokumen_pabean'],
                                 'out_tanggal_dokumen_pabean': query[i]['out_tanggal_dokumen_pabean'],
                                 'out_jenis_dokumen_pabean':query[i]['out_jenis_dokumen_pabean'],
                                 'out_tanggal':query[i]['out_tanggal'],
-
                                 'tanggal_dokumen_pabean':query[i]['tanggal_dokumen_pabean'],
                                 'jenis_dokumen_pabean':query[i]['jenis_dokumen_pabean'],
                                 'saldo_awal':saldo_awal,
@@ -730,7 +720,6 @@ class laporan_posisi_barang(report_sxw.rml_parse):
 
 
                             self.isi_laporan.append(res)
-                            # print self.isi_laporan
                             i += 1
 
             return self.isi_laporan
@@ -753,146 +742,3 @@ class laporan_posisi_barang(report_sxw.rml_parse):
 
 
 report_sxw.report_sxw('report.laporan_posisi_barang', 'stock.move', 'addons/fb_stock/report/laporan_posisi_barang.rml', parser=laporan_posisi_barang, header=False)
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
-
-
-
-
-
-
-
-
-
-# # -*- coding: utf-8 -*-
-# ##############################################################################
-# #
-# #    OpenERP, Open Source Management Solution
-# #    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
-# #
-# #    This program is free software: you can redistribute it and/or modify
-# #    it under the terms of the GNU Affero General Public License as
-# #    published by the Free Software Foundation, either version 3 of the
-# #    License, or (at your option) any later version.
-# #
-# #    This program is distributed in the hope that it will be useful,
-# #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-# #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# #    GNU Affero General Public License for more details.
-# #
-# #    You should have received a copy of the GNU Affero General Public License
-# #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# #
-# ##############################################################################
-#
-# import time
-# import locale
-# from report import report_sxw
-# import netsvc
-#
-# class laporan_posisi_barang(report_sxw.rml_parse):
-#
-#
-#     def __init__(self, cr, uid, name, context=None):
-#         super(laporan_posisi_barang, self).__init__(cr, uid, name, context=context)
-#         self.isi_laporan = []
-#         self.slip_ids = []
-#         self.localcontext.update({
-#             'time' : time,
-#             'locale' : locale,
-#             'isi_laporan' : self.isi,
-#             'date_from' : self.get_date_from,
-#             'date_to' : self.get_date_to,
-#
-#         })
-#
-#     def isi(self):
-#     #TODO pengeluaran Barang
-#         obj_move = self.pool.get('stock.move')
-#         kriteria = [('picking_id.type', '=', 'out'),
-#                     ('picking_id.state', '=', 'done'),
-#                     ('picking_id.date', '>=', self.date_from),
-#                     ('picking_id.date', '<=', self.date_to),
-#                     ('picking_id.chk_import', '=', True), ('location_id', '=', self.location_id)]
-#
-#         move_ids = obj_move.search(self.cr, self.uid, kriteria)
-#
-#         if move_ids:
-#             out = 1
-#             for move in obj_move.browse(self.cr, self.uid, move_ids):
-#                 result =   {
-#                             # 'out_no': no,
-#                             'out_jenis_dokumen' : move.picking_id.jenis_dokumen_id.name,
-#                             'out_nomor_dokumen' : move.picking_id.nomor_dokumen_pabean,
-#                             'out_tanggal_dokumen' : move.picking_id.tanggal_dokumen_pabean,
-#                             'out_nomor_bast' : move.picking_id.name,
-#                             'out_tanggal_bast' : '%s/%s/%s' % (move.picking_id.date[8:10],move.picking_id.date[5:7], move.picking_id.date[0:4]),
-#                             'out_pemasok' :  move.picking_id and move.picking_id.partner_id.name or '-',
-#                             'out_kode_barang' : move.product_id.default_code,
-#                             'out_nama_barang' : move.product_id.name,
-#                             'out_satuan' : move.product_uom.name,
-#                             'out_kuantitas' : move.product_qty,
-#                             'out_nilai_barang' : move.price_unit * move.product_qty,
-#                             }
-#
-#                 out += 1
-#
-#                 # self.isi_laporan.append(res)
-#     #TODO Penerimaan Barang
-#         obj_move = self.pool.get('stock.move')
-#         kriteria = [('picking_id.type', '=', 'in'), ('picking_id.state', '=', 'done'),
-#                     ('picking_id.date', '>=', self.date_from), ('picking_id.date', '<=', self.date_to),
-#                     ('picking_id.chk_import', '=', True), ('location_dest_id', '=', self.location_id)]
-#
-#         move_ids = obj_move.search(self.cr, self.uid, kriteria)
-#
-#         if move_ids:
-#             no = 1
-#             for move in obj_move.browse(self.cr, self.uid, move_ids):
-#                 res =   {
-#                             'no' : no,
-#                             'jenis_dokumen' : move.picking_id.jenis_dokumen_id.name,
-#                             'nomor_dokumen' : move.picking_id.nomor_dokumen_pabean,
-#                             'tanggal_dokumen' : move.picking_id.tanggal_dokumen_pabean,
-#                             'nomor_bast' : move.picking_id.name,
-#                             'tanggal_bast' : '%s/%s/%s' % (move.picking_id.date[8:10],move.picking_id.date[5:7], move.picking_id.date[0:4]),
-#                             'pemasok' : move.picking_id and move.picking_id.partner_id.name or '-',
-#                             'kode_barang' : move.product_id.default_code,
-#                             'nama_barang' : move.product_id.name,
-#                             'satuan' : move.product_uom.name,
-#                             'kuantitas' : move.product_qty,
-#                             'nilai_barang' : move.price_unit * move.product_qty,
-#                             }
-#
-#                 res.update(result)
-#                 self.isi_laporan.append(res)
-#                 no += 1
-#
-#         return self.isi_laporan
-#
-#     def get_date_from(self):
-#
-#         return '%s/%s/%s' % (self.date_from[8:10], self.date_from[5:7], self.date_from[0:4])
-#
-#     def get_date_to(self):
-#
-#         return '%s/%s/%s' % (self.date_to[8:10], self.date_to[5:7], self.date_to[0:4])
-#
-#     def get_location(self):
-#
-#         return self.location_id
-#
-#     def set_context(self, objects, data, ids, report_type=None):
-#         self.location_id = data['form']['location_id'][0]
-#         self.date_from = data['form']['date_from']
-#         self.date_to = data['form']['date_to']
-#
-#
-#         return super(laporan_posisi_barang, self).set_context(objects, data, ids, report_type=report_type)
-#
-# report_sxw.report_sxw('report.laporan_posisi_barang', 'stock.move', 'addons/fb_stock/report/laporan_posisi_barang.rml', parser=laporan_posisi_barang, header=False)
-#
-# # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-#

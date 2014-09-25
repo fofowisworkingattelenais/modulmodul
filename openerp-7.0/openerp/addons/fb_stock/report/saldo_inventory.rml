@@ -96,7 +96,6 @@
 	</stylesheet>
 
 	<story>
-		<para style="ISI_TABEL_ITEM_2">ll. LAPORAN PERTANGGUNGJAWABAN MUTASI BARANG</para>
 
 		<para >PT. LOISTA INDONESIA</para>
 		<para >REPORT SALDO INVENTORY</para>
@@ -106,7 +105,7 @@
 		<para><font color="white"> </font></para>
 
 		<para><seqReset id="nourut"/></para>
-		<blockTable style="TABEL_STANDAR" colWidths="1cm,2cm,4cm,1.5cm,2cm,2.75cm,2.75cm,3cm,2cm,2cm,4.5cm">
+		<blockTable style="TABEL_STANDAR" colWidths="1cm,2cm,4cm,1.5cm,4cm,2.75cm,2.75cm,3cm,2cm,2cm,2.5cm">
 			<tr>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">No.</para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Kode Barang</para></td>
@@ -130,15 +129,15 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['nama_product'] ]]</para></td>
 
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['nama_uom'] ]]</para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_awal'] ]]  </para></td>
-			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['pemasukan'] ]]  </para></td>
-
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['pengeluaran'] ]]  </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_akhir'] ]]  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['category_name'] ]]  </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['location_name'] ]]  </para></td>
 
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['harga_beli'] ]]</para></td>
+
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['qty_available'] ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['total'] ]] </para></td>
 
 			</tr>
 

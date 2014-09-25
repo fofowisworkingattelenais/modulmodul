@@ -136,6 +136,8 @@ class laporan_mutasi_barang_gb(report_sxw.rml_parse):
                                         COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
                                         COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal\
                                     FROM stock_move A \
+                                    LEFT JOIN stock_picking P \
+                                    on A.picking_id = P.id \
                                         LEFT JOIN (SELECT A2.id,A2.product_qty \
                                             FROM  \
                                                 stock_move A2 \
@@ -172,6 +174,7 @@ class laporan_mutasi_barang_gb(report_sxw.rml_parse):
                                             B5 ON A.id = B5.id \
                                     WHERE \
                                         product_id = %s \
+                                        AND P.chk_import = 'true' \
                                         AND A.state = %s \
                                         AND (A.location_dest_id = %s OR A.location_id = %s) \
                                     ", (form['location_id'][0], form['date_from'], form['date_to'],
@@ -474,7 +477,8 @@ class laporan_mutasi_barang_gb(report_sxw.rml_parse):
             left join product_category b on a.categ_id = b.parent_left \
             left join product_product c on a.id = c.product_tmpl_id \
             left join stock_move d on c.id = d.product_id \
-            where  d.product_id is not null and d.location_id = %s \
+            LEFT JOIN stock_picking P on d.picking_id = P.id \
+            where  d.product_id is not null and d.location_id = %s AND P.chk_import = 'true'   \
         " % form['location_id'][0])
 
         cat = self.cr.dictfetchall()
@@ -506,6 +510,7 @@ class laporan_mutasi_barang_gb(report_sxw.rml_parse):
                             LEFT JOIN res_partner R \
                             on A.partner_id = R.id \
                             WHERE product_id = %s \
+                            AND P.chk_import = 'true' \
                             AND A.state = %s \
                             AND (A.location_dest_id = %s OR A.location_id = %s)\
                             AND (A.date > %s AND A.date < %s)\
