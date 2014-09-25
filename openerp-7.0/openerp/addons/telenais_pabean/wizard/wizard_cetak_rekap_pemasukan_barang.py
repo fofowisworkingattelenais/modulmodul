@@ -29,33 +29,34 @@ from tools.translate import _
 
 
 class wizard_cetak_rekap_pemasukan_barang(osv.osv_memory):
-	_name = 'gdi.wizard_cetak_rekap_pemasukan_barang'
-	_description = 'Wizard Cetak Rekapitulasi Pemasukan Barang'
-	
-	_columns = {
-							'date_from' : fields.date(string='Date From', required=True),
-							'date_to' : fields.date(string='Date To', required=True),
-    						}
-    						
-	def cetak_laporan(self, cr, uid, ids, context=None):
-		datas = {}
-		if context is None:
-			context = {}
-			
-		data = self.read(cr, uid, ids, [], context)[0]
-		
-		datas =	{
-				'ids' : context.get('active_ids', []),
-				'model' : 'stock.move',
-				'form' : data
-				}
-				
-		return	{
-				'type' : 'ir.actions.report.xml',
-				'report_name' : 'gdi.rekap_penerimaan_barang',
-				'datas' : datas
-				}    						
-    
+    _name = 'gdi.wizard_cetak_rekap_pemasukan_barang'
+    _description = 'Wizard Cetak Rekapitulasi Pemasukan Barang'
+
+    _columns = {
+                'date_from': fields.date(string='Date From', required=True),
+                'date_to': fields.date(string='Date To', required=True),
+                'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
+    }
+
+    def cetak_laporan(self, cr, uid, ids, context=None):
+        datas = {}
+        if context is None:
+            context = {}
+
+        data = self.read(cr, uid, ids, [], context)[0]
+
+        datas = {
+            'ids': context.get('active_ids', []),
+            'model': 'stock.move',
+            'form': data
+        }
+
+        return {
+            'type': 'ir.actions.report.xml',
+            'report_name': 'gdi.rekap_penerimaan_barang',
+            'datas': datas
+        }
+
 
 wizard_cetak_rekap_pemasukan_barang()
 

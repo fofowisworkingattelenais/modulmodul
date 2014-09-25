@@ -28,6 +28,7 @@ class stock_picking_in(osv.osv_memory):
    
     _inherit = 'stock.picking.in'
 
+
     _columns = {
                 # 'karyawan_id' : fields.many2one('hr.employee', 'User Request',required=False),
                 'jenis_dokumen_id' : fields.many2one('gdi.jenis_dokumen_pabean', 'Jenis Dokumen',required=False),

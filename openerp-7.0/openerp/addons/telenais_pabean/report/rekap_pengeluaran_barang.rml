@@ -3,7 +3,7 @@
 	<!-- TODO: TEMPLATE -->
 	<template pageSize="(29.7cm,21.0cm)" title="Rekapitulasi Pengeluaran Barang" author="PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
 		<pageTemplate id="First">
-      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>	
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>
 		</pageTemplate>
 	</template>
 	

@@ -39,7 +39,8 @@ class rekap_penerimaan_barang(report_sxw.rml_parse):
         
     def isi(self):
         obj_move = self.pool.get('stock.move')
-        kriteria = [('picking_id.type','=','in'),('picking_id.state','=','done'),('picking_id.date','>=',self.date_from),('picking_id.date','<=',self.date_to),('picking_id.chk_import','=',True)]
+        print self.location
+        kriteria = [('picking_id.type','=','in'),('picking_id.state','=','done'),('picking_id.date','>=',self.date_from),('picking_id.date','<=',self.date_to),('picking_id.chk_import','=',True),('location_dest_id','=',self.location)]
         
         move_ids = obj_move.search(self.cr, self.uid, kriteria)
         
@@ -78,7 +79,7 @@ class rekap_penerimaan_barang(report_sxw.rml_parse):
     def set_context(self, objects, data, ids, report_type=None):
         self.date_from = data['form']['date_from']
         self.date_to = data['form']['date_to']
-        
+        self.location = data['form']['location_id'][0]
 
         return super(rekap_penerimaan_barang, self).set_context(objects, data, ids, report_type=report_type)           
 
