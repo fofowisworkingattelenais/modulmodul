@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<document filename="faktur_pajak_preprinted.pdf">
+[[ repeatIn(objects,'o') ]]
+  <template pageSize="(21.5cm,28cm)" title="Faktur Pajak" author="Vikasa Infinity Anugrah" allowSplitting="20" showBoundary="0">
+    <pageTemplate id="main">
+      	<frame id="first" x1="0.0" y1="300.0" width="588" height="250"/>
+		<frame id="second" x1="0.0" y1="10.0" width="588" height="100"/>
+	  <pageGraphics>
+		<setFont name="Helvetica" size="10"/>
+			<drawString x="5cm" y="26.70cm">[[ o.name ]]</drawString>
+
+			<!-- PENGUSAHA KENA PAJAK -->
+			<drawString x="4.4cm" y="25.4cm">[[ o.company_id.name ]]</drawString>
+			<drawString x="4.4cm" y="25.0cm">[[ o.company_address.name_get()[0][1] ]]</drawString>
+			<drawString x="4.4cm" y="24.1cm">[[ o.company_npwp ]]</drawString>
+
+			<!-- PEMBELI -->
+			<drawString x="4.4cm" y="22.4cm">[[ o.partner_id.name ]]</drawString>
+			<drawString x="4.4cm" y="22.0cm">[[ o.partner_address_id.name_get()[0][1] ]]</drawString>
+			<drawString x="4.4cm" y="21.2cm">[[ o.partner_npwp ]]</drawString>
+
+			<!-- HARGA JUAL -->
+			<drawRightString x="577.2" y="294">[[ locale.format('%.2f', o.untaxed, True) ]]</drawRightString>
+			
+			<!-- POTONGAN HARGA -->
+			<drawRightString x="577.2" y="269">[[ locale.format('%.2f', o.discount, True) ]]</drawRightString>
+			
+			<!-- UANG MUKA -->
+			<drawRightString x="577.2" y="244">[[ locale.format('%.2f', o.advance_payment, True) ]]</drawRightString>
+			
+			<!-- DASAR PENGENAAN PAJAK -->
+			<drawRightString x="577.2" y="219">[[ locale.format('%.2f', o.base, True) ]]</drawRightString>
+			
+			<!-- PPN -->
+			<drawRightString x="577.2" y="194">[[ locale.format('%.2f', o.amount_tax, True) ]]</drawRightString>
+
+			<!-- TEMPAT SSP -->
+			<drawRightString x="420" y="174.3">Jakarta,</drawRightString>
+			
+			<!-- TANGGAL SSP -->
+			<drawString x="440" y="174.1">[[ '%s/%s/%s' % (o.invoice_id.date_invoice[8:10], o.invoice_id.date_invoice[5:7], o.invoice_id.date_invoice[0:4]) ]]</drawString>
+			
+			<!-- PEMBUAT SSP -->
+			<drawCentredString x="468" y="102.5">[[ o.signature_id.signature ]]</drawCentredString>
+			
+			
+			<!-- PAJAK PENJUALAN BARANG MEWAH -->
+			<!-- LINE 1 
+			<drawRightString x="55" y="138"></drawRightString>
+			<drawRightString x="190" y="138">120.000,00</drawRightString>
+			<drawRightString x="320" y="138">120.000,00</drawRightString>
+			-->
+			<!-- LINE 2
+			<drawRightString x="55" y="126">12.0</drawRightString>
+			<drawRightString x="190" y="126">120.000,00</drawRightString>
+			<drawRightString x="320" y="126">120.000,00</drawRightString>
+			-->
+			<!-- LINE 3
+			<drawRightString x="55" y="114">12.0</drawRightString>
+			<drawRightString x="190" y="114">120.000,00</drawRightString>
+			<drawRightString x="320" y="114">120.000,00</drawRightString>
+			-->
+			<!-- LINE 4
+			<drawRightString x="55" y="102">12.0</drawRightString>
+			<drawRightString x="190" y="102">1.120.000,00</drawRightString>
+			<drawRightString x="320" y="102">12.000,00</drawRightString>
+			-->
+			<!-- TOTAL PAJAK PENJUALAN BARANG MEWAH -->
+			<!-- <drawRightString x="320" y="78">1.200.000,00</drawRightString> -->
+	</pageGraphics>
+    </pageTemplate> 
+  </template>
+	<!-- STYLESHEET -->
+	<stylesheet>
+		<paraStyle
+				name="font-10" 
+				fontName="Helvetica" 
+				fontSize="10.0" 
+				leading="10" 
+				alignment="LEFT" 
+				spaceBefore="0.0" 
+				spaceAfter="0.0"/>
+		
+		<paraStyle
+				name="font-10-bold" 
+				fontName="Helvetica-Bold" 
+				fontSize="10.0" 
+				leading="12" 
+				alignment="LEFT" 
+				spaceBefore="0.0" 
+				spaceAfter="0.0"/>
+				
+		<blockTableStyle id="table-header">
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		</blockTableStyle>
+		
+		<blockTableStyle id="table-custom">
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="-1,-1"/>
+		</blockTableStyle>
+	</stylesheet>
+
+	<!-- STORY -->	
+	<story>
+	<para>[[ repeatIn(objects,'o') ]]</para>
+	<para><seqReset id="nourut"/></para>
+	<blockTable colWidths="37.0, 353, 193.0, 5.0">
+	<tr>
+		<para>[[repeatIn(o.taxform_line_ids,'line')]]</para>
+		<td><para style="font-10" alignment="right"><seq id="nourut">.</seq></para></td>
+		<td><para style="font-10">[[ line.name ]]</para></td>
+		<td><para style="font-10" alignment="right">[[ locale.format('%.2f', line.subtotal, True) ]]</para></td>
+		<td><para style="font-10"></para></td>
+	</tr>
+
+	</blockTable>
+	</story>
+</document>

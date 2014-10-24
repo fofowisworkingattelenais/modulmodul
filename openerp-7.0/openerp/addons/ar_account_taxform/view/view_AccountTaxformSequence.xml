@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      	<record id="tree_account_taxformSequence" model="ir.ui.view">
+            <field name="name">Tree Taxform Sequence</field>
+            <field name="model">account.taxform_sequence</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Taxform Sequence">
+                	<field name="name"/>
+                	<field name="taxform_id"/>
+                </tree>
+            </field>
+        </record>
+            
+   	     <record id="form_account_taxformSequence" model="ir.ui.view">
+            <field name="name">Form Taxform Sequence</field>
+            <field name="model">account.taxform_sequence</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            	<form string="Taxform Sequence">
+					<field name="name"/>
+					<field name="taxform_id"/>             
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
+

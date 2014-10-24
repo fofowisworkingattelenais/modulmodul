@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<document filename="Kartu Stock.pdf">
+
+	<template pageSize="(595.0,842.0)" title="Kartu Stock" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="first">
+      		<frame id="first" x1="57.0" y1="57.0" width="481" height="728"/>
+		</pageTemplate>
+	</template>
+
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="14.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEABOVE" colorName="black" start="0,0" stop="12,0"/>
+			<lineStyle kind="LINEBELOW" colorName="black" start="0,0" stop="12,0"/>
+
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="-1,-1"/>
+			<lineStyle kind="BOX" colorName="#000000"/>
+
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,2" stop="12,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="black" start="0,-1" stop="12,-1"/>
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_HEADER">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_TOTAL">
+
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="3,-1" stop="5,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="3,-1" stop="-2,-1"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="5,-1"/>
+		</blockTableStyle>
+
+
+
+	</stylesheet>
+
+	<story>
+
+		<para style="terp_default_8">[[ repeatIn(objects,'o') ]]</para>
+		<para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>
+		<blockTable style="TABEL_HEADER" colWidths="19cm">
+			<tr>
+				<td><para style="JUDUL_LAPORAN" alignment="LEFT">  </para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">    </para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">    </para></td>
+			</tr>
+		</blockTable>
+
+		<para><font color="white"> </font></para>
+
+		<blockTable style="TABEL_HEADER" colWidths="7cm,5cm,3cm,1cm,3cm">
+
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">[[ (o.partner_id and o.partner_id.title and o.partner_id.title.name) or '' ]] [[ (o.partner_id and o.partner_id.name) or '' ]]  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Invoice No. </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.number ]] </para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.partner_id and display_address(o.partner_id) ]] </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Date </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[formatLang(o.date_invoice,date=True) ]] </para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Currency </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.currency_id.symbol ]] </para></td>
+			</tr>
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Payment Terms </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.payment_term.name ]] </para></td>
+			</tr>
+		</blockTable>
+
+		<para style="JUDUL_LAPORAN" alignment="LEFT">  </para>
+        <para><font color="white"> </font></para>
+		<para><seqReset id="nourut"/></para>
+
+
+        <para><font color="white"> </font></para>
+
+		<blockTable style="TABEL_STANDAR" colWidths="4cm,5cm,4cm,2cm,2cm,2cm">
+			<tr>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Customer Part No </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Customer Part Name</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Customer PO No </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Qty</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Unit Price</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">Amount</para></td>
+			</tr>
+		</blockTable>
+
+		<section>
+
+			<para style="terp_default_2">[[ repeatIn([line for line in o.invoice_line ],'invoice_line') ]]</para>
+
+			<blockTable style="TABEL_STANDAR" colWidths="4cm,5cm,4cm,2cm,2cm,2cm">
+				<tr>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ get_product_code(invoice_line) ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ get_product_desc(invoice_line) ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ o.name ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ invoice_line.quantity ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ invoice_line.price_unit ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ invoice_line.price_subtotal ]] </para></td>
+				</tr>
+
+			</blockTable>
+		</section>
+
+		<blockTable style="TABEL_TOTAL" colWidths="4cm,5cm,4cm,2cm,2cm,2cm">
+
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> E. <![CDATA[&]]>  O.E. </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> Total </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ reduce(lambda x, obj: x+obj.quantity, o.invoice_line, 0 ) ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ reduce(lambda x, obj: x+obj.price_subtotal, o.invoice_line, 0 ) ]] </para></td>
+			</tr>
+		</blockTable>
+
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+        <para><font color="white"> </font></para>
+
+		<blockTable style="TABEL_HEADER" colWidths="7cm,4cm,8cm">
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> I confirm the above goods mentioned were received in good condition.</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> GB PT.FD INDUSTRI INDONESIA </para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT">___________________________ </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">___________________________  </para></td>
+			</tr>
+			<tr>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT">Customer Signature And Official Stamp</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+			</tr>
+		</blockTable>
+
+
+	</story>
+</document>

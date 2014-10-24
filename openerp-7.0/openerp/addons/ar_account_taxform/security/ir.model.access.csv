@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"account_taxform_all","account_taxform all","model_account_taxform",,1,0,0,0
+"account_taxform_manager","account_taxform manager","model_account_taxform","account.group_account_user",1,1,1,1
+"account_taxform_line_all","account_taxform_line all","model_account_taxform_line",,1,0,0,0
+"account_taxform_line_manager","account_taxform_line manager","model_account_taxform_line","account.group_account_user",1,1,1,1
+"account_taxform_category_all","account_taxform_category all","model_account_taxform_category",,1,0,0,0
+"account_taxform_category_manager","account_taxform_category manager","model_account_taxform_category","account.group_account_user",1,1,1,1
+"account_taxform_sequence_all","account_taxform_sequence all","model_account_taxform_sequence",,1,0,0,0
+"account_taxform_sequence_manager","account_taxform_sequence manager","model_account_taxform_sequence","account.group_account_user",1,1,1,1

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<document filename="Hutang_report.pdf">
+
+
+	<template pageSize="(29.7cm,21.0cm)" title="Rekapitulasi Penerimaan Barang" author="PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="28cm" height="19.0cm"/>
+		</pageTemplate>
+	</template>
+
+
+
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<blockTableStyle id="TABEL_STANDAR">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+
+			<blockSpan start="0,0" stop="0,1"/>
+			<blockSpan start="1,0" stop="1,1"/>
+			<blockSpan start="2,0" stop="2,1"/>
+			<blockSpan start="3,0" stop="3,1"/>
+			<blockSpan start="4,0" stop="4,1"/>
+			<blockSpan start="5,0" stop="5,1"/>
+			<blockSpan start="6,0" stop="6,1"/>
+			<blockSpan start="7,0" stop="7,0"/>
+			<blockSpan start="8,0" stop="7,0"/>
+			<blockSpan start="9,0" stop="7,0"/>
+			<blockSpan start="10,0" stop="7,0"/>
+			<blockSpan start="11,0" stop="11,1"/>
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/>
+
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<story>
+
+		<para >PT. LOISTA INDONESIA</para>
+		<para >REPORT HUTANG</para>
+		<para >PERIODE S/D [[ date_header(data['form']) ]]</para>
+		<para><font color="white"> </font></para>
+
+		<para><font color="white"> </font></para>
+
+		<section>
+			<blockTable colWidths="20.0,85.0,65.0,80.0,65.0,80.0,60.0,70.0,70.0,70.0,70.0,80.0" style="TABEL_STANDAR" repeatRows="2">
+				<tr>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO INVOICE</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">REF SO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">TGL INVOICE</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NAMA KONSUMEN</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">SALES</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">BELUM JT TEMPO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">LEWAT JT TEMPO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER"></para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">AR AGING</para></td>
+				</tr>
+				<tr>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">01 - 30</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">31 - 60</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">61 - 90</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER"> >90 </para></td>
+					<td><para style="JUDUL_KATEGORI"></para></td>
+				</tr>
+				<tr>
+					[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+					<td><para style="ISI_TABEL_ITEM">[[ a['no'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM">[[ a['no_invoice'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM">[[ a['ref'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM">[[ a['date_invoice'] ]]  </para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['supplier'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['sales'] ]]  </para></td>
+
+					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ a['belumjatuh'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ a['tgljatuh'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="RIGHT">[[ a['tgljatuh30'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['tgljatuh60'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['tgljatuhlebih'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['ap_aging'] ]]</para></td>
+				</tr>
+			</blockTable>
+		</section>
+
+	</story>
+
+</document>
+

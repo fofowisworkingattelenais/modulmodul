@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="report_delivery_order_gb" model="stock.picking.out" name="stock.delivery_order_gb" string="Delivery Order GB" rml="fb_fd_industri/report/delivery_order_gb.rml"/>
+        <report id="report_delivery_order_kb" model="stock.picking.out" name="stock.delivery_order_kb" string="Delivery Order KB" rml="fb_fd_industri/report/delivery_order_kb.rml"/>
+
+    </data>
+</openerp>

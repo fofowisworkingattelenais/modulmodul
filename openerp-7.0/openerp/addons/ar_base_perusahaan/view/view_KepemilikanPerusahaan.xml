@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="tree_base_kepemilikanPerusahaan" model="ir.ui.view">
+            <field name="name">Tree Kepemilikan Perusahaan</field>
+            <field name="model">base.kepemilikan_perusahaan</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Kepemilikan Perusahaan">
+                	<field name="name"/>
+					<field name="kode"/>
+                </tree>
+            </field>
+        </record>
+            
+        <record id="form_base_kepemilikanPerusahaan" model="ir.ui.view">
+            <field name="name">Form Kepemilikan Perusahaan</field>
+            <field name="model">base.kepemilikan_perusahaan</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Kepemilikan Perusahaan">
+					<group colspan="4" col="2" name="group_1">
+						<group colspan="1" col="2" name="group_1_1">
+							<separator string="Kepemilikan Perusahaan" colspan="2"/>
+							<field name="kode"/>
+				            <field name="name"/>														
+						</group>
+						<group colspan="1" col="2" name="group_1_2">
+							<separator string="Aktif" colspan="2"/>
+							<field name="active"/>														
+						</group>
+					</group>
+                	<separator string="Keterangan" colspan="4"/>
+                	<field name="keterangan" nolabel="1" colspan="4"/>	
+                </form>
+            </field>
+        </record>
+
+
+
+
+        <record id="search_base_kepemilikanPerusahaan" model="ir.ui.view">
+            <field name="name">Search Kepemilikan Perusahaan</field>
+            <field name="model">base.kepemilikan_perusahaan</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Kepemilikan Perusahaan">
+                	<field name="name"/>
+					<field name="kode"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</openerp>
+

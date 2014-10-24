@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_base_negara" model="ir.ui.view">
+			<field name="name">Tree Negara</field>
+			<field name="model">res.country</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Negara">
+					<field name="code" string="Kode"/>
+					<field name="name" string="Nama Negara"/>
+				</tree>
+			</field>
+		</record>
+
+        <record id="form_base_negara" model="ir.ui.view">
+            <field name="name">Form Negara</field>
+            <field name="model">res.country</field>
+            <field name="type">form</field>
+			<field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Negara">
+                    <field name="code" string="Kode" select="1"/>
+					<field name="name" string="Nama Negara" select="1"/>
+                </form>
+            </field>
+        </record>
+	</data>
+</openerp>

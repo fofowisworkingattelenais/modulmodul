@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<document filename="faktur_pajak.pdf">
+  <template pageSize="(8.3in,12in)" title="Faktur Pajak" author="Vikasa Infinity Anugrah" allowSplitting="20" showBoundary="1">
+    <pageTemplate id="first">
+      <frame id="first" x1="20.0" y1="57.0" width="560" height="700"/>
+	  <pageGraphics>
+			<setFont name="Helvetica-Bold" size="9"/>
+				<!--COL 1-->
+				<!--<drawString x="1.0cm" y="28.1cm">[[ company.name ]]</drawString>
+				<drawString x="16.2cm" y="28.1cm">Faktur Pajak - [[ company.currency_id.name ]]</drawString>-->
+				<setFont name="Helvetica" size="7"/>
+				<drawString x="0.7cm" y="1.7cm">*)Coret yang tidak perlu</drawString>
+				<setFont name="Helvetica-Bold" size="13"/>
+
+
+
+				<drawCentredString x="280" y="27.1cm">FAKTUR PAJAK</drawCentredString>
+				<setFont name="Helvetica" size="7"/>
+
+				<drawString x="14.1cm" y="28.4cm">Lembar ke-2 : Untuk Penjual BKP/Pemberi JKP</drawString>
+				<drawString x="15.7cm" y="28.1cm">sebagai bukti Pajak Keluaran</drawString>
+
+				<lineMode width="1"/>
+
+
+
+	</pageGraphics>
+
+    </pageTemplate>
+  </template>
+	<!-- STYLESHEET -->
+	<stylesheet>
+		<paraStyle 	name="JUDUL"
+				fontName="Helvetica-Bold"
+				fontSize="14.0"
+				leading="25"
+				alignment="CENTER"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3"
+				fontName="Helvetica-Bold"
+				fontSize="10.0"
+				leading="13"
+				alignment="LEFT"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+    		<blockTableStyle id="Table1.1">
+      			<blockAlignment value="LEFT"/>
+      			<blockValign value="TOP"/>
+				<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,4"/>
+				<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="1,4"/>
+    		</blockTableStyle>
+
+    		<blockTableStyle id="Table1">
+      			<blockAlignment value="LEFT"/>
+      			<blockValign value="TOP"/>
+
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,1"/>
+    		</blockTableStyle>
+
+    		<blockTableStyle id="Table2">
+      			<blockAlignment value="LEFT"/>
+      			<blockValign value="TOP"/>
+      			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+
+    		</blockTableStyle>
+
+    		<blockTableStyle id="Table6">
+      			<blockAlignment value="LEFT"/>
+      			<blockValign value="TOP"/>
+      			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+				<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+				<lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    		</blockTableStyle>
+
+    		<blockTableStyle id="Table5">
+      			<blockAlignment value="LEFT"/>
+      			<blockValign value="TOP"/>
+      			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,0"/>
+	  			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,0"/>
+				<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+				<lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+    		</blockTableStyle>
+
+		<blockTableStyle id="Table4">
+			<blockAlignment value="LEFT"/>
+			<blockValign value="TOP"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="0,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="0,0"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,-1" stop="0,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="1,0" stop="1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="1,0" stop="1,0"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="1,-1" stop="1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="2,0" stop="2,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="2,0" stop="2,0"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="2,-1" stop="2,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="3,0" stop="3,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="3,0" stop="3,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="3,0" stop="3,0"/>
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="3,-1" stop="3,-1"/>
+		</blockTableStyle>
+
+	<blockTableStyle id="blocktablestyle4">
+		<!-- show a grid: this also comes in handy for debugging your tables.-->
+		<lineStyle kind="GRID" colorName="#000000" thickness="1" start="0,0" stop="-1,-1" />
+	</blockTableStyle>
+
+		<paraStyle 	name="P1A"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="CENTER"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3B"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="LEFT"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3A"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="RIGHT"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3C"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="CENTER"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3S"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="RIGHT"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+		<paraStyle 	name="P3R"
+				fontName="Helvetica"
+				fontSize="8.0"
+				leading="10"
+				alignment="LEFT"
+				spaceBefore="0.0"
+				spaceAfter="6.0"/>
+
+
+	</stylesheet>
+
+	<!-- STORY -->
+	<story>
+	<para>[[repeatIn(objects,'o')]]</para>
+
+	<blockTable colWidths="160.0,10.0, 270.0, 120" style="Table1">
+		<tr>
+			<td><para style="P3B">Kode dan No. Seri Faktur Pajak</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o['name'] ]]</para></td>
+			<td><para style="P3B"></para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Pengusaha Kena Pajak</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Nama</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.company_id.name ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Alamat</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.company_address.street  ]], [[ o.company_address.street2 ]], [[ o.company_address.city or '' ]], [[ o.company_address.zip ]]</para></td>
+		</tr>
+
+		<tr>
+			<td><para style="P3B">N.P.W.P</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.company_npwp ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B"></para></td>
+			<td><para style="P3B"></para></td>
+		</tr>
+	</blockTable>
+	<blockTable colWidths="160.0, 10.0, 190.0, 50.0, 150.0" style="Table2">
+		<tr>
+			<td><para style="P3B">Pembeli Barang Kena Pajak/Penerima Jasa Kena Pajak</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Nama</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.partner_id.name ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Alamat</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.partner_address_id.street or '']], [[ o.partner_address_id.street2 or '']], [[ o.partner_address_id.city or '' ]], [[  o.partner_address_id.zip ]]</para></td>
+		</tr>
+
+		<tr>
+			<td><para style="P3B">N.P.W.P</para></td>
+			<td><para style="P3C">:</para></td>
+			<td><para style="P3B">[[ o.partner_npwp ]]</para></td>
+			<td><para style="P3B"></para></td>
+			<td><para style="P3B"></para></td>
+		</tr>
+	</blockTable>
+	<para><font color="white"> </font></para>
+	<para><seqReset id="nourut"/></para>
+	<blockTable colWidths="38.0,282.0,240.0" style="Table6">
+		<tr>
+			<td><para style="P3B">No. Urut</para></td>
+			<td><para style="P3C">Nama Barang Kena Pajak/Jasa Kena Pajak</para></td>
+			<td><para style="P3C">Harga Jual/Penggantian/Uang Muka/Termin (Rp.)</para></td>
+		</tr>
+	</blockTable>
+	<section>
+	<para>[[repeatIn(o.taxform_line_ids,'line')]]</para>
+	<blockTable colWidths="38.0,282.0,240.0" style="Table6">
+		<tr>
+			<td><para style="P3R"><seq id="nourut"/></para></td>
+			<td><para style="P3R">[[ line.name ]]</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', line.subtotal, True) ]]</para></td>
+		</tr>
+
+	</blockTable>
+	</section>
+	<blockTable colWidths="320.0, 240.0" style="Table1.1">
+		<tr>
+			<td><para style="P3B">Harga Jual/Penggantian/Uang Muka/Termin *)</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', o.untaxed, True) ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Dikurangi Potongan Harga</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', o.discount, True) ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Dikurangi Uang Muka yang telah diterima</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', o.advance_payment, True) ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">Dasar Pengenaan Pajak</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', o.base, True) ]]</para></td>
+		</tr>
+		<tr>
+			<td><para style="P3B">PPN = 10% x Dasar Pengenaan Pajak</para></td>
+			<td><para style="P3S">[[ locale.format('%.2f', o.amount_tax, True) ]]</para></td>
+		</tr>
+		<tr>
+			<td>
+				<blockTable colWidths="285.0">
+					<tr>
+						<td><para style="P3B">Pajak Penjualan Atas Barang Mewah</para></td>
+					</tr>
+				</blockTable>
+
+				<blockTable colWidths="50.0,100.0,135.0" style="blocktablestyle4">
+					<tr>
+						<td><para style="P1A">Tarif</para></td>
+						<td><para style="P1A">DPP</para></td>
+						<td><para style="P1A">PPn BM</para></td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+					</tr>
+				</blockTable>
+				<blockTable colWidths="150.0,135.0" style="blocktablestyle4">
+					<tr>
+						<td><para style="P1A">Jumlah</para></td>
+						<td> </td>
+					</tr>
+				</blockTable>
+				<para><font color="white"> </font></para>
+				<para><font color="white"> </font></para>
+			</td>
+			<td>
+				<para><font color="white"> </font></para>
+				<para><font color="white"> </font></para>
+
+				<blockTable colWidths="200.0">
+					<tr>
+						<td><para style="P1A">Jakarta,  [[ formatLang(o.taxform_date,date='True') ]]</para></td>
+					</tr>
+				</blockTable>
+
+				<blockTable colWidths="200.0">
+					<tr><td> </td></tr>
+					<tr><td> </td></tr>
+					<tr><td> </td></tr>
+					<tr>
+						<td><para style="P1A"> [[ user.signature ]] </para></td>
+					</tr>
+				</blockTable>
+			</td>
+		</tr>
+	</blockTable>
+	</story>
+</document>

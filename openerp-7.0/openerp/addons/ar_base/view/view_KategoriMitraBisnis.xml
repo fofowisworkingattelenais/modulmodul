@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="tree_base_partnerCategory" model="ir.ui.view">
+			<field name="name">Tree Kategori Mitra Bisnis</field>
+			<field name="model">res.partner.category</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Kategori Mitra Bisnis">
+					<field name="complete_name"/>
+				</tree>
+			</field>
+		</record>
+
+        <record id="form_base_partnerCategory" model="ir.ui.view">
+            <field name="name">Form Kategori Mitra Bisnis</field>
+            <field name="model">res.partner.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Kategori Mitra Bisnis">
+                    <field name="name" select="1"/>
+                    <field name="active" groups="base.group_extended"/>
+                    <field name="parent_id"/>
+                    <separator colspan="4" string="Partners"/>
+                    <field colspan="4" name="partner_ids" nolabel="1"/>
+                </form>
+            </field>
+        </record>
+	</data>
+</openerp>

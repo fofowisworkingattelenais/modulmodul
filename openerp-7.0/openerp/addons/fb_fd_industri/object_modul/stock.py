@@ -23,18 +23,40 @@
 from osv import fields, osv
 
 
-class jenis_usaha_perusahaan(osv.osv):
-    _name = "base.jenis_usaha_perusahaan"
-    _description = "Jenis Usaha Perusahaan"
+class stock_move(osv.osv):
+    _name = 'stock.move'
+    _inherit = 'stock.move'
+    _columns = {
+            'ctn_no': fields.float(string='Ctn No', digits=(4, 1),  required=True),
+            # 'client_order_ref': fields.many2one('sale.order', 'Client Order Reference'),
+            # 'payment_term': fields.many2one('account.payment.term', 'Payment Term'),
+            # 'pricelist_id':fields.many2one('product.pricelist', 'Pricelist', required=True,  help="The pricelist sets the currency used for this purchase order. It also computes the supplier price for the selected products/quantities."),
+            # 'currency_id': fields.related('pricelist_id', 'currency_id', type="many2one", relation="res.currency", string="Currency",readonly=True, required=True),
+            # 'gross_weight': fields.float(string='Gross Weight', digits=(4, 1), required=True),
+            # 'net_weight': fields.float(string='Net Weight', digits=(4, 1), required=True),
+        }
+
+stock_move()
+
+class stock_picking(osv.osv):
+    # _name = 'stock.picking'
+    _inherit = 'stock.picking'
 
     _columns = {
-                'name' : fields.char(string='Jenis Usaha Perusahaan', size=100, required=True),
-                'kode' : fields.char(string='Kode', size=30),
-                'keterangan' : fields.text(string='Keterangan'),
-                'active' : fields.boolean(string='Aktif'),
-            }
+            'ctn_no': fields.float(string='Ctn No', digits=(4, 1),  required=True),
+            # 'client_order_ref': fields.many2one('sale.order', 'Client Order Reference'),
+            'payment_term': fields.many2one('account.payment.term', 'Payment Term'),
 
-jenis_usaha_perusahaan()
+            'pricelist_id':fields.many2one('product.pricelist', 'Pricelist', required=True,  help="The pricelist sets the currency used for this purchase order. It also computes the supplier price for the selected products/quantities."),
+            'currency_id': fields.related('pricelist_id', 'currency_id', type="many2one", relation="res.currency", string="Currency",readonly=True, required=True),
+            'gross_weight': fields.float(string='Gross Weight', digits=(4, 1), required=True),
+            'net_weight': fields.float(string='Net Weight', digits=(4, 1), required=True),
+        }
+    _defaults = {
+        'ctn_no': 1.0
+    }
+stock_picking()
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

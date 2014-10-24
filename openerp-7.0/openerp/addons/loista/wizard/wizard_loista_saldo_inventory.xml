@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_loista_wizardLoistaSaldoInventory" model="ir.ui.view">
+            <field name="name">Form Wizard Loista Saldo Inventory</field>
+            <field name="model">loista.wizard_loista_saldo_inventory</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cetak Laporan Loista Saldo Inventory">
+					<field name="date_from"/>
+					<newline/>
+					<field name="date_to"/>
+					<newline/>
+                    <field name="location_id" colspan="2"/>
+					<newline/>
+							<button special="cancel" string="Cancel" icon="gtk-cancel"/>
+						<button name="cetak_laporan" type="object" string="Print" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_loista_wizardLoistaSaldoInventory" model="ir.actions.act_window">
+            <field name="name">Cetak Loista Saldo Inventory</field>
+            <field name="res_model">loista.wizard_loista_saldo_inventory</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_loista_wizardLoistaSaldoInventory"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem
+			id="menu_loista_menuLoistaSaldoInventory"
+			parent="stock.next_id_61"
+			action="waction_loista_wizardLoistaSaldoInventory"
+			name="Saldo Inventory" />
+    </data>
+</openerp>

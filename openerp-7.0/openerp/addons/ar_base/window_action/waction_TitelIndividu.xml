@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+		<record id="waction_base_contactTitle" model="ir.actions.act_window">
+			<field name="name">Titel Individu</field>
+			<field name="res_model">res.partner.title</field>
+			<field name="view_type">form</field>
+            <field name="domain">[('domain','=','contact')]</field>
+            <field name="context">{'default_domain': 'contact'}</field>			
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		 <record id="wactionView_base_treeContactTitle" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="tree_base_partnerTitle"/>
+			<field name="act_window_id" ref="waction_base_contactTitle"/>
+		</record>
+
+		<record id="wactionView_base_formContactTitle" model="ir.actions.act_window.view">
+			<field eval="1" name="sequence"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="form_base_partnerTitle"/>
+			<field name="act_window_id" ref="waction_base_contactTitle"/>
+		</record>
+    </data>
+</openerp>

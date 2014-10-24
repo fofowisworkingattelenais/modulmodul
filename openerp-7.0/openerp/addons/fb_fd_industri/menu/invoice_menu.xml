@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            id="report_customer_invoice_fd"
+            string="Invoices FD"
+            model="account.invoice"
+            name="customer.invoice.fd"
+            rml="fb_fd_industri/report/customer_invoice_fd.rml"
+            menu="True"
+            auto="False" />
+            <!--attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"-->
+            <!--attachment_use="True"-->
+            <!--usage="default"-->
+            <!--/>-->
+
+
+
+    </data>
+</openerp>
