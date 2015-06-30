@@ -128,18 +128,18 @@
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Currency </para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
-				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.currency_id.symbol ]] </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.currency_id.name ]]</para></td>
 			</tr>
 			<tr>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT">  </para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> Payment Terms </para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="LEFT">:</para></td>
-				<td><para style="JUDUL_KATEGORI" alignment="LEFT"> [[ o.payment_term.name ]] </para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="LEFT">[[ o.payment_term.name ]]</para></td>
 			</tr>
 		</blockTable>
 
-		<para style="JUDUL_LAPORAN" alignment="LEFT"> Attn: [[ o.partner_id.user_id.name ]] </para>
+		<para style="JUDUL_KATEGORI" alignment="LEFT"> <b>Attn :</b> [[ (o.partner_id.child_ids.name[0]) or '' ]] </para>
         <para><font color="white"> </font></para>
 		<para><seqReset id="nourut"/></para>
 
@@ -167,7 +167,7 @@
 					<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"><seq id="nourut"/></para></td>
 					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ get_product_code(move_lines) ]] </para></td>
 					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ get_product_desc(move_lines) ]] </para></td>
-					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ o.client_order_ref.name ]] </para></td>
+					<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> [[ move_lines.custpono ]] </para></td>
 					<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[ move_lines.ctn_no ]] </para></td>
 					<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ formatLang(move_lines.product_qty) ]] </para></td>
 				</tr>
@@ -182,7 +182,7 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> E. <![CDATA[&]]>  O.E. </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> Total </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  [[ reduce(lambda x, obj: x+obj.ctn_no, o.move_lines, 0 ) ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[ total_ctn(move_lines) ]] </para></td>
 			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  [[ reduce(lambda x, obj: x+obj.product_qty, o.move_lines, 0 ) ]]</para></td>
 			</tr>
 		</blockTable>
@@ -199,7 +199,7 @@
 			<tr>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> Total Carton Box </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> : </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ reduce(lambda x, obj: x+obj.ctn_no, o.move_lines, 0 ) ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ total_ctn(move_lines) ]]	 </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> BOXS </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
 			</tr>
@@ -213,14 +213,14 @@
 			<tr>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> Gross Weight </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> : </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ o.gross_weight ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ reduce(lambda x, obj: x+obj.product_id.weight, o.move_lines, 0 ) ]] </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> KG </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
 			</tr>
 			<tr>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> Net Weight </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> : </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ o.net_weight ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="RIGHT"> [[ reduce(lambda x, obj: x+obj.product_id.weight_net, o.move_lines, 0 ) ]] </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> KG </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
 			</tr>
@@ -230,7 +230,7 @@
 			<tr>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> I confirm the above goods mentioned were received in good condition.</para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">  </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> GB PT.FD INDUSTRI INDONESIA </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">PT.FD INDUSTRI INDONESIA </para></td>
 			</tr>
 			<tr>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="LEFT"> </para></td>

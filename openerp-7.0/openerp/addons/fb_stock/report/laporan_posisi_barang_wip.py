@@ -107,137 +107,206 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
     def get_nama_product(self, form):
         obj_product = self.pool.get('product.product')
         i = 0
-
+        l = 0
         cat = {}
         nama_product = []
         saldo = []
 
-        self.cr.execute(" select distinct(d.product_id) as id from product_template a \
-            left join product_category b on a.categ_id = b.parent_left \
-            left join product_product c on a.id = c.product_tmpl_id \
-            left join stock_move d on c.id = d.product_id \
-            where  d.product_id is not null and d.location_id = %s \
-        " % form['location_id'][0])
-        cat = self.cr.dictfetchall()
-        if not cat:
-            return {
-                        'nama_product': '',
-                    }
+        ## add location inheritence
+
+        self.cr.execute("   select a.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and a.id is not null\
+                            union \
+                            select b.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and b.id is not null \
+                            union \
+                            select c.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and c.id is not null \
+                            union \
+                            select d.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and d.id is not null \
+                            union \
+                            select e.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and e.id is not null \
+                            order by location_id ", (form['location_id'][0], form['location_id'][0], form['location_id'][0],
+                                            form['location_id'][0], form['location_id'][0]))
+        loc_id = self.cr.dictfetchall()
+
+        if l < len(loc_id):
+            for iiii in loc_id:
+
+                self.cr.execute(" select \
+                                        distinct(a.id) as id,\
+                                        c.default_code as code\
+                                    from product_template a \
+                                         left join product_category b on a.categ_id = b.parent_left \
+                                         left join product_product 	c on a.id 	= c.product_tmpl_id \
+                                         left join stock_move 	d on c.id 	= d.product_id \
+                                    where  (d.location_id = %s or d.location_dest_id = %s) and d.state = 'done'\
+                                    order by   c.default_code asc \
+                ", (iiii['location_id'], iiii['location_id']))
+                print self.cr
+                print form['location_id'][0]
+                cat = self.cr.dictfetchall()
+                # if not cat:
+                #     return {
+                #                 'nama_product': '',
+                #             }
 
 
-        if i < len(cat):
-            for ii in cat:
+                for ii in cat:
 
-                self.cr.execute("   SELECT \
-                                        COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
-                                        COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
-                                        COALESCE(sum(B2.product_qty), 0.000) masuk,\
-                                        COALESCE(sum(B3.product_qty), 0.000) keluar,\
-                                        COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
-                                        COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal\
-                                    FROM stock_move A \
-                                    LEFT JOIN stock_picking P \
-                                    on A.picking_id = P.id \
-                                        LEFT JOIN (SELECT A2.id,A2.product_qty \
-                                            FROM  \
-                                                stock_move A2 \
-                                                    JOIN stock_location C \
-                                                        ON A2.location_dest_id = C.id \
-                                            WHERE 	C.id = %s \
-                                                    AND (A2.date > %s AND A2.date < %s))\
-                                            B2 ON A.id = B2.id \
-                                        LEFT JOIN (SELECT A3.id, A3.product_qty \
-                                            FROM \
-                                                stock_move A3 \
-                                                    JOIN stock_location C2 \
-                                                        ON A3.location_id = C2.id \
-                                            WHERE 	C2.id = %s \
-                                                    AND (A3.date > %s AND A3.date < %s) ) \
-                                             B3 ON A.id = B3.id \
-                                        LEFT JOIN (SELECT A4.id, A4.product_qty \
-                                            FROM \
-                                                stock_move A4 \
-                                                    JOIN stock_location C3 \
-                                                        ON A4.location_id = C3.id \
-                                            WHERE 	C3.id = %s\
-                                                AND (A4.date < %s )  \
-                                                AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
-                                            B4 ON A.id = B4.id \
-                                        LEFT JOIN (SELECT A5.id, A5.product_qty \
-                                            FROM \
-                                                stock_move A5 \
-                                                    JOIN stock_location C4 \
-                                                        ON A5.location_dest_id = C4.id \
-                                            WHERE 	C4.id = %s \
-                                                AND (A5.date < %s ) \
-                                                AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
-                                            B5 ON A.id = B5.id \
-                                    WHERE \
-                                        product_id = %s \
-                                        AND P.chk_import = 'true' \
-                                        AND A.state = %s \
-                                        AND (A.location_dest_id = %s OR A.location_id = %s) \
-                                    ", (form['location_id'][0], form['date_from'], form['date_to'],
-                                        form['location_id'][0], form['date_from'], form['date_to'],
-                                        form['location_id'][0], form['date_from'], form['location_id'][0],
-                                        form['location_id'][0], form['location_id'][0], form['date_from'],
-                                        form['location_id'][0], form['location_id'][0], ii['id'],
-                                        'done', form['location_id'][0], form['location_id'][0]))
+                    self.cr.execute(" select \
+                                        a.standard_price as harga_beli \
+                                    from product_template a \
+                                         left join product_product 	c on a.id 	= c.product_tmpl_id \
+                                         left join stock_move 	d on c.id 	= d.product_id \
+                                         left join stock_location 	e on d.location_id = e.id \
+                                    where   c.id = %s \
+                                    group by a.standard_price\
+                                    " % ii['id'])
 
-                query = self.cr.dictfetchall()
+                    q = self.cr.dictfetchall()
 
-                for a in query:
+                    for iii in q:
+                        results ={
+                            'harga_beli': iii['harga_beli'] or '0.0',
+                            'location_name': form['location_id'][1],
+                        }
 
-                    if a['masuk_awal'] is None or '':
-                        a['masuk_awal'] = 0.000
-                    if a['keluar_awal'] is None or '':
-                        a['keluar_awal'] = 0.000
-                    if a['masuk'] is None or '':
-                        a['masuk'] = 0.000
-                    if a['keluar'] is None or '':
-                        a['keluar'] = 0.000
+                    self.cr.execute("   SELECT \
+                                            COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
+                                            COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
+                                            COALESCE(sum(B2.product_qty), 0.000) masuk,\
+                                            COALESCE(sum(B3.product_qty), 0.000) keluar,\
+                                            COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
+                                            COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal\
+                                        FROM stock_move A \
+                                            LEFT JOIN (SELECT A2.id,A2.product_qty \
+                                                FROM  \
+                                                    stock_move A2 \
+                                                        JOIN stock_location C \
+                                                            ON A2.location_dest_id = C.id \
+                                                WHERE 	C.id = %s \
+                                                        AND (date(A2.date) >= %s AND date(A2.date) <= %s))\
+                                                B2 ON A.id = B2.id \
+                                            LEFT JOIN (SELECT A3.id, A3.product_qty \
+                                                FROM \
+                                                    stock_move A3 \
+                                                        JOIN stock_location C2 \
+                                                            ON A3.location_id = C2.id \
+                                                WHERE 	C2.id = %s \
+                                                        AND (date(A3.date) >= %s AND date(A3.date) <= %s) ) \
+                                                 B3 ON A.id = B3.id \
+                                            LEFT JOIN (SELECT A4.id, A4.product_qty \
+                                                FROM \
+                                                    stock_move A4 \
+                                                        JOIN stock_location C3 \
+                                                            ON A4.location_id = C3.id \
+                                                WHERE 	C3.id = %s\
+                                                    AND (date(A4.date) <= %s )  \
+                                                    AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
+                                                B4 ON A.id = B4.id \
+                                            LEFT JOIN (SELECT A5.id, A5.product_qty \
+                                                FROM \
+                                                    stock_move A5 \
+                                                        JOIN stock_location C4 \
+                                                            ON A5.location_dest_id = C4.id \
+                                                WHERE 	C4.id = %s \
+                                                    AND (date(A5.date) <= %s ) \
+                                                    AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
+                                                B5 ON A.id = B5.id \
+                                        WHERE \
+                                            product_id = %s \
+                                            AND A.state = %s \
+                                            AND (A.location_dest_id = %s OR A.location_id = %s) \
+                                        ", (iiii['location_id'], form['date_from'], form['date_to'],
+                                            iiii['location_id'], form['date_from'], form['date_to'],
+                                            iiii['location_id'], form['date_from'], iiii['location_id'],
+                                            iiii['location_id'], iiii['location_id'], form['date_from'],
+                                            iiii['location_id'], iiii['location_id'], ii['id'],
+                                            'done', form['location_id'][0], form['location_id'][0]))
 
+                    query = self.cr.dictfetchall()
 
-                    masuk_awal =  a['masuk_awal'] or 0.000
-                    keluar_awal = a['keluar_awal'] or 0.000
-                    keluar = a['keluar'] or 0.000
-                    masuk = a['masuk'] or 0.000
-                    hasil =  a['hasil'] or 0.000
-                    # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
-                    # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
-                    saldo_awal = (masuk_awal - keluar_awal)  or 0.0
-                    saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
-                    if masuk is None or '' or 0.0:
-                        saldo_akhir = saldo_awal - keluar
+                    for a in query:
 
-
-                    result ={
-                        'saldo_akhir':saldo_akhir or '0.0',
-                        'pemasukan':masuk or '0.0',
-                        'pengeluaran': keluar or '0.0',
-                        'saldo_awal': saldo_awal or '0.0'
-                    }
-
-                saldo_ak = 0
-                kriteria = [ ('id','=', ii['id'])]
-
-                product_ids = obj_product.search(self.cr, self.uid, kriteria)
-
-                for product in obj_product.browse(self.cr, self.uid, product_ids):
+                        if a['masuk_awal'] is None or '':
+                            a['masuk_awal'] = 0.000
+                        if a['keluar_awal'] is None or '':
+                            a['keluar_awal'] = 0.000
+                        if a['masuk'] is None or '':
+                            a['masuk'] = 0.000
+                        if a['keluar'] is None or '':
+                            a['keluar'] = 0.000
 
 
-                    res = {
-                        'nama_product': product.name,
-                        'nama_uom': product.uom_id.name,
-                        'default_code': product.default_code,
-                        'qty_available': product.qty_available,
-                    }
-                    res.update(result)
-                    nama_product.append(res)
-                    saldo_ak += 1
-                    i += 1
+                        masuk_awal =  a['masuk_awal'] or 0.000
+                        keluar_awal = a['keluar_awal'] or 0.000
+                        keluar = a['keluar'] or 0.000
+                        masuk = a['masuk'] or 0.000
+                        hasil =  a['hasil'] or 0.000
+                        # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
+                        # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
+                        saldo_awal = (masuk_awal - keluar_awal)  or 0.0
+                        saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
+                        if masuk is None or '' or 0.0:
+                            saldo_akhir = saldo_awal - keluar
 
 
+                        result ={
+                            'saldo_akhir':saldo_akhir or '0.0',
+                            'pemasukan':masuk or '0.0',
+                            'pengeluaran': keluar or '0.0',
+                            'saldo_awal': saldo_awal or '0.0',
+                            'akhir': saldo_akhir or '0.0',
+                            'total_akhir': (masuk - keluar) * iii['harga_beli'] or '0.0'
+                        }
+                        result.update(results)
+                    saldo_ak = 0
+                    kriteria = [ ('id','=', ii['id'])]
+
+                    product_ids = obj_product.search(self.cr, self.uid, kriteria)
+
+                    for product in obj_product.browse(self.cr, self.uid, product_ids):
+
+
+                        res = {
+                            'nama_product': product.name,
+                            'nama_uom': product.uom_id.name,
+                            'default_code': product.default_code,
+                            'qty_available': product.qty_available,
+                            'category_name': product.categ_id.name,
+                            'location_name': product.location_id.name,
+                            # 'harga_beli': ii['harga_beli'],
+                            # 'total': product.qty_available * ii['harga_beli']
+                        }
+                        res.update(result)
+                        nama_product.append(res)
+                        saldo_ak += 1
+                        i += 1
+
+            l += 1
             return nama_product
 
     def get_default_code(self, form):
@@ -389,7 +458,7 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
                                                     JOIN stock_location C \
                                                         ON A2.location_dest_id = C.id \
                                             WHERE 	C.id = %s \
-                                                    AND (A2.date > %s AND A2.date < %s))\
+                                                    AND (date(A2.date) >= %s AND date(A2.date) <= %s))\
                                             B2 ON A.id = B2.id \
                                         LEFT JOIN (SELECT A3.id, A3.product_qty \
                                             FROM \
@@ -397,7 +466,7 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
                                                     JOIN stock_location C2 \
                                                         ON A3.location_id = C2.id \
                                             WHERE 	C2.id = %s \
-                                                    AND (A3.date > %s AND A3.date < %s) ) \
+                                                    AND (date(A3.date) >= %s AND date(A3.date) <= %s) ) \
                                              B3 ON A.id = B3.id \
                                         LEFT JOIN (SELECT A4.id, A4.product_qty \
                                             FROM \
@@ -405,7 +474,7 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
                                                     JOIN stock_location C3 \
                                                         ON A4.location_id = C3.id \
                                             WHERE 	C3.id = %s\
-                                                AND (A4.date < %s )  \
+                                                AND (date(A4.date) <= %s )  \
                                                 AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
                                             B4 ON A.id = B4.id \
                                         LEFT JOIN (SELECT A5.id, A5.product_qty \
@@ -414,7 +483,7 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
                                                     JOIN stock_location C4 \
                                                         ON A5.location_dest_id = C4.id \
                                             WHERE 	C4.id = %s \
-                                                AND (A5.date < %s ) \
+                                                AND (date(A5.date) <= %s ) \
                                                 AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
                                             B5 ON A.id = B5.id \
                                     WHERE \
@@ -511,7 +580,7 @@ class laporan_posisi_barang_wip(report_sxw.rml_parse):
                             WHERE product_id = %s \
                             AND A.state = %s \
                             AND (A.location_dest_id = %s OR A.location_id = %s)\
-                            AND (A.date > %s AND A.date < %s)\
+                            AND (date(A.date) >= %s AND date(A.date) <= %s)\
                             ORDER BY A.date ",
                                 (form['location_id'][0], form['location_id'][0], ii['id'], 'done', form['location_id'][0], form['location_id'][0], form['date_from'], form['date_to']))
 

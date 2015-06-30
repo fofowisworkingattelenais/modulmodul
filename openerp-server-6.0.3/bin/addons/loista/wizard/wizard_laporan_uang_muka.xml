@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_wizardLaporanUangMuka" model="ir.ui.view">
+            <field name="name">Form Wizard Laporan Uang Muka</field>
+            <field name="model">loista.wizard_laporan_uang_muka</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Hutang Report">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+							<field name="date_from" colspan="2"/>
+                            <field name="date_to" colspan="2"/>
+                            <field name="journal" colspan="2"/>
+						</group>
+					</group>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="cetak_report" type="object" string="Print" colspan="2" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_wizardLaporanUangMuka" model="ir.actions.act_window">
+            <field name="name">Laporan Uang Muka</field>
+            <field name="res_model">loista.wizard_laporan_uang_muka</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_wizardLaporanUangMuka"/>
+            <field name="target">new</field>
+        </record>
+
+		<menuitem 	id="menu_WizardLaporanUangMuka"
+					parent="account.next_id_22"
+					name="Laporan Uang Muka"
+					action="waction_wizardLaporanUangMuka" />
+
+    </data>
+</openerp>

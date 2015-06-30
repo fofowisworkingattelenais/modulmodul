@@ -18,12 +18,19 @@
 					name="Kartu Stock"
 					sequence="500"
 					action="waction_titis_wizardKartuStock" />		
-					
+
 		<menuitem 	id="menu_titis_WizardLaporanStokTotal" 
 					parent="stock.next_id_61" 
 					name="Stok Total"
 					sequence="501"
 					action="waction_titis_wizardStokTotal" />
+
+
+		<menuitem 	id="menu_titis_WizardLogisticReport"
+					parent="stock.next_id_61"
+					name="Logistic Report"
+					sequence="502"
+					action="waction_titis_wizardLogisticReport" />
 
 	</data>
 </openerp>

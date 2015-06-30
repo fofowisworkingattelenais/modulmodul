@@ -23,5 +23,7 @@ import delivery_order_gb
 import delivery_order_kb
 import purchase_order_fd
 import customer_invoice_fd
+import quotation_fd
+import packing_list
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

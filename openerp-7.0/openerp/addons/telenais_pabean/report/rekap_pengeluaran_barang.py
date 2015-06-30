@@ -38,32 +38,74 @@ class rekap_pengeluaran_barang(report_sxw.rml_parse):
         })
         
     def isi(self):
-        obj_move = self.pool.get('stock.move')
-        kriteria = [('picking_id.type','=','out'),('picking_id.state','=','done'),('picking_id.date','>=',self.date_from),('picking_id.date','<=',self.date_to),('picking_id.chk_import','=',True),('location_id','=',self.location)]
-        
-        move_ids = obj_move.search(self.cr, self.uid, kriteria)
-        
-        if move_ids:
-            no = 1
-            for move in obj_move.browse(self.cr, self.uid, move_ids):
-                res =   {
-                            'no' : no,
-                            'jenis_dokumen' : move.picking_id.jenis_dokumen_id.name,
-                            'nomor_dokumen' : move.picking_id.nomor_dokumen_pabean,
-                            'tanggal_dokumen' : move.picking_id.tanggal_dokumen_pabean,
-                            'nomor_bast' : move.picking_id.name,
-                            'tanggal_bast' : '%s/%s/%s' % (move.picking_id.date[8:10],move.picking_id.date[5:7], move.picking_id.date[0:4]),
-                            'pemasok' :  move.picking_id and move.picking_id.partner_id.name or '-',
-                            'kode_barang' : move.product_id.default_code,
-                            'nama_barang' : move.product_id.name,
-                            'satuan' : move.product_uom.name,
-                            'kuantitas' : move.product_qty,
-                            'nilai_barang' : move.price_unit * move.product_qty,
-                            }
-                            
-                no += 1
 
-                self.isi_laporan.append(res)
+        l = 0
+        obj_move = self.pool.get('stock.move')
+        self.cr.execute("   select a.id as location_id, a.name as location_name  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = 13 and a.id is not null\
+                            union \
+                            select b.id as location_id, b.name as location_name  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = 13 and b.id is not null \
+                            union \
+                            select c.id as location_id, c.name as location_name  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = 13 and c.id is not null \
+                            union \
+                            select d.id as location_id, d.name as location_name  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = 13 and d.id is not null \
+                            union \
+                            select e.id as location_id, e.name as location_name  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = 13 and e.id is not null \
+                            order by location_id ")
+        loc_id = self.cr.dictfetchall()
+
+        if l < len(loc_id):
+            for iiii in loc_id:
+                kriteria = [('picking_id.type','=','out'),('picking_id.state','=','done'),('picking_id.date','>=',self.date_from),('picking_id.date','<=',self.date_to),('picking_id.chk_import','=',True),('location_id','=',iiii['location_id'])]
+
+                move_ids = obj_move.search(self.cr, self.uid, kriteria)
+
+                if move_ids:
+                    no = 1
+                    for move in obj_move.browse(self.cr, self.uid, move_ids):
+                        res =   {
+                                    'no' : no,
+                                    'jenis_dokumen' : move.picking_id.jenis_dokumen_id.name,
+                                    'nomor_dokumen' : move.picking_id.nomor_dokumen_pabean,
+                                    'tanggal_dokumen' : move.picking_id.tanggal_dokumen_pabean,
+                                    'nomor_invoice' : move.picking_id.nomor_invoice_custom,
+                                    'nomor_bast' : move.picking_id.name,
+                                    'tanggal_bast' : '%s/%s/%s' % (move.picking_id.date[8:10],move.picking_id.date[5:7], move.picking_id.date[0:4]),
+                                    'pemasok' :  move.picking_id and move.picking_id.partner_id.name or '-',
+                                    'kode_barang' : move.product_id.default_code,
+                                    'nama_barang' : move.product_id.name,
+                                    'satuan' : move.product_uom.name,
+                                    'kuantitas' : move.product_qty,
+                                    'nilai_barang' : move.price_unit * move.product_qty,
+                                    }
+
+                        no += 1
+
+                        self.isi_laporan.append(res)
     
         return self.isi_laporan
         
@@ -79,7 +121,7 @@ class rekap_pengeluaran_barang(report_sxw.rml_parse):
     def set_context(self, objects, data, ids, report_type=None):
         self.date_from = data['form']['date_from']
         self.date_to = data['form']['date_to']
-        self.location = data['form']['location_id'][0]
+        # self.location = data['form']['location_id'][0]
 
 
         return super(rekap_pengeluaran_barang, self).set_context(objects, data, ids, report_type=report_type)           

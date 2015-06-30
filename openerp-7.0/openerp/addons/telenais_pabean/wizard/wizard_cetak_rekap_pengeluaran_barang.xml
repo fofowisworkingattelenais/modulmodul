@@ -7,13 +7,13 @@
             <field name="model">gdi.wizard_cetak_rekap_pengeluaran_barang</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Cetak Rekapitulasi Pengeluaran Barang">
+                <form string="Cetak Rekapitulasi Pengeluaran Barang KB">
 					<field name="date_from"/>
 					<newline/>
 					<field name="date_to"/>
 					<newline/>
-                    <field name="location_id" colspan="2"/>
-					<newline/>
+                    <!--<field name="location_id" colspan="2"/>-->
+					<!--<newline/>-->
 
 						<button special="cancel" string="Cancel" icon="gtk-cancel"/>
 						<button name="cetak_laporan" type="object" string="Print" icon="gtk-print"/>
@@ -23,7 +23,7 @@
         </record>
 
         <record id="waction_gdi_wizardCetakRekapPengeluaranBarang" model="ir.actions.act_window">
-            <field name="name">Cetak Rekapitulasi Pengeluaran Barang</field>
+            <field name="name">Cetak Rekapitulasi Pengeluaran Barang KB</field>
             <field name="res_model">gdi.wizard_cetak_rekap_pengeluaran_barang</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_type">form</field>

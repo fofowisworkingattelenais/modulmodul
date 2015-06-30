@@ -20,7 +20,7 @@
 ##############################################################################
 
 import report
-# import object_modul
+import object_modul
 # import wizard
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

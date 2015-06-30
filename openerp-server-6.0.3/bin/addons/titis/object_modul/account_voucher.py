@@ -107,7 +107,7 @@ class account_voucher(osv.osv):
 
                         'line_ids':fields.one2many('account.voucher.line','voucher_id','Voucher Lines', readonly=False),
 
-                        'move_line_id':fields.one2many('account.voucher.line','voucher_id','move_line_id'),
+                        'move_line_id': fields.related('line_ids','move_line_id','invoice', type='one2many', relation='account.voucher', string='Journal Items', readonly=True),
 
                         'line_cr_ids':fields.one2many('account.voucher.line','voucher_id','Credits', domain=[('type','=','cr')], context={'default_type':'cr'}, readonly=False, states={'posted': [('readonly', True)], 'cancel': [('readonly', True)]}),
                         'line_dr_ids':fields.one2many('account.voucher.line','voucher_id','Debits', domain=[('type','=','dr')], context={'default_type':'dr'}, readonly=False, states={'posted': [('readonly', True)], 'cancel': [('readonly', True)]}),

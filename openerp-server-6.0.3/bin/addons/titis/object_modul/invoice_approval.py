@@ -30,7 +30,7 @@ class invoice_approval(osv.osv):
 	_description = 'Invoice Approval'
 	_order = 'invoice_id, sequence'
 	_columns =	{
-							'name' : fields.char(string='Approval', size=100, required=True),
+							'name' : fields.char(string='Approval', size=256, required=True),
 							'invoice_id' : fields.many2one(string='# Invoice', obj='account.invoice'),
 							'sequence' : fields.integer(string='Sequence', required=True),
 							'user_id' : fields.many2one(string='Approved By', obj='res.users', required=True),

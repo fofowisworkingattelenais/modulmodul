@@ -136,8 +136,8 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['harga_beli'] ]]</para></td>
 
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['qty_available'] ]] </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['total'] ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['akhir'] ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['total_akhir'] ]] </para></td>
 
 			</tr>
 

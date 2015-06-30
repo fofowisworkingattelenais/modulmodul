@@ -132,5 +132,4 @@ class account_voucher(osv.osv):
         
         
 							
-account_voucher()							
-	
+account_voucher()

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!--<report id="report_purchase_order_fd"-->
-                <!--string="Purchase Order FD"-->
-                <!--model="purchase.order"-->
-                <!--name="purchase.order.fd"-->
-                <!--rml="fb_fd_industri/report/purchase_order_fd.rml"-->
-                <!--menu="True"-->
-                <!--auto="False"-->
-                <!--/>-->
+        <report id="report_purchase_order_fd"
+                string="Purchase Order FD"
+                model="purchase.order"
+                name="purchase.order.fd"
+                rml="fb_fd_industri/report/purchase_order_fd.rml"
+                menu="True"
+                auto="False"
+                />
+        <!--<report auto="False" id="report_quotation_fd" model="purchase.order"-->
+                <!--name="quotation.fd" rml="fb_fd_industri/report/quotation_fd.rml"-->
+                <!--string="Quotation FD"/>-->
+
+
     </data>
 </openerp>

@@ -28,16 +28,23 @@
                         1. Purchase Order report FD
                         2. Delivery Order report FD
                         3. Customer Invoice report FD
+                        4. Quotation / Sale Order FD
                     """,
     "category" : "Purchase Management",
     "website" : "http://wopopwopop.wordpress.com",
     'depends': ['stock', 'process', 'procurement', 'purchase'],
     "update_xml" : [
 
-        "menu/purchase_menu.xml",
         "menu/stock_menu.xml",
         "menu/invoice_menu.xml",
-        # "view/stock_view.xml",
+        "menu/sale_menu.xml",
+        "menu/purchase_menu.xml",
+
+        "view/purchase_view.xml",
+        "view/sale_order_view.xml",
+        "view/stock_view.xml",
+        "view/invoice_view.xml",
+
     ],
     "active": False,
     "installable": True,

@@ -19,8 +19,8 @@
 		<paraStyle
 			name="JUDUL_KATEGORI"
 			fontName="Times-Bold"
-			fontSize="10.0"
-			leading="9"
+			fontSize="8.0"
+			leading="8"
 		/>
 
 		<paraStyle
@@ -43,8 +43,8 @@
 			name="ISI_TABEL_ITEM_2"
 			alignment="LEFT"
 			fontName="Times-Roman"
-			fontSize="8.0"
-			leading="9"
+			fontSize="6.0"
+			leading="7"
 		/>
 
 		<paraStyle
@@ -108,7 +108,7 @@
         <para><font color="white"> </font></para>
         <para><font color="white"> </font></para>
 		<para><seqReset id="nourut"/></para>
-		<blockTable style="TABEL_STANDAR" colWidths="1cm,2cm,4cm,1.5cm,2cm,2.75cm,2.75cm,3cm,2cm,2cm,2cm,2.5cm">
+		<blockTable style="TABEL_STANDAR" colWidths="0.5cm,3cm,4.5cm,1cm,1.75cm,2.5cm,2.75cm,3cm,2cm,2cm,2cm,2.5cm">
 			<tr>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO</para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KODE BARANG</para></td>
@@ -141,9 +141,9 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_akhir'] ]]  </para></td>
 
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
-			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['stock_opname'] ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['selisih'] ]] </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['keterangan'] ]] </para></td>
 
 			</tr>
 

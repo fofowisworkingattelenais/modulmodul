@@ -43,11 +43,12 @@ class wizard_saldo_inventory(osv.osv_memory):
 		if context is None:
 			context = {}
 
-		data = self.read(cr, uid, ids, [], context)[0]
-
+		data = self.read(cr, uid, ids, ['date_from','date_to','location_id'], context)[0]
+		# data = self.read(cr, uid, ids, ['date_from', 'date_to'], context=context)[0]
+		print data
 		datas =	{
 				'ids' : context.get('active_ids', []),
-				'model' : 'stock.move',
+				'res_model' : 'product.product',
 				'form' : data
 				}
 

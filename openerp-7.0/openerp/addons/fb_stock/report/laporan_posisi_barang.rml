@@ -19,10 +19,18 @@
 		<paraStyle
 			name="JUDUL_KATEGORI"
 			fontName="Times-Bold"
-			fontSize="6.0"
+			fontSize="7.0"
 			leading="7"
 			alignment="CENTER"
 
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="CENTER"
+			fontName="Times-Roman"
+			fontSize="5.0"
+			leading="6"
 		/>
 
 		<paraStyle
@@ -98,7 +106,7 @@
 					<td><para style="JUDUL_KATEGORI">JENIS</para></td>
 					<td><para style="JUDUL_KATEGORI">NO</para></td>
 					<td><para style="JUDUL_KATEGORI">TANGGAL</para></td>
-					<td><para style="JUDUL_KATEGORI">TGLMASUK</para></td>
+					<td><para style="JUDUL_KATEGORI">TGL MASUK</para></td>
 					<td><para style="JUDUL_KATEGORI">KODE</para></td>
 					<td><para style="JUDUL_KATEGORI">NAMA BARANG</para></td>
 					<td><para style="JUDUL_KATEGORI">SAT</para></td>
@@ -110,7 +118,7 @@
 					<td><para style="JUDUL_KATEGORI">TANGGAL</para></td>
 					<td><para style="JUDUL_KATEGORI">TGL KELUAR</para></td>
 					<td><para style="JUDUL_KATEGORI">NAMA BARANG</para></td>
-					<td><para style="JUDUL_KATEGORI">JUMLAH</para></td>
+					<td><para style="JUDUL_KATEGORI">JUM</para></td>
 					<td><para style="JUDUL_KATEGORI">NILAI</para></td>
 
 					<td><para style="JUDUL_KATEGORI">JUM</para></td>
@@ -122,29 +130,28 @@
 				<tr>
 
 					[[ repeatIn(isi_laporan(data['form']), 'a') ]]
-					<td><para style="JUDUL_KATEGORI"><font color="white">_</font><seq id="nourut"/></para></td>
-					<td><para style="JUDUL_KATEGORI" >[[ a['in_jenis_dokumen_pabean'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI" >[[ a['in_nomor_dokumen_pabean'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI" >[[ a['in_tanggal_dokumen_pabean'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI" >[[  a['in_tanggal'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI" >[[ a['kode_barang'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI" >[[  a['nama_product'] ]]  </para></td>
-				    <td><para style="JUDUL_KATEGORI" >[[  a['satuan_barang'] ]]</para></td>
-			    	<td><para style="JUDUL_KATEGORI"></para>[[  a['masuk'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[  a['in_price'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"><font color="white">_</font><seq id="nourut"/></para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['in_jenis_dokumen_pabean'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['in_nomor_dokumen_pabean'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['in_tanggal_dokumen_pabean'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['in_tanggal'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['kode_barang'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2" >[[ a['nama_product'] ]]  </para></td>
+				    <td><para style="ISI_TABEL_ITEM_2" >[[ a['satuan_barang'] ]]</para></td>
+			    	<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['masuk'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['in_price'] ]]</td>
 
-					<td><para style="JUDUL_KATEGORI">[[ a['out_jenis_dokumen_pabean'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI">[[ a['out_nomor_dokumen_pabean'] ]]</para></td>
-					<td><para style="JUDUL_KATEGORI"></para>[[  a['out_tanggal'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[ a['out_tanggal_dokumen_pabean'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[ a['nama_product'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[  a['keluar'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[  a['out_price'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ a['out_jenis_dokumen_pabean'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ a['out_nomor_dokumen_pabean'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['out_tanggal'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['out_tanggal_dokumen_pabean'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['nama_product'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['keluar'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['out_price'] ]]</td>
 
-					<td><para style="JUDUL_KATEGORI"></para>[[ a['saldo_awal'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para>[[ a['satuan_barang'] ]]</td>
-					<td><para style="JUDUL_KATEGORI"></para></td>
-
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ formatLang(a['saldo_awal']) ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para>[[ a['satuan_barang'] ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2"></para></td>
 
 				</tr>
 			</blockTable>

@@ -653,8 +653,9 @@ class stock_picking(osv.osv):
                  "* Cancelled: has been cancelled, can't be confirmed anymore"),
         # 'min_date': fields.function(get_min_max_date, fnct_inv=_set_minimum_date, multi="min_max_date", method=True, store=True,readonly=False, type='datetime', string='Expected Date', select=True, help="Expected date for the picking to be processed"),
         'min_date': fields.datetime('Expected Date', help="Date of Excepted", select=True, readonly=False),
-        'receive_date': fields.datetime('Receive Date', help="Date of Excepted", select=True, readonly=True),
-        'date': fields.datetime('Commencement Date', help="Date of Order", select=True),
+        'receive_date': fields.date('Receive Date', help="Date of Excepted", select=True, readonly=True),
+        'date': fields.datetime('Delivery Order Date', help="Date of Order", select=True),
+        'commencement_date': fields.datetime('Commencement Date', help="Date of Order", select=True),
         'date_done': fields.datetime('Date Done', help="Date of Completion"),
         'max_date': fields.function(get_min_max_date, fnct_inv=_set_maximum_date, multi="min_max_date",
                  method=True, store=True, type='datetime', string='Max. Expected Date', select=2),
@@ -676,14 +677,15 @@ class stock_picking(osv.osv):
         'type': 'in',
         'invoice_state': 'none',
         'date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
+        'commencement_date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
         'company_id': lambda self, cr, uid, c: self.pool.get('res.company')._company_default_get(cr, uid, 'stock.picking', context=c)
     }
+    
     def action_process(self, cr, uid, ids, context=None):
         if context is None: context = {}
         partial_id = self.pool.get("stock.partial.picking").create(
             cr, uid, {}, context=dict(context, active_ids=ids))
         self.write(cr, uid, ids, {'receive_date': time.strftime('%Y-%m-%d')})
-        print 'ok'
         return {
             'name':_("Products to Process"),
             'view_mode': 'form',

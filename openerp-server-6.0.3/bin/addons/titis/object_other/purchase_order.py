@@ -449,6 +449,7 @@ class purchase_order(osv.osv):
                         'product_uom': order_line.product_uom.id,
                         'product_uos': order_line.product_uom.id,
                         'date': order_line.date_planned,
+                        'commencement_date':order_line.date_planned,
                         # 'date_expected': order_line.date_planned,
                         'location_id': loc_id,
                         'location_dest_id': dest,

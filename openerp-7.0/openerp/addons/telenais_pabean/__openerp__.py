@@ -32,6 +32,7 @@
     'init_xml': [],
     'update_xml': [
                     'security/ir.model.access.csv',
+                    
                     'data/data_DocumentType.xml',
                   
                    'wizard/wizard_cetak_rekap_pemasukan_barang.xml',

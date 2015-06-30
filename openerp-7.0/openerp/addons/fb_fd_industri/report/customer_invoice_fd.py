@@ -32,13 +32,42 @@ class customer_invoice_fd(report_sxw.rml_parse):
 
         })
 
-    def get_product_desc(self, invoice_line):
-        desc = invoice_line.product_id.name
-        return desc
+    def get_product_desc(self, move_line):
+        i = 0
+        nama= []
 
-    def get_product_code(self, invoice_line):
-        desc = invoice_line.product_id.default_code
-        return desc
+        self.cr.execute("   select b.product_name as product_name\
+                                from product_product a \
+                                    left join tat_product_customerinfo b \
+                                        on a.id = b.product_id \
+                            where a.id = %s \
+        " % move_line.product_id.id)
+
+        cat = self.cr.dictfetchall()
+        if i < len(cat):
+            for ii in cat:
+                product_name = ii['product_name']
+                if not product_name:
+                    return move_line.product_id.name
+                return product_name
+
+    def get_product_code(self, move_line):
+        i = 0
+        self.cr.execute("   select b.product_code as product_code\
+                                from product_product a \
+                                    left join tat_product_customerinfo b \
+                                        on a.id = b.product_id \
+                            where a.id = %s \
+        " % move_line.product_id.id)
+
+        cat = self.cr.dictfetchall()
+        if i < len(cat):
+            for ii in cat:
+                product_code = ii['product_code']
+                if not product_code:
+                    return move_line.product_id.code
+                return product_code
+
 
 
 

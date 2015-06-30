@@ -37,7 +37,9 @@ class wizard_posisi_barang(osv.osv_memory):
 		# 'parent_id': fields.many2one('product.category', 'Product Category', required='True'),
 		'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
 		'date_from': fields.date(string='Date From', required=True),
-		'date_to': fields.date(string='Date To', required=True)
+		'date_to': fields.date(string='Date To', required=True),
+		'jenis_dokumen_id' : fields.many2one('gdi.jenis_dokumen_pabean', 'Jenis Dokumen',required=False),
+
 	}
 
 	def cetak_laporan(self, cr, uid, ids, context=None):
@@ -46,6 +48,8 @@ class wizard_posisi_barang(osv.osv_memory):
 			context = {}
 
 		data = self.read(cr, uid, ids, [], context)[0]
+		if data['jenis_dokumen_id'] is False:
+			data['jenis_dokumen_id'] = u'0'
 
 		datas =	{
 				'ids' : context.get('active_ids', []),
@@ -61,5 +65,6 @@ class wizard_posisi_barang(osv.osv_memory):
 
 
 wizard_posisi_barang()
+
 
 

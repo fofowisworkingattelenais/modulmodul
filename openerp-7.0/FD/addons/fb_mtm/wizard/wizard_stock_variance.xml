@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="form_fb_mtm_wizard_variance" model="ir.ui.view">
+            <field name="name">Form Wizard Stock Move Variance</field>
+            <field name="model">fb_mtm.stock_variance</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Report Stock Move Varience">
+					<group name="group_1" colspan="4" col="2">
+						<group name="group_1_1" colspan="1" col="2">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="variance"/>
+						</group>
+					</group>
+					<button special="cancel" string="Cancel" icon="gtk-cancel" colspan="2"/>
+					<button name="cetak_report" type="object" string="Print" colspan="2" icon="gtk-print"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="waction_fb_mtm_wizard_variance" model="ir.actions.act_window">
+            <field name="name">Stock Move Varience</field>
+            <field name="res_model">fb_mtm.stock_variance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="form_fb_mtm_wizard_variance"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="waction_fb_mtm_wizard_variance"
+                  id="menu_waction_fb_mtm_wizard_variance"
+                  parent="stock.next_id_61"
+                  name="Stock Move Varience"/>
+
+
+    </data>
+</openerp>

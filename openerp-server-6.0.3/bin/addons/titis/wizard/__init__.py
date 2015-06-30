@@ -41,6 +41,8 @@ import wizard_balance_sheet
 import wizard_trial_balance
 import wizard_import_move_line
 import wizard_purchase_requisition_line
+import wizard_logistic_report
+import wizard_laporan_uang_muka
 
 #import wizard_import_absensi
 

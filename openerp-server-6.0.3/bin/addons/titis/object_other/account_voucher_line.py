@@ -23,6 +23,7 @@
 
 from osv import fields, osv
 from datetime import datetime
+from tools.translate import _
 
 class account_voucher_line(osv.osv):
 	_name = 'account.voucher.line'

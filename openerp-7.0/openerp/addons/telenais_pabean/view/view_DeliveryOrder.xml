@@ -25,6 +25,18 @@
 				<field name="jenis_dokumen_id" position="after">
 					<field name="tanggal_dokumen_pabean" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
 				</field>
+				<!-- View Nomor Invoice Custom -->
+				<field name="tanggal_dokumen_pabean" position="after">
+					<field name="nomor_invoice_custom" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
+				<!-- ========================= -->
+				<!-- BL /AWB -->
+				<field name="nomor_invoice_custom" position="after">
+					<field name="nomor_bl_awb" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
+				<field name="nomor_bl_awb" position="after">
+					<field name="tanggal_bl_awb" attrs="{'invisible':[('chk_import','=',False)], 'required':[('chk_import','=',True)]}"/>
+				</field>
 			</data>
 
        </field>

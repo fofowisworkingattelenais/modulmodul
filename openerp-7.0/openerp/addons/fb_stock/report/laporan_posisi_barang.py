@@ -23,6 +23,7 @@
 
 from datetime import time, date, datetime
 from report import report_sxw
+from itertools import tee, islice, chain, izip
 
 class laporan_posisi_barang(report_sxw.rml_parse):
     def __init__(self, cr, uid, name, context):
@@ -36,7 +37,6 @@ class laporan_posisi_barang(report_sxw.rml_parse):
             'nama_uom' : self.get_nama_uom,
             'nama_product' : self.get_nama_product,
             'default_code' : self.get_default_code,
-
             'qty_available' : self.get_qty_available,
             'isi_saldo' : self.saldo,
             'category_name' : self.get_category_name,
@@ -112,12 +112,12 @@ class laporan_posisi_barang(report_sxw.rml_parse):
         cat = {}
         nama_product = []
         saldo = []
-        print 'getting id'
+
         self.cr.execute(" select distinct(d.product_id) as id from product_template a \
             left join product_category b on a.categ_id = b.parent_left \
             left join product_product c on a.id = c.product_tmpl_id \
             left join stock_move d on c.id = d.product_id \
-            where  d.product_id is not null and d.location_id = %s \
+            where  and d.location_id = %s \
         " % form['location_id'][0])
         cat = self.cr.dictfetchall()
         if not cat:
@@ -125,9 +125,7 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                         'nama_product': '',
                     }
 
-        print 'get id'
-        print cat
-        # print form['parent_id'][0]
+
         if i < len(cat):
             for ii in cat:
 
@@ -185,14 +183,6 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                         'done', form['location_id'][0], form['location_id'][0]))
 
                 query = self.cr.dictfetchall()
-                print '++++++++++++++++++++++++++++++++++++++'
-                print form['location_id'][0], form['date_from'], form['date_to'],
-                print form['location_id'][0], form['date_from'], form['date_to'],
-                print form['location_id'][0], form['date_from'], form['location_id'][0],
-                print form['location_id'][0], form['location_id'][0], form['date_from'],
-                print form['location_id'][0], form['location_id'][0], ii['id'],
-                print 'done', form['location_id'][0], form['location_id'][0]
-                print '++++++++++++++++++++++++++++++++++++++'
 
                 for a in query:
 
@@ -245,7 +235,7 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                     saldo_ak += 1
                     i += 1
 
-            print nama_product
+
             return nama_product
 
     def get_default_code(self, form):
@@ -478,144 +468,194 @@ class laporan_posisi_barang(report_sxw.rml_parse):
         res = {}
         query = {}
         i = 0
+        l = 0
         cat = {}
-        self.cr.execute(" select distinct(d.product_id) as id from product_template a \
-            left join product_category b on a.categ_id = b.parent_left \
-            left join product_product c on a.id = c.product_tmpl_id \
-            left join stock_move d on c.id = d.product_id \
-            where  d.product_id is not null and d.location_id = %s \
-        " % form['location_id'][0])
-
-        cat = self.cr.dictfetchall()
-        if i < len(cat):
-            for ii in cat:
-                a = 0
-                #todo query saldo awal
-                self.cr.execute("   SELECT \
-                                    COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
-                                    COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
-                                    COALESCE(sum(B2.product_qty), 0.000) masuk,\
-                                    COALESCE(sum(B3.product_qty), 0.000) keluar,\
-                                    COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
-                                    COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal,\
-                                    U.name as satuan_barang,\
-                                    Z.name_template as nama_product\
-                                    FROM stock_move A \
-                                    LEFT JOIN (SELECT A2.id,A2.product_qty \
-                                    FROM  \
-                                    stock_move A2 \
-                                    JOIN stock_location C \
-                                    ON A2.location_dest_id = C.id \
-                                    WHERE 	C.id = %s \
-                                                    AND (A2.date > %s AND A2.date < %s))\
-                                            B2 ON A.id = B2.id \
-                                        LEFT JOIN (SELECT A3.id, A3.product_qty \
-                                            FROM \
-                                                stock_move A3 \
-                                                    JOIN stock_location C2 \
-                                                        ON A3.location_id = C2.id \
-                                            WHERE 	C2.id = %s \
-                                                    AND (A3.date > %s AND A3.date < %s) ) \
-                                             B3 ON A.id = B3.id \
-                                        LEFT JOIN (SELECT A4.id, A4.product_qty \
-                                            FROM \
-                                                stock_move A4 \
-                                                    JOIN stock_location C3 \
-                                                        ON A4.location_id = C3.id \
-                                            WHERE 	C3.id = %s\
-                                                AND (A4.date < %s )  \
-                                                AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
-                                            B4 ON A.id = B4.id \
-                                        LEFT JOIN (SELECT A5.id, A5.product_qty \
-                                            FROM \
-                                                stock_move A5 \
-                                                    JOIN stock_location C4 \
-                                                        ON A5.location_dest_id = C4.id \
-                                            WHERE 	C4.id = %s \
-                                                AND (A5.date < %s ) \
-                                                AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
-                                            B5 ON A.id = B5.id \
-                                LEFT JOIN product_uom U \
-                                on A.product_uom = U.id \
-                                LEFT JOIN product_product Z \
-                                on A.product_id = Z.id \
-                                LEFT JOIN stock_picking P \
-                                on A.picking_id = P.id \
-                                    WHERE \
-                                        product_id = %s \
-                                        AND P.chk_import = 'true' \
-                                        AND A.state = %s \
-                                        AND (A.location_dest_id = %s OR A.location_id = %s) \
-                                    GROUP BY U.name, Z.name_template \
-                                    ", (form['location_id'][0], form['date_from'], form['date_to'],
-                                        form['location_id'][0], form['date_from'], form['date_to'],
-                                        form['location_id'][0], form['date_from'], form['location_id'][0],
-                                        form['location_id'][0], form['location_id'][0], form['date_from'],
-                                        form['location_id'][0], form['location_id'][0], ii['id'],
-                                        'done', form['location_id'][0], form['location_id'][0]))
-
-                query = self.cr.dictfetchall()
-                if a < len(query):
-                    if query[a]['masuk_awal'] is None or '':
-                        query[a]['masuk_awal'] = 0.000
-                    if query[a]['keluar_awal'] is None or '':
-                        query[a]['keluar_awal'] = 0.000
-                    if query[a]['masuk'] is None or '':
-                        query[a]['masuk'] = 0.000
-                    if query[a]['keluar'] is None or '':
-                        query[a]['keluar'] = 0.000
 
 
-                    masuk_awal =  query[a]['masuk_awal'] or 0.000
-                    keluar_awal = query[a]['keluar_awal'] or 0.000
-                    keluar = query[a]['keluar'] or 0.000
-                    masuk = query[a]['masuk'] or 0.000
-                    hasil =  query[a]['hasil'] or 0.000
-                    # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
-                    # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
-                    saldo_awal = (masuk_awal - keluar_awal)  or 0.0
-                    saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
-                    if masuk is None or '' or 0.0:
-                        saldo_akhir = saldo_awal - keluar
+## adding location header pick
+        self.cr.execute("   select a.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and a.id is not null\
+                            union \
+                            select b.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and b.id is not null \
+                            union \
+                            select c.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and c.id is not null \
+                            union \
+                            select d.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and d.id is not null \
+                            union \
+                            select e.id as location_id  from stock_location a \
+                                    left join stock_location b on a.id = b.location_id \
+                                    left join stock_location c on b.id = c.location_id \
+                                    left join stock_location d on c.id = d.location_id \
+                                    left join stock_location e on d.id = e.location_id \
+                                where a.id = %s and e.id is not null \
+                            order by location_id ", (form['location_id'][0], form['location_id'][0], form['location_id'][0],
+                                            form['location_id'][0], form['location_id'][0]))
+        loc_id = self.cr.dictfetchall()
 
-                    resi = {
-                            'no': a,
-                            'nama_barang': '',
-                            'tanggal': '',
-                            'masuk': '',
-                            'keluar': '-',
-                            'stok': '-',
-                            'start_date': '',
-                            'end_date': '',
-                            'satuan_barang': query[a]['satuan_barang'],
-                            'nama_product':query[a]['nama_product'],
-                            'kode_barang': '',
-                            'in_nomor_dokumen_pabean': '',
-                            'in_tanggal_dokumen_pabean': '',
-                            'in_jenis_dokumen_pabean':'',
-                            'in_tanggal':'',
-                            'out_nomor_dokumen_pabean': '',
-                            'out_tanggal_dokumen_pabean': '',
-                            'out_jenis_dokumen_pabean':'',
-                            'out_tanggal': '',
-                            'tanggal_dokumen_pabean':'',
-                            'jenis_dokumen_pabean':'',
-                            'masuk_awal' :masuk_awal,
-                            'keluar_awal' : keluar_awal,
-                            'saldo_awal': saldo_awal or '0.0',
-                            'saldo_akhir': saldo_akhir or '0.0',
-                            'date_from': form['date_from'],
-                            'date_to': form['date_to'],
-                            'in_price': '',
-                            'out_price': ''
-                    }
+        if l < len(loc_id):
+            for iiii in loc_id:
 
-                    self.isi_laporan.append(resi)
-                    a+=1
+                self.cr.execute(" select \
+                                        distinct(a.id) as id,\
+                                        c.default_code as code\
+                                    from product_template a \
+                                         left join product_category b on a.categ_id = b.parent_left \
+                                         left join product_product 	c on a.id 	= c.product_tmpl_id \
+                                         left join stock_move 	d on c.id 	= d.product_id \
+                                         left join stock_picking 	e on d.picking_id 	= e.id \
+                                    where  (d.location_id = %s or d.location_dest_id = %s) and d.state = 'done' \
+                                    order by   c.default_code asc \
+                ", (iiii['location_id'], iiii['location_id']))
 
+                cat = self.cr.dictfetchall()
 
-                    self.cr.execute("   SELECT date(A.date), \
+                for ii in cat:
+                    a = 0
+                    #todo query saldo awal
+                    # self.cr.execute("   SELECT \
+                    #                     COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
+                    #                     COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
+                    #                     COALESCE(sum(B2.product_qty), 0.000) masuk,\
+                    #                     COALESCE(sum(B3.product_qty), 0.000) keluar,\
+                    #                     COALESCE(sum(B2.product_qty) - sum(B3.product_qty), 0.000) hasil,\
+                    #                     COALESCE(sum(B5.product_qty)  - sum(B4.product_qty), 0.000) saldo_awal,\
+                    #                     U.name as satuan_barang,\
+                    #                     Z.name_template as nama_product\
+                    #                     FROM stock_move A \
+                    #                     LEFT JOIN (SELECT A2.id,A2.product_qty \
+                    #                     FROM  \
+                    #                     stock_move A2 \
+                    #                     JOIN stock_location C \
+                    #                     ON A2.location_dest_id = C.id \
+                    #                     WHERE 	C.id = %s \
+                    #                                     AND (date(A2.date) >= %s AND date(A2.date) <= %s))\
+                    #                             B2 ON A.id = B2.id \
+                    #                         LEFT JOIN (SELECT A3.id, A3.product_qty \
+                    #                             FROM \
+                    #                                 stock_move A3 \
+                    #                                     JOIN stock_location C2 \
+                    #                                         ON A3.location_id = C2.id \
+                    #                             WHERE 	C2.id = %s \
+                    #                                     AND (date(A3.date) >= %s AND date(A3.date) <= %s) ) \
+                    #                              B3 ON A.id = B3.id \
+                    #                         LEFT JOIN (SELECT A4.id, A4.product_qty \
+                    #                             FROM \
+                    #                                 stock_move A4 \
+                    #                                     JOIN stock_location C3 \
+                    #                                         ON A4.location_id = C3.id \
+                    #                             WHERE 	C3.id = %s\
+                    #                                 AND (date(A4.date) <= %s )  \
+                    #                                 AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
+                    #                             B4 ON A.id = B4.id \
+                    #                         LEFT JOIN (SELECT A5.id, A5.product_qty \
+                    #                             FROM \
+                    #                                 stock_move A5 \
+                    #                                     JOIN stock_location C4 \
+                    #                                         ON A5.location_dest_id = C4.id \
+                    #                             WHERE 	C4.id = %s \
+                    #                                 AND (date(A5.date) <= %s ) \
+                    #                                 AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
+                    #                             B5 ON A.id = B5.id \
+                    #                 LEFT JOIN product_uom U \
+                    #                 on A.product_uom = U.id \
+                    #                 LEFT JOIN product_product Z \
+                    #                 on A.product_id = Z.id \
+                    #                 LEFT JOIN stock_picking P \
+                    #                 on A.picking_id = P.id \
+                    #                     WHERE \
+                    #                         product_id = %s \
+                    #                         AND A.state = %s \
+                    #                         AND (A.location_dest_id = %s OR A.location_id = %s) \
+                    #                     GROUP BY U.name, Z.name_template \
+                    #                     ", (iiii['location_id'], form['date_from'], form['date_to'],
+                    #                         iiii['location_id'], form['date_from'], form['date_to'],
+                    #                         iiii['location_id'], form['date_from'], iiii['location_id'],
+                    #                         iiii['location_id'], iiii['location_id'], form['date_from'],
+                    #                         iiii['location_id'], iiii['location_id'], ii['id'],
+                    #                         'done', iiii['location_id'], iiii['location_id']))
+                    #
+                    # query = self.cr.dictfetchall()
+                    # if a < len(query):
+                    #     if query[a]['masuk_awal'] is None or '':
+                    #         query[a]['masuk_awal'] = 0.000
+                    #     if query[a]['keluar_awal'] is None or '':
+                    #         query[a]['keluar_awal'] = 0.000
+                    #     if query[a]['masuk'] is None or '':
+                    #         query[a]['masuk'] = 0.000
+                    #     if query[a]['keluar'] is None or '':
+                    #         query[a]['keluar'] = 0.000
+                    #
+                    #
+                    #     masuk_awal =  query[a]['masuk_awal'] or 0.000
+                    #     keluar_awal = query[a]['keluar_awal'] or 0.000
+                        #     keluar = query[a]['keluar'] or 0.000
+                    #     masuk = query[a]['masuk'] or 0.000
+                    #     hasil =  query[a]['hasil'] or 0.000
+                    #     # saldo_awal = query[i]['masuk_awal']  + query[i]['keluar_awal']
+                    #     # saldo_akhir = (query[i]['masuk_awal'] + query[i]['keluar_awal']) or 0.000 - query[i]['hasil'] or 0.000
+                    #     saldo_awal = (masuk_awal - keluar_awal)  or 0.0
+                    #     saldo_akhir = (saldo_awal + (masuk - keluar)) or 0.0
+                    #     if masuk is None or '' or 0.0:
+                    #         saldo_akhir = saldo_awal - keluar
+                    #
+                    #     resi = {
+                    #             'no': a,
+                    #             'nama_barang': '',
+                    #             'tanggal': '',
+                    #             'masuk': '',
+                    #             'keluar': '-',
+                    #             'stok': '-',
+                    #             'start_date': '',
+                    #             'end_date': '',
+                    #             'satuan_barang': query[a]['satuan_barang'],
+                    #             'nama_product':query[a]['nama_product'],
+                    #             'kode_barang': '',
+                    #             'in_nomor_dokumen_pabean': '',
+                    #             'in_tanggal_dokumen_pabean': '',
+                    #             'in_jenis_dokumen_pabean':'',
+                    #             'in_tanggal':'',
+                    #             'out_nomor_dokumen_pabean': '',
+                    #             'out_tanggal_dokumen_pabean': '',
+                    #             'out_jenis_dokumen_pabean':'',
+                    #             'out_tanggal': '',
+                    #             'tanggal_dokumen_pabean':'',
+                    #             'jenis_dokumen_pabean':'',
+                    #             'masuk_awal' :masuk_awal,
+                    #             'keluar_awal' : keluar_awal,
+                    #             'saldo_awal': saldo_awal or '0.0',
+                    #             'saldo_akhir': saldo_akhir or '0.0',
+                    #             'date_from': form['date_from'],
+                    #             'date_to': form['date_to'],
+                    #             'in_price': '',
+                    #             'out_price': ''
+                    #     }
+                    #
+                    #     self.isi_laporan.append(resi)
+                    #     a+=1
+##todo start
+
+                    self.cr.execute("   SELECT A.date, \
                                 A.name AS nama_barang,\
+                                LL.qty as sisa_barang,\
                                 A.price_unit AS price_unit,\
                                 U.name AS satuan_barang,\
                                 Z.name_template AS nama_product,\
@@ -668,32 +708,42 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                 on A.product_id = Z.id \
                                 LEFT JOIN gdi_jenis_dokumen_pabean J \
                                 on P.jenis_dokumen_id = J.id \
-                                WHERE product_id = %s \
-                                AND P.chk_import = 'true' \
+                                LEFT JOIN stock_production_lot lot \
+                                on A.prodlot_id = lot.id \
+left join ( select prodlot_id , qty, product_id from stock_report_prodlots where location_id= %s and qty <> 0) LL on lot.id = LL.prodlot_id\
+                                WHERE A.product_id = %s \
                                 AND A.state = %s \
+                                AND B2.product_qty is not null \
+                                AND LL.qty is not null \
                                 AND (A.location_dest_id = %s OR A.location_id = %s)\
-                                AND (A.date > %s AND A.date < %s)\
-                                ORDER BY date(A.date) ",
-                                    (form['location_id'][0], form['location_id'][0], ii['id'], 'done', form['location_id'][0], form['location_id'][0], form['date_from'], form['date_to']))
+                                AND date(P.tanggal_dokumen_pabean) <= %s\
+                                ORDER BY P.tanggal_dokumen_pabean ",
+                                    (iiii['location_id'], iiii['location_id'],iiii['location_id'], ii['id'],
+                                     'done', iiii['location_id'], iiii['location_id'],
+                                       form['date_from']))
 
                     query = self.cr.dictfetchall()
 
                     i = 0
-
+                    saldo = 0
+                    list_hasil = []
                     if i < len(query):
                         while i < len(query):
 
                             debit = query[i]['debit'] or 0.0
                             kredit = query[i]['kredit'] or 0.0
                             price = query[i]['price_unit'] or 0.0
-                            saldo_awal += (debit - kredit)
-                            print price
+                            # saldo_awal += (debit - kredit)
+
+                            saldo += (debit - kredit)
+
+
                             res = {
                                 'no': i,
                                 'nama_barang': query[i]['nama_barang'],
                                 'tanggal': self.get_tanggal(query[i]['date']),
-                                'masuk':  query[i]['debit'] or 0.0,
-                                'keluar': query[i]['kredit'] or 0.0,
+                                'masuk': 'awal',
+                                'keluar': '',
                                 'stok': query[i]['debit'] or query[i]['kredit'] or '-',
                                 # 'keterangan': query[i]['note'],
                                 'start_date': form['date_from'],
@@ -701,8 +751,8 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                 'satuan_barang': query[i]['satuan_barang'],
                                 'nama_product': query[i]['nama_product'],
                                 'kode_barang': query[i]['kode_barang'],
-                                'in_price': debit * price ,
-                                'out_price': kredit * price ,
+                                'in_price': debit * price,
+                                'out_price': kredit * price,
                                 'in_nomor_dokumen_pabean': query[i]['in_nomor_dokumen_pabean'],
                                 'in_tanggal_dokumen_pabean': query[i]['in_tanggal_dokumen_pabean'],
                                 'in_jenis_dokumen_pabean':query[i]['in_jenis_dokumen_pabean'],
@@ -713,14 +763,267 @@ class laporan_posisi_barang(report_sxw.rml_parse):
                                 'out_tanggal':query[i]['out_tanggal'],
                                 'tanggal_dokumen_pabean':query[i]['tanggal_dokumen_pabean'],
                                 'jenis_dokumen_pabean':query[i]['jenis_dokumen_pabean'],
-                                'saldo_awal':saldo_awal,
+                                'saldo_awal':query[i]['sisa_barang'],
 
                             }
 
 
-
                             self.isi_laporan.append(res)
                             i += 1
+
+##todo query before periode
+#                     self.cr.execute("   SELECT A.date, \
+#                                 A.name AS nama_barang,\
+#                                 A.price_unit AS price_unit,\
+#                                 U.name AS satuan_barang,\
+#                                 Z.name_template AS nama_product,\
+#                                 Z.default_code AS kode_barang,\
+#                                 B3.product_qty AS kredit, \
+#                                 B2.product_qty AS debit, \
+#                                 P.nomor_dokumen_pabean AS nomor_dokumen_pabean, \
+#                                 P.tanggal_dokumen_pabean AS tanggal_dokumen_pabean, \
+#                                 AAA1.nomor_dokumen_pabean AS in_nomor_dokumen_pabean, \
+#                                 AAA1.tanggal_dokumen_pabean AS in_tanggal_dokumen_pabean, \
+#                                 AAA1.name AS in_jenis_dokumen_pabean, \
+#                                 AAA1.date AS in_tanggal, \
+#                                 BBB1.nomor_dokumen_pabean AS out_nomor_dokumen_pabean, \
+#                                 BBB1.tanggal_dokumen_pabean AS out_tanggal_dokumen_pabean, \
+#                                 BBB1.name AS out_jenis_dokumen_pabean, \
+#                                 BBB1.date AS out_tanggal, \
+#                                 J.name AS jenis_dokumen_pabean \
+#                                 FROM stock_move A \
+#                                 LEFT JOIN (SELECT A2.id, \
+#                                 A2.product_qty \
+#                                 FROM stock_move A2 \
+#                                 JOIN stock_location C ON A2.location_dest_id = C.id \
+#                                 WHERE C.id = %s ) B2 ON A.id = B2.id \
+#                                 LEFT JOIN (SELECT A3.id, \
+#                                 A3.product_qty \
+#                                 FROM stock_move A3 \
+#                                 JOIN stock_location C2 ON A3.location_id = C2.id \
+#                                 WHERE C2.id = %s ) B3 ON A.id = B3.id \
+#                                 LEFT JOIN (SELECT AAA.id, \
+#                                 PPP.nomor_dokumen_pabean, PPP.tanggal_dokumen_pabean, J1.name, AAA.date \
+#                                 FROM stock_move AAA \
+#                                 JOIN stock_picking PPP ON AAA.picking_id = PPP.id \
+#                                 LEFT JOIN gdi_jenis_dokumen_pabean J1 \
+#                                 on PPP.jenis_dokumen_id = J1.id \
+#                                 WHERE PPP.type ='in' ) AAA1 ON A.id = AAA1.id \
+#                                 LEFT JOIN (SELECT BBB.id, \
+#                                 PPP1.nomor_dokumen_pabean, PPP1.tanggal_dokumen_pabean , J2.name, BBB.date\
+#                                 FROM stock_move BBB \
+#                                 JOIN stock_picking PPP1 ON BBB.picking_id = PPP1.id \
+#                                 LEFT JOIN gdi_jenis_dokumen_pabean J2 \
+#                                 on PPP1.jenis_dokumen_id = J2.id \
+#                                 WHERE PPP1.type ='out' ) BBB1 ON A.id = BBB1.id \
+#                                 LEFT JOIN stock_picking P \
+#                                 on A.picking_id = P.id \
+#                                 LEFT JOIN res_partner R \
+#                                 on A.partner_id = R.id \
+#                                 LEFT JOIN product_uom U \
+#                                 on A.product_uom = U.id \
+#                                 LEFT JOIN product_product Z \
+#                                 on A.product_id = Z.id \
+#                                 LEFT JOIN gdi_jenis_dokumen_pabean J \
+#                                 on P.jenis_dokumen_id = J.id \
+#                                 LEFT JOIN stock_production_lot lot \
+#                                 on A.prodlot_id = lot.id \
+# left join ( select prodlot_id , qty, product_id from stock_report_prodlots where location_id=%s and qty = 0) LL on lot.id = LL.prodlot_id\
+#                                 WHERE A.product_id = %s \
+#                                 AND A.state = %s \
+#                                 AND (A.location_dest_id = %s OR A.location_id = %s)\
+#                                 AND date(P.tanggal_dokumen_pabean) <= %s\
+#                                 ORDER BY P.tanggal_dokumen_pabean desc limit 1",
+#                                     (iiii['location_id'], iiii['location_id'],iiii['location_id'], ii['id'],
+#                                      'done', iiii['location_id'], iiii['location_id'],
+#                                        form['date_from']))
+#
+#                     query = self.cr.dictfetchall()
+#
+#                     i = 0
+#                     # saldo = 0
+#                     list_hasil = []
+#                     if i < len(query):
+#                         while i < len(query):
+#
+#                             debit = query[i]['debit'] or 0.0
+#                             kredit = query[i]['kredit'] or 0.0
+#                             price = query[i]['price_unit'] or 0.0
+#                             # saldo_awal += (debit - kredit)
+#
+#                             saldo += (debit - kredit)
+#
+#                             res = {
+#                                 'no': i,
+#                                 'nama_barang': query[i]['nama_barang'],
+#                                 'tanggal': self.get_tanggal(query[i]['date']),
+#                                 # 'masuk':  query[i]['debit'] or 0.0,
+#                                 # 'keluar': query[i]['kredit'] or 0.0,
+#                                 'stok': query[i]['debit'] or query[i]['kredit'] or '-',
+#                                 # 'keterangan': query[i]['note'],
+#                                 'start_date': form['date_from'],
+#                                 'end_date': form['date_to'],
+#                                 'satuan_barang': query[i]['satuan_barang'],
+#                                 'nama_product': query[i]['nama_product'],
+#                                 'kode_barang': query[i]['kode_barang'],
+#                                 'in_price': debit * price,
+#                                 'out_price': kredit * price,
+#                                 'in_nomor_dokumen_pabean': query[i]['in_nomor_dokumen_pabean'],
+#                                 'in_tanggal_dokumen_pabean': query[i]['in_tanggal_dokumen_pabean'],
+#                                 'in_jenis_dokumen_pabean':query[i]['in_jenis_dokumen_pabean'],
+#                                 'in_tanggal':query[i]['in_tanggal'],
+#                                 'out_nomor_dokumen_pabean': query[i]['out_nomor_dokumen_pabean'],
+#                                 'out_tanggal_dokumen_pabean': query[i]['out_tanggal_dokumen_pabean'],
+#                                 'out_jenis_dokumen_pabean':query[i]['out_jenis_dokumen_pabean'],
+#                                 'out_tanggal':query[i]['out_tanggal'],
+#                                 'tanggal_dokumen_pabean':query[i]['tanggal_dokumen_pabean'],
+#                                 'jenis_dokumen_pabean':query[i]['jenis_dokumen_pabean'],
+#                                 'saldo_awal':saldo,
+#
+#                             }
+#
+#
+#                             self.isi_laporan.append(res)
+#                             i += 1
+
+
+                    self.cr.execute(" select distinct(id) from stock_production_lot where product_id = %s order by id",
+                                    (ii['id'], ))
+                    q = self.cr.dictfetchall()
+
+                    for sn in q:
+##todo dalam periode form and order by tanggal pabean dan lot id
+                        self.cr.execute("   SELECT A.date, \
+                                    A.name AS nama_barang,\
+                                    A.price_unit AS price_unit,\
+                                    U.name AS satuan_barang,\
+                                    Z.name_template AS nama_product,\
+                                    Z.default_code AS kode_barang,\
+                                    B3.product_qty AS kredit, \
+                                    B2.product_qty AS debit, \
+                                    P.nomor_dokumen_pabean AS nomor_dokumen_pabean, \
+                                    P.tanggal_dokumen_pabean AS tanggal_dokumen_pabean, \
+                                    AAA1.nomor_dokumen_pabean AS in_nomor_dokumen_pabean, \
+                                    AAA1.tanggal_dokumen_pabean AS in_tanggal_dokumen_pabean, \
+                                    AAA1.name AS in_jenis_dokumen_pabean, \
+                                    AAA1.date AS in_tanggal, \
+                                    BBB1.nomor_dokumen_pabean AS out_nomor_dokumen_pabean, \
+                                    BBB1.tanggal_dokumen_pabean AS out_tanggal_dokumen_pabean, \
+                                    BBB1.name AS out_jenis_dokumen_pabean, \
+                                    BBB1.date AS out_tanggal, \
+                                    J.name AS jenis_dokumen_pabean \
+                                    FROM stock_move A \
+                                    LEFT JOIN (SELECT A2.id, \
+                                    A2.product_qty \
+                                    FROM stock_move A2 \
+                                    JOIN stock_location C ON A2.location_dest_id = C.id \
+                                    WHERE C.id = %s ) B2 ON A.id = B2.id \
+                                    LEFT JOIN (SELECT A3.id, \
+                                    A3.product_qty \
+                                    FROM stock_move A3 \
+                                    JOIN stock_location C2 ON A3.location_id = C2.id \
+                                    WHERE C2.id = %s ) B3 ON A.id = B3.id \
+                                    LEFT JOIN (SELECT AAA.id, \
+                                    PPP.nomor_dokumen_pabean, PPP.tanggal_dokumen_pabean, J1.name, AAA.date \
+                                    FROM stock_move AAA \
+                                    JOIN stock_picking PPP ON AAA.picking_id = PPP.id \
+                                    LEFT JOIN gdi_jenis_dokumen_pabean J1 \
+                                    on PPP.jenis_dokumen_id = J1.id \
+                                    WHERE PPP.type ='in' ) AAA1 ON A.id = AAA1.id \
+                                    LEFT JOIN (SELECT BBB.id, \
+                                    PPP1.nomor_dokumen_pabean, PPP1.tanggal_dokumen_pabean , J2.name, BBB.date\
+                                    FROM stock_move BBB \
+                                    JOIN stock_picking PPP1 ON BBB.picking_id = PPP1.id \
+                                    LEFT JOIN gdi_jenis_dokumen_pabean J2 \
+                                    on PPP1.jenis_dokumen_id = J2.id \
+                                    WHERE PPP1.type ='out' ) BBB1 ON A.id = BBB1.id \
+                                    LEFT JOIN stock_picking P \
+                                    on A.picking_id = P.id \
+                                    LEFT JOIN res_partner R \
+                                    on A.partner_id = R.id \
+                                    LEFT JOIN product_uom U \
+                                    on A.product_uom = U.id \
+                                    LEFT JOIN product_product Z \
+                                    on A.product_id = Z.id \
+                                    LEFT JOIN gdi_jenis_dokumen_pabean J \
+                                    on P.jenis_dokumen_id = J.id \
+                                    LEFT JOIN stock_production_lot lot \
+                                    on A.prodlot_id = lot.id \
+                                    WHERE A.product_id = %s \
+                                    AND A.state = %s \
+                                    AND (A.location_dest_id = %s OR A.location_id = %s)\
+                                    AND (  date(P.tanggal_dokumen_pabean) >= %s and date(P.tanggal_dokumen_pabean) <= %s)\
+                                    and lot.id in ( %s ) \
+                                    ORDER BY lot.id,P.tanggal_dokumen_pabean asc",
+                                        (iiii['location_id'], iiii['location_id'], ii['id'],
+                                         'done', iiii['location_id'], iiii['location_id'],
+                                            form['date_from'], form['date_to'], sn['id']))
+
+                        query = self.cr.dictfetchall()
+
+                        def previous_and_next(some_iterable):
+                            prevs, items, nexts = tee(some_iterable, 3)
+                            prevs = chain([None], prevs)
+                            nexts = chain(islice(nexts, 1, None), [None])
+                            return izip(prevs, items, nexts)
+
+                        i = 0
+                        saldo = 0
+                        list_hasil = []
+                        if i < len(query):
+                            while i < len(query):
+
+                                debit = query[i]['debit'] or 0.0
+                                kredit = query[i]['kredit'] or 0.0
+                                price = query[i]['price_unit'] or 0.0
+                                # saldo_awal += (debit - kredit)
+
+                                saldo += (debit - kredit)
+                                list_hasil.append(saldo)
+                                print list_hasil[-1]
+                                if saldo < 0:
+                                    saldo = 0
+                                    stok_awal = abs(list_hasil[-1])
+
+
+                                    self.isi_laporan.append({
+                                        'saldo_awal': stok_awal,
+                                        'nama_product': query[i]['nama_product'],
+                                        'satuan_barang': query[i]['satuan_barang'],
+                                        })
+
+                                res = {
+                                    'no': i,
+                                    'nama_barang': query[i]['nama_barang'],
+                                    'tanggal': self.get_tanggal(query[i]['date']),
+                                    'masuk':  query[i]['debit'] or 0.0,
+                                    'keluar': query[i]['kredit'] or 0.0,
+                                    'stok': query[i]['debit'] or query[i]['kredit'] or '-',
+                                    # 'keterangan': query[i]['note'],
+                                    'start_date': form['date_from'],
+                                    'end_date': form['date_to'],
+                                    'satuan_barang': query[i]['satuan_barang'],
+                                    'nama_product': query[i]['nama_product'],
+                                    'kode_barang': query[i]['kode_barang'],
+                                    'in_price': debit * price,
+                                    'out_price': kredit * price,
+                                    'in_nomor_dokumen_pabean': query[i]['in_nomor_dokumen_pabean'],
+                                    'in_tanggal_dokumen_pabean': query[i]['in_tanggal_dokumen_pabean'],
+                                    'in_jenis_dokumen_pabean':query[i]['in_jenis_dokumen_pabean'],
+                                    'in_tanggal':query[i]['in_tanggal'],
+                                    'out_nomor_dokumen_pabean': query[i]['out_nomor_dokumen_pabean'],
+                                    'out_tanggal_dokumen_pabean': query[i]['out_tanggal_dokumen_pabean'],
+                                    'out_jenis_dokumen_pabean':query[i]['out_jenis_dokumen_pabean'],
+                                    'out_tanggal':query[i]['out_tanggal'],
+                                    'tanggal_dokumen_pabean':query[i]['tanggal_dokumen_pabean'],
+                                    'jenis_dokumen_pabean':query[i]['jenis_dokumen_pabean'],
+                                    'saldo_awal':saldo,
+
+                                }
+
+
+                                self.isi_laporan.append(res)
+                                i += 1
 
             return self.isi_laporan
 
@@ -736,6 +1039,7 @@ class laporan_posisi_barang(report_sxw.rml_parse):
         # self.categ_id = data['form']['parent_id'][0]
         self.date_from = data['form']['date_from']
         self.date_to = data['form']['date_to']
+        # self.jenis_dokumen_id = data['form']['jenis_dokumen_id'][0]
 
 
         return super(laporan_posisi_barang, self).set_context(objects, data, ids, report_type=report_type)

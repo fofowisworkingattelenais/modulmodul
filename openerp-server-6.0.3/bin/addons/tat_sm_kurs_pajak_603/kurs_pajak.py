@@ -37,6 +37,7 @@ class smcus_kurs_pajak(osv.osv):
     _order = "name desc"
 
     def _current_rate(self, cr, uid, ids, name, arg, context=None):
+        print 'kesini ga lu'
         if context is None:
             context = {}
         res = {}

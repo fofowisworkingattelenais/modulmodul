@@ -23,7 +23,7 @@
 from osv import fields, osv
 
 
-class stock_picking_in(osv.osv_memory):
+class stock_picking_in(osv.osv):
    
    
     _inherit = 'stock.picking.in'
@@ -31,6 +31,15 @@ class stock_picking_in(osv.osv_memory):
 
     _columns = {
                 # 'karyawan_id' : fields.many2one('hr.employee', 'User Request',required=False),
+                # Nomor dan Tanggal BL/AWB - added : Sigit 31 Maret 2015
+                # ======================================================
+                'nomor_bl_awb' : fields.char(string='Nomor BL/AWB', size=50, required=False),
+                'tanggal_bl_awb' : fields.date(string='Tanggal BL/AWB', required=False),                
+                # ======================================================
+                # Nomor Invoice Custom -added : Sigit - 16 Feb 2015
+                # =================================================
+                'nomor_invoice_custom' : fields.char(string='Nomor Invoice (Custom)', size=50, required=False),
+                # =================================================
                 'jenis_dokumen_id' : fields.many2one('gdi.jenis_dokumen_pabean', 'Jenis Dokumen',required=False),
                 'nomor_dokumen_pabean' : fields.char(string='Nomor Dokumen Pabean', size=50, required=False),
                 'tanggal_dokumen_pabean' : fields.date(string='Tanggal Dokumen Pabean', required=False),
@@ -40,13 +49,22 @@ stock_picking_in()
 
 
 
-class stock_picking_out(osv.osv_memory):
+class stock_picking_out(osv.osv):
    
    
     _inherit = 'stock.picking.out'
 
     _columns = {
                 # 'karyawan_id' : fields.many2one('hr.employee', 'User Request',required=False),
+                # Nomor dan Tanggal BL/AWB - added : Sigit 31 Maret 2015
+                # ======================================================
+                'nomor_bl_awb' : fields.char(string='Nomor BL/AWB', size=50, required=False),
+                'tanggal_bl_awb' : fields.date(string='Tanggal BL/AWB', required=False),
+                # ======================================================
+                # Nomor Invoice Custom -added : Sigit - 16 Feb 2015
+                # =================================================
+                'nomor_invoice_custom' : fields.char(string='Nomor Invoice (Custom)', size=50, required=False),
+                # =================================================
                 'jenis_dokumen_id' : fields.many2one('gdi.jenis_dokumen_pabean', 'Jenis Dokumen',required=False),
                 'nomor_dokumen_pabean' : fields.char(string='Nomor Dokumen Pabean', size=50, required=False),
                 'tanggal_dokumen_pabean' : fields.date(string='Tanggal Dokumen Pabean', required=False),
@@ -54,13 +72,22 @@ class stock_picking_out(osv.osv_memory):
             }
 stock_picking_out()
 
-class stock_picking(osv.osv_memory):
+class stock_picking(osv.osv):
    
    
     _inherit = 'stock.picking'
 
     _columns = {
                 # 'karyawan_id' : fields.many2one('hr.employee', 'User Request',required=False),
+                # Nomor dan Tanggal BL/AWB - added : Sigit 31 Maret 2015
+                # ======================================================
+                'nomor_bl_awb' : fields.char(string='Nomor BL/AWB', size=50, required=False),
+                'tanggal_bl_awb' : fields.date(string='Tanggal BL/AWB', required=False),
+                # ======================================================
+                # Nomor Invoice Custom -added : Sigit - 16 Feb 2015
+                # =================================================
+                'nomor_invoice_custom' : fields.char(string='Nomor Invoice (Custom)', size=50, required=False),
+                # =================================================
                 'jenis_dokumen_id' : fields.many2one('gdi.jenis_dokumen_pabean', 'Jenis Dokumen',required=False),
                 'nomor_dokumen_pabean' : fields.char(string='Nomor Dokumen Pabean', size=50, required=False),
                 'tanggal_dokumen_pabean' : fields.date(string='Tanggal Dokumen Pabean', required=False),

@@ -74,6 +74,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
         return tanggal_cnvt
 
     def get_nama_uom(self, form):
+        print '+++++++++++++++++++++++++++++++=======================+++++++++++++++'
         nama_uom = ''
         obj_product = self.pool.get('product.product')
 
@@ -274,7 +275,10 @@ class laporan_kartu_stock(report_sxw.rml_parse):
         self.cr.execute("   SELECT A.date, \
                     A.note, \
                     B3.product_qty AS kredit, \
-                    B2.product_qty AS debit \
+                    B2.product_qty AS debit, \
+                    P.name AS references, \
+                    P.origin AS origin, \
+                    R.name AS partner \
                     FROM stock_move A \
                     LEFT JOIN (SELECT A2.id, \
                     A2.product_qty \
@@ -286,6 +290,10 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                     FROM stock_move A3 \
                     JOIN stock_location C2 ON A3.location_id = C2.id \
                     WHERE C2.id = %s ) B3 ON A.id = B3.id \
+                    LEFT JOIN stock_picking P \
+                    on A.picking_id = P.id \
+                    LEFT JOIN res_partner R \
+                    on A.partner_id = R.id \
                     WHERE product_id = %s \
                     AND A.state = %s \
                     AND (A.location_dest_id = %s OR A.location_id = %s)\
@@ -304,6 +312,9 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                     'keterangan' : query[i]['note'],
                     'start_date': form['date_from'],
                     'end_date': form['date_to'],
+                    'origin': query[i]['origin'],
+                    'references': query[i]['references'],
+                    'partner': query[i]['partner']
                 }
                 self.isi_laporan.append(res)
                 i+=1

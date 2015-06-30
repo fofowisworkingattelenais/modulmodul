@@ -85,14 +85,19 @@ def amount_to_text(number, currency):
     number = '%.2f' % number
     units_name = currency
     list = str(number).split('.')
-    start_word = indo_number(int(list[0]))
+    print len(list[0])
+    if int(list[0]) == 1000 or len(list[0])== 4:
+        start_word = indo_number(int(list[0]))
+        start_word = start_word.replace('Satu  Ribu', 'Seribu')
+    else:
+        start_word = indo_number(int(list[0]))
     end_word = indo_number(int(list[1]))
     if end_word is '':
         final_result = start_word + ' ' + units_name + ' ' + end_word
     else:
         final_result = start_word + ' ' + units_name + ' ' + end_word + ' Sen'
 
-    final_result = final_result.replace('Satu  Ribu', 'Seribu')
+    # final_result = final_result.replace('Satu  Ribu', 'Seribu')
     final_result = final_result.replace('Puluh  Seribu', 'Puluh Satu Ribu')
 
     return final_result

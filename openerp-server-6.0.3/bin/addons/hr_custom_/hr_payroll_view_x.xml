@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- 
+    	 <record id="hr_allounce_deduction_categoty_x_form" model="ir.ui.view">
+            <field name="name">hr.allounce.deduction.categoty.x.form</field>
+            <field name="model">hr.allounce.deduction.categoty</field>
+            <field name="inherit_id" ref="hr_payroll.hr_allounce_deduction_categoty_form" />
+            <field name="priority" eval="15" />                        
+            <field name="arch" type="xml">
+            	<xpath expr="/form[@string='Salary Heads']/group" position="attributes">
+            		<attribute name="col">8</attribute>
+            		<attribute name="colspan">8</attribute>
+            	</xpath>
+            	<field name="type" position="after">
+					 <field name="printable" />
+				</field>
+				<xpath expr="/form[@string='Salary Heads']/group/group[@colspan='4']" position="replace">
+					<group col="2" colspan="6">
+                         <separator colspan="6" string="Based on"/>
+                         <field name="base" colspan="6" nolabel="1"/>
+                     </group>
+            	</xpath>	
+            </field>
+        </record>
+         -->
+                                    
+        <record id="view_hr_payslip_x_form" model="ir.ui.view">
+            <field name="name">hr.payslip.x.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
+            <field name="priority" eval="15" />                        
+            <field name="arch" type="xml">      
+                                
+                <!-- 	
+                </xpath>
+            	<xpath expr="/form[@string='Payslip']/notebook/page[@string='Salary Computation']/field[@name='line_ids']/tree/field[@name='total']" position="after">
+            		<field name="hidden" />
+            	</xpath>            	
+            	 --> 
+            	                  	
+            	<field name="worked_days" position="after">
+            		<field name="overtime_hours" />
+            		<field name="late_days" />
+				</field>
+				<field name="date" position="after">
+            		<field name="pph_calc_mode" />
+            		<field name="thr_bonus" />
+				</field>
+            </field>
+        </record>
+        <record id="hr_allounce_deduction_categoty_x_form" model="ir.ui.view">
+            <field name="name">hr.allounce.deduction.categoty.x.form</field>
+            <field name="model">hr.allounce.deduction.categoty</field>
+            <field name="inherit_id" ref="hr_payroll.hr_allounce_deduction_categoty_form" />
+            <field name="priority" eval="15" />                        
+            <field name="arch" type="xml">        	
+            	<field name="sequence" position="after">
+					 <field name="printable" />
+				</field>
+            </field>
+        </record> 
+        <record id="hr_allounce_deduction_categoty_x_tree" model="ir.ui.view">
+            <field name="name">hr.allounce.deduction.categoty.x.tree</field>
+            <field name="model">hr.allounce.deduction.categoty</field>
+            <field name="inherit_id" ref="hr_payroll.hr_allounce_deduction_categoty_tree" />
+            <field name="priority" eval="15" />                        
+            <field name="arch" type="xml">
+            	<field name="condition" position="after">
+					 <field name="printable" />
+				</field>	
+            </field>
+        </record>
+    </data>
+</openerp>

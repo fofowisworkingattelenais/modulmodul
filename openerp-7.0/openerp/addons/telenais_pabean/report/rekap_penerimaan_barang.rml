@@ -24,8 +24,15 @@
 		<paraStyle
 			name="HEADER_TABEL"
 			fontName="Times-Bold"
-		/>		
-		
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
 				
 		
 		<blockTableStyle id="TABEL_STANDAR">		
@@ -53,9 +60,9 @@
 	<!-- TODO: ISI LAPORAN -->
 	<story>
 		
-		<para>LAPORAM PEMASUKAN BARANG PER DOKUMEN PABEAN</para>
+		<!-- <para>LAPORAN PEMASUKAN BARANG PER DOKUMEN PABEAN</para> -->
 		<para>KAWASAN BERIKAT PT. FD INDUSTRI INDONESIA</para>
-		<para>LAPORAM PEMASUKAN BARANG PER DOKUMEN PABEAN</para>
+		<para>LAPORAN PEMASUKAN BARANG PER DOKUMEN PABEAN</para>
 		<para>PERIODE [[ date_from() ]] S/D [[ date_to() ]]</para>
 		<para><font color="white"> </font></para>
 
@@ -94,18 +101,18 @@
 				
 				<tr>
 					[[ repeatIn(isi_laporan(), 'isi') ]]
-					<td>[[ isi['no'] ]]</td>
-					<td>[[ isi['jenis_dokumen'] ]]</td>
-					<td>[[ isi['nomor_dokumen'] ]]</td>
-					<td>[[ isi['tanggal_dokumen'] ]]</td>
-					<td>[[ isi['nomor_bast'] ]]</td>
-					<td>[[ isi['tanggal_bast'] ]]</td>
-					<td>[[ isi['pemasok'] ]]</td>
-					<td>[[ isi['kode_barang'] ]]</td>
-					<td>[[ isi['nama_barang'] ]]</td>
-					<td>[[ isi['satuan'] ]]</td>
-					<td>[[ isi['kuantitas'] ]]</td>
-					<td>[[ locale.format('%.2f', isi['nilai_barang'], True) ]]</td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['no'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['jenis_dokumen'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['nomor_dokumen'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['tanggal_dokumen'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['nomor_invoice'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['tanggal_bast'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['pemasok'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['kode_barang'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['nama_barang'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['satuan'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ isi['kuantitas'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2">[[ locale.format('%.2f', isi['nilai_barang'], True) ]]</para></td>
 				</tr>				
 			</blockTable>
 		</section>

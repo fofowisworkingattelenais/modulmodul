@@ -12,6 +12,9 @@
             <xpath expr="//field[@name='target_move']" position="replace">
                 <field name="target_move" required="0" readonly="1"/>
             </xpath>
+	    <xpath expr="/form/group/button[@string='Print']" position="after">
+		<button name="export_to_excel" type="object" string="Export to Excel" icon="gtk-go-forward" colspan="4"/>
+	    </xpath>
             <xpath expr="//field[@name='journal_ids']" position="replace">
                 <field name="journal_ids" required="0" colspan="4" nolabel="1" readonly="1"/>
             </xpath>

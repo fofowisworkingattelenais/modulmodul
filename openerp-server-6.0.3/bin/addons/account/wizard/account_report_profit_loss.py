@@ -43,6 +43,7 @@ class account_pl_report(osv.osv_memory):
             context = {}
         data = self.pre_print_report(cr, uid, ids, data, context=context)
         data['form'].update(self.read(cr, uid, ids, ['display_type'])[0])
+        
         if data['form']['display_type']:
             return {
                 'type': 'ir.actions.report.xml',
@@ -55,6 +56,20 @@ class account_pl_report(osv.osv_memory):
                 'report_name': 'pl.account',
                 'datas': data,
             }
+
+    def export_to_excel(self, cr, uid, ids, data, context=None):
+        if context is None:
+            context = {}
+        data['form'] = self.read(cr, uid, ids, context=context)[0]
+        data = self.pre_print_report(cr, uid, ids, data, context=context)
+        data['form'].update(self.read(cr, uid, ids, ['display_type'])[0])
+
+        return {
+            'type': 'ir.actions.report.xml',
+            'report_name': 'pl.account.excel',
+            'datas': data,
+        }
+
 
 account_pl_report()
 

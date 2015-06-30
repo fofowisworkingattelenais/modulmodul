@@ -540,7 +540,7 @@ class account_invoice_tax(osv.osv):
         company_currency = inv.company_id.currency_id.id
 
         for line in inv.invoice_line:
-            for tax in tax_obj.compute_all(cr, uid, line.invoice_line_tax_id, (line.price_unit* (1-(line.discount or 0.0)/100.0)), line.quantity, inv.address_invoice_id.id, line.product_id, inv.partner_id)['taxes']:
+            for tax in tax_obj.compute_all(cr, uid, line.invoice_line_tax_id, (line.price_unit* (1-(line.discount or 0.0)/100.0)), line.quantity, line.partner_id.id, line.product_id, inv.partner_id)['taxes']:
                 val={}
                 val['invoice_id'] = inv.id
                 val['name'] = tax['name']
@@ -554,10 +554,10 @@ class account_invoice_tax(osv.osv):
                     val['tax_code_id'] = tax['tax_code_id']
 
                     rate = 1
+
                     if company_currency <> inv.currency_id.id:
                         datek = inv.date_invoice or time.strftime('%Y-%m-%d')
                         kp_rate = kp_obj.search(cr, uid, [('name','=',inv.currency_id.id),('tcurrency_id','=',company_currency)], context={'date': datek})
-                        
                         if kp_rate:
                             rate_id = kp_rate[0]
                             rate = kp_obj.browse(cr, uid, [rate_id], context={'date': datek})[0].rate

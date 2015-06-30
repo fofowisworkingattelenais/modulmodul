@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<document filename="Stock Move Varience.pdf"> <!-- TODO: SESUAIKAN NAMA FILE REPORT -->
+	<!-- TODO: TEMPLATE -->
+	<template pageSize="(29.7cm,21.0cm)" title="Stock Move Varience" author="Faris Bassam, PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="27.7cm" height="19.0cm"/>
+		</pageTemplate>
+	</template>
+
+	<!-- TODO: DEFINISIKAN STYLESHEET DISINI -->
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="RATA_KANAN"
+			alignment="RIGHT"
+		/>
+
+		<paraStyle
+			name="HEADER_TABEL"
+			fontName="Times-Bold"
+			alignment="CENTER"
+			fontSize="6.0"
+		/>
+
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="CENTER"
+			fontName="Times-Roman"
+			fontSize="6.0"
+
+		/>
+
+<!--
+		<blockTableStyle id="TABEL_STANDAR">
+			<lineStyle kind="GRID" colorName="black"/>
+			  <blockFont name="Helvetica" size="8"/>
+
+
+		</blockTableStyle>
+-->
+		<blockTableStyle id="TABEL_STANDAR">
+			<!-- GARIS BAWAH HEADER -->
+			<lineStyle kind="GRID" colorName="black"/>
+			 <blockSpan  start="0,0" stop="0,1"/>
+			 <blockSpan  start="1,0" stop="1,1"/>
+			 <blockSpan  start="2,0" stop="2,1"/>
+			 <blockSpan  start="3,0" stop="3,1"/>
+			 <blockSpan  start="4,0" stop="5,0"/>
+			 <blockSpan  start="6,0" stop="7,0"/>
+			 <blockSpan  start="8,0" stop="8,1"/>
+			 <blockSpan  start="9,0" stop="9,1"/>
+			 <blockSpan  start="10,0" stop="11,0"/>
+			 <blockSpan  start="12,0" stop="13,0"/>
+
+
+			 <blockAlignment value="CENTER" start="0,0" stop="-1,1"/>
+			  <blockValign value="MIDDLE" start="0,0" stop="-1,1"/>
+			  <blockFont name="Helvetica" size="8"/>
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<!-- TODO: ISI LAPORAN -->
+	<story>
+
+		<para>LAPORAN VARIANCE COST</para> -->
+		<para>PT. MENARA TERUS MAKMUR</para>
+		<para>PERIODE [[ date_from() ]] S/D [[ date_to() ]]</para>
+		<para><font color="white"> </font></para>
+
+		<para><font color="white"> </font></para>
+
+		<section>
+			<blockTable style="TABEL_STANDAR" colWidths="0.5cm,4.5cm,4.0cm,1.5cm,1.5cm,1.5cm,1.5cm,1.5cm,2.5cm,2.0cm,1.5cm,2.0cm,1.5cm,1.5cm">
+				<tr>
+					<td> <para style="HEADER_TABEL">No</para> </td>
+					<td> <para style="HEADER_TABEL">Product</para> </td>
+					<td> <para style="HEADER_TABEL">Description</para> </td>
+					<td> <para style="HEADER_TABEL">Std Price</para> </td>
+					<td> <para style="HEADER_TABEL">Begin Stock</para> </td>
+					<td> <para style="HEADER_TABEL">Begin Stock</para> </td>
+					<td> <para style="HEADER_TABEL">IN</para> </td>
+					<td> <para style="HEADER_TABEL">IN</para> </td>
+					<td> <para style="HEADER_TABEL">Variance</para> </td>
+					<td> <para style="HEADER_TABEL">Actual Amount</para> </td>
+					<td> <para style="HEADER_TABEL">OUT</para> </td>
+					<td> <para style="HEADER_TABEL">OUT</para> </td>
+					<td> <para style="HEADER_TABEL">Closed Stock</para> </td>
+					<td> <para style="HEADER_TABEL">Closed Stock</para> </td>
+
+
+				</tr>
+				<tr>
+					<td> <para style="HEADER_TABEL">No</para> </td>
+					<td> <para style="HEADER_TABEL">Product</para> </td>
+					<td> <para style="HEADER_TABEL">Description</para> </td>
+					<td> <para style="HEADER_TABEL">Std Price</para> </td>
+					<td> <para style="HEADER_TABEL">Qty</para> </td>
+					<td> <para style="HEADER_TABEL">Amount</para> </td>
+					<td> <para style="HEADER_TABEL">Qty</para> </td>
+					<td> <para style="HEADER_TABEL">Amount</para> </td>
+					<td> <para style="HEADER_TABEL">Variance</para> </td>
+					<td> <para style="HEADER_TABEL">Actual Amount</para> </td>
+					<td> <para style="HEADER_TABEL">Qty</para> </td>
+					<td> <para style="HEADER_TABEL">Amount</para> </td>
+					<td> <para style="HEADER_TABEL">Qty</para> </td>
+					<td> <para style="HEADER_TABEL">Amount</para> </td>
+
+
+				</tr>
+				<tr>
+					<para>[[ repeatIn(isi_laporan(data['form']), 'isi') ]]</para>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['no'] ]]					</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['description'] ]]			</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['product'] ]]				</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['standard_cost_price']) ]]	</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['begin_qty']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['begin_amount']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['in_product_qty']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['in_amount']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['var'])  ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['actual_amount'])  ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['out_product_qty']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['out_amount']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['ending_qty']) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang( isi['ending_amount']) ]]</para></td>
+				</tr>
+
+<!--
+				<tr>
+					<td> <para style="HEADER_TABEL">No</para> </td>
+					<td> <para style="HEADER_TABEL">Description</para> </td>
+					<td> <para style="HEADER_TABEL">References</para> </td>
+					<td> <para style="HEADER_TABEL">Source</para> </td>
+					<td> <para style="HEADER_TABEL">Shipping Type</para> </td>
+					<td> <para style="HEADER_TABEL">Product</para> </td>
+					<td> <para style="HEADER_TABEL">Qty</para> </td>
+					<td> <para style="HEADER_TABEL">Unit Of Measure</para> </td>
+					<td> <para style="HEADER_TABEL">Standard Cost Price</para> </td>
+					<td> <para style="HEADER_TABEL">Amount Cost</para> </td>
+					<td> <para style="HEADER_TABEL">Variance</para> </td>
+					<td> <para style="HEADER_TABEL">Actual Amount</para> </td>
+					<td> <para style="HEADER_TABEL">Actual Cost Price</para> </td>
+					<td> <para style="HEADER_TABEL">Serial Number</para> </td>
+
+					<td> <para style="HEADER_TABEL">Source Location</para> </td>
+					<td> <para style="HEADER_TABEL">Destination Location</para> </td>
+					<td> <para style="HEADER_TABEL">Date</para> </td>
+					<td> <para style="HEADER_TABEL">Scheduled Date</para> </td>
+					<td> <para style="HEADER_TABEL">Status</para> </td>
+
+				</tr>
+
+				<tr>
+					<para>[[ repeatIn(isi_laporan(data['form']), 'isi') ]]</para>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['no'] ]]					</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['description'] ]]			</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['references'] ]]			</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['source'] ]]				</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['shipping_type'] ]]		</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['product'] ]]				</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['kuantitas'] ]]			</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['satuan'] ]]				</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang(reduce(lambda  x, obj: x +obj['standard_cost_price'], isi_laporan(data['form']), 0.00 )) ]]	</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang(reduce(lambda  x, obj: x +obj['total_cost'], isi_laporan(data['form']), 0.00 )) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang(reduce(lambda  x, obj: x +obj['var'], isi_laporan(data['form']), 0.00 )) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang(reduce(lambda  x, obj: x +obj['actual_amount'], isi_laporan(data['form']), 0.00 )) ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ formatLang(reduce(lambda  x, obj: x +obj['actual_cost_price'], isi_laporan(data['form']), 0.00 )) ]]	</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['serial_number'] ]]</para></td>
+
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['location_id'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['location_dest_id'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['date'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['date_expected'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM_2"> [[ isi['status'] ]]</para></td>
+
+				</tr>
+-->
+			</blockTable>
+		</section>
+	</story>
+
+</document>

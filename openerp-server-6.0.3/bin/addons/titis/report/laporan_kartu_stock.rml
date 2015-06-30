@@ -165,14 +165,15 @@
         <para><font color="white"> </font></para>
         <para><font color="white"> </font></para>
 
-		<blockTable style="TABEL_STANDAR" colWidths="3.5cm,2.5cm,2.5cm,6cm,4cm">
+		<blockTable style="TABEL_STANDAR" colWidths="3cm,2.5cm,2.5cm,3cm,4.7cm,3.3cm">
 			<tr>								
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">TANGGAL</para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">MASUK</para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KELUAR</para></td>
 				
-				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KETERANGAN</para></td>
-				<td><para style="JUDUL_KATEGORI" alignment="CENTER">TANDA TANGAN</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">REFERENCE</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">ORIGIN</para></td>
+				<td><para style="JUDUL_KATEGORI" alignment="CENTER">PARTNER</para></td>
 			</tr>
 			<tr>				
 				[[ repeatIn(isi_laporan(data['form']), 'a') ]]				
@@ -180,8 +181,9 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['masuk'] ]]</para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['keluar'] ]]</para></td>
 				
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['keterangan'] ]]</para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  a['references'] ]]</para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  a['origin'] ]] </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  a['partner'] ]] </para></td>
 			</tr>
 		
 		</blockTable>

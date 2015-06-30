@@ -71,8 +71,8 @@
         
 
 		<!-- REPORT -->
-        	
-		<menuitem 	id="menu_titis_WizardLaporanCashFlowDirect" 
+
+		<menuitem 	id="menu_titis_WizardLaporanCashFlowDirect"
 					parent="account.menu_finance_reporting" 
 					name="Cash Direct"
 					sequence="500"
@@ -142,6 +142,12 @@
 					parent="account.menu_finance_reporting" 
 					name="Trial Balance"
 					sequence="511"
-					action="waction_titis_wizardTrialBalance" />																										
+					action="waction_titis_wizardTrialBalance" />
+
+		<menuitem 	id="menu_titis_WizardLaporanUangMuka"
+					parent="account.menu_finance_reporting"
+					name="Journal Report"
+					sequence="512"
+					action="waction_titis_wizardLaporanUangMuka" />
 	</data>
 </openerp>

@@ -110,7 +110,7 @@ class purchase_requisition_partner(osv.osv_memory):
                             'company_id': tender.company_id.id,
                             'fiscal_position': partner.property_account_position and partner.property_account_position.id or False,
                             'requisition_id':tender.id,
-                            'notes':tender.description,
+                            'catatan':tender.description,
                             'warehouse_id':tender.warehouse_id.id and tender.warehouse_id.id ,
                             'location_id':location_id,
                             'company_id':tender.company_id.id,

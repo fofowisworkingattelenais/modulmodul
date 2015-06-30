@@ -43,7 +43,7 @@
 			name="ISI_TABEL_ITEM_2"
 			alignment="LEFT"
 			fontName="Times-Roman"
-			fontSize="8.0"
+			fontSize="6.0"
 			leading="9"
 		/>
 
@@ -103,69 +103,11 @@
 		<para><font color="white"> </font></para>
 
 		<para><font color="white"> </font></para>
-<!--
-		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,13cm">
-			<tr>
-				<td><para style="JUDUL_KATEGORI">NOMOR PART (PN)</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  default_code(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">DESKRIPSI</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  nama_product(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">TYPE/SERIAL/MODEL</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  category_name(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">MANUFACTURE/MERK</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  nama_product(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">NOMOR IDENTIK PIN</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">-</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">POSISI</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  location_name(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">SATUAN JUMLAH</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  nama_uom(data['form']) ]]</para></td>
-			</tr>
-			<tr>
-				<td><para style="JUDUL_KATEGORI">MSL</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">-</para></td>
-			</tr>
 
-		</blockTable>
--->
-<!--
-
-		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,3cm,5.5cm,0.5cm,4.5cm">
-			<tr>
-				[[ repeatIn(isi_saldo(data['form']), 'sasa') ]]
-				<td><para style="JUDUL_KATEGORI">STOK AWAL</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  sasa['saldo_awal'] ]]</para></td>
-				<td><para style="JUDUL_KATEGORI" alignment="RIGHT">Tanggal</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  sasa['date_from'] ]] - [[  sasa['date_to'] ]]</para></td>
-			</tr>
-		</blockTable>
--->
         <para><font color="white"> </font></para>
         <para><font color="white"> </font></para>
 		<para><seqReset id="nourut"/></para>
-		<blockTable style="TABEL_STANDAR" colWidths="1cm,2cm,2cm,1.5cm,2cm,3cm,3cm,4cm,2cm,2cm,2cm,3cm">
+		<blockTable style="TABEL_STANDAR" colWidths="0.5cm,3cm,3.25cm,1cm,1.75cm,3cm,3cm,3cm,2cm,2cm,2cm,3cm">
 			<tr>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO</para></td>
 				<td><para style="JUDUL_KATEGORI" alignment="CENTER">KODE BARANG</para></td>
@@ -198,9 +140,9 @@
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
 				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER">[[  nama_product['saldo_akhir'] ]]  </para></td>
 
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
-				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
-			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> - </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['stock_opname'] ]] </para></td>
+				<td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['selisih'] ]] </para></td>
+			    <td><para style="ISI_TABEL_ITEM_2" alignment="CENTER"> [[  nama_product['keterangan'] ]] </para></td>
 
 			</tr>
 
@@ -208,15 +150,7 @@
 
                 <para><font color="white"> </font></para>
                 <para><font color="white"> </font></para>
-<!--
-		<blockTable style="TABEL_HEADER" colWidths="5cm,0.5cm,13cm">
-			<tr>
-				<td><para style="JUDUL_KATEGORI">STOK AKHIR</para></td>
-				<td><para style="ISI_TABEL_ITEM">:</para></td>
-				<td><para style="ISI_TABEL_ITEM">[[  sasa['saldo_akhir'] ]]</para></td>
-			</tr>
-		</blockTable>
--->
+
 	</story>
 
 </document>

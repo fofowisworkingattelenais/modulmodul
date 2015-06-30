@@ -183,10 +183,11 @@ class account_invoice(osv.osv):
 
     _columns = {
         'name': fields.char('Description', size=256, select=True, readonly=True, states={'draft':[('readonly',False)]}),
+        # 'name1': fields.char('Description', size=256, select=True, readonly=True, states={'draft':[('readonly',False)]}),
         #'project_id': fields.many2one(string='Project', obj='project.project', readonly=True,
                                       #states={'draft': [('readonly', False)]}),
         'origin': fields.char('Source Document', size=64, help="Reference of the document that produced this invoice.", readonly=True, states={'draft':[('readonly',False)]}),
-        
+
         'type': fields.selection([
             ('out_invoice','Customer Invoice'),
             ('in_invoice','Supplier Invoice'),
@@ -200,7 +201,7 @@ class account_invoice(osv.osv):
         'reference_type': fields.selection(_get_reference_type, 'Reference Type',
             required=True, readonly=True, states={'draft':[('readonly',False)]}),
         'comment': fields.text('Additional Information'),
-        
+
 
         'state': fields.selection([
             ('draft','Draft'),
@@ -259,7 +260,7 @@ class account_invoice(osv.osv):
 
 
 
-      
+
 
         'company_id': fields.many2one('res.company', 'Company', required=True, change_default=True, readonly=True, states={'draft':[('readonly',False)]}),
         'check_total': fields.float('Total', digits_compute=dp.get_precision('Account'), states={'open':[('readonly',True)],'close':[('readonly',True)]}),
@@ -1015,6 +1016,14 @@ class account_invoice(osv.osv):
         for i in invoices:
             if i['move_id']:
                 move_ids.append(i['move_id'][0])
+                object_account = self.pool.get('account.move.line')
+                object_voucher = self.pool.get('account.voucher.line')
+                invoicess = object_account.search(cr, uid, [('invoice', '=', i['move_id'][1])])
+                for iiii in invoicess:
+                    vouchers = object_voucher.search(cr, uid, [('move_line_id', '=', iiii)])
+                    for ii in vouchers:
+                        if ii:
+                            raise osv.except_osv(_('Error !'), _('You cannot cancel the Invoice which is attached in list cheque, please check bank payment!'))
             if i['payment_ids']:
                 account_move_line_obj = self.pool.get('account.move.line')
                 pay_ids = account_move_line_obj.browse(cr, uid, i['payment_ids'])

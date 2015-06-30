@@ -1,24 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819401b7-04fe-4952-bbb4-68350d60d8e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/trial_balance.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/trial_balance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" afterPath="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" afterPath="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" />
+    <list default="true" id="f6de0c67-e52c-406a-ac8f-613e7d3310cb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/report_xls/static/src/img/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/object_modul/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/report/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/wizard/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/report_xls/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/report/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/wizard/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/__openerp__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/report_xls/__openerp__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/__openerp__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/__openerp__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/laporan_uang_muka.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/laporan_uang_muka.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_hutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/report/loista_hutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_hutang_report.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/report/loista_hutang_report.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_piutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/report/loista_piutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_piutang_report.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/report/loista_piutang_report.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_saldo_inventory.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/report/loista_saldo_inventory.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/packing_list.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/object_modul/purchase.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/view/purchase_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/quotation_fd.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/quotation_fd.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/report_xls/report_xls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/menu/sale_menu.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/view/sale_order_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/object_modul/stock.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/report/stock_varience_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/report/stock_varience_report.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/view/stock_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/view/stock_view.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/report_xls/utils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/warning_x.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_laporan_uang_muka.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_laporan_uang_muka.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_hutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/wizard/wizard_loista_hutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_hutang_report.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/wizard/wizard_loista_hutang_report.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_piutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/wizard/wizard_loista_piutang_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_piutang_report.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/titis/addons/fb_piutangpiutang/wizard/wizard_loista_piutang_report.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_saldo_inventory.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/loista/wizard/wizard_loista_saldo_inventory.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/wizard/wizard_stock_variance.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openerp-7.0/FD/addons/fb_mtm/wizard/wizard_stock_variance.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/warning_x.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/.project" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/.project" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/.pydevproject" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/.pydevproject" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/.settings/org.eclipse.core.resources.prefs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/__init__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/__openerp__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_attendance_x.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_attendance_x.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_contract_view_x.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_contract_view_x.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_contract_x.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_contract_x.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_payroll_view_x.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_payroll_view_x.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_payroll_x.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_payroll_x.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_timesheet_sheet_view_x.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_timesheet_sheet_view_x.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_timesheet_sheet_x.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_timesheet_sheet_x.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_view_x.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_view_x.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/hr_x.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/hr_x.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom/wizard/__init__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/hr_custom_/wizard/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/object_modul/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/object_modul/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_modul/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_modul/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_other/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_other/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/__init__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/__init__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/stock/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/stock/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/__openerp__.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/__openerp__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/account_move_line.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/account_move_line.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/wizard/account_report_profit_loss.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/wizard/account_report_profit_loss.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/wizard/account_report_profit_loss_view.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/wizard/account_report_profit_loss_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/account_voucher.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/account_voucher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/account_voucher.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/account_voucher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/account_voucher_line.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/account_voucher_line.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/tools/amount_to_text_ind.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/tools/amount_to_text_ind.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/customer_invoice_fd.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/customer_invoice_fd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/data/data_DocumentType.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/data/data_DocumentType.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_gb.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_gb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_gb.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_gb.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_kb.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/report/delivery_order_kb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/tat_sm_kurs_pajak_603/invoice.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/tat_sm_kurs_pajak_603/invoice.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/invoice.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/account/invoice.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/invoice_approval.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_modul/invoice_approval.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/security/ir.model.access.csv" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/security/ir.model.access.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_modul/jenis_dokumen_pabean.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_modul/jenis_dokumen_pabean.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/tat_sm_kurs_pajak_603/kurs_pajak.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/tat_sm_kurs_pajak_603/kurs_pajak.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_kartu_stock.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_kartu_stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.rml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_kartu_stock.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang_gb.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang_gb.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang_gb.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_mutasi_barang_gb.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang_wip.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/laporan_posisi_barang_wip.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_uang_muka_excel.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_uang_muka_excel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_uang_muka_excel_view.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/laporan_uang_muka_excel_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/logistic_report.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/logistic_report.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/logistic_report.rml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/logistic_report.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/menu/menu_Warehouse.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/menu/menu_Warehouse.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_account.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_account.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_stock.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_stock.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modulmodul.iml" afterPath="$PROJECT_DIR$/.idea/modulmodul.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/menu/purchase_menu.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/menu/purchase_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_order.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/object_other/purchase_order.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/purchase_requisition/purchase_requisition.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/purchase_requisition_partner.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/purchase_requisition_partner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/purchase/purchase_view.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/purchase/purchase_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_penerimaan_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_penerimaan_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_penerimaan_barang.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_penerimaan_barang.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_pengeluaran_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_pengeluaran_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_pengeluaran_barang.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/report/rekap_pengeluaran_barang.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/report_xls.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/report_xls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/saldo_inventory.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/saldo_inventory.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/saldo_inventory.rml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/report/saldo_inventory.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/sale_analytic_plans/sale_analytic_plans.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/sale_analytic_plans/sale_analytic_plans.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/object_modul/stock.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/object_modul/stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/stock/stock.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/stock/stock.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/menu/stock_menu.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_fd_industri/menu/stock_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_other/stock_picking.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/object_other/stock_picking.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/stock/stock_view.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/stock/stock_view.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/report/supplier_invoice.rml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/view/view_BankPayment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/view/view_DeliveryOrder.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/view/view_DeliveryOrder.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/view/view_IncomingShipment.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/view/view_IncomingShipment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pemasukan_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pemasukan_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pemasukan_barang.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pemasukan_barang.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pengeluaran_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pengeluaran_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pengeluaran_barang.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/telenais_pabean/wizard/wizard_cetak_rekap_pengeluaran_barang.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/wizard_logistic_report.py" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/wizard_logistic_report.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/wizard_logistic_report.xml" afterPath="$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/wizard/wizard_logistic_report.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_mutasi_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_mutasi_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_posisi_barang.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_posisi_barang.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_posisi_barang.xml" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_posisi_barang.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_saldo_inventory.py" afterPath="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_stock/wizard/wizard_saldo_inventory.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="modulmodul.iws" />
@@ -42,49 +185,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="wizard_ledger.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
+      <file leaf-file-name="stock_varience_report_xls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1044">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wizard_trial_balance.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="22" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1062">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wizard_trial_balance.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="24" selection-start="1066" selection-end="1066" vertical-scroll-proportion="-8.592592" vertical-offset="200" max-vertical-offset="738">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/ar_base_amount_to_text/object_other/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="49" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ledger.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.9031142" vertical-offset="432" max-vertical-offset="4104">
+            <state line="191" column="22" selection-start="8886" selection-end="8886" vertical-scroll-proportion="0.2639405" vertical-offset="3296" max-vertical-offset="7470">
               <folding>
-                <element signature="e#990#1031#0" expanded="true" />
+                <element signature="e#981#992#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stock_varience_report.rml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="62" selection-start="2716" selection-end="2740" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="2124">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stock_varience_report.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="204" column="33" selection-start="10995" selection-end="11010" vertical-scroll-proportion="0.0" vertical-offset="3179" max-vertical-offset="4554">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account_partner_open_arap_xls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="166" column="27" selection-start="7097" selection-end="7118" vertical-scroll-proportion="-9.074074" vertical-offset="2617" max-vertical-offset="8208">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stock.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="35" selection-start="1537" selection-end="1545" vertical-scroll-proportion="-11.666667" vertical-offset="405" max-vertical-offset="2088">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stock_varience_report_1.rml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1998" max-vertical-offset="3564">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,27 +254,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_ledger.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_ledger.xml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py" />
-        <option value="$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml" />
-        <option value="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml" />
+        <option value="$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py" />
+        <option value="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py" />
+        <option value="$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py" />
       </list>
     </option>
   </component>
@@ -157,6 +291,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -185,7 +320,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemId" value="openerp-7.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -199,11 +334,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemId" value="openerp-7.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="openerp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -217,11 +352,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemId" value="openerp-7.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="openerp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -239,11 +374,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemId" value="openerp-7.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="openerp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -251,7 +386,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ar_base_amount_to_text" />
+              <option name="myItemId" value="fb_mtm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -265,11 +400,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openerp-server-6.0.3" />
+              <option name="myItemId" value="openerp-7.0" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="openerp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,29 +412,111 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ar_base_amount_to_text" />
+              <option name="myItemId" value="fb_mtm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="object_other" />
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp-7.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fb_mtm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="object_modul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp-7.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account_open_receivables_payables_xls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modulmodul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp-7.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openerp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="addons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account_open_receivables_payables_xls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report" />
-      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard" />
-      <recent name="$PROJECT_DIR$/ajlb/bin/addons/report_ajlb" />
-      <recent name="$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard" />
-    </key>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="tests" factoryName="py.test">
@@ -311,7 +528,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -335,7 +552,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -358,7 +575,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <method />
@@ -372,7 +589,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -394,7 +611,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -413,7 +630,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="modulmodul" />
+      <module name="FD" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -445,9 +662,9 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="819401b7-04fe-4952-bbb4-68350d60d8e4" name="Default" comment="" />
-      <created>1401875033559</created>
-      <updated>1401875033559</updated>
+      <changelist id="f6de0c67-e52c-406a-ac8f-613e7d3310cb" name="Default" comment="" />
+      <created>1435659033182</created>
+      <updated>1435659033182</updated>
     </task>
     <servers />
   </component>
@@ -468,7 +685,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -491,296 +709,208 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py">
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="22" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1134">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="1" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="13" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="61" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="756">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="8" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0" vertical-offset="1252" max-vertical-offset="2232" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1005" selection-end="1005" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1401" selection-end="1401" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="8" selection-start="4146" selection-end="4146" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2232" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/laporan_kartu_stock.rml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3798" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/laporan_kartu_stock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_purchase.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="71" selection-start="553" selection-end="596" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="432" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/titis_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="26" selection-start="673" selection-end="673" vertical-scroll-proportion="0.57954544" vertical-offset="282" max-vertical-offset="1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_stock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/titis/menu/menu_account.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="2167" selection-end="2339" vertical-scroll-proportion="-3.8148148" vertical-offset="1445" max-vertical-offset="2754" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/ledger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="421" selection-end="422" vertical-scroll-proportion="-3.9629629" vertical-offset="55" max-vertical-offset="3996" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="22" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1134">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_kartu_stock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="37" max-vertical-offset="756">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/wizard_trial_balance.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="20" selection-start="3361" selection-end="3361" vertical-scroll-proportion="0.0" vertical-offset="1062" max-vertical-offset="2232" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/scp_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="31" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1134" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="18" selection-start="0" selection-end="1122" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="12" selection-start="0" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="978" selection-end="978" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rscp/bin/addons/report_scp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="14" selection-start="0" selection-end="1074" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="1" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="13" selection-start="3028" selection-end="3028" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="2232">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="17" selection-start="1582" selection-end="1582" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1044">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="22" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1062">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/tools/amount_to_text_en.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.4385321" vertical-offset="337" max-vertical-offset="2340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/ajlb_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="464" selection-end="464" vertical-scroll-proportion="0.5658153" vertical-offset="0" max-vertical-offset="509">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/trial_balance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="0" selection-start="6598" selection-end="6598" vertical-scroll-proportion="0.40699816" vertical-offset="3145" max-vertical-offset="3690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_ledger.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="378" selection-end="379" vertical-scroll-proportion="0.29401088" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/wizard/wizard_trial_balance.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="1066" selection-end="1066" vertical-scroll-proportion="-8.592592" vertical-offset="200" max-vertical-offset="738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openerp-server-6.0.3/bin/addons/ar_base_amount_to_text/object_other/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="49" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajlb/bin/addons/report_ajlb/report/ledger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.9031142" vertical-offset="432" max-vertical-offset="4104">
+        <state line="209" column="67" selection-start="9919" selection-end="9919" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="7506">
           <folding>
-            <element signature="e#990#1031#0" expanded="true" />
+            <element signature="e#981#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="62" selection-start="2716" selection-end="2740" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1394" selection-end="1394" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="8334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="2088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="59" selection-start="1448" selection-end="1448" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="8334">
+          <folding>
+            <element signature="e#981#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="1" selection-start="0" selection-end="20491" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="8334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="2088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <folding>
+            <element signature="e#981#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="51" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="8208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="756" max-vertical-offset="2088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <folding>
+            <element signature="e#981#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="62" selection-start="2716" selection-end="2740" vertical-scroll-proportion="0.0" vertical-offset="1134" max-vertical-offset="2124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_1.rml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/object_modul/stock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="35" selection-start="1537" selection-end="1545" vertical-scroll-proportion="-11.666667" vertical-offset="405" max-vertical-offset="2088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="204" column="33" selection-start="10995" selection-end="11010" vertical-scroll-proportion="0.0" vertical-offset="3179" max-vertical-offset="4554">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/account_open_receivables_payables_xls/report/account_partner_open_arap_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="27" selection-start="7097" selection-end="7118" vertical-scroll-proportion="-9.074074" vertical-offset="2617" max-vertical-offset="8208">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openerp-7.0/openerp/addons/fb_mtm/report/stock_varience_report_xls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="22" selection-start="8886" selection-end="8886" vertical-scroll-proportion="0.2639405" vertical-offset="3296" max-vertical-offset="7470">
+          <folding>
+            <element signature="e#981#992#0" expanded="true" />
           </folding>
         </state>
       </provider>

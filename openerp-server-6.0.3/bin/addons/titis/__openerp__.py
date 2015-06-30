@@ -74,6 +74,8 @@
                     'wizard/wizard_import_move_line.xml',
                     #'wizard/wizard_import_absensi.xml',                    
                     'wizard/wizard_purchase_requisition_line.xml',
+                    'wizard/wizard_logistic_report.xml',
+                    'wizard/wizard_laporan_uang_muka.xml',
 
                     'view/view_ResPartner.xml',
                     'view/view_AccountMove.xml',

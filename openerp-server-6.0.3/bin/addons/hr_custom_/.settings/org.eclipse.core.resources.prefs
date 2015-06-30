@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//wizard/__init__.py=utf-8
+encoding//wizard/hr_timesheet_import_data.py=utf-8
+encoding/__init__.py=utf-8
+encoding/__openerp__.py=utf-8
+encoding/hr_attendance_x.py=utf-8
+encoding/hr_contract_x.py=utf-8
+encoding/hr_payroll_x.py=utf-8
+encoding/hr_timesheet_sheet_x.py=utf-8
+encoding/hr_x.py=utf-8
+encoding/resource_x.py=utf-8

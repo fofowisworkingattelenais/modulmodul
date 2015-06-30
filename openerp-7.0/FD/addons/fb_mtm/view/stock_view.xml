@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model='ir.ui.view' id='stock_move_tree_inherit'>
+			<field name='name'>stock.move.tree.inherit</field>
+			<field name='model'>stock.move</field>
+			<field name='inherit_id' ref='stock.view_move_tree'/>
+			<field name='arch' type='xml'>
+
+                <xpath expr="//tree//field[@name='product_uom']" position="after">
+                    <field name="cost_price" string="Cost Price"/>
+                    <field name="total_cost" string="Total Cost" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

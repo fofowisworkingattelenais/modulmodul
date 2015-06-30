@@ -2,7 +2,7 @@
 <document filename="Voucher.pdf">
   <template pageSize="(595.0,842.0)" title="Voucher" author="Faris Bassam" allowSplitting="20">
     <pageTemplate id="first">
-      <frame id="first" x1="20.0" y1="25.0" width="539" height="772"/>
+      <frame id="first" x1="20.0" y1="26.0" width="539" height="772"/>
     </pageTemplate>
   </template>
 
@@ -107,7 +107,7 @@
 </blockTableStyle>
 
 	  <paraStyle name="JUDUL" fontName="Helvetica-BoldOblique" fontSize="18.0" alignment="CENTER" />
-	  <paraStyle name="JUDUL2" fontName="Helvetica-BoldOblique" fontSize="18.0" alignment="LEFT"/>
+	  <paraStyle name="JUDUL2" fontName="Helvetica" fontSize="16.0" alignment="LEFT"/>
 	  <paraStyle name="NORMAL" fontSize="8.0"/>
 	  <paraStyle name="NORMAL_1" fontSize="8.0" alignment="CENTER"/>
 	  <paraStyle name="NORMAL_2" fontSize="6.0" alignment="LEFT"/>
@@ -143,7 +143,7 @@
 
 
         <para style="COSTUM_2"><font color="white"> </font></para>
-        <para><font color="white"> </font></para>
+        
 
         <para style="COSTUM_2">[[ repeatIn(objects,'o') ]]</para>
         <para style="COSTUM_2">[[ setLang(o.partner_id.lang) ]]</para>
@@ -179,31 +179,31 @@
             </tr>
         </blockTable>
 
-        <para><font color="white"> </font></para>
+        
 
 		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
 			<tr>
 				<td><para style="NORMAL_4"><font color="white">_</font>Pay To</para></td>
 				<td><para style="NORMAL_4"><font color="white">_</font>[[o.partner_id.name]]</para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Unit Code</para></td>
+				<td><para style="NORMAL_4"><font color="white">_</font>Project</para></td>
                 <td><para style="NORMAL_4"><font color="white">_</font> [[o.project_id.name]]</para></td>
 			</tr>
 		</blockTable>
 		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
 			<tr>
 
-				<td><para style="NORMAL_4"><font color="white">_</font>Cheque Number</para></td>
 				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Department Code</para></td>
+				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
+				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
 			        <td><para style="NORMAL_4"><font color="white">_</font></para></td>
 			</tr>
 		</blockTable>
 		<blockTable colWidths="4cm,7cm,3.5cm,4.5cm" style="TABEL_BAWAH">
 			<tr>
 
-				<td><para style="NORMAL_4"><font color="white">_</font>Cheque Due Date</para></td>
 				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
-				<td><para style="NORMAL_4"><font color="white">_</font>Transaction Type</para></td>
+				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
+				<td><para style="NORMAL_4"><font color="white">_</font></para></td>
 			        <td><para style="NORMAL_4"><font color="white">_</font></para></td>
 			</tr>
 		</blockTable>
@@ -214,7 +214,7 @@
 			<td>
 				<!-- <para style="SPACE">[[ repeatIn(objects,'voucher') ]]</para> -->
 
-				<blockTable colWidths="1cm,13.5cm,4.5cm" style="JUDUL_TABEL">
+				<blockTable colWidths="1cm,10cm,3.5cm,4.5cm" style="JUDUL_TABEL">
 				  <tr>
 					<td>
 					  <blockTable>
@@ -224,6 +224,11 @@
 					<td>
 					  <blockTable>
 						<tr><td><para style="NORMAL_1">Description</para></td></tr>
+					  </blockTable>
+					</td>
+                    <td>
+					<blockTable>
+						<tr><td><para style="NORMAL_1">Analytic Distribution</para></td></tr>
 					  </blockTable>
 					</td>
 					<td>
@@ -239,7 +244,7 @@
 <!--				<para style="">[[ repeatIn(objects,'a') ]] </para> -->
                 <para>[[ repeatIn(o.invoice_line,'a') ]]</para>
 
-				<blockTable colWidths="1cm,0.1cm,13.4cm,0.5cm,4cm" style="TABEL_ATAS_2">
+				<blockTable colWidths="1cm,10cm,3.5cm,0.5cm,4cm" style="TABEL_ATAS_2">
 				  <tr>
 				    <td>
 					  <blockTable>
@@ -247,18 +252,18 @@
 					  </blockTable>
 					</td>
 
-					<td>
-					  <blockTable>
-						<tr><td><para style="NORMAL_4"> </para></td></tr>
-					  </blockTable>
-					</td>
+					
 
 					<td>
 					  <blockTable>
-						<tr><td><para style="NORMAL_4">[[ a.product_id.name]]   [[ a.name]] </para></td></tr>
+						<tr><td><para style="NORMAL_4"> [[ a.name]] </para></td></tr>
 					  </blockTable>
 					</td>
-
+					<td>
+					  <blockTable >
+						<tr><td><para style="NORMAL_4"> [[ a.analytics_id.name]] </para></td></tr>
+					  </blockTable>
+					</td>
 					<td>
 					  <blockTable>
 						<tr>
@@ -333,14 +338,12 @@
 
 
 
-				<blockTable colWidths="4.75cm,4.75cm,4.75cm,4.75cm" style="JUDUL_TABEL">
+				<blockTable colWidths="5.75cm,5.75cm,7.5cm" style="JUDUL_TABEL">
 					<tr>
 						<td>
 							<para style="NORMAL_1">Originator</para>
 						</td>
-						<td>
-							<para style="NORMAL_1">Validator<font color="white">_</font></para>
-						</td>
+						
 						<td>
 							<para style="NORMAL_1">Approved By<font color="white">_</font></para>
 						</td>
@@ -351,7 +354,7 @@
 				</blockTable>
 
 
-				<blockTable colWidths="4.75cm,4.75cm,4.75cm,4.75cm" style="JUDUL_TABEL">
+				<blockTable colWidths="5.75cm,5.75cm,7.5cm" style="JUDUL_TABEL">
 					<tr>
 						<td>
 							<para style="NORMAL_4"><font color="white">_</font></para>
@@ -362,15 +365,7 @@
 							<para style="NORMAL_1"><font color="white">_</font><u>[[ o.user_id.name ]]</u></para>
 							<para style="NORMAL_1"><font color="white">_</font>Staf Adm. Personalia Keuangan</para>
 						</td>
-						<td>
-							<para style="NORMAL_4"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-							<para style="NORMAL_1"><font color="white">_</font></para>
-						</td>
+						
 						<td>
 							<para style="NORMAL_4"><font color="white">_</font></para>
 							<para style="NORMAL_1"><font color="white">_</font></para>
@@ -395,14 +390,12 @@
 
 
 
-				<blockTable colWidths="4.75cm,4.75cm,4.75cm,4.75cm" style="JUDUL_TABEL">
+				<blockTable colWidths="5.75cm,5.75cm,7.5cm" style="JUDUL_TABEL">
 					<tr>
 						<td>
 							<para style="NORMAL_1">[[ formatLang(o.date_invoice , date=True) or '' ]]</para>
 						</td>
-						<td>
-							<para style="NORMAL_1">[[ formatLang(o.date_invoice , date=True) or '' ]]<font color="white">_</font></para>
-						</td>
+						
 						<td>
 							<para style="NORMAL_1">[[ formatLang(o.date_invoice , date=True) or '' ]]<font color="white">_</font></para>
 						</td>

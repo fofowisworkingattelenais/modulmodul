@@ -36,6 +36,7 @@ class wizard_mutasi_barang(osv.osv_memory):
 		# 'product_id' : fields.many2one(obj='product.product', string='Product', required='True'),
 		'parent_id': fields.many2one('product.category', 'Product Category', required='True'),
 		'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
+		'categ': fields.selection([('36','Bahan Baku dan Penolong'),('26','Barang Jadi')],'Product Category', required=True),
 		'date_from': fields.date(string='Date From', required=True),
 		'date_to': fields.date(string='Date To', required=True)
 	}

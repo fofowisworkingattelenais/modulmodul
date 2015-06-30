@@ -49,5 +49,7 @@ import cash_receipt
 import bank_payment_voucher
 import cash_payment_voucher
 import expenses
+import logistic_report
+import laporan_uang_muka
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

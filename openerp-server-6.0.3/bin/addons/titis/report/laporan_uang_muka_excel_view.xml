@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!-- Definition of the report-->
+      <report auto="True"
+          id="laporan_uang_muka_excel"
+          model="account.account"
+          name="pl.account.excel"
+          rml="titis/report/account_profit_loss_excel.mako"
+          string="Profit And Loss"
+          menu="False"
+      />
+    </data>
+</openerp>

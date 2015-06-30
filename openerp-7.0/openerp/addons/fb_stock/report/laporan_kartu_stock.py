@@ -186,7 +186,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C \
                                                 ON A2.location_dest_id = C.id \
                                     WHERE 	C.id = %s \
-                                            AND (A2.date > %s AND A2.date < %s))\
+                                            AND (date(A2.date) >= %s AND date(A2.date) <= %s))\
                                     B2 ON A.id = B2.id \
                                 LEFT JOIN (SELECT A3.id, A3.product_qty \
                                     FROM \
@@ -194,7 +194,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C2 \
                                                 ON A3.location_id = C2.id \
                                     WHERE 	C2.id = %s \
-                                            AND (A3.date > %s AND A3.date < %s) ) \
+                                            AND (date(A3.date) >= %s AND date(A3.date) <= %s) ) \
                                      B3 ON A.id = B3.id \
                                 LEFT JOIN (SELECT A4.id, A4.product_qty \
                                     FROM \
@@ -202,7 +202,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C3 \
                                                 ON A4.location_id = C3.id \
                                     WHERE 	C3.id = %s\
-                                        AND (A4.date < %s )  \
+                                        AND (A4.date <= %s )  \
                                         AND (A4.location_dest_id = %s OR A4.location_id = %s)) \
                                     B4 ON A.id = B4.id \
                                 LEFT JOIN (SELECT A5.id, A5.product_qty \
@@ -211,7 +211,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                                             JOIN stock_location C4 \
                                                 ON A5.location_dest_id = C4.id \
                                     WHERE 	C4.id = %s \
-                                        AND (A5.date < %s ) \
+                                        AND (A5.date <= %s ) \
                                         AND (A5.location_dest_id = %s OR A5.location_id = %s)) \
                                     B5 ON A.id = B5.id \
                             WHERE \
@@ -227,6 +227,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
 
 
         query = self.cr.dictfetchall()
+        print query
         if i < len(query):
             if query[i]['masuk_awal'] is None or '':
                 query[i]['masuk_awal'] = 0.000
@@ -269,23 +270,22 @@ class laporan_kartu_stock(report_sxw.rml_parse):
         res = {}
         query = {}
         i = 0
-
-        self.cr.execute("   SELECT A.date, \
-                    A.note, \
-                    B3.product_qty AS kredit, \
-                    B2.product_qty AS debit, \
-                    P.name AS references, \
-                    P.origin AS origin, \
-                    R.name AS partner \
-                    FROM stock_move A \
-                    LEFT JOIN (SELECT A2.id, \
-                    A2.product_qty \
-                    FROM stock_move A2 \
-                    JOIN stock_location C ON A2.location_dest_id = C.id \
-                    WHERE C.id = %s ) B2 ON A.id = B2.id \
-                    LEFT JOIN (SELECT A3.id, \
-                    A3.product_qty \
-                    FROM stock_move A3 \
+        self.cr.execute("   SELECT  A.date, \
+                                    A.note, \
+                                    B3.product_qty AS kredit, \
+                                    B2.product_qty AS debit, \
+                                    P.name AS references, \
+                                    P.origin AS origin, \
+                                    R.name AS partner \
+                            FROM stock_move A \
+                                LEFT JOIN ( SELECT   A2.id, \
+                                                    A2.product_qty \
+                                            FROM stock_move A2 \
+                                                JOIN stock_location C ON A2.location_dest_id = C.id \
+                                                    WHERE C.id = %s ) B2 ON A.id = B2.id \
+                                                LEFT JOIN ( SELECT   A3.id, \
+                                                                    A3.product_qty \
+                                                            FROM stock_move A3 \
                     JOIN stock_location C2 ON A3.location_id = C2.id \
                     WHERE C2.id = %s ) B3 ON A.id = B3.id \
                     LEFT JOIN stock_picking P \
@@ -295,7 +295,7 @@ class laporan_kartu_stock(report_sxw.rml_parse):
                     WHERE product_id = %s \
                     AND A.state = %s \
                     AND (A.location_dest_id = %s OR A.location_id = %s)\
-					AND (A.date > %s AND A.date < %s)\
+                    AND (date(A.date) >= %s AND date(A.date) <= %s)\
                     ORDER BY A.date " ,
                     (form['location_id'][0], form['location_id'][0], form['product_id'][0], 'done', form['location_id'][0], form['location_id'][0], form['date_from'], form['date_to']))
         query = self.cr.dictfetchall()

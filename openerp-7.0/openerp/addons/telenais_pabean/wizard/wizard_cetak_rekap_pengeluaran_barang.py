@@ -35,7 +35,7 @@ class wizard_cetak_rekap_pengeluaran_barang(osv.osv_memory):
 	_columns = {
 							'date_from' : fields.date(string='Date From', required=True),
 							'date_to' : fields.date(string='Date To', required=True),
-                            'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
+                            # 'location_id': fields.many2one(obj='stock.location', string='Location', required='True'),
 
     						}
     						

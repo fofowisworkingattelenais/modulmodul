@@ -4,7 +4,11 @@
         <record id="data_jenisDokumenPabean_23" model="gdi.jenis_dokumen_pabean">
 			<field name="name">BC 2.3</field>
         </record>
-        
+
+    	<record id="data_jenisDokumenPabean_27" model="gdi.jenis_dokumen_pabean">
+			<field name="name">BC 2.7</field>
+        </record>        
+
         <record id="data_jenisDokumenPabean_20" model="gdi.jenis_dokumen_pabean">
 			<field name="name">BC 2.0</field>
         </record>        
@@ -28,6 +32,7 @@
         <record id="data_jenisDokumenPabean_262" model="gdi.jenis_dokumen_pabean">
 			<field name="name">BC 2.6.2</field>
         </record>           
+
 
     </data>
 </openerp>

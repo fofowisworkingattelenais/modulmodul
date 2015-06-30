@@ -112,13 +112,17 @@ class saldo_inventory(report_sxw.rml_parse):
         nama_product = []
         saldo = []
 
-        self.cr.execute(" select distinct(d.product_id) as id, e.name as location, a.standard_price as harga_beli from product_template a \
-            left join product_category b on a.categ_id = b.parent_left \
-            left join product_product c on a.id = c.product_tmpl_id \
-            left join stock_move d on c.id = d.product_id \
-            left join stock_location e on d.location_id = e.id \
-            where  d.product_id is not null and d.location_id = %s \
-        " % form['location_id'][0])
+        self.cr.execute(" select \
+                                distinct(a.id) as id,\
+                                c.default_code as code\
+                            from product_template a \
+                                 left join product_category b on a.categ_id = b.parent_left \
+                                 left join product_product 	c on a.id 	= c.product_tmpl_id \
+                                 left join stock_move 	d on c.id 	= d.product_id \
+                            where   c.default_code is not null and d.product_id is not null and (d.location_id = %s or d.location_dest_id = %s)\
+                            order by   c.default_code asc \
+        ", (form['location_id'][0], form['location_id'][0]))
+
         cat = self.cr.dictfetchall()
         if not cat:
             return {
@@ -128,6 +132,24 @@ class saldo_inventory(report_sxw.rml_parse):
 
         if i < len(cat):
             for ii in cat:
+                self.cr.execute(" select \
+                                    a.standard_price as harga_beli \
+                                from product_template a \
+                                     left join product_product 	c on a.id 	= c.product_tmpl_id \
+                                     left join stock_move 	d on c.id 	= d.product_id \
+                                     left join stock_location 	e on d.location_id = e.id \
+                                where   c.id = %s \
+                                group by a.standard_price\
+                                " % ii['id'])
+
+                q = self.cr.dictfetchall()
+
+                for iii in q:
+                    results ={
+                        'harga_beli': iii['harga_beli'] or '0.0',
+                        'location_name': form['location_id'][1],
+                    }
+
                 self.cr.execute("   SELECT \
                                         COALESCE(sum(B5.product_qty), 0.000)   masuk_awal,\
                                         COALESCE(sum(B4.product_qty), 0.000)  keluar_awal,\
@@ -212,9 +234,11 @@ class saldo_inventory(report_sxw.rml_parse):
                         'saldo_akhir':saldo_akhir or '0.0',
                         'pemasukan':masuk or '0.0',
                         'pengeluaran': keluar or '0.0',
-                        'saldo_awal': saldo_awal or '0.0'
+                        'saldo_awal': saldo_awal or '0.0',
+                        'akhir': saldo_akhir or '0.0',
+                        'total_akhir': (masuk - keluar) * iii['harga_beli'] or '0.0'
                     }
-
+                    result.update(results)
                 saldo_ak = 0
                 kriteria = [ ('id','=', ii['id'])]
 
@@ -229,9 +253,9 @@ class saldo_inventory(report_sxw.rml_parse):
                         'default_code': product.default_code,
                         'qty_available': product.qty_available,
                         'category_name': product.categ_id.name,
-                        'location_name': ii['location'],
-                        'harga_beli': ii['harga_beli'],
-                        'total': product.qty_available * ii['harga_beli']
+                        'location_name': product.location_id.name,
+                        # 'harga_beli': ii['harga_beli'],
+                        # 'total': product.qty_available * ii['harga_beli']
                     }
                     res.update(result)
                     nama_product.append(res)

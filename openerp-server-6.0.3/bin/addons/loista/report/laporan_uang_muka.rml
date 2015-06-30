@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<document filename="Hutang_report.pdf">
+
+
+	<template pageSize="(29.7cm,21.0cm)" title="Laporan Uang Muka" author="PT. Telenais Aset Tangguh" allowSplitting="20" showBoundary="0">
+		<pageTemplate id="First">
+      		<frame id="first" x1="1.0cm" y1="1.0cm" width="20cm" height="19.0cm"/>
+		</pageTemplate>
+	</template>
+
+
+
+	<stylesheet>
+		<paraStyle
+			name="JUDUL_LAPORAN"
+			fontName="Times-Bold"
+			fontSize="12.0"
+			alignment="CENTER"
+		/>
+
+		<paraStyle
+			name="JUDUL_KATEGORI"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ANGKA"
+			alignment="RIGHT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="10.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_ITEM_2"
+			alignment="LEFT"
+			fontName="Times-Roman"
+			fontSize="8.0"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL"
+			fontName="Times-Bold"
+			fontSize="10.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<paraStyle
+			name="ISI_TABEL_TOTAL_2"
+			fontName="Times-Bold"
+			fontSize="8.0"
+			alignment="RIGHT"
+			leading="9"
+		/>
+
+		<blockTableStyle id="TABEL_STANDAR">
+
+			<lineStyle kind="LINEBELOW" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEABOVE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEBEFORE" colorName="#000000" start="0,0" stop="-1,-1"/>
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="0,0" stop="-1,-1"/>
+		</blockTableStyle>
+
+		<blockTableStyle id="TABEL_TOTAL">
+			 <!-- GARIS DISEKELILING TABEL -->
+			<lineStyle kind="BOX" colorName="#000000"/>
+
+				<!-- PEMISAH KOLOM ISI -->
+			<lineStyle kind="LINEAFTER" colorName="#000000" start="1,-1" stop="-2,-1"/>
+
+
+
+		</blockTableStyle>
+
+	</stylesheet>
+
+	<story>
+
+		<para >PT. LOISTA INDONESIA</para>
+		<para >REPORT UANG MUKA</para>
+		<para >PERIODE [[ date_from(data['form']) ]] S/D [[ date_to(data['form']) ]]</para>
+		<para><font color="white"> </font></para>
+
+		<para><font color="white"> </font></para>
+
+		<section>
+			<blockTable colWidths="20.0,150.0,150.0,100.0,80.0,100.0" style="TABEL_STANDAR" repeatRows="2">
+				<tr>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NO UANG MUKA (DP)</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">TGL UANG MUKA (DP)</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">SUPPLIER</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">NOMINAL</para></td>
+					<td><para style="JUDUL_KATEGORI" alignment="CENTER">KETERANGAN</para></td>
+				</tr>
+				<tr>
+					[[ repeatIn(isi_laporan(data['form']), 'a') ]]
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['no'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['no_invoice'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['date_invoice'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['supplier'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER">[[ a['acc_payable_balance_rp'] ]]</para></td>
+					<td><para style="ISI_TABEL_ITEM" alignment="CENTER"> - </para></td>
+				</tr>
+			</blockTable>
+		</section>
+	</story>
+
+</document>
+

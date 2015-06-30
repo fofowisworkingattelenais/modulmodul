@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/openerp-7.0/FD/.idea/FD.iml" filepath="$PROJECT_DIR$/openerp-7.0/FD/.idea/FD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openerp-7.0/FD/addons/.idea/addons.iml" filepath="$PROJECT_DIR$/openerp-7.0/FD/addons/.idea/addons.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modulmodul.iml" filepath="$PROJECT_DIR$/.idea/modulmodul.iml" />
     </modules>
   </component>
